@@ -408,8 +408,12 @@ LINUX       : <code>${OS}</code>
 function make_folder_xray() {
     # // Make Folder Xray to accsess
     mkdir -p /etc/xray
-    mkdir -p /usr/bin/xray
-    mkdir -p /var/log/xray
+    mkdir -p /etc/vmess
+    mkdir -p /etc/vless
+    mkdir -p /etc/trojan
+    mkdir -p /etc/shadowsocks
+    mkdir -p /usr/bin/xray/
+    mkdir -p /var/log/xray/
     mkdir -p /var/www/html
     chmod +x /var/log/xray
     touch /etc/xray/domain
