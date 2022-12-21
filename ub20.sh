@@ -103,12 +103,10 @@ function nginx_install() {
         sudo apt install python3-certbot-nginx -y
     elif [[ $(cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/ID//g') == "debian" ]]; then
         judge "Setup nginx For OS Is $(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')"
-        curl -o /tmp/nginx_signing.key https://nginx.org/keys/nginx_signing.key  
-        sudo mv /tmp/nginx_signing.key /etc/apt/trusted.gpg.d/nginx_signing.asc 
+	sudo apt install gnupg2 ca-certificates lsb-release -y
         sudo apt update -y
 	apt upgrade -y
         apt-get install nginx -y
-        apt --fix-broken install -y
     else
         echo -e "${RED} Your OS Is Not Supported ( ${YELLOW}$(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')${NC} )"
         exit 1
