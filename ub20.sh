@@ -369,7 +369,7 @@ LINUX       : <code>${OS}</code>
     systemctl restart openvpn
     systemctl restart cron
     systemctl restart haproxy
-    systemctl restart iptables
+    systemctl restart netfilter-persistent
     systemctl restart ws
     systemctl restart squid
     clear
