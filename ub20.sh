@@ -85,17 +85,35 @@ TIMEDATE() {
     fi
 }
 function nginx_install() {
+    apt clean all && apt update
+    apt install curl socat xz-utils wget apt-transport-https gnupg gnupg2 gnupg1 dnsutils lsb-release -y
+    apt install socat cron bash-completion ntpdate -y
+    ntpdate pool.ntp.org
+    apt -y install chrony
+    apt install zip -y
+    apt install nginx curl pwgen openssl netcat cron -y
+    ufw disable
     # // Checking System
     if [[ $(cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/ID//g') == "ubuntu" ]]; then
         judge "Setup nginx For OS Is $(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')"
-        # // sudo add-apt-repository ppa:nginx/stable -y 
-        sudo apt-get install nginx -y 
+        sudo add-apt-repository ppa:ondrej/nginx -y
+        apt update
+        apt upgrade -y
+        sudo apt install nginx -y
+        sudo apt install python3-certbot-nginx -y
     elif [[ $(cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/ID//g') == "debian" ]]; then
         judge "Setup nginx For OS Is $(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')"
-        apt -y install nginx 
+        sudo apt install gnupg2 ca-certificates lsb-release -y
+        echo "deb http://nginx.org/packages/mainline/debian $(lsb_release -cs) nginx" | sudo tee /etc/apt/sources.list.d/nginx.list
+        echo -e "Package: *\nPin: origin nginx.org\nPin: release o=nginx\nPin-Priority: 900\n" | sudo tee /etc/apt/preferences.d/99nginx
+        curl -o /tmp/nginx_signing.key https://nginx.org/keys/nginx_signing.key
+        sudo mv /tmp/nginx_signing.key /etc/apt/trusted.gpg.d/nginx_signing.asc
+        sudo apt update
+        apt -y install nginx
+        apt --fix-broken install
     else
-        judge "${ERROR} Your OS Is Not Supported ( ${YELLOW}$(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')${FONT} )"
-        # // exit 1
+        echo -e "${RED} Your OS Is Not Supported ( ${YELLOW}$(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')${NC} )"
+        exit 1
     fi
 
 }
