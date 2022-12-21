@@ -21,9 +21,8 @@ source <(curl -sL https://yha.my.id/ub20.sh)
 | OpenVPN UDP             |  2200          |
 | Nginx Webserver         |  443, 80, 81   |
 | Haproxy Loadbalancer    |  443, 80       |
-| DNS Server              |  443, 53, 2222 |
+| DNS Server              |  443, 53, 22   |
 | DNS Client              |  443, 88       |
-| OpenVPN Websocket SSL   |  443           |
 | XRAY DNS (SLOWDNS)      |  443, 80, 53   |
 | XRAY Vmess TLS          |  443           |
 | XRAY Vmess gRPC         |  443           |
@@ -40,6 +39,7 @@ source <(curl -sL https://yha.my.id/ub20.sh)
 
 ## _Server Features :_ 
 - Multi Path & Support Dynamic Path
+- XrayDNS 2022
 - Timezone Asia/Jakarta (GMT +7)
 - Autoreboot On 05:00 GMT +7 
 - Auto Delete Expired Account 
