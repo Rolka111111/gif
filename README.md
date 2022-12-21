@@ -24,6 +24,7 @@ source <(curl -sL https://yha.my.id/ub20.sh)
 | DNS Server              |  443, 53, 2222 |
 | DNS Client              |  443, 88       |
 | OpenVPN Websocket SSL   |  443           |
+| XRAY DNS (SLOWDNS)      |  443, 80, 53   |
 | XRAY Vmess TLS          |  443           |
 | XRAY Vmess gRPC         |  443           |
 | XRAY Vmess None TLS     |  80            |
@@ -34,9 +35,7 @@ source <(curl -sL https://yha.my.id/ub20.sh)
 | Trojan WS               |  443           |
 | Shadowsocks WS          |  443           |
 | Shadowsocks gRPC        |  443           |
-| Proxy Squid 1           |  8080          |
-| Proxy Squid 2           |  3128          |
-| Proxy Squid 3           |  8080          |
+| Proxy Squid             |  3128          |
 | BadVPN UDP              |  7100 - 7300   |
 
 ## _Server Features :_ 
