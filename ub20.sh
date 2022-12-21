@@ -97,7 +97,7 @@ function nginx_install() {
     if [[ $(cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/ID//g') == "ubuntu" ]]; then
         judge "Setup nginx For OS Is $(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')"
         sudo add-apt-repository ppa:ondrej/nginx -y
-        apt update
+        apt update -y
         apt upgrade -y
         sudo apt install nginx -y
         sudo apt install python3-certbot-nginx -y
@@ -109,8 +109,9 @@ function nginx_install() {
         curl -o /tmp/nginx_signing.key https://nginx.org/keys/nginx_signing.key
         sudo mv /tmp/nginx_signing.key /etc/apt/trusted.gpg.d/nginx_signing.asc
         sudo apt update
-        apt -y install nginx
-        apt --fix-broken install
+	apt upgrade -y
+        apt-get install nginx -y
+        apt --fix-broken install -y
     else
         echo -e "${RED} Your OS Is Not Supported ( ${YELLOW}$(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')${NC} )"
         exit 1
