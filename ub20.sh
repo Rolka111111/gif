@@ -428,7 +428,11 @@ function restart_system() {
 
 }
 function make_folder_xray() {
-    # // Make Folder Xray to accsess
+    rm -rf /etc/vmess/.vmess.db
+    rm -rf /etc/vless/.vless.db
+    rm -rf /etc/trojan/.trojan.db
+    rm -rf /etc/shadowsocks/.shadowsocks.db
+    rm -rf /etc/ssh/.ssh.db
     rm -rf /etc/xray/city
     rm -rf /etc/xray/isp
     mkdir -p /etc/xray
