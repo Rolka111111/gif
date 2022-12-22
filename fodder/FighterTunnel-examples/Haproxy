@@ -5,20 +5,17 @@ global
 defaults
         log global
         mode    tcp
-        option  dontlognull
-        maxconn 5000
-        timeout connect 1s
-        timeout client  20s
-        timeout server  20s
-        timeout queue   30s
-        timeout http-request 1s
-        timeout http-keep-alive 1s
+        option httplog
+        option forwardfor
+        timeout connect 5000
+        timeout client 50000
+        timeout server 50000
 
 frontend http
         mode http
-        bind *:80
-        bind *:8080
-        bind *:2086
+        bind *:80 tfo
+        bind *:8080 tfo
+        bind *:2086 tfo
         tcp-request inspect-delay 1ms
         option forwardfor header X-Real-IP
         http-request set-header X-Real-IP %[src]
@@ -54,8 +51,8 @@ backend openresty_http
 
 frontend ssl
         mode tcp
-        bind 0.0.0.0:80
-        bind 0.0.0.0:443
+        bind 0.0.0.0:80 tfo
+        bind 0.0.0.0:443 tfo
         bind *:443 tfo ssl crt /etc/haproxy/yha.pem alpn h2,http/1.1
         option forwardfor header X-Real-IP
         http-request set-header X-Real-IP %[src]
@@ -63,24 +60,73 @@ frontend ssl
         tcp-request content accept if { req.payload(0,11) -m found }
         tcp-request content accept if WAIT_END 
         tcp-request content accept if { req.ssl_hello_type 1 }
-#       acl web req.payload(0,3) -m found
         acl web req_ssl_sni -i xxx
         acl is_ssh req.payload(0,7) -m bin 5353482d322e30        
         use_backend FighterTunnel  if web
-        use_backend ssh if is_ssh
-        default_backend FighterTunnel_web2
+        use_backend ft1 if { path -i /vless }
+        use_backend ft2 if { path -i /vmess }
+        use_backend ft3 if { path -i /trojan-ws }
+        use_backend ft4 if { path -i /ss-ws }
+        use_backend ft5 if { path -i /vless-grpc }
+        use_backend ft6 if { path -i /vmess-grpc }
+        use_backend ft7 if { path -i /trojan-grpc }
+        use_backend ft8 if { path -i /ss-grpc }
+        use_backend ft9 if { path -i /fightertunnelssh }
+        use_backend ft10 if { path -i /fightertunnelovpn }
+        use_backend ft11 if is_ssh
+        default_backend ft12
 
 backend FighterTunnel 
         mode tcp
         server localhost 127.0.0.1:443 check
 
-backend FighterTunnel_web2
+backend ft1
+        mode tcp
+        server ft1 127.0.0.1:10001 check
+
+backend ft2
+        mode tcp
+        server ft2 127.0.0.1:10002 check  
+
+backend ft3
+        mode tcp
+        server ft3 127.0.0.1:10003 check  
+
+backend ft4
+        mode tcp
+        server ft4 127.0.0.1:10004 check
+
+backend ft5
+        mode tcp
+        server ft5 127.0.0.1:10005 check
+
+backend ft6
+        mode tcp
+        server ft6 127.0.0.1:10006 check
+
+backend ft7
+        mode tcp
+        server ft7 127.0.0.1:10007 check 
+
+backend ft8
+        mode tcp
+        server ft8 127.0.0.1:10008 check
+
+backend ft9
+        mode tcp
+        server ft9 127.0.0.1:10015 check
+
+backend ft10
+        mode tcp
+        server ft10 127.0.0.1:10012 check
+
+backend ft11
         mode tcp
         balance roundrobin
-        server website1 127.0.0.1:10030 send-proxy check
-        server website2 127.0.0.1:10040 send-proxy check
-        server website3 127.0.0.1:1194 check
+        server ftt11 127.0.0.1:10030 send-proxy check
+        server ftt12 127.0.0.1:10040 send-proxy check
+        server ftt13 127.0.0.1:1194 check
 
-backend ssh
+backend ft12
         mode tcp
-        server website4 127.0.0.1:22 check
+        server ft12 127.0.0.1:22 check
