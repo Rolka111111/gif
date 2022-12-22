@@ -56,7 +56,7 @@ frontend ssl
         bind *:443 tfo ssl crt /etc/haproxy/yha.pem alpn h2,http/1.1
         option forwardfor header X-Real-IP
         http-request set-header X-Real-IP %[src]
-        tcp-request inspect-delay 1s
+        tcp-request inspect-delay 100ms
         tcp-request content accept if { req.payload(0,11) -m found }
         tcp-request content accept if WAIT_END 
         tcp-request content accept if { req.ssl_hello_type 1 }
