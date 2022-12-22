@@ -429,6 +429,8 @@ function restart_system() {
 }
 function make_folder_xray() {
     # // Make Folder Xray to accsess
+    rm -rf /etc/xray/city
+    rm -rf /etc/xray/isp
     mkdir -p /etc/xray
     mkdir -p /etc/vmess
     mkdir -p /etc/vless
