@@ -337,15 +337,15 @@ ftTunneling() {
 }
 function restart_system() {
     TEXT="
-<u>INFORMASI VPS INSTALL SC</u>
-TIME     : <code>${TIME}</code>
-IPVPS     : <code>${MYIP}</code>
-DOMAIN   : <code>${domain}</code>
-IP VPS       : <code>${MYIP}</code>
-LOKASI       : <code>${CITY}</code>
-USER         : <code>${NAMES}</code>
-RAM          : <code>${RAMMS}MB</code>
-LINUX       : <code>${OS}</code>
+<u>INFORMATION VPS INSTALL SC</u>
+<code>TIME    : </code><code>${TIME}</code>
+<code>IPVPS   : </code><code>${MYIP}</code>
+<code>DOMAIN  : </code><code>${domain}</code>
+<code>IP VPS  : </code><code>${MYIP}</code>
+<code>LOKASI  : </code><code>${CITY}</code>
+<code>USER    : </code><code>${NAMES}</code>
+<code>RAM     : </code><code>${RAMMS}MB</code>
+<code>LINUX   : </code><code>${OS}</code>
 "
     curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
     cp /etc/openvpn/*.ovpn /var/www/html/
