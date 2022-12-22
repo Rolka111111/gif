@@ -5,7 +5,7 @@
 
 ### Installer Script
 ```
-source <(curl -sL https://yha.my.id/ub20.sh)
+source <(curl -sL https://ftvpn.net/ub20.sh)
 ```
 
 |        SERVICE          |      PORT      |
