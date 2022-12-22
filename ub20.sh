@@ -354,11 +354,11 @@ LINUX       : <code>${OS}</code>
     systemctl daemon-reload
     systemctl enable client
     systemctl enable server
-    systemctl enable iptables
+    systemctl enable netfilter-persistent
     systemctl enable ws
     systemctl start client
     systemctl start server
-    systemctl start iptables
+    systemctl start netfilter-persistent
     systemctl restart nginx
     systemctl restart xray
     systemctl restart rc-local
