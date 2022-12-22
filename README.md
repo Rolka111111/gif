@@ -3,9 +3,13 @@
 
 ### Contact admin [bhoikfostyahya](https://t.me/bhoikfost_yahya)
 
+### Update & Install Curl
+```
+apt update && apt install curl -y
+```
 ### Installer Script
 ```
-source <(curl -sL https://ftvpn.net/ub20.sh)
+source <(curl -sL https://yha.my.id/ub20.sh)
 ```
 
 |        SERVICE          |      PORT      |
