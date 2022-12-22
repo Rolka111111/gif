@@ -73,8 +73,8 @@ frontend ssl
         use_backend ft8 if { path -i /ss-grpc }
         use_backend ft9 if { path -i /fightertunnelssh }
         use_backend ft10 if { path -i /fightertunnelovpn }
-        use_backend ft11 if is_ssh
-        default_backend ft12
+        use_backend ft12 if is_ssh
+        default_backend ft11
 
 backend FighterTunnel 
         mode tcp
