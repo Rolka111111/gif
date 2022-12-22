@@ -443,6 +443,16 @@ function make_folder_xray() {
     touch /etc/xray/domain
     touch /var/log/xray/access.log
     touch /var/log/xray/error.log
+    touch /etc/vmess/.vmess.db
+    touch /etc/vless/.vless.db
+    touch /etc/trojan/.trojan.db
+    touch /etc/shadowsocks/.shadowsocks.db
+    touch /etc/ssh/.ssh.db
+    echo "& plughin Account" >> /etc/vmess/.vmess.db
+    echo "& plughin Account" >> /etc/vless/.vless.db
+    echo "& plughin Account" >> /etc/trojan/.trojan.db
+    echo "& plughin Account" >> /etc/shadowsocks/.shadowsocks.db
+    echo "& plughin Account" >> /etc/ssh/.ssh.db
 }
 
 function dependency_install() {
