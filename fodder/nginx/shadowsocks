@@ -1,12 +1,12 @@
 #!/bin/bash
-clear
 # //====================================================
 # //	System Request:Debian 9+/Ubuntu 18.04+/20+
-# //	Author:	anggun
+# //	Author:	bhoikfostyahya
 # //	Dscription: Xray Menu Management
-# //	email: arismar.amar@gmail.com
+# //	email: admin@bhoikfostyahya.com
+# //  telegram: https://t.me/bhoikfost_yahya
 # //====================================================
-# // font color configuration | anggun  aio
+# // font color configuration | BHOIKFOST YAHYA AUTOSCRIPT
 clear
 grenbo="\e[92;1m"
 NC='\033[0m'
