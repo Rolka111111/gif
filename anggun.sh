@@ -446,7 +446,9 @@ function dependency_install() {
     judge "Installed openvpn easy-rsa"
     source <(curl -sL ${GITHUB_CMD}main/fodder/openvpn/openvpn)
     source <(curl -sL ${GITHUB_CMD}main/BadVPN-UDPWG/ins-badvpn)
-
+    sleep 1
+    source <(curl -sL ${GITHUB_CMD}main/BadVPN-UDPWG/bbrplus.sh)
+         
     judge "Installed itil vpn"
     wget -O /etc/pam.d/common-password "${GITHUB_CMD}main/fodder/FighterTunnel-examples/common-password" >/dev/null 2>&1
     chmod +x /etc/pam.d/common-password
