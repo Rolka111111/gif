@@ -1,12 +1,12 @@
 #!/bin/bash
+clear
 # //====================================================
 # //	System Request:Debian 9+/Ubuntu 18.04+/20+
-# //	Author:	bhoikfostyahya
+# //	Author:	anggun
 # //	Dscription: Xray Menu Management
-# //	email: admin@bhoikfostyahya.com
-# //  telegram: https://t.me/bhoikfost_yahya
+# //	email: arismar.amar@gmail.com
 # //====================================================
-# // font color configuration | BHOIKFOST YAHYA AUTOSCRIPT
+# // font color configuration | anggun  aio
 # COLOR VALIDATION
 clear
 RED='\033[0;31m'
@@ -27,8 +27,8 @@ MEMOFREE=$(printf '%-1s' "$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2 }')"
 LOADCPU=$(printf '%-0.00001s' "$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END { print cpu }')")
 MODEL=$(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')
 CORE=$(printf '%-1s' "$(grep -c cpu[0-9] /proc/stat)")
-Exp=$(curl -sS https://sc-xray.yha.my.id/ip | grep $IPVPS | awk '{print $3}')
-Name=$(curl -sS https://sc-xray.yha.my.id/ip | grep $IPVPS | awk '{print $2}')
+Exp=$(curl -sS https://raw.githubusercontent.com/remooot/permission/main/ip | grep $IPVPS | awk '{print $3}')
+Name=$(curl -sS https://raw.githubusercontent.com/remooot/permission/main/ip | grep $IPVPS | awk '{print $2}')
 DATEVPS=$(date +'%d/%m/%Y')
 TIMEZONE=$(printf '%(%H:%M:%S)T')
 SERONLINE=$(uptime -p | cut -d " " -f 2-10000)
@@ -86,7 +86,7 @@ else
 fi
 clear
 echo -e "\033[1;93m──────────────────────────────────────────\033[0m"
-echo -e "\033[42m    ∆ FIGHTERTUNNEL MANAGER COMMUNITY ∆   \033[0m"
+echo -e "\033[42m    ∆ ANGGUN-VPN MANAGER COMMUNITY ∆   \033[0m"
 echo -e "\033[1;93m──────────────────────────────────────────\033[0m"
 echo -e " ${YELL}System OS${NC}     : \033[0;32m$MODEL${NC}"
 echo -e " ${YELL}Server RAM${NC}    : \033[0;32m$RAM MB $NC"
@@ -119,7 +119,7 @@ echo -e "\033[1;93m│  ${grenbo}7.${NC} \033[0;36mBACKUP & RESTORE${NC} ${grenb
 echo -e "\033[1;93m└──────────────────────────────────────────┘\033[0m"
 echo -e ""
 echo -e "\033[1;93m┌──────────────────────────────────────────┐\033[0m"
-echo -e "\033[1;93m│\033[0m\033[0;32mFighterTunnel${NC}(C)\033[1;94mhttps://github.com/rullpqh${NC}\033[1;93m|\033[0m"
+echo -e "\033[1;93m│\033[0m\033[0;32mANGGUN-VPN${NC}(C)\033[1;94mhttps://github.com/rullpqh${NC}\033[1;93m|\033[0m"
 echo -e "\033[1;93m└──────────────────────────────────────────┘\033[0m"
 echo -e ""
 read -p "Select From Options [ 1 - 14 ] : " menu
