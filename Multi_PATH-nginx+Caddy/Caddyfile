@@ -39,7 +39,7 @@ cat >/etc/caddy/vmess <<-EOF
 @ws_path {
 path /worryfree
 path /xray
-path /yha
+path /anggun
 path /*
 
 }
