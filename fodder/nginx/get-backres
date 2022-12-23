@@ -1,12 +1,11 @@
 #!/bin/bash
 # //====================================================
 # //	System Request:Debian 9+/Ubuntu 18.04+/20+
-# //	Author:	bhoikfostyahya
+# //	Author:	anggun
 # //	Dscription: Xray Menu Management
-# //	email: admin@bhoikfostyahya.com
-# //  telegram: https://t.me/bhoikfost_yahya
+# //  telegram: https://t.me/anggun2
 # //====================================================
-# // font color configuration | BHOIKFOST YAHYA AUTOSCRIPT
+# // font color configuration | ANGGN AIO
 clear
 red() { echo -e "\\033[32;1m${*}\\033[0m"; }
 IP=$(curl -s ipv4.icanhazip.com)
@@ -71,11 +70,10 @@ LOCATION    : $CITY
 LINK BACKUP : $LINKBACKUP
 _______________________________________
 
-© Copyright By https://github.com/rullpqh
-Busines email : bhoikfostyahya@gmail.com
-Report bugs   : https://t.me/bhoikfost_yahya
+© Copyright By https://github.com/comot
+Report bugs   : https://t.me/anggun2
 FighterTunnel Project
-    " | mail -s "FighterTunnel Backup" $EMAIL
+    " | mail -s "anggun Backup" $EMAIL
     clear
     echo -e "\033[1;93m─────────────────────────────────────────\033[0m"
     echo -e "SUCCESSFULL BACKUP YOUR VPS"
