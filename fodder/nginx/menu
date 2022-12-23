@@ -112,7 +112,7 @@ echo -e "\033[1;93m│  ${grenbo}1.${NC} \033[0;36mSSH OVPN MANAGER${NC} ${grenb
 echo -e "\033[1;93m│  ${grenbo}2.${NC} \033[0;36mVMESS MANAGER${NC}    ${grenbo}9.${NC}  \033[0;36mLOAD VPS INFO${NC}"
 echo -e "\033[1;93m│  ${grenbo}3.${NC} \033[0;36mVLESS MANAGER${NC}    ${grenbo}10.${NC} \033[0;36mSPEEDTEST${NC}"
 echo -e "\033[1;93m│  ${grenbo}4.${NC} \033[0;36mTROJAN MANAGER${NC}   ${grenbo}11.${NC} \033[0;36mCHANGE DOMAIN${NC}"
-echo -e "\033[1;93m│  ${grenbo}5.${NC} \033[0;36mSHDWSK MANAGER${NC}   ${grenbo}12.${NC} \033[0;36mCHANGE BANNER${NC}"
+echo -e "\033[1;93m│  ${grenbo}5.${NC} \033[0;36mshadowsocks MANAGER${NC}   ${grenbo}12.${NC} \033[0;36mCHANGE BANNER${NC}"
 echo -e "\033[1;93m│  ${grenbo}6.${NC} \033[0;36mRUNNING SYSTEM${NC}   ${grenbo}13.${NC} \033[0;36mRESTART SERVICE${NC}"
 echo -e "\033[1;93m│  ${grenbo}7.${NC} \033[0;36mBACKUP & RESTORE${NC} ${grenbo}14.${NC} \033[0;36mRESTART SERVER${NC}"
 echo -e "\033[1;93m└──────────────────────────────────────────┘\033[0m"
