@@ -1,7 +1,7 @@
 # Autoscript VPS v.2
 ## _Fighter Tunnel, This autoscript can be used by Debian 10/Ubuntu 20.04 (LTS)_
 
-### Contact admin [bhoikfostyahya](https://t.me/bhoikfost_yahya)
+### Contact admin [bhoikfostyahya](https://api.whatsapp.com/send/?phone=6281211092868&text&type=phone_number&app_absent=0)
 
 ### Installer Script
 ```
