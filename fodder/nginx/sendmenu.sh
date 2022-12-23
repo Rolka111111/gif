@@ -74,6 +74,8 @@ chmod +x seres
 chmod +x get-backres
 chmod +x get-domain
 chmod +x portin
+chmod +x ittil.bak
+chmod +x logclean
 
 cd
 # finihsing
