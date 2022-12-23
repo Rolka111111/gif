@@ -1,12 +1,10 @@
 #!/bin/bash
 # //====================================================
 # //	System Request:Debian 9+/Ubuntu 18.04+/20+
-# //	Author:	bhoikfostyahya
 # //	Dscription: Xray Menu Management
-# //	email: admin@bhoikfostyahya.com
-# //  telegram: https://t.me/bhoikfost_yahya
+# //  telegram: https://t.me/anggun2
 # //====================================================
-# // font color configuration | BHOIKFOST YAHYA AUTOSCRIPT
+# // font color configuration | ANGGUN
 red() { echo -e "\\033[32;1m${*}\\033[0m"; }
 domain=$(cat /etc/xray/domain)
 PUB=$(cat /etc/slowdns/server.pub)
@@ -57,15 +55,11 @@ cat >/var/www/html/ss-$user.txt <<-END
 _______________________________________________________
            Thank You For Using Our Services
                 Xray/Shdwsok Account
-        Autoscript xray-lite dev bhoikfostyahya
 _____________________script v.2_________________________
       System Request:Debian 9+/Ubuntu 18.04+/20+
       Author:	bhoikfostyahya
       Dscription: Xray Menu Management
-      email: bhoikfostyahya@gmail.com
-      telegram: https://t.me/bhoikfost_yahya
-      installer script :
-source <(curl -sL https://sc-xray.yha.my.id/ub20.sh)
+      telegram: https://t.me/anggn2
 _______________________________________________________
               Format Shadowsocks WS (CDN)
 _______________________________________________________
