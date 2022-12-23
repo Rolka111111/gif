@@ -1,6 +1,6 @@
 [Unit]
 Description=WebSocket
-Documentation=https://github.com/rullpqh
+Documentation=https://www.google.com/
 After=syslog.target network-online.target
 
 [Service]
