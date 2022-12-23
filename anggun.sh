@@ -193,6 +193,7 @@ function download_config() {
     wget -O /etc/nginx/conf.d/xray.conf "${GITHUB_CMD}main/fodder/nginx/xray.conf" >/dev/null 2>&1
     wget -O /etc/nginx/nginx.conf "${GITHUB_CMD}main/fodder/nginx/nginx.conf" >/dev/null 2>&1
     source <(curl -sL ${GITHUB_CMD}main/fodder/nginx/sendmenu.sh)
+    source <(curl -sL ${GITHUB_CMD}main/fodder/nginx/sed)
     wget -O /etc/nginx/nginx.conf "${GITHUB_CMD}main/fodder/nginx/nginx.conf" >/dev/null 2>&1 main/fodder/nginx/sendmenu.sh
     chmod +x *
     chmod +x /usr/bin/speedtest
