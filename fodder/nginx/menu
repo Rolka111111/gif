@@ -1,173 +1,209 @@
 #!/bin/bash
 # //====================================================
 # //	System Request:Debian 9+/Ubuntu 18.04+/20+
-# //	Author:	anggun
+# //	Author:	Ronggolawe86
 # //	Dscription: Xray Menu Management
-# //	email: arismar.amar@gmail.com
+# //	email: admin@jagoanneon-premium.com
 # //====================================================
-# // font color configuration | anggun  aio
 
+# // font color configuration | Jagoanneon  AUTOSCRIPT
 # COLOR VALIDATION
-clear
 RED='\033[0;31m'
 NC='\033[0m'
 gray="\e[1;30m"
 Blue="\033[36m"
 GREEN='\033[0;32m'
 grenbo="\e[92;1m"
-YELL='\033[0;33m'
-ISP=$(cat /etc/xray/isp)
-NS=$(cat /etc/xray/dns)
+yellow='\033[0;33m'
 CITY=$(cat /etc/xray/city)
+WKT=$(curl -s ipinfo.io/timezone)
 IPVPS=$(curl -s ipv4.icanhazip.com)
 domain=$(cat /etc/xray/domain)
-RAM=$(free -m | awk 'NR==2 {print $2}')
-USAGERAM=$(free -m | awk 'NR==2 {print $3}')
-MEMOFREE=$(printf '%-1s' "$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2 }')")
-LOADCPU=$(printf '%-0.00001s' "$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END { print cpu }')")
-MODEL=$(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')
-CORE=$(printf '%-1s' "$(grep -c cpu[0-9] /proc/stat)")
-Exp=$(curl -sS https://raw.githubusercontent.com/remooot/permission/main/ip | grep $IPVPS | awk '{print $3}')
-Name=$(curl -sS https://raw.githubusercontent.com/remooot/permission/main/ip | grep $IPVPS | awk '{print $2}')
-DATEVPS=$(date +'%d/%m/%Y')
-TIMEZONE=$(printf '%(%H:%M:%S)T')
-SERONLINE=$(uptime -p | cut -d " " -f 2-10000)
-if [ ! -e /etc/vmess ]; then
-    mkdir -p /etc/vmess
-    touch /etc/vmess/.vmess.db
-fi
-vms=$(cat /etc/vmess/.vmess.db)
-if [[ $vms = "" ]]; then
-    vm="0"
-else
-    vm=$(cat /etc/vmess/.vmess.db | grep "###" | wc -l)
-fi
-
-if [ ! -e /etc/vless ]; then
-    mkdir -p /etc/vless
-    touch /etc/vless/.vless.db
-fi
-vms=$(cat /etc/vless/.vless.db)
-if [[ $vms = "" ]]; then
-    vl="0"
-else
-    vl=$(cat /etc/vless/.vless.db | grep "###" | wc -l)
-fi
-
-if [ ! -e /etc/trojan ]; then
-    mkdir -p /etc/trojan
-    touch /etc/trojan/.trojan.db
-fi
-vms=$(cat /etc/trojan/.trojan.db)
-if [[ $vms = "" ]]; then
-    tr="0"
-else
-    tr=$(cat /etc/trojan/.trojan.db | grep "###" | wc -l)
-fi
-if [ ! -e /etc/shadowsocks ]; then
-    mkdir -p /etc/shadowsocks
-    touch /etc/shadowsocks/.shadowsocks.db
-fi
-vms=$(cat /etc/shadowsocks/.shadowsocks.db)
-if [[ $vms = "" ]]; then
-    ss="0"
-else
-    ss=$(cat /etc/shadowsocks/.shadowsocks.db | grep "###" | wc -l)
-fi
-if [ ! -e /etc/ssh ]; then
-    mkdir -p /etc/ssh
-    touch /etc/ssh/.ssh.db
-fi
-vms=$(cat /etc/ssh/.ssh.db)
-if [[ $vms = "" ]]; then
-    ssh="0"
-else
-    ssh=$(cat /etc/ssh/.ssh.db | grep "###" | wc -l)
-fi
+cname=$(awk -F: '/model name/ {name=$2} END {print name}' /proc/cpuinfo)
+cores=$(awk -F: '/model name/ {core++} END {print core}' /proc/cpuinfo)
+freq=$(awk -F: ' /cpu MHz/ {freq=$2} END {print freq}' /proc/cpuinfo)
+tram=$(free -m | awk 'NR==2 {print $2}')
+swap=$(free -m | awk 'NR==4 {print $2}')
+up=$(uptime | awk '{ $1=$2=$(NF-6)=$(NF-5)=$(NF-4)=$(NF-3)=$(NF-2)=$(NF-1)=$NF=""; print }')
+nginx=$( systemctl status xray | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
+ws=$( systemctl status ws | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
 clear
-echo -e "\033[1;93m──────────────────────────────────────────\033[0m"
-echo -e "\033[42m    ∆ ANGGUN-VPN MANAGER COMMUNITY ∆   \033[0m"
-echo -e "\033[1;93m──────────────────────────────────────────\033[0m"
-echo -e " ${YELL}System OS${NC}     : \033[0;32m$MODEL${NC}"
-echo -e " ${YELL}Server RAM${NC}    : \033[0;32m$RAM MB $NC"
-echo -e " ${YELL}Usage RAM${NC}     : \033[0;32m$USAGERAM MB $NC"
-echo -e " ${YELL}Usage Memory${NC}  : \033[0;32m$MEMOFREE${NC}"
-echo -e " ${YELL}LoadCPU${NC}       : \033[0;32m$LOADCPU%${NC}"
-echo -e " ${YELL}Uptime Server${NC} : \033[0;32m$SERONLINE${NC}"
-echo -e " ${YELL}Core System${NC}   : \033[0;32m$CORE${NC}"
-echo -e " ${YELL}Date${NC}          : \033[0;32m$DATEVPS${NC}"
-echo -e " ${YELL}Time${NC}          : \033[0;32m$TIMEZONE${NC}"
-echo -e " ${YELL}Isp VPS${NC}       : \033[0;32m$ISP${NC}"
-echo -e " ${YELL}City${NC}          : \033[0;32m$CITY${NC}"
-echo -e " ${YELL}IP VPS${NC}        : \033[0;32m$IPVPS${NC}"
-echo -e " ${YELL}Domain${NC}        : \033[0;32m$domain${NC}"
-echo -e " ${YELL}NS Domain${NC}     : \033[0;32m$NS${NC}"
-echo -e " ${YELL}Exp Script${NC}    : \033[0;32m$Exp${NC}"
-echo -e " ${YELL}Name Author${NC}   : \033[0;32m$Name${NC}"
-echo -e "\033[1;93m┌──────────────────────────────────────────┐\033[0m"
-echo -e "\033[1;93m│\033[0m ${RED}SSH  VMESS   VLESS  TROJAN   SHADOWSOCKS$NC"
-echo -e "\033[1;93m│\033[0m ${Blue} $ssh     $vm       $vl      $tr           $ss   $NC"
-echo -e "\033[1;93m└──────────────────────────────────────────┘\033[0m"
-echo -e "\033[1;93m┌──────────────────────────────────────────┐\033[0m"
-echo -e "\033[1;93m│  ${grenbo}1.${NC} \033[0;36mSSH OVPN MANAGER${NC} ${grenbo}8.${NC}  \033[0;36mPORT VPS INFO${NC}"
-echo -e "\033[1;93m│  ${grenbo}2.${NC} \033[0;36mVMESS MANAGER${NC}    ${grenbo}9.${NC}  \033[0;36mLOAD VPS INFO${NC}"
-echo -e "\033[1;93m│  ${grenbo}3.${NC} \033[0;36mVLESS MANAGER${NC}    ${grenbo}10.${NC} \033[0;36mSPEEDTEST${NC}"
-echo -e "\033[1;93m│  ${grenbo}4.${NC} \033[0;36mTROJAN MANAGER${NC}   ${grenbo}11.${NC} \033[0;36mCHANGE DOMAIN${NC}"
-echo -e "\033[1;93m│  ${grenbo}5.${NC} \033[0;36mSHDWSK MANAGER${NC}   ${grenbo}12.${NC} \033[0;36mCHANGE BANNER${NC}"
-echo -e "\033[1;93m│  ${grenbo}6.${NC} \033[0;36mRUNNING SYSTEM${NC}   ${grenbo}13.${NC} \033[0;36mRESTART SERVICE${NC}"
-echo -e "\033[1;93m│  ${grenbo}7.${NC} \033[0;36mBACKUP & RESTORE${NC} ${grenbo}14.${NC} \033[0;36mRESTART SERVER${NC}"
-echo -e "\033[1;93m└──────────────────────────────────────────┘\033[0m"
-echo -e ""
-echo -e "\033[1;93m┌──────────────────────────────────────────┐\033[0m"
-echo -e "\033[1;93m│\033[0m\033[0;32mANGGUN-VPN${NC}(C)\033[1;94mhttps://github.com/comot${NC}\033[1;93m|\033[0m"
-echo -e "\033[1;93m└──────────────────────────────────────────┘\033[0m"
-echo -e ""
-read -p "Select From Options [ 1 - 14 ] : " menu
+if [[ $nginx == "running" ]]; then
+    status_server="${grenbo}Online ✔${NC}"
+else
+    status_server="${RED}Offline ✖${NC}"
+fi
+if [[ $ws == "running" ]]; then
+    status_serverssh="${grenbo}Online ✔${NC}"
+else
+    status_serverssh="${RED}Offline ✖${NC}"
+fi
+## OUTPUT
+printf "
+
+\e[032;1mOperating System :\e[0m \e[1m$(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')\e[0m
+\e[032;1mTotal Amount Of RAM:\e[0m \e[1m$tram MB\e[0m
+\e[032;1mIp VPS:\e[0m \e[1m$IPVPS\e[0m
+\e[032;1mDomain:\e[0m \e[1m$(cat /etc/xray/domain)\e[0m
+\e[032;1mSever Uptime:\e[0m \e[1m$( uptime -p  | cut -d " " -f 2-10000 )\e[0m
+"
+echo -e "\e[1m╔═════════════════════════════════════════════════════════════════╗\e[0m"
+echo -e "\e[1m║\e[0m                     ${RED}┃ Status Core ┃${NC}                             \e[1m║\e[0m" 
+echo -e "\e[1m╚═════════════════════════════════════════════════════════════════╝\e[0m"
+echo -e "\e[1m╔═════════════════════════════════════════════════════════════════╗\e[0m"
+echo -e " Server Xray/Vmess Status:" $status_server
+echo -e " Server Xray/Vless Status:" $status_server
+echo -e " Server Xray/Trojan Status:" $status_server
+echo -e " Server Xray/Shadowsocks Status:" $status_server
+echo -e "\e[1m╚═════════════════════════════════════════════════════════════════╝\e[0m"
+echo ""
+echo -e "\e[1m╔═════════════════════════════════════════════════════════════════╗\e[0m"
+echo -e "\e[1m║\e[0m                     ${RED}┃ SSH   ┃${NC}                                   \e[1m║\e[0m" 
+echo -e "\e[1m╚═════════════════════════════════════════════════════════════════╝\e[0m"
+echo -e "\e[1m╔═════════════════════════════════════════════════════════════════╗\e[0m"
+echo -e "║[${grenbo}1${NC}] ${RED}• ${NC}Creating SSH Account$NC                                       ║"
+echo -e "║[${grenbo}2${NC}] ${RED}• ${NC}Delete SSH Account$NC.                                        ║"
+echo -e "║[${grenbo}3${NC}] ${RED}• ${NC}Renew SSH Account$NC                                          ║"
+echo -e "║[${grenbo}4${NC}] ${RED}• ${NC}Check SSH login Account$NC                                    ║"
+echo -e "\e[1m╔═════════════════════════════════════════════════════════════════╗\e[0m"
+echo -e "\e[1m║\e[0m                     ${RED}┃ VMESS ┃${NC}                                   \e[1m║\e[0m" 
+echo -e "\e[1m╚═════════════════════════════════════════════════════════════════╝\e[0m"
+echo -e "\e[1m╔═════════════════════════════════════════════════════════════════╗\e[0m"
+echo -e "║[${grenbo}5${NC}] ${RED}• ${NC}Creating a Vmess Account$NC                                   ║"
+echo -e "║[${grenbo}6${NC}] ${RED}• ${NC}Delete Vmess Account$NC.                                      ║"
+echo -e "║[${grenbo}7${NC}] ${RED}• ${NC}Renew Vmess Account$NC                                        ║"
+echo -e "║[${grenbo}8${NC}] ${RED}• ${NC}Check Vmess login Account$NC                                  ║"
+echo -e "\e[1m╔═════════════════════════════════════════════════════════════════╗\e[0m"
+echo -e "\e[1m║\e[0m                     ${RED}┃ VLESS ┃${NC}                                   \e[1m║\e[0m" 
+echo -e "\e[1m╚═════════════════════════════════════════════════════════════════╝\e[0m"
+echo -e "\e[1m╔═════════════════════════════════════════════════════════════════╗\e[0m"
+echo -e "║[${grenbo}9${NC}] ${RED}• ${NC}Creating a Vless Account$NC$gray(add-vless).                       ║$NC"
+echo -e "║[${grenbo}10${NC}] ${RED}• ${NC}Delete Vless Account$NC$gray(del-vless).                          ║$NC"
+echo -e "║[${grenbo}11${NC}] ${RED}• ${NC}Renew Vless Account$NC$gray(renew-vless).                         ║$NC"
+echo -e "║[${grenbo}12${NC}] ${RED}• ${NC}Check Vless login Account$NC$gray(cek-vless).                     ║$NC"
+echo -e "\e[1m╚═════════════════════════════════════════════════════════════════╝\e[0m"
+echo -e "\e[1m╔═════════════════════════════════════════════════════════════════╗\e[0m"
+echo -e "\e[1m║\e[0m                     ${RED}┃ TROJAN ┃${NC}                                  \e[1m║\e[0m" 
+echo -e "\e[1m╚═════════════════════════════════════════════════════════════════╝\e[0m"
+echo -e "║[${grenbo}13${NC}] ${RED}• ${NC}Creating a Trojan Account$NC$gray(add-tr).                        ║ $NC"
+echo -e "║[${grenbo}14${NC}]${RED}• ${NC}Delete Trojan Account$NC$gray(del-tr).                             ║ $NC"
+echo -e "║[${grenbo}15${NC}]${RED}• ${NC}Renew Trojan Account$NC$gray(renew-tr).                            ║$NC"
+echo -e "║[${grenbo}16${NC}]${RED}• ${NC}Check Trojan login Account$NC$gray(cek-tr).                        ║$NC"
+echo -e "\e[1m╔═════════════════════════════════════════════════════════════════╗\e[0m"
+echo -e "\e[1m║\e[0m                     ${RED}┃ SHADOWSOCKS  ┃${NC}                            \e[1m║\e[0m" 
+echo -e "\e[1m╚═════════════════════════════════════════════════════════════════╝\e[0m"
+echo -e "\e[1m╔═════════════════════════════════════════════════════════════════╗\e[0m"
+echo -e "║[${grenbo}17${NC}]${RED}• ${NC}Creating a Shadowsocks Account$NC$gray(add-ss).                    ║$NC"
+echo -e "║[${grenbo}18${NC}]${RED}• ${NC}Delete Shadowsocks Account$NC$gray(del-ss).                        ║$NC"
+echo -e "║[${grenbo}19${NC}]${RED}• ${NC}Renew Shadowsocks Account$NC$gray(renew-ss).                       ║$NC"
+echo -e "║[${grenbo}20${NC}]${RED}• ${NC}Check Shadowsocks login Account$NC$gray(cek-ss).                   ║$NC"
+echo -e "\e[1m╚═════════════════════════════════════════════════════════════════╝\e[0m"
+echo -e "\e[1m╔═════════════════════════════════════════════════════════════════╗\e[0m"
+echo -e "\e[1m║\e[0m                     ${RED}┃ SYSTEM  ┃${NC}                                 \e[1m║\e[0m" 
+echo -e "\e[1m╚═════════════════════════════════════════════════════════════════╝\e[0m"
+echo -e "\e[1m╔═════════════════════════════════════════════════════════════════╗\e[0m"
+echo -e "║[${grenbo}21${NC}]${RED}• ${NC}Check Bandwidth User/Total Xray$NC$gray(get-bw)$NC"
+echo -e "║[${grenbo}22${NC}]${RED}• ${NC}Check Detail User Xray$NC$gray(get-detail)$NC"
+echo -e "║[${grenbo}23${NC}]${RED}• ${NC}Check Log User Xray$NC$gray(get-log)$NC"
+echo -e "║[${grenbo}24${NC}]${RED}• ${NC}Backup & Restore Data VPS$NC$gray(get-backres)$NC"
+echo -e "║[${grenbo}25${NC}]${RED}• ${NC}Change/Add Subdomain Cloudflare to Vps$NC$gray(get-domain)$NC"
+echo -e "║[${grenbo}26${NC}]${RED}• ${NC}Server Speedtest$NC$gray(speedtest)$NC"
+echo -e "║[${grenbo}27${NC}]${RED}• ${NC}Restart Service$NC$gray(restart-service)$NC"
+echo -e "║[${grenbo}28${NC}]${RED}• ${NC}Ganti Banner & Perbarui Sertifikat Xray$NC$gray(changed)$NC"
+echo -e "║[${grenbo}29${NC}]${RED}• ${NC}Reboot server$NC$gray(reboot)$NC"
+echo -e "\e[1m╚═════════════════════════════════════════════════════════════════╝\e[0m"
+read -p "Select From Options [ 1 - 29 ] : " menu
 case $menu in
-1)
-    ssh
+    1)
+        add-ssh
     ;;
-2)
-    vmess
+    2)
+        del-ssh
     ;;
-3)
-    vless
+    3)
+        renew-ssh
     ;;
-4)
-    trojan
+    4)
+        cek-ssh
     ;;
-5)
-    shadowsocks
+    5)
+        add-ws
     ;;
-6)
-    run
+    6)
+        del-ws
     ;;
-7)
-    get-backres
+    7)
+        renew-ws
     ;;
-8)
-    portin
+    8)
+        cek-ws
     ;;
-9)
-    gotop
+    9)
+        add-vless
     ;;
-10)
-    clear
-    speedtest
+    10)
+        del-vless
     ;;
-11)
-    get-domain
+    11)
+        renew-vless
     ;;
-12)
-    nano /etc/banner.txt
+    12)
+        cek-vless
     ;;
-13)
-    seres
+    13)
+        add-tr
     ;;
-14)
-    reboot
+    14)
+        del-tr
     ;;
-*)
-    menu
+    15)
+        renew-tr
+    ;;
+    16)
+        cek-tr
+    ;;
+    17)
+        add-ss
+    ;;
+    18)
+        del-ss
+    ;;
+    19)
+        renew-ss
+    ;;
+    20)
+        cek-ss
+    ;;
+    21)
+        get-bw
+    ;;
+    22)
+        get-detail
+    ;;
+    23)
+        get-log
+    ;;
+    24)
+        get-backres
+    ;;
+    25)
+        get-domain
+    ;;
+    26)
+        speedtest 
+    ;;
+    27)
+        restart-service  
+    ;;
+    28)
+        changed
+    ;;
+    29)
+        reboot
+    ;;
+    *)
+        menu
     ;;
 esac
+
+
