@@ -1,12 +1,12 @@
 #!/bin/bash
+clear
 # //====================================================
 # //	System Request:Debian 9+/Ubuntu 18.04+/20+
-# //	Author:	bhoikfostyahya
+# //	Author:	anggun
 # //	Dscription: Xray Menu Management
-# //	email: admin@bhoikfostyahya.com
-# //  telegram: https://t.me/bhoikfost_yahya
+# //	email: arismar.amar@gmail.com
 # //====================================================
-# // font color configuration | BHOIKFOST YAHYA AUTOSCRIPT
+# // font color configuration | anggun  aio
 # COLOR VALIDATION
 RED='\033[0;31m'
 NC='\033[0m'
@@ -48,7 +48,7 @@ $yellow    //  \\ \\   $NC\e[032;1mIsp & City Name:\e[0m \e[1m$ISP & $CITY\e[0m
 $yellow   ( |  | /|  $NC\e[032;1mIp VPS:\e[0m \e[1m$IPVPS\e[0m
 $yellow  _/\\ __)/_)  $NC\e[032;1mDomain:\e[0m \e[1m$(cat /etc/xray/domain)\e[0m
 $yellow  \/-____\/   $NC\e[032;1mSever Uptime:\e[0m \e[1m$(uptime -p | cut -d " " -f 2-10000)\e[0m
-${RED}Fighter Tunnel${NC}(C)${Blue}https://github.com/rullpqh$NC
+${RED}Fighter Tunnel${NC}(C)${Blue}https://github.com/comot$NC
 "
 
 echo -e "\e[1m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\e[0m"
