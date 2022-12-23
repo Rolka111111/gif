@@ -1,15 +1,15 @@
 #!/bin/bash
-clear
 # //====================================================
 # //	System Request:Debian 9+/Ubuntu 18.04+/20+
-# //	Author:	anggun
+# //	Author:	Ronggolawe86
 # //	Dscription: Xray Menu Management
-# //	email: arismar.amar@gmail.com
+# //	email: admin@jagoanneon-premium.com
 # //====================================================
-# // font color configuration | anggun  aio
+
+# // font color configuration | Jagoanneon  AUTOSCRIPT
 clear
 red() { echo -e "\\033[32;1m${*}\\033[0m"; }
-IP=$(curl -s ipv4.icanhazip.com)
+IP=$(curl -s ipv4.icanhazip.com);
 HOST="$(cat /etc/xray/domain)"
 DATEVPS=$(date +"%d-%B-%Y")
 ISPVPS=$(cat /etc/xray/isp)
@@ -28,7 +28,7 @@ function QUESTION() {
     echo -e "${BLUE}Please enter the recipient's email Vps Data Backup${NC}"
     echo -e "${BLUE}Remind Save Link Backup For Easy Data Restore${NC}"
     read -p "Plase Input Email : " EMAIL
-
+    
 }
 
 function QUESTION2() {
@@ -41,7 +41,7 @@ function QUESTION2() {
     echo -e "${BLUE}Remind Save Link Backup For Easy Data Restore${NC}"
     echo -e "Have you uploaded the backup file?"
     read -p "Plase Input Link : " DATAVPS
-
+    
 }
 
 function BACKUPVPS() {
@@ -52,10 +52,10 @@ function BACKUPVPS() {
     cp /etc/shadow backup/
     cp /etc/gshadow backup/
     cp -r /var/www/html backup/html
-    zip -r FT-${DATEVPS}.zip backup >/dev/null 2>&1
+    zip FT-${DATEVPS}.zip backup >/dev/null 2>&1
     rclone copy FT-${DATEVPS}.zip dr:BACKUPVPS/
     url=$(rclone link dr:BACKUPVPS/FT-${DATEVPS}.zip)
-    id=($(echo $url | grep '^https' | cut -d'=' -f2))
+    id=(`echo $url | grep '^https' | cut -d'=' -f2`)
     LINKBACKUP="https://drive.google.com/u/4/uc?id=${id}&export=download"
     rm -rf *
     echo "
@@ -77,19 +77,20 @@ Report bugs   : https://t.me/bhoikfost_yahya
 FighterTunnel Project
     " | mail -s "FighterTunnel Backup" $EMAIL
     clear
-    echo -e "\033[1;93m─────────────────────────────────────────\033[0m"
+    echo -e "\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "SUCCESSFULL BACKUP YOUR VPS"
     echo -e "Please Save The Following Data"
-    echo -e "\033[1;93m─────────────────────────────────────────\033[0m"
+    echo -e "\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "${BLUE}Your VPS IP${NC} : ${GREEN}$IP${NC}"
     echo -e "${BLUE}DOMAIN${NC}      : ${GREEN}$HOST${NC}"
     echo -e "${BLUE}DATE${NC}        : ${GREEN}$DATEVPS${NC}"
     echo -e "${BLUE}ISP${NC}         : ${GREEN}$ISPVPS${NC}"
     echo -e "${BLUE}LOCATION${NC}    : ${GREEN}$CITY${NC}"
     echo -e "${BLUE}LINK BACKUP${NC} : ${GREEN}$LINKBACKUP${NC}"
-    echo -e "\033[1;93m─────────────────────────────────────────\033[0m"
+    echo -e "\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "${RED}Please Check your Email backup file${NC}"
-
+    
+    
 }
 
 function RESTOREVPS() {
@@ -107,46 +108,46 @@ function RESTOREVPS() {
     cd
     rm -rf *
     clear
-    echo -e "\033[1;93m─────────────────────────────────────────\033[0m"
+    echo -e "\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "SUCCESSFULL RESTORE YOUR VPS"
     echo -e "Please Save The Following Data"
-    echo -e "\033[1;93m─────────────────────────────────────────\033[0m"
+    echo -e "\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "${BLUE}Your VPS IP${NC} : ${GREEN}$IP${NC}"
     echo -e "${BLUE}DOMAIN${NC}      : ${GREEN}$HOST${NC}"
     echo -e "${BLUE}DATE${NC}        : ${GREEN}$DATEVPS${NC}"
     echo -e "${BLUE}ISP${NC}         : ${GREEN}$ISPVPS${NC}"
     echo -e "${BLUE}LOCATION${NC}    : ${GREEN}$CITY${NC}"
-    echo -e "${BLUE}LINK RESTORE${NC}: ${GREEN}$DATAVPS${NC}"
-    echo -e "\033[1;93m─────────────────────────────────────────\033[0m"
+    echo -e "${BLUE}LINK RESTORE${NC}: ${GREEN}$LINKBACKUP${NC}"
+    echo -e "\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "${RED}This feature can only be used if the previous data backup uses this script${NC}"
     echo -e "${RED}Please Reboot Vps${NC}"
-
+    
 }
 
-echo -e "\033[1;93m─────────────────────────────────────────\033[0m"
+echo -e "\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\e[42m              BACKUP & RESTORE           \E[0m"
-echo -e "\033[1;93m─────────────────────────────────────────\033[0m"
+echo -e "\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
 echo -e " [${grenbo}1${NC}] ${RED}• ${NC} Backup Data VPS"
 echo -e " [${grenbo}2${NC}] ${RED}• ${NC} Restore Data VPS"
 echo -e ""
-echo -e "\033[1;93m─────────────────────────────────────────\033[0m"
+echo -e "\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
 read -p "Select From Options [ 1 - 2 ] : " OPT_MENU
 echo -e ""
 case $OPT_MENU in
-1)
-    QUESTION
-    BACKUPVPS
+    1)
+        QUESTION
+        BACKUPVPS
     ;;
-2)
-    QUESTION2
-    RESTOREVPS
+    2)
+        QUESTION2
+        RESTOREVPS
     ;;
-*)
-    echo -e "${Red}You wrong command !${Font}"
-    sleep 5
-    menu
+    *)
+        echo -e "${Red}You wrong command !${Font}"
+        sleep 5
+        menu
     ;;
 esac
 echo ""
