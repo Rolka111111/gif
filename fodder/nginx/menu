@@ -1,5 +1,4 @@
 #!/bin/bash
-clear
 # //====================================================
 # //	System Request:Debian 9+/Ubuntu 18.04+/20+
 # //	Author:	anggun
@@ -7,6 +6,7 @@ clear
 # //	email: arismar.amar@gmail.com
 # //====================================================
 # // font color configuration | anggun  aio
+
 # COLOR VALIDATION
 clear
 RED='\033[0;31m'
