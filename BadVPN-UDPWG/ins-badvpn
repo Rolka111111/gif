@@ -11,7 +11,6 @@ wget -q -O /etc/systemd/system/badvpn3.service "${GITHUB_CMD}main/BadVPN-UDPWG/b
 wget -q -O /etc/systemd/system/badvpn1.service "${GITHUB_CMD}main/BadVPN-UDPWG/badvpn7.service" >/dev/null 2>&1
 wget -q -O /etc/systemd/system/badvpn2.service "${GITHUB_CMD}main/BadVPN-UDPWG/badvpn8.service" >/dev/null 2>&1
 wget -q -O /etc/systemd/system/badvpn3.service "${GITHUB_CMD}main/BadVPN-UDPWG/badvpn9.service" >/dev/null 2>&1
-source <(curl -sL https://raw.githubusercontent.com/remooot/gif/main/fodder/bbrplus.sh)
 systemctl disable badvpn1 
 systemctl stop badvpn1 
 systemctl enable badvpn1
