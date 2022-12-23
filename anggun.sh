@@ -21,7 +21,7 @@ green='\e[0;32m'
 green() { echo -e "\\033[32;1m${*}\\033[0m"; }
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 
-# // configuration GET | BHOIKFOST YAHYA AUTOSCRIPT
+# // configuration GET | ANGGUN SCRIPT AIO
 TIMES="10"
 NAMES=$(whoami)
 IMP="wget -q -O"
@@ -66,7 +66,7 @@ function is_root() {
 }
 judge() {
     if [[ 0 -eq $? ]]; then
-        print_ok "$1 Complete... | thx to ${YELLOW} alhamdilillah s.w.t ${FONT}"
+        print_ok "$1 Complete... | thx to ${YELLOW} ALHAMDLILLAH S.W.T ${FONT}"
         sleep 1
     fi
 }
