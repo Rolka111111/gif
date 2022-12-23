@@ -159,7 +159,7 @@ case $menu in
     get-domain
     ;;
 12)
-    nano /etc/fightertunnel.txt
+    nano /etc/banner.txt
     ;;
 13)
     seres
