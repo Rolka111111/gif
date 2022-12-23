@@ -30,7 +30,7 @@ wget -O renew-vless "https://raw.githubusercontent.com/remooot/gif/main/fodder/n
 wget -O renew-ws "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/renew-ws"
 wget -O run "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/run"
 wget -O seres "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/seres"
-wget -O shadowsocks "https://raw.githubusercontent.com/remooot/gif/main/fodder/shadowsocks"
+wget -O shadowsocks "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/shadowsocks"
 wget -O trojan "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/trojan"
 wget -O vless "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/vless"
 wget -O vmess "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/vmess"
