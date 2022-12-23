@@ -2,7 +2,7 @@
 clear
 red() { echo -e "\\033[32;1m${*}\\033[0m"; }
 echo -e "\033[1;93m╒═══════════════════════════════════╕\033[0m"
-echo -e "\e[42m              SSH Ovpn Account           \E[0m"
+echo -e "\e[42m      Account ANGGUN  SSH Ovpn          \E[0m"
 echo -e "\033[1;93m╘═══════════════════════════════════╛\033[0m"
 read -p "Username : " LOGIN
 read -p "Password : " PASSWD
@@ -16,10 +16,7 @@ exp="$(chage -l $LOGIN | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$PASSWD\n$PASSWD\n"|passwd $LOGIN &> /dev/null
 cat > /var/www/html/ssh-$LOGIN.txt <<-END
 _______________________________________________________
-           Thank You For Using Our Services
-                 SSH OVPN Account 
-_______________________________________________________
-              Format SSH OVPN Account
+             Account ANGGUN SSH OVPN  
 _______________________________________________________
 
 Username         : $LOGIN
@@ -57,8 +54,8 @@ END
 clear
 cat > /var/www/html/configmu.txt <<-END
 _______________________________________________________
-   SETUP CONFIG INDOSAT OPOK FOR HTTPCUSTOM
-                              BACA DENGAN TELITI
+    CONFIG OPOK INDOSAT   HTTPCUSTOM
+                          CEK  DENGAN TEPAT
 _______________________________________________________
 >>>>>Payload<<<<<<
 
@@ -83,8 +80,8 @@ clear
 
 cat > /var/www/html/configmuu.txt <<-END
 _______________________________________________________
- SETUP CONFIG TELKOMSEL OPOK FOR HTTPCUSTOM
-                              BACA DENGAN TELITI
+ SETUP CONFIG  OPOK TELKOMSEL  HTTPCUSTOM
+                              CEK DENGAN TEPAT
 _______________________________________________________
 >>>>>Payload<<<<<<
 
