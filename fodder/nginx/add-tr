@@ -1,22 +1,22 @@
 #!/bin/bash
+clear
 # //====================================================
 # //	System Request:Debian 9+/Ubuntu 18.04+/20+
-# //	Author:	bhoikfostyahya
+# //	Author:	anggun
 # //	Dscription: Xray Menu Management
-# //	email: admin@bhoikfostyahya.com
-# //  telegram: https://t.me/bhoikfost_yahya
+# //	email: arismar.amar@gmail.com
 # //====================================================
-# // font color configuration | BHOIKFOST YAHYA AUTOSCRIPT
+# // font color configuration | anggun  aio
 red() { echo -e "\\033[32;1m${*}\\033[0m"; }
 domain=$(cat /etc/xray/domain)
 PUB=$(cat /etc/slowdns/server.pub)
-CITY=$(cat /etc/xray/city)
 NS=$(cat /etc/xray/dns)
 clear
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
-  echo -e "\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-  echo -e "\e[42m        Add Xray/Trojan Account          \E[0m"
-  echo -e "\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+   clear
+   echo -e "\033[1;93m╒═══════════════════════════════════╕\033[0m"
+   echo -e "\e[42m       Add Xray/Trojan Account   \E[0m"
+   echo -e "\033[1;93m╘═══════════════════════════════════╛\033[0m"
 
   read -rp "User: " -e user
   user_EXISTS=$(grep -w $user /etc/xray/config.json | wc -l)
@@ -46,15 +46,6 @@ cat >/var/www/html/trojan-$user.txt <<-END
 _______________________________________________________
            Thank You For Using Our Services
                 Xray/Trojan Account
-        Autoscript xray-lite dev bhoikfostyahya
-_____________________script v.2_________________________
-      System Request:Debian 9+/Ubuntu 18.04+/20+
-      Author:	bhoikfostyahya
-      Dscription: Xray Menu Management
-      email: bhoikfostyahya@gmail.com
-      telegram: https://t.me/bhoikfost_yahya
-      installer script :
-source <(curl -sL https://sc-xray.yha.my.id/ub20.sh)
 _______________________________________________________
               Format Trojan GO/WS (CDN)
 _______________________________________________________
@@ -124,29 +115,28 @@ if [[ "${DATADB}" != '' ]]; then
 fi
 echo "### ${user} ${exp} ${uuid}" >>/etc/trojan/.trojan.db
 clear
-echo -e "\033[1;93m───────────────────────────\033[0m" | tee -a /etc/log-create-user.log
-echo -e "\e[42m    Xray/Trojan Account    \E[0m" | tee -a /etc/log-create-user.log
-echo -e "\033[1;93m───────────────────────────\033[0m" | tee -a /etc/log-create-user.log
-echo -e "Remarks     : ${user}" | tee -a /etc/log-create-user.log
-echo -e "Host        : ${domain}" | tee -a /etc/log-create-user.log
-echo -e "Host Slowdns: ${NS}" | tee -a /etc/log-create-user.log
-echo -e "Pub Key     : ${PUB}" | tee -a /etc/log-create-user.log
-echo -e "Location    : $CITY" | tee -a /etc/log-create-user.log
-echo -e "User Quota  : ${Quota} GB" | tee -a /etc/log-create-user.log
-echo -e "Port DNS    : 443, 53 " | tee -a /etc/log-create-user.log
-echo -e "Port TLS    : 443" | tee -a /etc/log-create-user.log
-echo -e "port        : 443" | tee -a /etc/log-create-user.log
-echo -e "Key         : ${uuid}" | tee -a /etc/log-create-user.log
-echo -e "\033[1;93m───────────────────────────\033[0m" | tee -a /etc/log-create-user.log
-echo -e "Link WS    : ${trojanlink}" | tee -a /etc/log-create-user.log
-echo -e "\033[1;93m───────────────────────────\033[0m" | tee -a /etc/log-create-user.log
-echo -e "Link GRPC  : ${trojanlink1}" | tee -a /etc/log-create-user.log
-echo -e "\033[1;93m───────────────────────────\033[0m" | tee -a /etc/log-create-user.log
-echo -e "Format OpenClash : https://${domain}:81/trojan-$user.txt" | tee -a /etc/log-create-user.log
-echo -e "\033[1;93m───────────────────────────\033[0m" | tee -a /etc/log-create-user.log
-echo -e "Expired On : $exp" | tee -a /etc/log-create-user.log
-echo -e "\033[1;93m───────────────────────────\033[0m" | tee -a /etc/log-create-user.log
-echo -e "" | tee -a /etc/log-create-user.log
+echo -e "
+\033[1;93m╒═══════════════════════════════════╕\033[0m
+\e[42mThank You For Using Our Services\E[0m
+\e[42mXray/Trojan Account             \E[0m
+\033[1;93m╘═══════════════════════════════════╛\033[0m
+Remarks    : ${user}
+Host       : ${domain}
+Location   : $CITY
+User Quota : ${Quota} GB
+Port TLS   : 443
+port       : 443
+Key        : ${uuid}
+\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m
+Link WS    : ${trojanlink}
+\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m
+Link GRPC  : ${trojanlink1}
+\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m
+Format OpenClash : http://${domain}:81/trojan-$user.txt
+\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m
+Expired On : $exp
+\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m
+" | tee -a /etc/log-create-user.log
 read -n 1 -s -r -p "Press any key to back on menu"
 
 menu
