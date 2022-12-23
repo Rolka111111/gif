@@ -2,13 +2,9 @@
 clear
 echo "# //===================================================="
 echo "# //	System Request:Debian 9+/Ubuntu 18.04+/20.04"
-echo "# //	Author:	bhoikfostyahya"
-echo "# //	Dscription: Xray Menu Management"
-echo "# //	email: admin@bhoikfostyahya.com"
-echo "# //      telegram: https://t.me/bhoikfost_yahya"
 echo "# //===================================================="
 sleep 3
-# // FONT color configuration | BHOIKFOST YAHYA AUTOSCRIPT
+# // FONT color configuration | SCRIPT ANGGN AIO
 Green="\e[92;1m"
 RED="\033[31m"
 YELLOW="\033[33m"
