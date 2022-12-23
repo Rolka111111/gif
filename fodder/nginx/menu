@@ -119,7 +119,7 @@ echo -e "\033[1;93m│  ${grenbo}7.${NC} \033[0;36mBACKUP & RESTORE${NC} ${grenb
 echo -e "\033[1;93m└──────────────────────────────────────────┘\033[0m"
 echo -e ""
 echo -e "\033[1;93m┌──────────────────────────────────────────┐\033[0m"
-echo -e "\033[1;93m│\033[0m\033[0;32mANGGUN-VPN${NC}(C)\033[1;94mhttps://github.com/rullpqh${NC}\033[1;93m|\033[0m"
+echo -e "\033[1;93m│\033[0m\033[0;32mANGGUN-VPN${NC}(C)\033[1;94mhttps://github.com/comot${NC}\033[1;93m|\033[0m"
 echo -e "\033[1;93m└──────────────────────────────────────────┘\033[0m"
 echo -e ""
 read -p "Select From Options [ 1 - 14 ] : " menu
