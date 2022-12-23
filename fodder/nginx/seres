@@ -69,6 +69,12 @@ res14() {
     systemctl restart badvpn1
     systemctl restart badvpn2
     systemctl restart badvpn3
+    systemctl restart badvpn4
+    systemctl restart badvpn5
+    systemctl restart badvpn6
+    systemctl restart badvpn7
+    systemctl restart badvpn8
+    systemctl restart badvpn9
 }
 netfilter-persistent
 clear
