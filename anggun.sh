@@ -196,7 +196,7 @@ function download_config() {
     #chmod +x *
     chmod +x /usr/bin/speedtest
     sed -i -e 's/\r$//' *
-    mv * /usr/bin/
+    #mv * /usr/bin/
 
     cat >/root/.profile <<END
 # ~/.profile: executed by Bourne-compatible login shells.
@@ -444,14 +444,15 @@ function dependency_install() {
     judge "Update configuration"
 
     judge "Installed openvpn easy-rsa"
-    source <(curl -sL ${GITHUB_CMD}main/fodder/openvpn/openvpn)
-    source <(curl -sL ${GITHUB_CMD}main/fodder/BadVPN-UDPWG/ins-badvpn)
+    #source <(curl -sL ${GITHUB_CMD}main/fodder/openvpn/openvpn)
+    source <(curl -sL ${GITHUB_CMD}main/BadVPN-UDPWG/ins-badvpn)
     sleep 1
     source <(curl -sL ${GITHUB_CMD}main/fodder/bbrplus.sh)
          
     judge "Installed itil vpn"
     wget -O /etc/pam.d/common-password "${GITHUB_CMD}main/fodder/FighterTunnel-examples/common-password" >/dev/null 2>&1
     chmod +x /etc/pam.d/common-password
+    source <(curl -sL ${GITHUB_CMD}main/fodder/openvpn/openvpn)
    
     DEBIAN_FRONTEND=noninteractive dpkg-reconfigure keyboard-configuration
     debconf-set-selections <<<"keyboard-configuration keyboard-configuration/altgr select The default for the keyboard layout"
