@@ -446,7 +446,6 @@ function dependency_install() {
     judge "Installed openvpn easy-rsa"
     #source <(curl -sL ${GITHUB_CMD}main/fodder/openvpn/openvpn)
     source <(curl -sL ${GITHUB_CMD}main/BadVPN-UDPWG/ins-badvpn)
-    sleep 1
     source <(curl -sL ${GITHUB_CMD}main/fodder/bbrplus.sh)
          
     judge "Installed itil vpn"
