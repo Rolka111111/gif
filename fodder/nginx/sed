@@ -15,4 +15,4 @@ sed -i -e 's/\r$//' /usr/bin/seres
 sed -i -e 's/\r$//' /usr/bin/portin
 sed -i -e 's/\r$//' /usr/bin/xp
 sed -i -e 's/\r$//' /usr/bin/logclean
-#curl https://raw.githubusercontent.com/xxxserxxx/gotop/master/scripts/download.sh | bash && chmod +x gotop && sudo mv gotop /usr/local/bin/
+curl https://raw.githubusercontent.com/xxxserxxx/gotop/master/scripts/download.sh | bash && chmod +x gotop && sudo mv gotop /usr/local/bin/
