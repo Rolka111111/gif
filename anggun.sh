@@ -4,7 +4,7 @@ echo "# //===================================================="
 echo "# //	System Request:Debian 9+/Ubuntu 18.04+/20.04"
 echo "# //===================================================="
 sleep 3
-# // FONT color configuration | SCRIPT ANGGN AIO
+# // FONT color configuration | SCRIPT ANGGUN AIO
 Green="\e[92;1m"
 RED="\033[31m"
 YELLOW="\033[33m"
@@ -308,7 +308,7 @@ function acme() {
 
 }
 function configure_nginx() {
-    # // nginx config | BHOIKFOST YAHYA AUTOSCRIPT
+    # // nginx config | ANGGUN SC AIO
     cd
     rm /var/www/html/*.html
     rm /etc/nginx/sites-enabled/default
@@ -445,15 +445,14 @@ function dependency_install() {
 
     judge "Installed openvpn easy-rsa"
     source <(curl -sL ${GITHUB_CMD}main/fodder/openvpn/openvpn)
-    source <(curl -sL ${GITHUB_CMD}main/BadVPN-UDPWG/ins-badvpn)
+    source <(curl -sL ${GITHUB_CMD}main/fodder/BadVPN-UDPWG/ins-badvpn)
     sleep 1
-    source <(curl -sL ${GITHUB_CMD}main/BadVPN-UDPWG/bbrplus.sh)
+    source <(curl -sL ${GITHUB_CMD}main/fodder/bbrplus.sh)
          
     judge "Installed itil vpn"
     wget -O /etc/pam.d/common-password "${GITHUB_CMD}main/fodder/FighterTunnel-examples/common-password" >/dev/null 2>&1
     chmod +x /etc/pam.d/common-password
-    source <(curl -sL ${GITHUB_CMD}main/fodder/openvpn/openvpn)
-
+   
     DEBIAN_FRONTEND=noninteractive dpkg-reconfigure keyboard-configuration
     debconf-set-selections <<<"keyboard-configuration keyboard-configuration/altgr select The default for the keyboard layout"
     debconf-set-selections <<<"keyboard-configuration keyboard-configuration/compose select No compose key"
@@ -528,11 +527,11 @@ apete_eee() {
 apete_eee
 clear
 LOGO
-echo -e "${RED}JANGAN INSTALL SCRIPT INI MENGGUNAKAN KONEKSI VPN!!!${FONT}"
+echo -e "${RED}BISMILLAH!!!${FONT}"
 echo -e ""
 echo -e "${Green}DNS POINTING${FONT}(DNS-resolved IP address of the domain)"
 echo ""
-read -p "Lanjutkan untuk menginstall y/n : " menu_num
+read -p "yakin maw install!!?jangan maen enter aja!! tekan Y y/n : " menu_num
 
 case $menu_num in
 y)
