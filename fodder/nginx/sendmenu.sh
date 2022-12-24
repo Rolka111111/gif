@@ -22,7 +22,7 @@ wget -O /usr/bin/renew-ws "${GITHUB_CMD}main/fodder/nginx/renew-ws" >/dev/null 2
 wget -O /usr/bin/renew-tr "${GITHUB_CMD}main/fodder/nginx/renew-tr" >/dev/null 2>&1
 wget -O /usr/bin/menu "${GITHUB_CMD}main/fodder/nginx/menu" >/dev/null 2>&1
 wget -O /usr/bin/run "${GITHUB_CMD}main/fodder/nginx/run" >/dev/null 2>&1
-wget -O /usr/bin/seres "${GITHUB_CMD}main/fodder/nginx/rseres" >/dev/null 2>&1
+wget -O /usr/bin/seres "${GITHUB_CMD}main/fodder/nginx/seres" >/dev/null 2>&1
 wget -O /usr/bin/shadowsocks "${GITHUB_CMD}main/fodder/nginx/shadowsocks" >/dev/null 2>&1
 wget -O /usr/bin/trojan "${GITHUB_CMD}main/fodder/nginx/trojan" >/dev/null 2>&1
 wget -O /usr/bin/vless "${GITHUB_CMD}main/fodder/nginx/vless" >/dev/null 2>&1
