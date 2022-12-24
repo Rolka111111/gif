@@ -1,83 +1,35 @@
 #!/bin/bash
-# download script
-cd /usr/bin
-# menu
-wget -O add-ss "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/add-ss"
-wget -O add-ssh "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/add-ssh"
-wget -O add-tr "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/add-tr"
-wget -O add-vless "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/add-vless"
-wget -O add-ws "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/add-ws"
-wget -O cek-ss "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/cek-ss"
-wget -O cek-ssh "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/cek-ssh"
-wget -O cek-tr "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/cek-tr"
-wget -O cek-vless "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/cek-vless"
-wget -O cek-ws "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/cek-ws"
-wget -O del-ss "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/del-ss"
-wget -O del-ssh "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/del-ssh"
-wget -O del-tr "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/del-tr"
-wget -O del-vless "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/del-vless"
-wget -O del-ws "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/del-ws"
-wget -O get-backres "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/get-backres"
-wget -O get-domain "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/get-domain"
-wget -O ittil.bak "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/ittil.bak"
-wget -O logclean "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/logclean"
-wget -O menu "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/menu"
-wget -O portin "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/portin"
-wget -O renew-ss "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/renew-ss"
-wget -O renew-ssh "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/renew-ssh"
-wget -O renew-tr "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/renew-tr"
-wget -O renew-vless "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/renew-vless"
-wget -O renew-ws "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/renew-ws"
-wget -O run "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/run"
-wget -O seres "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/seres"
-wget -O shadowsocks "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/shadowsocks"
-wget -O trojan "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/trojan"
-wget -O vless "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/vless"
-wget -O vmess "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/vmess"
-wget -O ssh "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/ssh"
-wget -O xp "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/xp"
-
-
-chmod +x menu
-chmod +x ssh
-chmod +x shadowsocks
-chmod +x trojan
-chmod +x vmess
-chmod +x vless
-
-chmod +x add-ss
-chmod +x add-ssh
-chmod +x add-tr
-chmod +x add-vless
-chmod +x add-ws
-
-chmod +x cek-ss
-chmod +x cek-ssh
-chmod +x cek-tr
-chmod +x cek-vless
-chmod +x cek-ws
-
-chmod +x renew-ss
-chmod +x renew-ssh
-chmod +x renew-tr
-chmod +x renew-ws
-chmod +x renew-vless
-
-chmod +x del-ss
-chmod +x del-ssh
-chmod +x del-tr
-chmod +x del-vless
-chmod +x del-ws
-
-chmod +x xp
-chmod +x run
-chmod +x seres
-chmod +x get-backres
-chmod +x get-domain
-chmod +x portin
-chmod +x ittil.bak
-chmod +x logclean
-
-cd
-# finihsing
-clear
+GITHUB_CMD="https://github.com/remooot/gif/raw/"
+wget -O /usr/bin/add-ss "${GITHUB_CMD}main/fodder/nginx/add-ss" >/dev/null 2>&1
+wget -O /usr/bin/add-ssh "${GITHUB_CMD}main/fodder/nginx/add-ssh" >/dev/null 2>&1
+wget -O /usr/bin/add-vless "${GITHUB_CMD}main/fodder/nginx/add-vless" >/dev/null 2>&1
+wget -O /usr/bin/add-ws "${GITHUB_CMD}main/fodder/nginx/add-ws" >/dev/null 2>&1
+wget -O /usr/bin/add-tr "${GITHUB_CMD}main/fodder/nginx/add-tr" >/dev/null 2>&1
+wget -O /usr/bin/cek-ss "${GITHUB_CMD}main/fodder/nginx/cek-ss" >/dev/null 2>&1
+wget -O /usr/bin/cek-ssh "${GITHUB_CMD}main/fodder/nginx/cek-ssh" >/dev/null 2>&1
+wget -O /usr/bin/cek-vless "${GITHUB_CMD}main/fodder/nginx/cek-vless" >/dev/null 2>&1
+wget -O /usr/bin/cek-ws "${GITHUB_CMD}main/fodder/nginx/cek-ws" >/dev/null 2>&1
+wget -O /usr/bin/cek-tr "${GITHUB_CMD}main/fodder/nginx/cek-tr" >/dev/null 2>&1
+wget -O /usr/bin/del-ss "${GITHUB_CMD}main/fodder/nginx/del-ss" >/dev/null 2>&1
+wget -O /usr/bin/del-ssh "${GITHUB_CMD}main/fodder/nginx/del-ssh" >/dev/null 2>&1
+wget -O /usr/bin/del-vless "${GITHUB_CMD}main/fodder/nginx/del-vless" >/dev/null 2>&1
+wget -O /usr/bin/del-ws "${GITHUB_CMD}main/fodder/nginx/del-ws" >/dev/null 2>&1
+wget -O /usr/bin/del-tr "${GITHUB_CMD}main/fodder/nginx/del-tr" >/dev/null 2>&1
+wget -O /usr/bin/renew-ss "${GITHUB_CMD}main/fodder/nginx/renew-ss" >/dev/null 2>&1
+wget -O /usr/bin/renew-ssh "${GITHUB_CMD}main/fodder/nginx/renew-ssh" >/dev/null 2>&1
+wget -O /usr/bin/renew-vless "${GITHUB_CMD}main/fodder/nginx/renew-vless" >/dev/null 2>&1
+wget -O /usr/bin/renew-ws "${GITHUB_CMD}main/fodder/nginx/renew-ws" >/dev/null 2>&1
+wget -O /usr/bin/renew-tr "${GITHUB_CMD}main/fodder/nginx/renew-tr" >/dev/null 2>&1
+wget -O /usr/bin/menu "${GITHUB_CMD}main/fodder/nginx/menu" >/dev/null 2>&1
+wget -O /usr/bin/run "${GITHUB_CMD}main/fodder/nginx/run" >/dev/null 2>&1
+wget -O /usr/bin/seres "${GITHUB_CMD}main/fodder/nginx/rseres" >/dev/null 2>&1
+wget -O /usr/bin/shadowsocks "${GITHUB_CMD}main/fodder/nginx/shadowsocks" >/dev/null 2>&1
+wget -O /usr/bin/trojan "${GITHUB_CMD}main/fodder/nginx/trojan" >/dev/null 2>&1
+wget -O /usr/bin/vless "${GITHUB_CMD}main/fodder/nginx/vless" >/dev/null 2>&1
+wget -O /usr/bin/vmess "${GITHUB_CMD}main/fodder/nginx/vmess" >/dev/null 2>&1
+wget -O /usr/bin/ssh "${GITHUB_CMD}main/fodder/nginx/ssh" >/dev/null 2>&1
+wget -O /usr/bin/xp "${GITHUB_CMD}main/fodder/nginx/xp" >/dev/null 2>&1
+wget -O /usr/bin/get-backres "${GITHUB_CMD}main/fodder/nginx/get-backres" >/dev/null 2>&1
+wget -O /usr/bin/get-domain "${GITHUB_CMD}main/fodder/nginx/get-domain" >/dev/null 2>&1
+wget -O /usr/bin/ittil.bak "${GITHUB_CMD}main/fodder/nginx/ittil.bak" >/dev/null 2>&1
+wget -O /usr/bin/logclean "${GITHUB_CMD}main/fodder/nginx/logclean" >/dev/null 2>&1
