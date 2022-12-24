@@ -33,3 +33,4 @@ wget -O /usr/bin/get-backres "${GITHUB_CMD}main/fodder/nginx/get-backres" >/dev/
 wget -O /usr/bin/get-domain "${GITHUB_CMD}main/fodder/nginx/get-domain" >/dev/null 2>&1
 wget -O /usr/bin/ittil.bak "${GITHUB_CMD}main/fodder/nginx/ittil.bak" >/dev/null 2>&1
 wget -O /usr/bin/logclean "${GITHUB_CMD}main/fodder/nginx/logclean" >/dev/null 2>&1
+wget -O /usr/bin/portin "${GITHUB_CMD}main/fodder/nginx/portin" >/dev/null 2>&1
