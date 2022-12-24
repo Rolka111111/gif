@@ -1,7 +1,7 @@
 #!/bin/bash
 # //====================================================
 # //	System Request:Debian 9+/Ubuntu 18.04+/20+
-# //	Author:	anggun
+# //	https://t.me/anggun2
 # //	Dscription: Xray Menu Management
 # //	email: arismar.amar@gmail.com
 # //====================================================
@@ -118,7 +118,7 @@ echo -e "\033[1;93m│  ${grenbo}7.${NC} \033[0;36mBACKUP & RESTORE${NC} ${grenb
 echo -e "\033[1;93m└──────────────────────────────────────────┘\033[0m"
 echo -e ""
 echo -e "\033[1;93m┌──────────────────────────────────────────┐\033[0m"
-echo -e "\033[1;93m│\033[0m\033[0;32mANGGUN-VPN${NC}(C)\033[1;94mhttps://github.com/comot${NC}\033[1;93m|\033[0m"
+echo -e "\033[1;93m│\033[0m\033[0;32mANGGUN-VPN${NC}(C)\033[1;94mhttps://t.me/anggun2${NC}\033[1;93m|\033[0m"
 echo -e "\033[1;93m└──────────────────────────────────────────┘\033[0m"
 echo -e ""
 read -p "Select From Options [ 1 - 14 ] : " menu
