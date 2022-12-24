@@ -35,6 +35,7 @@ wget -O trojan "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/
 wget -O vless "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/vless"
 wget -O vmess "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/vmess"
 wget -O ssh "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/ssh"
+wget -O xp "https://raw.githubusercontent.com/remooot/gif/main/fodder/nginx/xp"
 
 
 chmod +x menu
