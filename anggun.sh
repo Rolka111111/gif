@@ -2,7 +2,6 @@
 clear
 echo "# //===================================================="
 echo "# //	System Request:Debian 9+/Ubuntu 18.04+/20.04"
-echo "# //	https://t.me/anggun2
 echo "# //===================================================="
 sleep 3
 # // FONT color configuration | ANGGUN SC AIO
