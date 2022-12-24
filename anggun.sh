@@ -2,9 +2,10 @@
 clear
 echo "# //===================================================="
 echo "# //	System Request:Debian 9+/Ubuntu 18.04+/20.04"
+echo "# //	https://t.me/anggun2
 echo "# //===================================================="
 sleep 3
-# // FONT color configuration | SCRIPT ANGGUN AIO
+# // FONT color configuration | ANGGUN SC AIO
 Green="\e[92;1m"
 RED="\033[31m"
 YELLOW="\033[33m"
@@ -21,7 +22,7 @@ green='\e[0;32m'
 green() { echo -e "\\033[32;1m${*}\\033[0m"; }
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 
-# // configuration GET | ANGGUN SCRIPT AIO
+# // configuration GET | ANGGUN SC AIO
 TIMES="10"
 NAMES=$(whoami)
 IMP="wget -q -O"
@@ -116,7 +117,7 @@ function LOGO() {
  ───│    $Green┌─┐┬ ┬┌┬┐┌─┐┌─┐┌─┐┬─┐┬┌─┐┌┬┐  ┬  ┬┌┬┐┌─┐$NC   │───
  ───│    $Green├─┤│ │ │ │ │└─┐│  ├┬┘│├─┘ │   │  │ │ ├┤ $NC   │───
  ───│    $Green┴ ┴└─┘ ┴ └─┘└─┘└─┘┴└─┴┴   ┴   ┴─┘┴ ┴ └─┘$NC   │───
-    │    ${YELLOW}Copyright${FONT} (C)$GRAY https://github.com/comot$NC   │
+    │    ${YELLOW}Copyright${FONT} (C)$GRAY https://t.me/anggun2$NC   │
     └───────────────────────────────────────────────┘
          ${RED}Autoscript xray vpn lite (multi port)${FONT}    
 ${RED}Make sure the internet is smooth when installing the script${FONT}
@@ -519,7 +520,7 @@ apete_eee() {
     else
         clear
         echo ""
-        red "Permission Denied! Please Buy Licence"
+        red "acces di tolak ! silahkan sewa izin"
         green "Contact telegram https://t.me/anggun2"
         sleep 8
         exit 0
