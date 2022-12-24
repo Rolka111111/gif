@@ -47,4 +47,3 @@ systemctl disable badvpn9
 systemctl stop badvpn9 
 systemctl enable badvpn9
 systemctl start badvpn9
-sleep 1
