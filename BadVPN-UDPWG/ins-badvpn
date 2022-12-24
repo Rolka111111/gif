@@ -5,12 +5,12 @@ chmod +x /usr/bin/badvpn > /dev/null 2>&1
 wget -q -O /etc/systemd/system/badvpn1.service "${GITHUB_CMD}main/BadVPN-UDPWG/badvpn1.service" >/dev/null 2>&1
 wget -q -O /etc/systemd/system/badvpn2.service "${GITHUB_CMD}main/BadVPN-UDPWG/badvpn2.service" >/dev/null 2>&1
 wget -q -O /etc/systemd/system/badvpn3.service "${GITHUB_CMD}main/BadVPN-UDPWG/badvpn3.service" >/dev/null 2>&1
-wget -q -O /etc/systemd/system/badvpn1.service "${GITHUB_CMD}main/BadVPN-UDPWG/badvpn4.service" >/dev/null 2>&1
-wget -q -O /etc/systemd/system/badvpn2.service "${GITHUB_CMD}main/BadVPN-UDPWG/badvpn5.service" >/dev/null 2>&1
-wget -q -O /etc/systemd/system/badvpn3.service "${GITHUB_CMD}main/BadVPN-UDPWG/badvpn6.service" >/dev/null 2>&1
-wget -q -O /etc/systemd/system/badvpn1.service "${GITHUB_CMD}main/BadVPN-UDPWG/badvpn7.service" >/dev/null 2>&1
-wget -q -O /etc/systemd/system/badvpn2.service "${GITHUB_CMD}main/BadVPN-UDPWG/badvpn8.service" >/dev/null 2>&1
-wget -q -O /etc/systemd/system/badvpn3.service "${GITHUB_CMD}main/BadVPN-UDPWG/badvpn9.service" >/dev/null 2>&1
+wget -q -O /etc/systemd/system/badvpn4.service "${GITHUB_CMD}main/BadVPN-UDPWG/badvpn4.service" >/dev/null 2>&1
+wget -q -O /etc/systemd/system/badvpn5.service "${GITHUB_CMD}main/BadVPN-UDPWG/badvpn5.service" >/dev/null 2>&1
+wget -q -O /etc/systemd/system/badvpn6.service "${GITHUB_CMD}main/BadVPN-UDPWG/badvpn6.service" >/dev/null 2>&1
+wget -q -O /etc/systemd/system/badvpn7.service "${GITHUB_CMD}main/BadVPN-UDPWG/badvpn7.service" >/dev/null 2>&1
+wget -q -O /etc/systemd/system/badvpn8.service "${GITHUB_CMD}main/BadVPN-UDPWG/badvpn8.service" >/dev/null 2>&1
+wget -q -O /etc/systemd/system/badvpn9.service "${GITHUB_CMD}main/BadVPN-UDPWG/badvpn9.service" >/dev/null 2>&1
 systemctl disable badvpn1 
 systemctl stop badvpn1 
 systemctl enable badvpn1
