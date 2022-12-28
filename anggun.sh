@@ -31,7 +31,7 @@ MYIP=$(wget -qO- ipinfo.io/ip)
 CITY=$(curl -s ipinfo.io/city)
 TIME=$(date +'%Y-%m-%d %H:%M:%S')
 RAMMS=$(free -m | awk 'NR==2 {print $2}')
-KEY="5661986467:AAHRhgKFp9N5061gZtZ6n4Ae4BJF3PmQ188"
+KEY="5973249718:AAEQEcWIjxwTMylzckC1letVvxwSYRRNepU"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 GITHUB_CMD="https://github.com/remooot/gif/raw/"
 NAMECOM=$(curl -sS https://raw.githubusercontent.com/remooot/permission/main/ip | grep $MYIP | awk '{print $2}')
@@ -116,7 +116,7 @@ function LOGO() {
  ───│    $Green┌─┐┬ ┬┌┬┐┌─┐┌─┐┌─┐┬─┐┬┌─┐┌┬┐  ┬  ┬┌┬┐┌─┐$NC   │───
  ───│    $Green├─┤│ │ │ │ │└─┐│  ├┬┘│├─┘ │   │  │ │ ├┤ $NC   │───
  ───│    $Green┴ ┴└─┘ ┴ └─┘└─┘└─┘┴└─┴┴   ┴   ┴─┘┴ ┴ └─┘$NC   │───
-    │    ${YELLOW}Copyright${FONT} (C)$GRAY https://t.me/anggun2$NC   │
+    │    ${YELLOW}Copyright${FONT} (C)$GRAY https://t.me/Bengkalis_bot$NC   │
     └───────────────────────────────────────────────┘
          ${RED}Autoscript xray vpn lite (multi port)${FONT}    
 ${RED}Make sure the internet is smooth when installing the script${FONT}
