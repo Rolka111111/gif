@@ -1,5 +1,5 @@
 #!/bin/bash
-GIT_CMD="https://github.com/rullpqh/Linux-NetSpeed/raw/master/bbrplus/debian-ubuntu/x64/"
+GIT_CMD="https://github.com/remooot/Linux-NetSpeed/raw/master/bbrplus/debian-ubuntu/x64/"
 startbbr() {
     if [[ $(echo 4.14.129-bbrplus | awk -F'.' '{print $1}') -ge "5" ]]; then
 	echo "net.core.default_qdisc=cake" >> /etc/sysctl.conf
