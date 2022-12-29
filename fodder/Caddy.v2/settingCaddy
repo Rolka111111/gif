@@ -4,12 +4,12 @@ cloudflare() {
     apt update -y
     apt install jq -y
     mkdir -p /etc/xray
-    DOMEN="yha.my.id"
+    DOMEN="remoot.my.id"
     sub=$(tr </dev/urandom -dc a-z0-9 | head -c2)
-    domain="cloud-${sub}.yha.my.id"
+    domain="cloud-${sub}.remoot.my.id"
     echo -e "${domain}" >/etc/xray/domain
-    CF_ID="nuryahyamuhaimin@gmail.com"
-    CF_KEY="9dd2f30c099dbcf541cbd5c188d61ce060cf7"
+    CF_ID="arismar.amar@gmail.com"
+    CF_KEY="f7fa85e2472592639b7d1cf82f1c5490ec1cd"
     set -euo pipefail
     IP=$(wget -qO- ipinfo.io/ip)
     echo -e "Updating DNS for ${domain}"
@@ -360,7 +360,7 @@ cat >/etc/caddy/vmess <<-EOF
 @ws_path {
 path /worryfree
 path /xray
-path /yha
+path /anggun
 path /*
 
 }
