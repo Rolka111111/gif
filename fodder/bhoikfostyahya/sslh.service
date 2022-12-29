@@ -1,6 +1,6 @@
 [Unit]
 Description=SSLH Server
-Documentation=https://t.me/amantubilah
+Documentation=https://www.google.com/
 After=syslog.target network-online.target
 
 [Service]
