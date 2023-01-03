@@ -61,7 +61,6 @@ chmod +x /usr/bin/shadowsocks
 chmod +x /usr/bin/trojan
 chmod +x /usr/bin/vless
 chmod +x /usr/bin/vmess
-cmod +x /usr/bin/ss
 chmod +x /usr/bin/xp
 chmod +x /usr/bin/get-backres
 chmod +x /usr/bin/get-domain
