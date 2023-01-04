@@ -1,21 +1,22 @@
 #!/bin/bash
 # //====================================================
 # //	System Request:Debian 9+/Ubuntu 18.04+/20+
-# //	Author:	anggun
+# //	Author:	bhoikfostyahya rebuild anggun
 # //	Dscription: Xray Menu Management
 # //	email: arismar.amar@gmail.com
+# //  telegram: https://t.me/amantubilah
 # //====================================================
-# // font color configuration | anggun  aio
+# // font color configuration | ANGGUN AUTOSCRIPT
 red() { echo -e "\\033[32;1m${*}\\033[0m"; }
 domain=$(cat /etc/xray/domain)
 PUB=$(cat /etc/slowdns/server.pub)
+CITY=$(cat /etc/xray/city)
 NS=$(cat /etc/xray/dns)
 clear
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
-  clear
-  echo -e "\033[1;93m╒═══════════════════════════════════╕\033[0m"
+  echo -e "\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
   echo -e "\e[42m       Add Shadowsocks Ws/Grpc Account   \E[0m"
-  echo -e "\033[1;93m╘═══════════════════════════════════╛\033[0m"
+  echo -e "\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 
   read -rp "User: " -e user
   CLIENT_EXISTS=$(grep -w $user /etc/xray/config.json | wc -l)
@@ -56,6 +57,13 @@ cat >/var/www/html/ss-$user.txt <<-END
 _______________________________________________________
            Thank You For Using Our Services
                 Xray/Shdwsok Account
+        Autoscript xray-lite dev anggun
+_____________________script v.2_________________________
+      System Request:Debian 9+/Ubuntu 18.04+/20+
+      Author:	anggun
+      Dscription: Xray Menu Management
+      email: arismar.amar@gmail.com
+      telegram: https://t.me/amantubilah
 _______________________________________________________
               Format Shadowsocks WS (CDN)
 _______________________________________________________
@@ -309,33 +317,33 @@ if [[ "${DATADB}" != '' ]]; then
 fi
 echo "### ${user} ${exp} ${uuid}" >>/etc/shadowsocks/.shadowsocks.db
 clear
-echo -e "
-\033[1;93m╒═══════════════════════════════════╕\033[0m
-\e[42mThank You For Using Our Services\E[0m
-\e[42mShadowsocks WS/GRPC Account      \E[0m
-\033[1;93m╘═══════════════════════════════════╛\033[0m
-Remarks    : ${user}
-Domain     : ${domain}
-Location   : $CITY
-User Quota : ${Quota} GB
-Port TLS   : 443
-Port  GRPC : 443
-Password   : ${uuid}
-Cipers     : aes-128-gcm
-Network    : ws/grpc
-Path       : /ss-ws
-ServiceName: ss-grpc
-\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m
-Link TLS   : ${shadowsockslink}
-\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m
-Link gRPC  : ${shadowsockslink1}
-\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m
-Link JSON  : http://${domain}:81/ss-$user.txt
-\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m
-Expired On : $exp
-\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m
-" | tee -a /etc/log-create-user.log
+
+echo -e "\033[1;93m───────────────────────────\033[0m" | tee -a /etc/log-create-user.log
+echo -e "\\e[42m    Shadowsocks Account   \E[0m" | tee -a /etc/log-create-user.log
+echo -e "\033[1;93m───────────────────────────\033[0m" | tee -a /etc/log-create-user.log
+echo -e "Remarks     : ${user}" | tee -a /etc/log-create-user.log
+echo -e "Domain      : ${domain}" | tee -a /etc/log-create-user.log
+echo -e "Host Slowdns: ${NS}" | tee -a /etc/log-create-user.log
+echo -e "Pub Key     : ${PUB}" | tee -a /etc/log-create-user.log
+echo -e "Location    : $CITY" | tee -a /etc/log-create-user.log
+echo -e "User Quota  : ${Quota} GB" | tee -a /etc/log-create-user.log
+echo -e "Port TLS    : 443" | tee -a /etc/log-create-user.log
+echo -e "Port  GRPC  : 443" | tee -a /etc/log-create-user.log
+echo -e "Password    : ${uuid}" | tee -a /etc/log-create-user.log
+echo -e "Cipers      : aes-128-gcm" | tee -a /etc/log-create-user.log
+echo -e "Network     : ws/grpc" | tee -a /etc/log-create-user.log
+echo -e "Path        : /ss-ws" | tee -a /etc/log-create-user.log
+echo -e "ServiceName : ss-grpc" | tee -a /etc/log-create-user.log
+echo -e "033[1;93m───────────────────────────\033[0m" | tee -a /etc/log-create-user.log
+echo -e "Link TLS   : ${shadowsockslink}" | tee -a /etc/log-create-user.log
+echo -e "033[1;93m───────────────────────────\033[0m" | tee -a /etc/log-create-user.log
+echo -e "Link gRPC  : ${shadowsockslink1}" | tee -a /etc/log-create-user.log
+echo -e "033[1;93m───────────────────────────\033[0m" | tee -a /etc/log-create-user.log
+echo -e "Link JSON  : https://${domain}:81/ss-$user.txt" | tee -a /etc/log-create-user.log
+echo -e "033[1;93m───────────────────────────\033[0m" | tee -a /etc/log-create-user.log
+echo -e "Expired On : $exp" | tee -a /etc/log-create-user.log
+echo -e "033[1;93m───────────────────────────\033[0m" | tee -a /etc/log-create-user.log
+echo -e "" | tee -a /etc/log-create-user.log
 read -n 1 -s -r -p "Press any key to back on menu"
 
 menu
-

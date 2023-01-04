@@ -1,12 +1,12 @@
 #!/bin/bash
-clear
 # //====================================================
 # //	System Request:Debian 9+/Ubuntu 18.04+/20+
-# //	Author:	anggun
+# //	Author:	bhoikfostyahya rebuild anggun
 # //	Dscription: Xray Menu Management
 # //	email: arismar.amar@gmail.com
+# //  telegram: https://t.me/amantubilah
 # //====================================================
-# // font color configuration | anggun  aio
+# // font color configuration | ANGGUN AUTOSCRIPT
 red() { echo -e "\\033[32;1m${*}\\033[0m"; }
 clear
 NUMBER_OF_CLIENTS=$(grep -c -E "^###& " "/etc/xray/config.json")

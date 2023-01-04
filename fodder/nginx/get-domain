@@ -1,11 +1,13 @@
 #!/bin/bash
-clear
+# //====================================================
 # //====================================================
 # //	System Request:Debian 9+/Ubuntu 18.04+/20+
+# //	Author:	bhoikfostyahya rebuild anggun
 # //	Dscription: Xray Menu Management
-# //  telegram: https://t.me/anggun2
+# //	email: arismar.amar@gmail.com
+# //  telegram: https://t.me/amantubilah
 # //====================================================
-# // font color configuration | BHOIKFOST YAHYA AUTOSCRIPT
+# // font color configuration | ANGGUN AUTOSCRIPT
 RED='\033[0;31m'
 NC='\033[0m'
 GREEN='\033[0;32m'

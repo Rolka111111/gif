@@ -1,11 +1,12 @@
 #!/bin/bash
 # //====================================================
 # //	System Request:Debian 9+/Ubuntu 18.04+/20+
-# //	Author:	anggun
+# //	Author:	bhoikfostyahya rebuild anggun
 # //	Dscription: Xray Menu Management
 # //	email: arismar.amar@gmail.com
+# //  telegram: https://t.me/amantubilah
 # //====================================================
-# // font color configuration | anggun  aio
+# // font color configuration | ANGGUN AUTOSCRIPT
 clear
 grenbo="\e[92;1m"
 NC='\033[0m'
