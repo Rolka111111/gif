@@ -16,7 +16,7 @@
 </tr>
 <tr>
 <td>Dropbear Websocket</td>
-<td>443, 109</td>
+<td>80, 109</td>
 </tr>
 <tr>
 <td>SSH Websocket SSL</td>
