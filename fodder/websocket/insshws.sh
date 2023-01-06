@@ -1,5 +1,5 @@
 #!/bin/bash
-cd
+GITHUB_CMD="https://github.com/arismaramar/gif/raw/"
 
 wget -O /usr/bin/ws-dropbear https://raw.githubusercontent.com/arismaramar/multi/aio/websocket/dropbear-ws.py
 wget -O /usr/bin/ws-stunnel https://raw.githubusercontent.com/arismaramar/multi/aio/websocket/ws-stunnel
