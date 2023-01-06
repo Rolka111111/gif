@@ -108,7 +108,7 @@
 </tr>
 <tr>
 <td>BadVPN UDP</td>
-<td>7100 - 7300</td>
+<td>7100 - 7900</td>
 </tr>
 </tbody>
 </table>
