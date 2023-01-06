@@ -1,8 +1,6 @@
 #!/bin/bash
 # //====================================================
 # //	System Request:Debian 9+/Ubuntu 18.04+/20+
-# //	Author:	bhoikfostyahya rebuild anggun
-# //	Dscription: Xray Menu Management
 # //	email: arismar.amar@gmail.com
 # //  telegram: https://t.me/amantubilah
 # //====================================================
@@ -57,10 +55,8 @@ cat >/var/www/html/ss-$user.txt <<-END
 _______________________________________________________
            Thank You For Using Our Services
                 Xray/Shdwsok Account
-        Autoscript xray-lite dev anggun
 _____________________script v.2_________________________
       System Request:Debian 9+/Ubuntu 18.04+/20+
-      Author:	anggun
       Dscription: Xray Menu Management
       email: arismar.amar@gmail.com
       telegram: https://t.me/amantubilah
