@@ -29,12 +29,8 @@ echo "### ${LOGIN} " >>/etc/ssh/.ssh.db
 cat > /var/www/html/ssh-$LOGIN.txt <<-END
 _______________________________________________________
            Thank You For Using Our Services
-                Xray/Shdwsok Account
-        Autoscript xray-lite dev anggun
 _____________________script v.2_________________________
       System Request:Debian 9+/Ubuntu 18.04+/20+
-      Author:	anggun
-      Dscription: Xray Menu Management
       email: arismar.amar@gmail.com
       telegram: https://t.me/amantubilah
 _______________________________________________________
@@ -111,7 +107,6 @@ TEXT="
 <code>Save Link Account: </code>http://$domain:81/ssh-$LOGIN.txt
 <code>───────────────────────────</code>
 "
-curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL
 clear
 echo -e "\033[1;93m───────────────────────────\033[0m" | tee -a /etc/log-create-user.log
 echo -e "\e[42m      SSH OVPN Account     \E[0m" | tee -a /etc/log-create-user.log
