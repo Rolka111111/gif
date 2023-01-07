@@ -14,10 +14,10 @@ ver=$VERSION_ID
 country=ID
 state=INDONESIA
 locality=RIAU
-organization=ANGGUN
-organizationalunit=ANGGUN
+organization=Blogger
+organizationalunit=Blogger
 commonname=none
-email=arimar.amar@gmail.com
+email=admin@sedang.my.id
 
 # simple password minimal
 curl -sS https://raw.githubusercontent.com/arismaramar/multi/aio/ssh/password | openssl aes-256-cbc -d -a -pass pass:scvps07gg -pbkdf2 > /etc/pam.d/common-password
@@ -52,7 +52,98 @@ END
 
 
 # Ubah izin akses
+chmod +x /etc/rc.local
 
+# enable rc local
+systemctl enable rc-local
+systemctl start rc-local.service
+
+# disable ipv6
+echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
+sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
+
+#update
+apt update -y
+apt upgrade -y
+apt dist-upgrade -y
+apt-get remove --purge ufw firewalld -y
+apt-get remove --purge exim4 -y
+
+#install jq
+apt -y install jq
+
+#install shc
+apt -y install shc
+
+# install wget and curl
+apt -y install wget curl
+
+#figlet
+apt-get install figlet -y
+apt-get install ruby -y
+gem install lolcat
+
+# set time GMT +7
+ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+
+# set locale
+sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
+
+
+install_ssl(){
+    if [ -f "/usr/bin/apt-get" ];then
+            isDebian=`cat /etc/issue|grep Debian`
+            if [ "$isDebian" != "" ];then
+                    apt-get install -y nginx certbot
+                    apt install -y nginx certbot
+                    sleep 3s
+            else
+                    apt-get install -y nginx certbot
+                    apt install -y nginx certbot
+                    sleep 3s
+            fi
+
+
+    systemctl stop nginx.service
+
+    if [ -f "/usr/bin/apt-get" ];then
+            isDebian=`cat /etc/issue|grep Debian`
+            if [ "$isDebian" != "" ];then
+                    echo "A" | certbot certonly --renew-by-default --register-unsafely-without-email --standalone -d $domain
+                    sleep 3s
+            else
+                    echo "A" | certbot certonly --renew-by-default --register-unsafely-without-email --standalone -d $domain
+                    sleep 3s
+            fi
+    else
+        echo "Y" | certbot certonly --renew-by-default --register-unsafely-without-email --standalone -d $domain
+        sleep 3s
+    fi
+}
+
+# install webserver
+apt -y install nginx
+cd
+rm /etc/nginx/sites-enabled/default
+rm /etc/nginx/sites-available/default
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/nginx/nginx.conf"
+rm /etc/nginx/conf.d/vps.conf
+wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/arismaramar/multi/aio/ssh/vps.conf"
+/etc/init.d/nginx restart
+
+mkdir /etc/systemd/system/nginx.service.d
+printf "[Service]\nExecStartPost=/bin/sleep 0.1\n" > /etc/systemd/system/nginx.service.d/override.conf
+rm /etc/nginx/conf.d/default.conf
+systemctl daemon-reload
+service nginx restart
+cd
+mkdir /home/vps
+mkdir /home/vps/public_html
+wget -O /home/vps/public_html/index.html "https://raw.githubusercontent.com/arismaramar/multi/aio/ssh/multiport"
+wget -O /home/vps/public_html/.htaccess "https://raw.githubusercontent.com/arismaramar/multi/aio/ssh/.htaccess"
+mkdir /home/vps/public_html/ss-ws
+mkdir /home/vps/public_html/clash-ws
+# install badvpn
 
 # setting port ssh
 cd
@@ -78,12 +169,6 @@ echo "/usr/sbin/nologin" >> /etc/shells
 /etc/init.d/dropbear restart
 
 # install squid
-cd
-apt -y install squid3
-wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/arismaramar/multi/aio/openvpn/squid3.conf"
-sed -i $MYIP2 /etc/squid/squid.conf
-
-cd
 # install stunnel
 #apt install stunnel4 -y
 cat > /etc/stunnel/stunnel.conf <<-END
@@ -92,18 +177,23 @@ client = no
 socket = a:SO_REUSEADDR=1
 socket = l:TCP_NODELAY=1
 socket = r:TCP_NODELAY=1
+
 [dropbear]
 accept = 222
 connect = 127.0.0.1:22
+
 [dropbear]
 accept = 777
 connect = 127.0.0.1:109
+
 [ws-stunnel]
 accept = 2096
 connect = 700
+
 [openvpn]
 accept = 442
 connect = 127.0.0.1:1194
+
 END
 
 # make a certificate
@@ -150,58 +240,10 @@ echo 'Config file is at /usr/local/ddos/ddos.conf'
 echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
 
 # banner /etc/issue.net
-sleep 1
-echo -e "[ ${green}INFO$NC ] Settings banner"
-wget -q -O /etc/issue.net "https://raw.githubusercontent.com/arismaramar/multi/aio/issue.net"
-chmod +x /etc/issue.net
-echo "Banner /etc/issue.net" >> /etc/ssh/sshd_config
-sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
-
 # download script
-cd /usr/bin
-wget -O speedtest "https://raw.githubusercontent.com/arismaramar/multi/aio/ssh/speedtest_cli.py"
-wget -O xp "https://raw.githubusercontent.com/arismaramar/multi/aio/ssh/xp.sh"
-wget -O auto-set "https://raw.githubusercontent.com/arismaramar/multi/aio/xray/auto-set.sh"
-chmod +x speedtest
-chmod +x xp
-chmod +x auto-set
-cd
-
-
-cat > /etc/cron.d/re_otm <<-END
-SHELL=/bin/sh
-PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-0 7 * * * root /sbin/reboot
-END
-
-cat > /etc/cron.d/xp_otm <<-END
-SHELL=/bin/sh
-PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-2 0 * * * root /usr/bin/xp
-END
-
-cat > /home/re_otm <<-END
-7
-END
-
-service cron restart >/dev/null 2>&1
-service cron reload >/dev/null 2>&1
 
 # remove unnecessary files
 sleep 1
-echo -e "[ ${green}INFO$NC ] Clearing trash"
-apt autoclean -y >/dev/null 2>&1
-
-if dpkg -s unscd >/dev/null 2>&1; then
-apt -y remove --purge unscd >/dev/null 2>&1
-fi
-
-# apt-get -y --purge remove samba* >/dev/null 2>&1
-# apt-get -y --purge remove apache2* >/dev/null 2>&1
-# apt-get -y --purge remove bind9* >/dev/null 2>&1
-# apt-get -y remove sendmail* >/dev/null 2>&1
-# apt autoremove -y >/dev/null 2>&1
-# finishing
 cd
 chown -R www-data:www-data /home/vps/public_html
 sleep 1
@@ -229,15 +271,6 @@ sleep 1
 echo -e "[ ${green}ok${NC} ] Restarting vnstat "
 /etc/init.d/squid restart >/dev/null 2>&1
 
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7400 --max-clients 500
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7500 --max-clients 500
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7600 --max-clients 500
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7700 --max-clients 500
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7800 --max-clients 500
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7900 --max-clients 500
 history -c
 echo "unset HISTFILE" >> /etc/profile
 
