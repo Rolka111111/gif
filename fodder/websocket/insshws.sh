@@ -1,5 +1,5 @@
 #!/bin/bash
-GITHUB_CMD="https://github.com/arismaramar/gif/raw/"
+GITHUB_CMD="https://github.com/arismaramar/multi/raw/"
 wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/arismaramar/multi/aio/websocket/dropbear-ws.py
 wget -O /usr/local/bin/ws-stunnel https://raw.githubusercontent.com/arismaramar/multi/aio/websocket/ws-stunnel
 wget -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/arismaramar/multi/aio/openvpn/ws-ovpn.py
