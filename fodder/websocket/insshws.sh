@@ -1,13 +1,12 @@
 #!/bin/bash
 GITHUB_CMD="https://github.com/arismaramar/gif/raw/"
+wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/arismaramar/multi/aio/websocket/dropbear-ws.py
+wget -O /usr/local/bin/ws-stunnel https://raw.githubusercontent.com/arismaramar/multi/aio/websocket/ws-stunnel
+wget -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/arismaramar/multi/aio/openvpn/ws-ovpn.py
 
-wget -O /usr/bin/ws-dropbear https://raw.githubusercontent.com/arismaramar/multi/aio/websocket/dropbear-ws.py
-wget -O /usr/bin/ws-stunnel https://raw.githubusercontent.com/arismaramar/multi/aio/websocket/ws-stunnel
-wget -O /usr/bin/ws-ovpn https://raw.githubusercontent.com/arismaramar/multi/aio/openvpn/ws-ovpn.py
-
-chmod +x /usr/bin/ws-dropbear
-chmod +x /usr/bin/ws-stunnel
-chmod +x /usr/bin/ws-ovpn
+chmod +x /usr/local/bin/ws-dropbear
+chmod +x /usr/local/bin/ws-stunnel
+chmod +x /usr/local/bin/ws-ovpn
 
 wget -O /etc/systemd/system/ws-dropbear.service https://raw.githubusercontent.com/arismaramar/multi/aio/websocket/service-wsdropbear && chmod +x /etc/systemd/system/ws-dropbear.service
 wget -O /etc/systemd/system/ws-stunnel.service https://raw.githubusercontent.com/arismaramar/multi/aio/websocket/ws-stunnel.service && chmod +x /etc/systemd/system/ws-stunnel.service
