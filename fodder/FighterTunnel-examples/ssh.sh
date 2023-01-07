@@ -1,7 +1,5 @@
 #!/bin/bash
-#
-# ==================================================
-
+GITHUB_CMD="https://github.com/arismaramar/multi/raw/"
 # initializing var
 export DEBIAN_FRONTEND=noninteractive
 MYIP=$(wget -qO- ipinfo.io/ip);
