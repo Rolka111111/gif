@@ -1,4 +1,6 @@
 #!/bin/bash
+#!/bin/sh
+GIT_CMD="https://github.com/arismaramar/supreme/raw/aio/"
 #installer Websocker tunneling 
 cd
 
