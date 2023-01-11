@@ -22,8 +22,8 @@ tyblue() { echo -e "\\033[36;1m${*}\\033[0m"; }
 yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
 green() { echo -e "\\033[32;1m${*}\\033[0m"; }
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
-cek=$( curl -sS https://raw.githubusercontent.com/wunuit/IP/main/access | awk '{print $2}'  | grep $MYIP )
-Name=$(curl -sS https://raw.githubusercontent.com/wunuit/IP/main/access | grep $MYIP | awk '{print $4}')
+cek=$( curl -sS https://raw.githubusercontent.com/arismaramar/permission/main/access | awk '{print $2}'  | grep $MYIP )
+Name=$(curl -sS https://raw.githubusercontent.com/arismaramar/permission/main/access | grep $MYIP | awk '{print $4}')
 if [[ $cek = $MYIP ]]; then
 echo -e "${green}Permission Accepted...${NC}"
 else
@@ -38,7 +38,7 @@ fi
 clear
 
 BURIQ() {
-    curl -sS https://raw.githubusercontent.com/wunuit/IP/main/access >/root/tmp
+    curl -sS https://raw.githubusercontent.com/arismaramar/permission/main/access >/root/tmp
     data=($(cat /root/tmp | grep -E "^### " | awk '{print $4}'))
     for user in "${data[@]}"; do
         exp=($(grep -E "^### $user" "/root/tmp" | awk '{print $3}'))
@@ -55,7 +55,7 @@ BURIQ() {
 }
 
 MYIP=$(wget -qO- ipv4.icanhazip.com);
-Name=$(curl -sS https://raw.githubusercontent.com/wunuit/IP/main/access | grep $MYIP | awk '{print $4}')
+Name=$(curl -sS https://raw.githubusercontent.com/arismaramar/permission/main/access | grep $MYIP | awk '{print $4}')
 echo $Name >/usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -72,7 +72,7 @@ Bloman() {
 
 PERMISSION() {
     MYIP=$(wget -qO- ipv4.icanhazip.com);
-    IZIN=$(curl -sS https://raw.githubusercontent.com/wunuit/IP/main/access | awk '{print $2}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/arismaramar/permission/main/access | awk '{print $2}' | grep $MYIP)
     if [[ "$MYIP" = "$IZIN" ]]; then
         Bloman
     else
@@ -288,18 +288,18 @@ proxies:
     servername: ${sni}
     network: ws
     ws-opts:
-      path: /vless-tls
+      path: /vless
       headers:
         Host: ${domain}
     udp: true
 proxy-groups:
-  - name: wunuit-Autoscript
+  - name: anggun-Autoscript
     type: select
     proxies:
       - XRAY_VLESS_TLS_${user}
       - DIRECT
 rules:
-  - MATCH,wunuit-Autoscript
+  - MATCH,anggun-Autoscript
 EOF
 
 cat > /home/vps/public_html/$user-VLESSNTLS.yaml <<EOF
@@ -444,18 +444,18 @@ proxies:
     servername: ${sni}
     network: ws
     ws-opts:
-      path: /vless-ntls
+      path: /vless
       headers:
         Host: ${domain}
     udp: true
 proxy-groups:
-  - name: wunuit-Autoscript
+  - name: anggun-Autoscript
     type: select
     proxies:
       - XRAY_VLESS_NON_TLS_${user}
       - DIRECT
 rules:
-  - MATCH,wunuit-Autoscript
+  - MATCH,anggun-Autoscript
 EOF
 
 clear
@@ -469,8 +469,8 @@ echo -e "ID                : ${uuid}"
 echo -e "Security          : TLS"
 echo -e "Encryption        : None"
 echo -e "Network           : WS"
-echo -e "Path TLS          : /vless-tls"
-echo -e "Path NTLS         : /vless-ntls"
+echo -e "Path TLS          : /vless"
+echo -e "Path NTLS         : /vless"
 echo -e "Multipath         : /yourpath (XRAY Core Mod Only)"
 echo -e "═══════════════════"
 echo -e "Link WS TLS       : ${vlesslink1}"
@@ -485,5 +485,5 @@ echo -e "Created On        : $hariini"
 echo -e "Expired On        : $exp"
 echo -e "═══════════════════"
 echo -e ""
-echo -e "Autoscript By wunuit"
-echo -e "" 
+echo -e "Autoscript By anggun"
+echo -e ""�
