@@ -32,7 +32,7 @@ echo ""
 echo -e "Your IP is ${red}NOT REGISTER${NC} @ ${red}EXPIRED${NC}"
 echo ""
 echo -e "Please Contact ${green}Admin${NC}"
-echo -e "Telegram : t.me/wunuit"
+echo -e "Telegram : https://t.me/amantubilah"
 exit 0
 fi
 clear
@@ -484,13 +484,13 @@ proxies:
         Host: ${domain}
     udp: true
 proxy-groups:
-  - name: Geo-Autoscript
+  - name: anggun-Autoscript
     type: select
     proxies:
       - XRAY_VMESS_NON_TLS_${user}
       - DIRECT
 rules:
-  - MATCH,Geo-Autoscript
+  - MATCH,anggun-Autoscript
 EOF
 
 clear
@@ -519,5 +519,5 @@ echo -e "Created On        : $hariini"
 echo -e "Expired On        : $exp"
 echo -e "═══════════════════"
 echo -e ""
-echo -e "Autoscript By Geo Project"
+echo -e "Autoscript By Geo anggun"
 echo -e ""�
