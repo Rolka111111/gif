@@ -25,7 +25,7 @@ tyblue() { echo -e "\\033[36;1m${*}\\033[0m"; }
 yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
 green() { echo -e "\\033[32;1m${*}\\033[0m"; }
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
-cek=$( curl -sS https://raw.githubusercontent.com/arismaramar/permission/main/accesshttps://raw.githubusercontent.com/wunuit/IP/main/access | awk '{print $2}'  | grep $MYIP )
+cek=$( curl -sS https://raw.githubusercontent.com/arismaramar/permission/main/access | awk '{print $2}'  | grep $MYIP )
 Name=$(curl -sS https://raw.githubusercontent.com/arismaramar/permission/main/access | grep $MYIP | awk '{print $4}')
 if [[ $cek = $MYIP ]]; then
 echo -e "${green}Permission Accepted...${NC}"
@@ -35,7 +35,7 @@ echo ""
 echo -e "Your IP is ${red}NOT REGISTER${NC} @ ${red}EXPIRED${NC}"
 echo ""
 echo -e "Please Contact ${green}Admin${NC}"
-echo -e "Telegram : t.me/wunuit"
+echo -e "Telegram : htps://t.me/amantubilah"
 exit 0
 fi
 clear
@@ -468,5 +468,5 @@ echo -e "Created On           : $hariini"
 echo -e "Expired On           : $exp"
 echo -e "═══════════════════"
 echo -e ""
-echo -e "Autoscript By wunuit"
+echo -e "Autoscript By anggun"
 echo -e ""�
