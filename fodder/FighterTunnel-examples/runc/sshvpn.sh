@@ -10,7 +10,7 @@ green='\e[0;32m'
 purple='\e[0;35m'
 orange='\e[0;33m'
 NC='\e[0m'
-export Server_URL="raw.githubusercontent.com/arismaramar/gif/fodder/FighterTunnel-examples/runc/main"
+export Server_URL="raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc"
 clear
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
@@ -161,8 +161,8 @@ apt -y install wget curl
 # install netfilter-persistent
 apt-get install netfilter-persistent
 
-# set time GMT +8
-ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime
+# set time GMT +7
+ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
 # set locale
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
