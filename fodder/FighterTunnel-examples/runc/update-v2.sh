@@ -6,7 +6,7 @@ purple='\e[0;35m'
 orange='\e[0;33m'
 NC='\e[0m'
 # // Exporting URL Host
-export Server_URL="raw.githubusercontent.com/wunuit/Multiport/main"
+export Server_URL="raw.githubusercontent.com/gif/fodder/FighterTunnel-examples/runc/main"
 clear
 if [[ -e /usr/local/bin/xray ]]; then
      echo ""
