@@ -163,13 +163,13 @@ proxies:
     sni: ${sni}
     udp: true
 proxy-groups:
-  - name: wunuit-AUTOSCRIPT
+  - name: anggun-AUTOSCRIPT
     type: select
     proxies:
       - XRAY_TROJAN_DIRECT_${user}
       - DIRECT
 rules:
-  - MATCH,wunuit-AUTOSCRIPT
+  - MATCH,anggun-AUTOSCRIPT
 EOF
 
 cat > /home/vps/public_html/$user-TRSPLICE.yaml <<EOF
@@ -313,13 +313,13 @@ proxies:
     sni: ${sni}
     udp: true
 proxy-groups:
-  - name: wunuit-AUTOSCRIPT
+  - name: anggun-AUTOSCRIPT
     type: select
     proxies:
       - XRAY_TROJAN_SPLICE_${user}
       - DIRECT
 rules:
-  - MATCH,wunuit-AUTOSCRIPT
+  - MATCH,anggun-AUTOSCRIPT
 EOF
 
 systemctl restart xray@xtrojan.service
@@ -355,5 +355,5 @@ echo -e "Created On           : $hariini"
 echo -e "Expired On           : $exp"
 echo -e "═══════════════════"
 echo -e ""
-echo -e "Autoscript By wunuit"
-echo -e "" 
+echo -e "Autoscript By anggun"
+echo -e ""�
