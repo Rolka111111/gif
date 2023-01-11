@@ -19,8 +19,8 @@ sed -i '/#tls$/a\### '"$user $exp"'\
 sed -i '/#none$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /usr/local/etc/xray/vnone.json
 
-vlesslink1="vless://${uuid}@${domain}:443?type=ws&encryption=none&security=tls&host=${domain}&path=/vless-tls&allowInsecure=1&sni=${domain}#XRAY_VLESS_TLS_${user}"
-vlesslink2="vless://${uuid}@${domain}:80?type=ws&encryption=none&security=none&host=${domain}&path=/vless-ntls#XRAY_VLESS_NON_TLS_${user}"
+vlesslink1="vless://${uuid}@${domain}:443?type=ws&encryption=none&security=tls&host=${domain}&path=/vless&allowInsecure=1&sni=${domain}#XRAY_VLESS_TLS_${user}"
+vlesslink2="vless://${uuid}@${domain}:80?type=ws&encryption=none&security=none&host=${domain}&path=/vless#XRAY_VLESS_NON_TLS_${user}"
 
 cat > /home/vps/public_html/$user-VLESSTLS.yaml <<EOF
 port: 7890
@@ -164,12 +164,12 @@ proxies:
     servername: ${domain}
     network: ws
     ws-opts:
-      path: /vless-tls
+      path: /vless
       headers:
         Host: ${domain}
     udp: true
 proxy-groups:
-  - name: wunuit-Autoscript
+  - name: anggun-Autoscript
     type: select
     proxies:
       - XRAY_VLESS_TLS_${user}
@@ -320,7 +320,7 @@ proxies:
     servername: ${domain}
     network: ws
     ws-opts:
-      path: /vless-ntls
+      path: /vless
       headers:
         Host: ${domain}
     udp: true
@@ -349,9 +349,9 @@ echo -e "ID                : ${uuid}"
 echo -e "Security          : TLS"
 echo -e "Encryption        : None"
 echo -e "Network           : WS"
-echo -e "Path TLS          : /vless-tls"
-echo -e "Path NTLS         : /vless-ntls"
-echo -e "Multipath         : /yourpath (XRAY Core Mod Only)"
+echo -e "Path TLS          : /vless"
+echo -e "Path NTLS         : /vless"
+echo -e "Multipath         : /bebaspatch (XRAY Core Mod Only)"
 echo -e "═══════════════════"
 echo -e "Link WS TLS       : ${vlesslink1}"
 echo -e "═══════════════════"
@@ -365,5 +365,5 @@ echo -e "Created On        : $hariini"
 echo -e "Expired On        : $exp"
 echo -e "═══════════════════"
 echo -e ""
-echo -e "Autoscript By wunuit"
+echo -e "Autoscript By anggun"
 echo -e ""
