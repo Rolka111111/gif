@@ -32,7 +32,7 @@ echo ""
 echo -e "Your IP is ${red}NOT REGISTER${NC} @ ${red}EXPIRED${NC}"
 echo ""
 echo -e "Please Contact ${green}Admin${NC}"
-echo -e "Telegram : t.me/wunuit"
+echo -e "Telegram : https://t.me/amantubilah"
 exit 0
 fi
 clear
@@ -142,8 +142,8 @@ systemctl restart xray@trojanws.service
 systemctl restart xray@trnone.service
 service cron restart
 
-trojanlink1="trojan://${uuid}@${sts}:443?type=ws&security=tls&host=${domain}&path=/trojan-tls&sni=${sni}#${user}"
-trojanlink2="trojan://${uuid}@${sts}:80?type=ws&security=none&host=${domain}&path=/trojan-ntls#${user}"
+trojanlink1="trojan://${uuid}@${sts}:443?type=ws&security=tls&host=${domain}&path=/trojan&sni=${sni}#${user}"
+trojanlink2="trojan://${uuid}@${sts}:80?type=ws&security=none&host=${domain}&path=/trojan#${user}"
 
 cat > /home/vps/public_html/$user-TRTLS.yaml <<EOF
 port: 7890
