@@ -28,7 +28,7 @@ cat> /usr/local/etc/xray/$user-tls.json << EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/vmess-tls",
+      "path": "/vmess",
       "type": "none",
       "host": "${domain}",
       "tls": "tls",
@@ -45,7 +45,7 @@ cat> /usr/local/etc/xray/$user-none.json << EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/vmess-ntls",
+      "path": "/vmes",
       "type": "none",
       "host": "${domain}",
       "tls": "none"
@@ -200,18 +200,18 @@ proxies:
     servername: ${domain}
     network: ws
     ws-opts:
-      path: /vmess-tls
+      path: /vmess
       headers:
         Host: ${domain}
     udp: true
 proxy-groups:
-  - name: wunuit-Autoscript
+  - name: anggun-Autoscript
     type: select
     proxies:
       - XRAY_VMESS_TLS_${user}
       - DIRECT
 rules:
-  - MATCH,wunuit-Autoscript
+  - MATCH,anggun-Autoscript
 EOF
 
 cat > /home/vps/public_html/$user-VMESSNTLS.yaml <<EOF
@@ -357,18 +357,18 @@ proxies:
     servername: ${domain}
     network: ws
     ws-opts:
-      path: /vmess-ntls
+      path: /vmess
       headers:
         Host: ${domain}
     udp: true
 proxy-groups:
-  - name: wunuit-Autoscript
+  - name: anggun-Autoscript
     type: select
     proxies:
       - XRAY_VMESS_NON_TLS_${user}
       - DIRECT
 rules:
-  - MATCH,wunuit-Autoscript
+  - MATCH,anggun-Autoscript
 EOF
 
 systemctl restart xray.service
@@ -386,8 +386,8 @@ echo -e "ID                : ${uuid}"
 echo -e "AlterId           : 0"
 echo -e "Security          : Auto"
 echo -e "Network           : WS"
-echo -e "Path TLS          : /vmess-tls"
-echo -e "Path NTLS         : /vmess-ntls"
+echo -e "Path TLS          : /vmess"
+echo -e "Path NTLS         : /vmess"
 echo -e "═══════════════════"
 echo -e "Link WS TLS       : ${vmesslink1}"
 echo -e "═══════════════════"
@@ -401,5 +401,5 @@ echo -e "Created On        : $hariini"
 echo -e "Expired On        : $exp"
 echo -e "═══════════════════"
 echo -e ""
-echo -e "Autoscript By wunuit"
+echo -e "Autoscript By anggun"
 echo -e ""
