@@ -38,7 +38,7 @@ echo ""
 echo -e "Your IP is ${red}NOT REGISTER${NC} @ ${red}EXPIRED${NC}"
 echo ""
 echo -e "Please Contact ${green}Admin${NC}"
-echo -e "Telegram : t.me/amantuilah"
+echo -e "Telegram : t.me/amantubilah"
 exit 0
 fi
 clear
@@ -108,7 +108,7 @@ locality="ridar"
 organization="anggun-Project"
 organizationalunit="anggun-Project"
 commonname="anggun-Project"
-email="arimar.amart@gmail.com"
+email="arimar.amar@gmail.com"
 
 # go to root
 cd
