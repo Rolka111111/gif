@@ -21,8 +21,8 @@ sed -i '/#tr$/a\### '"$user $exp"'\
 sed -i '/#trnone$/a\### '"$user $exp"'\
 },{"password": "'""$uuid""'","email": "'""$user""'"' /usr/local/etc/xray/trnone.json
 
-trojanlink1="trojan://${uuid}@${domain}:443?type=ws&security=tls&host=${domain}&path=/trojan-tls&sni=${domain}#XRAY_TROJAN_TLS_${user}"
-trojanlink2="trojan://${uuid}@${domain}:80?type=ws&security=none&host=${domain}&path=/trojan-ntls#XRAY_TROJAN_NTLS_${user}"
+trojanlink1="trojan://${uuid}@${domain}:443?type=ws&security=tls&host=${domain}&path=/trojan&sni=${domain}#XRAY_TROJAN_TLS_${user}"
+trojanlink2="trojan://${uuid}@${domain}:80?type=ws&security=none&host=${domain}&path=/trojan#XRAY_TROJAN_NTLS_${user}"
 
 cat > /home/vps/public_html/$user-TRTLS.yaml <<EOF
 port: 7890
@@ -164,18 +164,18 @@ proxies:
     sni: ${domain}
     network: ws
     ws-opts:
-      path: /trojan-tls
+      path: /trojan
       headers:
         Host: ${domain}
     udp: true
 proxy-groups:
-  - name: wunuit-Autoscript
+  - name: anggun-Autoscript
     type: select
     proxies:
       - XRAY_TROJAN_TLS_${user}
       - DIRECT
 rules:
-  - MATCH,wunuit-Autoscript
+  - MATCH,anggun-Autoscript
 EOF
 
 systemctl restart xray@trojanws.service
@@ -193,8 +193,8 @@ echo -e "ID                : ${uuid}"
 echo -e "Security          : TLS"
 echo -e "Encryption        : None"
 echo -e "Network           : WS"
-echo -e "Path TLS          : /trojan-tls"
-echo -e "Path NTLS         : /trojan-ntls"
+echo -e "Path TLS          : /trojan"
+echo -e "Path NTLS         : /trojan"
 echo -e "═══════════════════"
 echo -e "Link WS TLS       : ${trojanlink1}"
 echo -e "═══════════════════"
@@ -206,5 +206,5 @@ echo -e "Created On        : $hariini"
 echo -e "Expired On        : $exp"
 echo -e "═══════════════════"
 echo -e ""
-echo -e "Autoscript By wunuit"
+echo -e "Autoscript By anggun"
 echo -e ""
