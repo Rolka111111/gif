@@ -165,14 +165,14 @@ echo "$host" >> /root/domain
 #Install SSH-VPN
 echo -e "\e[0;32mINSTALLING SSH-VPN...\e[0m"
 sleep 1
-wget https://${Server_URL}/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
+wget https://${Server_URL}/sshvpn.sh && chmod +x sshvpn.sh && ./sshvpn.sh
 sleep 3
 clear
 echo -e "\e[0;32mINSTALLING XRAY CORE...\e[0m"
 sleep 3
-wget -q -O /root/xray.sh "https://${Server_URL}/xray.sh"
-chmod +x /root/xray.sh
-./ins-xray.sh
+wget -q -O /root/xraycore.sh "https://${Server_URL}/xraycore.sh"
+chmod +x /root/xraycore.sh
+./ins-xraycore.sh
 echo -e "${GREEN}Done!${NC}"
 sleep 2
 clear
@@ -190,9 +190,9 @@ clear
 #wget -q -O /usr/share/nginx/html/index.html "https://raw.githubusercontent.com/wunuit/Multiport/main/OTHERS/index.html"
 
 # Finish
-rm -f /root/ins-xray.sh
+rm -f /root/xraycore.sh
 rm -f /root/set-br.sh
-rm -f /root/ssh-vpn.sh
+rm -f /root/sshvpn.sh.sh
 
 # Version
 echo "1.0" > /home/ver
