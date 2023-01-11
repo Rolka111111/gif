@@ -11,8 +11,8 @@ vmess_req() {
     echo -e "\e[36m╒═══════════════════════════════════════════╕\033[0m"
     echo -e " \E[0;41;36m               WSS CONVERTER               \E[0m"
     echo -e "\e[36m╘═══════════════════════════════════════════╛\033[0m"
-    echo -e "\033[1;37mWSS Converter By wunuit\033[0m"
-    echo -e "\033[1;37mTelegram : https://t.me/sampiiiiu / @sampiiiiu\033[0m"
+    echo -e "\033[1;37mWSS Converter By anggun\033[0m"
+    echo -e "\033[1;37mTelegram : https://t.me/amantubilah / @anggun\033[0m"
     echo ""
     echo -e "[1] Digi"
     echo -e "[2] Maxis"
@@ -85,7 +85,7 @@ EOF
     vmesslink1="vmess://$(base64 -w 0 /root/$user-tls.json)"
     echo "Config : $vmesslink1"
     echo -e ""
-    echo -e "Autoscript By wunuit"
+    echo -e "Autoscript By anggun"
     echo -e ""
     rm -f /root/$user-tls.json
 }
@@ -95,7 +95,7 @@ vless_req() {
     echo -e " \E[0;41;36m               WSS CONVERTER               \E[0m"
     echo -e "\e[36m╘═══════════════════════════════════════════╛\033[0m"
     echo -e "\033[1;37mWSS Converter By wunuit\033[0m"
-    echo -e "\033[1;37mTelegram : https://t.me/sampiiiiu / @sampiiiiu\033[0m"
+    echo -e "\033[1;37mTelegram : https://t.me/amantubilah / @anggun\033[0m"
 	echo ""
     echo -e "[1] Digi"
     echo -e "[2] Maxis"
@@ -118,7 +118,7 @@ vless_req() {
         ;;
     3)
         clear
-        kumbang='onlinepayment.celcom.com.my'
+        kumbang='tsel.me'
         ;;
     4)
         clear
@@ -159,7 +159,7 @@ trojan_req() {
     echo -e " \E[0;41;36m               WSS CONVERTER               \E[0m"
     echo -e "\e[36m╘═══════════════════════════════════════════╛\033[0m"
     echo -e "\033[1;37mWSS Converter By Geo Project\033[0m"
-    echo -e "\033[1;37mTelegram : https://t.me/sampiiiiu / @sampiiiiu\033[0m"
+    echo -e "\033[1;37mTelegram : https://t.me/amantubilah / @anggun\033[0m"
     echo ""
     echo -e "[1] Digi"
     echo -e "[2] Maxis"
@@ -182,7 +182,7 @@ trojan_req() {
         ;;
     3)
         clear
-        kumbang='onlinepayment.celcom.com.my'
+        kumbang='tsel.me'
         ;;
     4)
         clear
@@ -222,7 +222,7 @@ protocol_req() {
     echo -e " \E[0;41;36m               WSS CONVERTER               \E[0m"
     echo -e "\e[36m╘═══════════════════════════════════════════╛\033[0m"
     echo -e "\033[1;37mWSS Converter By Geo Project\033[0m"
-    echo -e "\033[1;37mTelegram : https://t.me/sampiiiiu / @sampiiiiu\033[0m"
+    echo -e "\033[1;37mTelegram : https://t.me/amantuilah / @anggun\033[0m"
     echo ""
     echo -e "[1] Vmess"
     echo -e "[2] Vless"
