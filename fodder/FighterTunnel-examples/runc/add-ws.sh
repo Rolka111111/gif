@@ -22,8 +22,8 @@ tyblue() { echo -e "\\033[36;1m${*}\\033[0m"; }
 yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
 green() { echo -e "\\033[32;1m${*}\\033[0m"; }
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
-cek=$( curl -sS https://raw.githubusercontent.com/wunuit/IP/main/access | awk '{print $2}'  | grep $MYIP )
-Name=$(curl -sS https://raw.githubusercontent.com/wunuit/IP/main/access | grep $MYIP | awk '{print $4}')
+cek=$( curl -sS https://raw.githubusercontent.com/arismaramar/permission/main/access | awk '{print $2}'  | grep $MYIP )
+Name=$(curl -sS https://raw.githubusercontent.com/arismaramar/permission/main/access | grep $MYIP | awk '{print $4}')
 if [[ $cek = $MYIP ]]; then
 echo -e "${green}Permission Accepted...${NC}"
 else
@@ -38,7 +38,7 @@ fi
 clear
 
 BURIQ() {
-    curl -sS https://raw.githubusercontent.com/wunuit/IP/main/access >/root/tmp
+    curl -sS https://raw.githubusercontent.com/arismaramar/permission/main/access >/root/tmp
     data=($(cat /root/tmp | grep -E "^### " | awk '{print $4}'))
     for user in "${data[@]}"; do
         exp=($(grep -E "^### $user" "/root/tmp" | awk '{print $3}'))
@@ -55,7 +55,7 @@ BURIQ() {
 }
 
 MYIP=$(wget -qO- ipv4.icanhazip.com);
-Name=$(curl -sS https://raw.githubusercontent.com/wunuit/IP/main/access | grep $MYIP | awk '{print $4}')
+Name=$(curl -sS https://raw.githubusercontent.com/arismaramar/permission/main/access | grep $MYIP | awk '{print $4}')
 echo $Name >/usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -72,7 +72,7 @@ Bloman() {
 
 PERMISSION() {
     MYIP=$(wget -qO- ipv4.icanhazip.com);
-    IZIN=$(curl -sS https://raw.githubusercontent.com/wunuit/IP/main/access | awk '{print $2}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/arismaramar/permission/main/access | awk '{print $2}' | grep $MYIP)
     if [[ "$MYIP" = "$IZIN" ]]; then
         Bloman
     else
@@ -147,7 +147,7 @@ cat> /usr/local/etc/xray/$user-tls.json << EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/vmess-tls",
+      "path": "/vmess",
       "type": "none",
       "host": "${domain}",
       "tls": "tls",
@@ -164,7 +164,7 @@ cat> /usr/local/etc/xray/$user-none.json << EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/vmess-ntls",
+      "path": "/vmess",
       "type": "none",
       "host": "${domain}",
       "tls": "none"
@@ -322,7 +322,7 @@ proxies:
     servername: ${sni}
     network: ws
     ws-opts:
-      path: /vmess-tls
+      path: /vmess
       headers:
         Host: ${domain}
     udp: true
@@ -333,7 +333,7 @@ proxy-groups:
       - XRAY_VMESS_TLS_${user}
       - DIRECT
 rules:
-  - MATCH,Geo-Autoscript
+  - MATCH,anggun-Autoscript
 EOF
 
 cat > /home/vps/public_html/$user-VMESSNTLS.yaml <<EOF
@@ -479,7 +479,7 @@ proxies:
     servername: ${domain}
     network: ws
     ws-opts:
-      path: /vmess-ntls
+      path: /vmess
       headers:
         Host: ${domain}
     udp: true
@@ -504,8 +504,8 @@ echo -e "ID                : ${uuid}"
 echo -e "AlterId           : 0"
 echo -e "Security          : Auto"
 echo -e "Network           : WS"
-echo -e "Path TLS          : /vmess-tls"
-echo -e "Path NTLS         : /vmess-ntls"
+echo -e "Path TLS          : /vmess"
+echo -e "Path NTLS         : /vmess"
 echo -e "═══════════════════"
 echo -e "Link WS TLS       : ${vmesslink1}"
 echo -e "═══════════════════"
@@ -520,4 +520,4 @@ echo -e "Expired On        : $exp"
 echo -e "═══════════════════"
 echo -e ""
 echo -e "Autoscript By Geo Project"
-echo -e "" 
+echo -e ""�
