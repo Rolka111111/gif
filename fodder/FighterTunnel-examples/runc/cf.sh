@@ -10,7 +10,7 @@ clear
 MYIP=$(wget -qO- ipinfo.io/ip);
 clear
 apt install jq curl -y >/dev/null 2>&1
-DOMAIN=vpnmurah.me
+DOMAIN=remoot.my.id
 sub=$(</dev/urandom tr -dc a-x1-9 | head -c6 | tr -d '\r' | tr -d '\r\n')
 SUB_DOMAIN=${sub}.remoot.my.id
 CF_ID=arismar.amar@gmail.com
