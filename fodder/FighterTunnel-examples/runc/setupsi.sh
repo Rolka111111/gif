@@ -172,7 +172,7 @@ echo -e "\e[0;32mINSTALLING XRAY CORE...\e[0m"
 sleep 3
 wget -q -O /root/xraycore.sh "https://${Server_URL}/xraycore.sh"
 chmod +x /root/xraycore.sh
-./ins-xraycore.sh
+./xraycore.sh
 echo -e "${GREEN}Done!${NC}"
 sleep 2
 clear
