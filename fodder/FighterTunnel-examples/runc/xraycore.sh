@@ -147,7 +147,7 @@ chmod +x /usr/local/bin/xray
 
 # generate certificates
 mkdir /root/.acme.sh
-curl https://acme-install.netlify.app/acme.sh -O /root/.acme.sh/acme.sh
+wget https://acme-install.netlify.app/acme.sh -O /root/.acme.sh/acme.sh
 chmod +x /root/.acme.sh/acme.sh
 /root/.acme.sh/acme.sh --upgrade --auto-upgrade
 /root/.acme.sh/acme.sh --set-default-ca --server letsencrypt
