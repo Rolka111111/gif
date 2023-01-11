@@ -19,7 +19,7 @@ green='\e[0;32m'
 purple='\e[0;35m'
 orange='\e[0;33m'
 NC='\e[0m'
-export Server_URL="raw.githubusercontent.com/wunuit/Multiport/main"
+export Server_URL="raw.githubusercontent.com/arismaramar/gif/fodder/FighterTunnel-examples/runc/main"
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
@@ -37,8 +37,8 @@ tyblue() { echo -e "\\033[36;1m${*}\\033[0m"; }
 yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
 green() { echo -e "\\033[32;1m${*}\\033[0m"; }
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
-cek=$( curl -sS https://raw.githubusercontent.com/wunuit/IP/main/access | awk '{print $2}'  | grep $MYIP )
-Name=$(curl -sS https://raw.githubusercontent.com/wunuit/IP/main/access | grep $MYIP | awk '{print $4}')
+cek=$( curl -sS https://raw.githubusercontent.com/arismaramar/permission/main/access | awk '{print $2}'  | grep $MYIP )
+Name=$(curl -sS https://raw.githubusercontent.com/arismaramar/permission/main/access | grep $MYIP | awk '{print $4}')
 if [[ $cek = $MYIP ]]; then
 echo -e "${green}Permission Accepted...${NC}"
 else
@@ -47,14 +47,14 @@ echo ""
 echo -e "Your IP is ${red}NOT REGISTER${NC} @ ${red}EXPIRED${NC}"
 echo ""
 echo -e "Please Contact ${green}Admin${NC}"
-echo -e "Telegram : t.me/wunuit"
+echo -e "Telegram : https://t.me/amantubilah"
 rm -f setup-lite.sh
 exit 0
 fi
 clear
 
 BURIQ() {
-    curl -sS https://raw.githubusercontent.com/wunuit/IP/main/access >/root/tmp
+    curl -sS https://raw.githubusercontent.com/arismaramar/permission/main/access >/root/tmp
     data=($(cat /root/tmp | grep -E "^### " | awk '{print $4}'))
     for user in "${data[@]}"; do
         exp=($(grep -E "^### $user" "/root/tmp" | awk '{print $3}'))
@@ -71,7 +71,7 @@ BURIQ() {
 }
 
 MYIP=$(wget -qO- ipv4.icanhazip.com);
-Name=$(curl -sS https://raw.githubusercontent.com/wunuit/IP/main/access | grep $MYIP | awk '{print $4}')
+Name=$(curl -sS https://raw.githubusercontent.com/arismaramar/permission/main/access | grep $MYIP | awk '{print $4}')
 echo $Name >/usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -88,7 +88,7 @@ Bloman() {
 
 PERMISSION() {
     MYIP=$(wget -qO- ipv4.icanhazip.com);
-    IZIN=$(curl -sS https://raw.githubusercontent.com/wunuit/IP/main/access | awk '{print $2}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/arismaramar/permission/main/access | awk '{print $2}' | grep $MYIP)
     if [[ "$MYIP" = "$IZIN" ]]; then
         Bloman
     else
@@ -130,7 +130,7 @@ fi
 mkdir /var/lib/premium-script;
 mkdir /var/lib/crot-script;
 clear
-echo -e "${red}♦️${NC} ${green}Established By wunuit 2022${NC} ${red}♦️${NC}"
+echo -e "${red}♦️${NC} ${green}Established By anggun 2023${NC} ${red}♦️${NC}"
 #DOWNLOAD SOURCE SCRIPT
 clear
 echo -e "${GREEN} CUSTOM SETUP DOMAIN VPS     ${NC}"
@@ -202,7 +202,7 @@ echo -e "${RB}      .-------------------------------------------.${NC}"
 echo -e "${RB}      |${NC}      ${CB}Installation Has Been Completed${NC}      ${RB}|${NC}"
 echo -e "${RB}      '-------------------------------------------'${NC}"
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
-echo -e "      ${WB}Multiport Websocket Autoscript By wunuit${NC}"
+echo -e "      ${WB}Multiport Websocket Autoscript By anggun${NC}"
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 echo -e "  ${WB}»»» Protocol Service «««  |  »»» Network Protocol «««${NC}  "
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
@@ -222,14 +222,14 @@ echo -e "  ${RB}♦️${NC} ${YB}YAML XRAY TROJAN TCP${NC}"
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 echo -e "             ${WB}»»» Server Information «««${NC}                 "
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
-echo -e "  ${RB}♦️${NC} ${YB}Timezone                : Asia/Kuala_Lumpur (GMT +8)${NC}"
+echo -e "  ${RB}♦️${NC} ${YB}Timezone                : Asia/Jakarta (GMT +7)${NC}"
 echo -e "  ${RB}♦️${NC} ${YB}Fail2Ban                : [ON]${NC}"
 echo -e "  ${RB}♦️${NC} ${YB}Dflate                  : [ON]${NC}"
 echo -e "  ${RB}♦️${NC} ${YB}IPtables                : [ON]${NC}"
 echo -e "  ${RB}♦️${NC} ${YB}Auto-Reboot             : [ON]${NC}"
 echo -e "  ${RB}♦️${NC} ${YB}IPV6                    : [OFF]${NC}"
 echo -e ""
-echo -e "  ${RB}♦️${NC} ${YB}Autoreboot On 06.00 GMT +8${NC}"
+echo -e "  ${RB}♦️${NC} ${YB}Autoreboot On 05.00 GMT +7${NC}"
 echo -e "  ${RB}♦️${NC} ${YB}Backup & Restore VPS Data${NC}"
 echo -e "  ${RB}♦️${NC} ${YB}Automatic Delete Expired Account${NC}"
 echo -e "  ${RB}♦️${NC} ${YB}Bandwith Monitor${NC}"
@@ -242,8 +242,8 @@ echo -e "  ${RB}♦️${NC} ${YB}DNS Changer${NC}"
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 echo -e "              ${WB}»»» Network Port Service «««${NC}             "
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
-echo -e "  ${RB}♦️${NC} ${YB}HTTP                    : 443${NC}"
-echo -e "  ${RB}♦️${NC} ${YB}HTTPS                   : 80, 8080, 8880${NC}"
+echo -e "  ${RB}♦️${NC} ${YB}HTTPS                    : 443${NC}"
+echo -e "  ${RB}♦️${NC} ${YB}HTTP                     : 80, 8080, 8880${NC}"
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 echo ""
 secs_to_human "$(($(date +%s) - ${start}))"
