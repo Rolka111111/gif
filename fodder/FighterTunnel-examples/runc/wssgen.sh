@@ -178,7 +178,7 @@ trojan_req() {
         ;;
     2)
         clear
-        kumbang='italeem.iium.edu.my'
+        kumbang='tsel.me'
         ;;
     3)
         clear
