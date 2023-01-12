@@ -1,5 +1,5 @@
 #!/bin/bash
-#Script Updater By wunuit
+#Script Updater By anggun
 Font_Black="\033[30m";
 Font_Red="\033[31m";
 Font_Green="\033[32m";
