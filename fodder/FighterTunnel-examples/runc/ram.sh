@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-
 # Try to determine how much RAM is currently being used per program.
 # Note per _program_, not per process. So for example this script
 # will report RAM used by all httpd process together. In detail it reports:
