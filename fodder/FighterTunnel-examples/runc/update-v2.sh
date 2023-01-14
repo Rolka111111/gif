@@ -71,7 +71,6 @@ else
 	 wget -O ins-helium "https://${Server_URL}/ins-helium.sh" && chmod +x ins-helium
 	 wget -O menu "https://${Server_URL}/menu.sh" && chmod +x menu
 	 wget -O limit "https://${Server_URL}/limit-speed.sh" && chmod +x limit
-	 #wget -O add-tr "https://raw.githubusercontent.com/wunuit/MultiportWebsocketPremium-V2/main/XRAY/add-tr.sh" && chmod +x add-tr
 	 wget -O bbr "https://${Server_URL}/bbr.sh" && chmod +x bbr
 	 echo ""
 	 echo -e "[${green}INFO${NC}] Successfully Install New Update File !"
