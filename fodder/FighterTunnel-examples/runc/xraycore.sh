@@ -1226,52 +1226,52 @@ cd /usr/bin
 # // VMESS WS FILES
 echo -e "[ ${green}INFO${NC} ] Downloading Vmess WS Files"
 sleep 1
-wget -O add-ws "https://${Server_URL}/add-ws.sh" && chmod +x add-ws
-wget -O cek-ws "https://${Server_URL}/cek-ws.sh" && chmod +x cek-ws
-wget -O del-ws "https://${Server_URL}/del-ws.sh" && chmod +x del-ws
-wget -O renew-ws "https://${Server_URL}/renew-ws.sh" && chmod +x renew-ws
-wget -O user-ws "https://${Server_URL}/user-ws.sh" && chmod +x user-ws
-wget -O trial-ws "https://${Server_URL}/trial-ws.sh" && chmod +x trial-ws
+wget -q -O add-ws "https://${Server_URL}/add-ws.sh" && chmod +x add-ws
+wget -q -O cek-ws "https://${Server_URL}/cek-ws.sh" && chmod +x cek-ws
+wget -q -O del-ws "https://${Server_URL}/del-ws.sh" && chmod +x del-ws
+wget -q -O renew-ws "https://${Server_URL}/renew-ws.sh" && chmod +x renew-ws
+wget -q -O user-ws "https://${Server_URL}/user-ws.sh" && chmod +x user-ws
+wget -q -O trial-ws "https://${Server_URL}/trial-ws.sh" && chmod +x trial-ws
 
 # // VLESS WS FILES
 echo -e "[ ${green}INFO${NC} ] Downloading Vless WS Files"
 sleep 1
-wget -O add-vless "https://${Server_URL}/add-vless.sh" && chmod +x add-vless
-wget -O cek-vless "https://${Server_URL}/cek-vless.sh" && chmod +x cek-vless
-wget -O del-vless "https://${Server_URL}/del-vless.sh" && chmod +x del-vless
-wget -O renew-vless "https://${Server_URL}/renew-vless.sh" && chmod +x renew-vless
-wget -O user-vless "https://${Server_URL}/user-vless.sh" && chmod +x user-vless
-wget -O trial-vless "https://${Server_URL}/trial-vless.sh" && chmod +x trial-vless
+wget -q -O add-vless "https://${Server_URL}/add-vless.sh" && chmod +x add-vless
+wget -q -O cek-vless "https://${Server_URL}/cek-vless.sh" && chmod +x cek-vless
+wget -q -O del-vless "https://${Server_URL}/del-vless.sh" && chmod +x del-vless
+wget -q -O renew-vless "https://${Server_URL}/renew-vless.sh" && chmod +x renew-vless
+wget -q -O user-vless "https://${Server_URL}/user-vless.sh" && chmod +x user-vless
+wget -q -O trial-vless "https://${Server_URL}/trial-vless.sh" && chmod +x trial-vless
 
 # // TROJAN WS FILES
 echo -e "[ ${green}INFO${NC} ] Downloading Trojan WS Files"
 sleep 1
-wget -O add-tr "https://${Server_URL}/add-tr.sh" && chmod +x add-tr
-wget -O cek-tr "https://${Server_URL}/cek-tr.sh" && chmod +x cek-tr
-wget -O del-tr "https://${Server_URL}/del-tr.sh" && chmod +x del-tr
-wget -O renew-tr "https://${Server_URL}/renew-tr.sh" && chmod +x renew-tr
-wget -O user-tr "https://${Server_URL}/user-tr.sh" && chmod +x user-tr
-wget -O trial-tr "https://${Server_URL}/trial-tr.sh" && chmod +x trial-tr
+wget -q -O add-tr "https://${Server_URL}/add-tr.sh" && chmod +x add-tr
+wget -q -O cek-tr "https://${Server_URL}/cek-tr.sh" && chmod +x cek-tr
+wget -q -O del-tr "https://${Server_URL}/del-tr.sh" && chmod +x del-tr
+wget -q -O renew-tr "https://${Server_URL}/renew-tr.sh" && chmod +x renew-tr
+wget -q -O user-tr "https://${Server_URL}/user-tr.sh" && chmod +x user-tr
+wget -q -O trial-tr "https://${Server_URL}/trial-tr.sh" && chmod +x trial-tr
 
 # // TROJAN TCP XTLS
 echo -e "[ ${green}INFO${NC} ] Downloading XRAY Vless TCP XTLS Files"
 sleep 1
-wget -O add-xrt "https://${Server_URL}/add-xrt.sh" && chmod +x add-xrt
-wget -O cek-xrt "https://${Server_URL}/cek-xrt.sh" && chmod +x cek-xrt
-wget -O del-xrt "https://${Server_URL}/del-xrt.sh" && chmod +x del-xrt
-wget -O renew-xrt "https://${Server_URL}/renew-xrt.sh" && chmod +x renew-xrt
-wget -O user-xrt "https://${Server_URL}/user-xrt.sh" && chmod +x user-xrt
-wget -O trial-xrt "https://${Server_URL}/trial-xrt.sh" && chmod +x trial-xrt
+wget -q -O add-xrt "https://${Server_URL}/add-xrt.sh" && chmod +x add-xrt
+wget -q -O cek-xrt "https://${Server_URL}/cek-xrt.sh" && chmod +x cek-xrt
+wget -q -O del-xrt "https://${Server_URL}/del-xrt.sh" && chmod +x del-xrt
+wget -q -O renew-xrt "https://${Server_URL}/renew-xrt.sh" && chmod +x renew-xrt
+wget -q -O user-xrt "https://${Server_URL}/user-xrt.sh" && chmod +x user-xrt
+wget -q -O trial-xrt "https://${Server_URL}/trial-xrt.sh" && chmod +x trial-xrt
 
 # // TROJAN TCP FILES
 echo -e "[ ${green}INFO${NC} ] Downloading Trojan TCP Files"
 sleep 1
-wget -O add-xtr "https://${Server_URL}/add-xtr.sh" && chmod +x add-xtr
-wget -O cek-xtr "https://${Server_URL}/cek-xtr.sh" && chmod +x cek-xtr
-wget -O del-xtr "https://${Server_URL}/del-xtr.sh" && chmod +x del-xtr
-wget -O renew-xtr "https://${Server_URL}/renew-xtr.sh" && chmod +x renew-xtr
-wget -O user-xtr "https://${Server_URL}/user-xtr.sh" && chmod +x user-xtr
-wget -O trial-xtr "https://${Server_URL}/trial-xtr.sh" && chmod +x trial-xtr
+wget -q -O add-xtr "https://${Server_URL}/add-xtr.sh" && chmod +x add-xtr
+wget -q -O cek-xtr "https://${Server_URL}/cek-xtr.sh" && chmod +x cek-xtr
+wget -q -O del-xtr "https://${Server_URL}/del-xtr.sh" && chmod +x del-xtr
+wget -q -O renew-xtr "https://${Server_URL}/renew-xtr.sh" && chmod +x renew-xtr
+wget -q -O user-xtr "https://${Server_URL}/user-xtr.sh" && chmod +x user-xtr
+wget -q -O trial-xtr "https://${Server_URL}/trial-xtr.sh" && chmod +x trial-xtr
 
 # // OTHER FILES
 echo -e "[ ${green}INFO${NC} ] Downloading Others Files"
