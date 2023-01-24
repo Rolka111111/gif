@@ -120,8 +120,8 @@ start=$(date +%s)
 
 echo -e "[ ${green}INFO${NC} ] Preparing the autoscript installation ~"
 apt install git curl -y >/dev/null 2>&1
-echo -e "[ ${green}INFO${NC} ] Installation file is ready to begin !"
-sleep 1
+#echo -e "[ ${green}INFO${NC} ] Installation file is ready to begin !"
+#sleep 1
 
  [ -f "/usr/local/etc/xray/domain" ];
 
