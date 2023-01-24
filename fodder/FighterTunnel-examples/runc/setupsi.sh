@@ -23,20 +23,20 @@ Server_URL="raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
-MYIP=$(wget -qO- ipv4.icanhazip.com);
-echo "Checking VPS"
-clear
-red='\e[1;31m'
-green='\e[0;32m'
-yell='\e[1;33m'
-tyblue='\e[1;36m'
-purple='\e[0;35m'
-NC='\e[0m'
-purple() { echo -e "\\033[35;1m${*}\\033[0m"; }
-tyblue() { echo -e "\\033[36;1m${*}\\033[0m"; }
-yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
-green() { echo -e "\\033[32;1m${*}\\033[0m"; }
-red() { echo -e "\\033[31;1m${*}\\033[0m"; }
+#MYIP=$(wget -qO- ipv4.icanhazip.com);
+#echo "Checking VPS"
+#clear
+#red='\e[1;31m'
+#green='\e[0;32m'
+#yell='\e[1;33m'
+#tyblue='\e[1;36m'
+#purple='\e[0;35m'
+#NC='\e[0m'
+#purple() { echo -e "\\033[35;1m${*}\\033[0m"; }
+#tyblue() { echo -e "\\033[36;1m${*}\\033[0m"; }
+#yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
+#green() { echo -e "\\033[32;1m${*}\\033[0m"; }
+#red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 #cek=$( curl -sS https://raw.githubusercontent.com/arismaramar/permission/main/access | awk '{print $2}'  | grep $MYIP )
 #Name=$(curl -sS https://raw.githubusercontent.com/arismaramar/permission/main/access | grep $MYIP | awk '{print $4}')
 #if [[ $cek = $MYIP ]]; then
@@ -49,9 +49,9 @@ red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 #echo -e "Please Contact ${green}Admin${NC}"
 #echo -e "Telegram : https://t.me/amantubilah"
 #rm -f setup-lite.sh
-exit 0
-fi
-clear
+#exit 0
+#fi
+#clear
 
 #BURIQ() {
     #curl -sS https://raw.githubusercontent.com/arismaramar/permission/main/access >/root/tmp
@@ -96,12 +96,12 @@ clear
   #  fi
   # BURIQ
 #}
-red='\e[1;31m'
-green='\e[0;32m'
-NC='\e[0m'
-green() { echo -e "\\033[32;1m${*}\\033[0m"; }
-red() { echo -e "\\033[31;1m${*}\\033[0m"; }
-PERMISSION
+#red='\e[1;31m'
+#green='\e[0;32m'
+#NC='\e[0m'
+#green() { echo -e "\\033[32;1m${*}\\033[0m"; }
+#red() { echo -e "\\033[31;1m${*}\\033[0m"; }
+#PERMISSION
 
 if [ "${EUID}" -ne 0 ]; then
 		echo "You need to run this script as root"
