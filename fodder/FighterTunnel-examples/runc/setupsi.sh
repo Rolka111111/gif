@@ -104,15 +104,15 @@ Server_URL="raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-
 #red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 #PERMISSION
 
-if [ "${EUID}" -ne 0 ]; then
-		echo "You need to run this script as root"
-		exit 1
-fi
-if [ "$(systemd-detect-virt)" == "openvz" ]; then
-		echo "OpenVZ is not supported"
-		exit 1
-fi
-MYIP=$(wget -qO- icanhazip.com/ip);
+#if [ "${EUID}" -ne 0 ]; then
+		#echo "You need to run this script as root"
+		#exit 1
+#fi
+#if [ "$(systemd-detect-virt)" == "openvz" ]; then
+	#	echo "OpenVZ is not supported"
+	#	exit 1
+#fi
+#MYIP=$(wget -qO- icanhazip.com/ip);
 secs_to_human() {
     echo "Installation time : $(( ${1} / 3600 )) hours $(( (${1} / 60) % 60 )) minutes $(( ${1} % 60 )) seconds"
 }
