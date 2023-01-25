@@ -5,13 +5,28 @@
 # Auther  : Geo Project
 # (C) Copyright 2022
 # =========================================
-#rver_URL="raw.githubusercontent.com/arismaramar/gif/fodder/FighterTunnel-examples/runc/main"
+P='\e[0;35m'
+B='\033[0;36m'
+G='\e[0;32m'
+N='\e[0m'
 
-#lear
-#ateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
-#ji=`date +"%Y-%m-%d" -d "$dateFromServer"`
-#########################
 clear
+dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
+biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
+#########################
+MYIP=$(wget -qO- ipv4.icanhazip.com);
+clear
+red='\e[1;31m'
+green='\e[0;32m'
+yell='\e[1;33m'
+tyblue='\e[1;36m'
+purple='\e[0;35m'
+NC='\e[0m'
+purple() { echo -e "\\033[35;1m${*}\\033[0m"; }
+tyblue() { echo -e "\\033[36;1m${*}\\033[0m"; }
+yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
+green() { echo -e "\\033[32;1m${*}\\033[0m"; }
+red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 
 # // Export Color & Information
 export RED='\033[0;31m'
@@ -41,9 +56,31 @@ else
     status_xray="${RED}OFF${NC}"
 fi
 
+# // script version
+myver="$(cat /home/ver)"
+
+# // script version check
+serverV=$( curl -sS https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/version_check_v2)
+
+function updatews(){
+clear
+echo -e "[ ${GREEN}INFO${NC} ] Check for Script updates . . ."
+sleep 1
+cd
+wget -q -O /root/update-v2.sh "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/version_check_v2" && chmod +x update-v2.sh && ./update-v2.sh
+sleep 1
+rm -f /root/update-v2.sh
+rm -f /home/ver
+version_check_v2=$( curl -sS https://raw.githubusercontent.com/wunuit/Multiport/main/version_check_v2)
+echo "$version_check_v2" >> /home/ver
+clear
+echo ""
+echo -e "[ ${GREEN}INFO${NC} ] Successfully Up To Date!"
+sleep 1
 echo ""
 read -n 1 -s -r -p "Press any key to continue..."
 menu
+}
 
 echo -e "\e[36m╒════════════════════════════════════════════╕\033[0m"
 echo -e " \E[0;41;36m                 INFO SERVER                \E[0m"
@@ -72,7 +109,7 @@ echo -e " IP Address         :  $IPVPS"
 echo -e "\e[36m╒════════════════════════════════════════════╕\033[0m"
 echo -e "     [ XRAY-CORE${NC} : ${status_xray} ]   [ NGINX${NC} : ${status_nginx} ]"
 echo -e "\e[36m╘════════════════════════════════════════════╛\033[0m"
-echo -e "      \033[1;37mMULTIPORT WEBSOCKET BY ANGGUN\033[0m"
+echo -e "      \033[1;37mMULTIPORT WEBSOCKET BY WUNUIT\033[0m"
 echo -e "\e[36m╒════════════════════════════════════════════╕\033[0m"
 echo -e " Daily Data Usage   :  ${yell}$daily_usage${N}"
 echo -e " Monthly Data Usage :  ${yell}$monthly_usage${N}"
@@ -109,11 +146,18 @@ echo -e "\e[36m╘════════════════════�
  [\033[1;36m•21\033[0m]  Backup
  [\033[1;36m•22\033[0m]  Restore
  [\033[1;36m•23\033[0m]  Reboot
- 
+"
+if [[ $serverV > $myver ]]; then
+echo -e " [\033[1;36m•24\033[0m]  Update Autoscript To V$serverV\n"
+up2u="updatews"
+else
+up2u="menu"
+fi
 echo -e " \033[1;37mType [ x ] To Exit From Menu \033[0m"
 echo ""
 echo -e "\e[36m╒════════════════════════════════════════════╕\033[0m"
 echo -e " Version       :\033[1;36m Multiport Websocket $myver\e[0m"
+echo -e " Client Name   : anggun
 echo -e " Status Script : ${G}Lifetime${NC}"
 echo -e "\e[36m╘════════════════════════════════════════════╛\033[0m"
 echo ""
@@ -142,6 +186,7 @@ case $opt in
 21) clear ; backup ; read -n1 -r -p "Press any key to continue..." ; menu ;;
 22) clear ; restore ; menu ;;
 23) clear ; reboot ;;
+24) clear ; $up2u ; read -n1 -r -p "Press any key to continue..." ; menu ;;
 00 | 0) clear ; menu ;;
 x | X) exit ;;
 *) clear ; menu ;;
