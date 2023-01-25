@@ -65,7 +65,7 @@ apt -y install nginx
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/nginx.conf
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/nginx.conf" " >/dev/null 2>&1
 mkdir -p /home/vps/public_html
 #wget -O /etc/nginx/conf.d/vps.conf "https://${Server_URL}/vps.conf"
 /etc/init.d/nginx restart
@@ -147,26 +147,26 @@ systemctl enable resolvconf.service
 
 # download script
 cd /usr/local/sbin
-wget -q -O ins-helium https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/ins-helium.sh
-wget -q -O bbr https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/bbr.sh
-wget -q -O wssgen https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/wssgen.sh
-wget -q -O add-host https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/add-host.sh
-wget -q -O speedtest https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/speedtest_cli.py
-wget -q -O xp https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/xp.sh
-wget -q -O menu https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu.sh
-wget -q -O status https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/status.sh
-wget -q -O info https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/info.sh
-wget -q -O restart  https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/restart.sh
-wget -q -O ram  https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/ram.sh
-wget -q -O dns  https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/dns.sh
-wget -q -O nf  https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/media.sh
-wget -q -O limit  https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/limit-speed.sh
-wget -q -O menu-tr  https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-tr.sh
-wget -q -O menu-ws  https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-ws.sh
-wget -q -O menu-vless  https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-vless.sh
-wget -q -O menu-xtr  https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-xtr.sh
-wget -q -O menu-xrt  https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-xrt.sh
-wget -q -O certxray  https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/cert.sh
+wget -q -O ins-helium "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/ins-helium.sh" >/dev/null 2>&1
+wget -q -O bbr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/bbr.sh" >/dev/null 2>&1
+wget -q -O wssgen "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/wssgen.sh" >/dev/null 2>&1
+wget -q -O add-host "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/add-host.sh" >/dev/null 2>&1
+wget -q -O speedtest "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/speedtest_cli.py" >/dev/null 2>&1
+wget -q -O xp "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/xp.sh" >/dev/null 2>&1
+wget -q -O menu "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu.sh" >/dev/null 2>&1
+wget -q -O status "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/status.sh" >/dev/null 2>&1
+wget -q -O info "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/info.sh" >/dev/null 2>&1
+wget -q -O restart  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/restart.sh" >/dev/null 2>&1
+wget -q -O ram  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/ram.sh" >/dev/null 2>&1
+wget -q -O dns  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/dns.sh" >/dev/null 2>&1
+wget -q -O nf  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/media.sh" >/dev/null 2>&1
+wget -q -O limit  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/limit-speed.sh" >/dev/null 2>&1
+wget -q -O menu-tr  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-tr.sh" >/dev/null 2>&1
+wget -q -O menu-ws  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-ws.sh" >/dev/null 2>&1
+wget -q -O menu-vless "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-vless.sh" >/dev/null 2>&1
+wget -q -O menu-xtr  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-xtr.sh" >/dev/null 2>&1
+wget -q -O menu-xrt  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-xrt.sh" >/dev/null 2>&1
+wget -q -O certxray  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/cert.sh" >/dev/null 2>&1
 chmod +x menu-tr
 chmod +x menu-ws
 chmod +x menu-vless
