@@ -39,11 +39,8 @@ if [[ $xray == "running" ]]; then
     status_xray="${GREEN}ON${NC}"
 else
     status_xray="${RED}OFF${NC}"
+fi
 
-
-echo ""
-echo -e "[ ${GREEN}INFO${NC} ] Successfully Up To Date!"
-sleep 1
 echo ""
 read -n 1 -s -r -p "Press any key to continue..."
 menu
