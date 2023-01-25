@@ -50,7 +50,7 @@ clear
 echo -e "${GREEN} CUSTOM SETUP DOMAIN VPS     ${NC}"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo "1. Use Domain From Script / Gunakan Domain Dari"
-echo "2. Choose Your Own Domain / Pilih Domain Sendiri"
+echo "2. Choose Your Own Domain / utk keamanan sebaik pilih 2"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 read -rp "Choose Your Domain Installation : " dom 
 
@@ -84,9 +84,9 @@ sleep 3
 clear
 echo -e "\e[0;32mINSTALLING XRAY CORE...\e[0m"
 sleep 3
-wget -q -O /root/xraycore.sh https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/xraycore.sh
-chmod +x /root/xraycore.sh
-./xraycore.sh
+wget -q -O /root/ins-xray.sh https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/ins-xray.sh
+chmod +x /root/ins-xray.sh
+./ins-xray.sh
 echo -e "${GREEN}Done!${NC}"
 sleep 2
 clear
@@ -101,7 +101,7 @@ sleep 2
 clear
 
 # Finish
-rm -f /root/xraycore.sh
+rm -f /root/ins-xray.sh
 rm -f /root/set-br.sh
 rm -f /root/sshvpn.sh
 
