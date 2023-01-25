@@ -163,7 +163,7 @@ echo -e "  ${RB}An${NC} ${YB}HTTPS                    : 443${NC}"
 echo -e "  ${RB}An${NC} ${YB}HTTP                     : 80, 8080, 8880${NC}"
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 echo ""
-rm -r setupsi.sh
+rm -r setup.sh
 echo ""
 read -p "$( echo -e "Press ${orange}[ ${NC}${green}Enter${NC} ${CYAN}]${NC} For Reboot") "
 reboot
