@@ -118,7 +118,7 @@ echo 'Config file is at /usr/local/ddos/ddos.conf'
 echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
 
 # banner /etc/issue.net
-wget -q -O /etc/issue.net "https://${Server_URL}/issues.net" && chmod +x /etc/issue.net
+wget -q -O /etc/issue.net https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/issue.net && chmod +x /etc/issue.net
 echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 
 # blockir torrent
@@ -147,12 +147,12 @@ systemctl enable resolvconf.service
 
 # download script
 cd /usr/local/sbin
-wget -q -O ins-helium https://${Server_URL}/ins-helium.sh
-wget -q -O bbr https://${Server_URL}/bbr.sh
-wget -q -O wssgen https://${Server_URL}/wssgen.sh
-wget -q -O add-host https://${Server_URL}/add-host.sh
-wget -q -O speedtest https://${Server_URL}/speedtest_cli.py
-wget -q -O xp https://${Server_URL}/xp.sh
+wget -q -O ins-helium https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/ins-helium.sh
+wget -q -O bbr https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/bbr.sh
+wget -q -O wssgen https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/wssgen.sh
+wget -q -O add-host https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/add-host.sh
+wget -q -O speedtest https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/speedtest_cli.py
+wget -q -O xp https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/xp.sh
 wget -q -O menu https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu.sh
 wget -q -O status https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/status.sh
 wget -q -O info https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/info.sh
@@ -162,7 +162,7 @@ wget -q -O dns  https://raw.githubusercontent.com/arismaramar/gif/main/fodder/Fi
 wget -q -O nf  https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/media.sh
 wget -q -O limit  https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/limit-speed.sh
 wget -q -O menu-tr  https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-tr.sh
-wget -q -O menu-ws  https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-ws.sh"
+wget -q -O menu-ws  https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-ws.sh
 wget -q -O menu-vless  https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-vless.sh
 wget -q -O menu-xtr  https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-xtr.sh
 wget -q -O menu-xrt  https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-xrt.sh
