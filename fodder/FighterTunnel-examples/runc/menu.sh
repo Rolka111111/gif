@@ -47,7 +47,6 @@ sleep 1
 echo ""
 read -n 1 -s -r -p "Press any key to continue..."
 menu
-}
 
 echo -e "\e[36m╒════════════════════════════════════════════╕\033[0m"
 echo -e " \E[0;41;36m                 INFO SERVER                \E[0m"
