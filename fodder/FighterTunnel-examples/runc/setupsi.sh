@@ -26,7 +26,19 @@ apt install socat cr
 on bash-completion ntpdate -y
 apt install zip -y
 apt install curl pwgen openssl netcat cron -y
+#update
 
+apt-get remove --purge ufw firewalld -y
+apt-get remove --purge exim4 -y
+
+# install wget and curl
+apt -y install wget curl
+
+# install netfilter-persistent
+apt-get install netfilter-persistent
+
+# set time GMT +7
+ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
 echo -e "[ ${green}INFO${NC} ] Preparing the autoscript installation ~"
 apt install git curl -y >/dev/null 2>&1
