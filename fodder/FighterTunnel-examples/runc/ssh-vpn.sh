@@ -30,12 +30,12 @@ green() { echo -e "\\033[32;1m${*}\\033[0m"; }
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 
 # initializing var
-export DEBIAN_FRONTEND=noninteractive
-MYIP=$(wget -qO- ipinfo.io/ip);
-MYIP2="s/xxxxxxxxx/$MYIP/g";
-NET=$(ip -o $ANU -4 route show to default | awk '{print $5}');
-source /etc/os-release
-ver=$VERSION_ID
+#export DEBIAN_FRONTEND=noninteractive
+#MYIP=$(wget -qO- ipinfo.io/ip);
+#MYIP2="s/xxxxxxxxx/$MYIP/g";
+#NET=$(ip -o $ANU -4 route show to default | awk '{print $5}');
+#source /etc/os-release
+#ver=$VERSION_ID
 
 #Detail
 country="ID"
