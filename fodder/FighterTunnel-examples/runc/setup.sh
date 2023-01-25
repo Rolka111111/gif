@@ -10,7 +10,6 @@ clear
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
-Server_URL="raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc"
 
 apt update -y
 apt upgrade -y
@@ -26,20 +25,14 @@ apt install socat cr
 on bash-completion ntpdate -y
 apt install zip -y
 apt install curl pwgen openssl netcat cron -y
+# install
+apt-get --reinstall --fix-missing install -y bzip2 gzip coreutils wget screen rsyslog iftop htop net-tools zip unzip wget net-tools curl nano sed screen gnupg gnupg1 bc apt-transport-https build-essential dirmngr libxml-parser-perl neofetch git lsof
+echo "clear" >> .profile
+echo "status" >> .profile
 #update
 
 apt-get remove --purge ufw firewalld -y
 apt-get remove --purge exim4 -y
-
-# install netfilter-persistent
-apt-get install netfilter-persistent
-
-# install wget and curl
-apt -y install wget curl
-
-
-# set time GMT +7
-ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
 echo -e "[ ${green}INFO${NC} ] Preparing the autoscript installation ~"
 apt install git curl -y >/dev/null 2>&1
@@ -63,7 +56,7 @@ read -rp "Choose Your Domain Installation : " dom
 
 if test $dom -eq 1; then
 clear
-wget -q -O /root/cf.sh "https://${Server_URL}/cf.sh"
+wget -q -O /root/cf.sh https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/cf.sh
 chmod +x /root/cf.sh
 ./cf.sh
 elif test $dom -eq 2; then
@@ -86,12 +79,12 @@ echo "$host" >> /root/domain
 #Install SSH-VPN
 echo -e "\e[0;32mINSTALLING SSH-VPN...\e[0m"
 sleep 1
-wget https://${Server_URL}/sshvpn.sh && chmod +x sshvpn.sh && ./sshvpn.sh
+wget https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/sshvpn.sh && chmod +x sshvpn.sh && ./sshvpn.sh
 sleep 3
 clear
 echo -e "\e[0;32mINSTALLING XRAY CORE...\e[0m"
 sleep 3
-wget -q -O /root/xraycore.sh "https://${Server_URL}/xraycore.sh"
+wget -q -O /root/xraycore.sh https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/xraycore.sh
 chmod +x /root/xraycore.sh
 ./xraycore.sh
 echo -e "${GREEN}Done!${NC}"
@@ -100,7 +93,7 @@ clear
 #Install SET-BR
 echo -e "\e[0;32mINSTALLING SET-BR...\e[0m"
 sleep 1
-wget -q -O /root/set-br.sh "https://${Server_URL}/set-br.sh"
+wget -q -O /root/set-br.sh https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/set-br.sh
 chmod +x /root/set-br.sh
 ./set-br.sh
 echo -e "${GREEN}Done!${NC}"
@@ -168,3 +161,4 @@ rm -r setup.sh
 echo ""
 read -p "$( echo -e "Press ${orange}[ ${NC}${green}Enter${NC} ${CYAN}]${NC} For Reboot") "
 reboot
+
