@@ -5,17 +5,45 @@
 # Auther  : Geo Project
 # (C) Copyright 2022
 # =========================================
+red='\e[1;31m'
+green='\e[0;32m'
+purple='\e[0;35m'
+orange='\e[0;33m'
+NC='\e[0m'
+
 clear
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
+MYIP=$(wget -qO- ipv4.icanhazip.com);
+clear
+red='\e[1;31m'
+green='\e[0;32m'
+yell='\e[1;33m'
+tyblue='\e[1;36m'
+purple='\e[0;35m'
+NC='\e[0m'
+purple() { echo -e "\\033[35;1m${*}\\033[0m"; }
+tyblue() { echo -e "\\033[36;1m${*}\\033[0m"; }
+yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
+green() { echo -e "\\033[32;1m${*}\\033[0m"; }
+red() { echo -e "\\033[31;1m${*}\\033[0m"; }
+
+# initializing var
+export DEBIAN_FRONTEND=noninteractive
+MYIP=$(wget -qO- ipinfo.io/ip);
+MYIP2="s/xxxxxxxxx/$MYIP/g";
+NET=$(ip -o $ANU -4 route show to default | awk '{print $5}');
+source /etc/os-release
+ver=$VERSION_ID
+
 #Detail
-country="ID"
-state="personal"
-locality="ridar"
-organization="anggun"
-organizationalunit="anggun"
-commonname="anggun"
+country="id"
+state="Riau"
+locality="Pekanbaru "
+organization="anggun-Project"
+organizationalunit="anggun-Project"
+commonname="anggun-Project"
 email="arimar.amar@gmail.com"
 
 # go to root
@@ -57,8 +85,14 @@ echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
 
 
+
 # set locale
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
+
+# install
+#apt-get --reinstall --fix-missing install -y bzip2 gzip coreutils wget screen rsyslog iftop htop net-tools zip unzip wget net-tools curl nano sed screen gnupg gnupg1 bc apt-transport-https build-essential dirmngr libxml-parser-perl neofetch git lsof
+echo "clear" >> .profile
+echo "menu" >> .profile
 
 # install webserver
 apt -y install nginx
@@ -121,7 +155,7 @@ echo 'Config file is at /usr/local/ddos/ddos.conf'
 echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
 
 # banner /etc/issue.net
-wget -q -O /etc/issue.net https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/issue.net && chmod +x /etc/issue.net
+wget -q -O /etc/issue.net "https://raw.githubusercontent.com/wunuit/Multiport/main/OTHERS/issues.net" && chmod +x /etc/issue.net
 echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 
 # blockir torrent
@@ -190,6 +224,7 @@ chmod +x ram
 chmod +x dns
 chmod +x nf
 chmod +x limit
+
 echo "0 6 * * * root reboot" >> /etc/crontab
 echo "0 0 * * * root /usr/bin/xp" >> /etc/crontab
 echo "*/2 * * * * root /usr/bin/cleaner" >> /etc/crontab
@@ -226,8 +261,10 @@ sleep 1
 echo -e "[ ${green}ok${NC} ] Restarting vnstat"
 /etc/init.d/vnstat restart >/dev/null 2>&1
 history -c
+echo "unset HISTFILE" >> /etc/profile
+
 cd
-rm -f /root/sshvpn.sh
+rm -f /root/ssh-vpn.sh
 
 # finishing
 clear
