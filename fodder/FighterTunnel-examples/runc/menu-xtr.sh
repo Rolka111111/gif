@@ -23,7 +23,6 @@ echo ""
 echo -e " \033[1;37mPress [ Ctrl+C ] • To-Exit-Script\033[0m"
 echo ""
 echo -ne "Select menu : "; read x
-if [[ $(cat /opt/.ver) = $serverV ]] > /dev/null 2>&1; then
     if [[ $x -eq 1 ]]; then
        add-xtr
        read -n1 -r -p "Press any key to continue..."
