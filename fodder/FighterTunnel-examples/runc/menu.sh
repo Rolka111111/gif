@@ -44,20 +44,20 @@ fi
 # // script version
 #ver="$(cat /home/ver)"
 
-# // script version check
-#rverV=$( curl -sS https://${Server_URL}/version_check_v2)
+ // script version check
+rverV=$( curl -sS https://${Server_URL}/version_check_v2)
 
 function updatews(){
 clear
 echo -e "[ ${GREEN}INFO${NC} ] Check for Script updates . . ."
 sleep 1
 cd
-wget -q -O /root/update-v2.sh "https://${Server_URL}/update-v2.sh" && chmod +x update-v2.sh && ./update-v2.sh
+wget -q -O /root/update-v2.sh https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/version_check_v2 && chmod +x update-v2.sh && ./update-v2.sh
 sleep 1
 rm -f /root/update-v2.sh
 rm -f /home/ver
-#rsion_check_v2=$( curl -sS https://${Server_URL}/version_check_v2)
-#cho "$version_check_v2" >> /home/ver
+version_check_v2=$( curl -sS https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/version_check_v2)
+echo "$version_check_v2" >> /home/ver
 clear
 echo ""
 echo -e "[ ${GREEN}INFO${NC} ] Successfully Up To Date!"
