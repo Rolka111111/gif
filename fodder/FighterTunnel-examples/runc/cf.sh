@@ -2,7 +2,7 @@
 # =========================================
 # Quick Setup | Script Setup Manager
 # Edition : Stable Edition V1.0
-# Auther  : Adit Ardiansyah
+# Auther  : Anggun
 # (C) Copyright 2022
 # =========================================
 
