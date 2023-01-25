@@ -64,7 +64,6 @@ SysVStartPriority=99
 [Install]
 WantedBy=multi-user.target
 END
-
 # nano /etc/rc.local
 cat > /etc/rc.local <<-END
 #!/bin/sh -e
@@ -72,6 +71,7 @@ cat > /etc/rc.local <<-END
 # By default this script does nothing.
 exit 0
 END
+
 
 # Ubah izin akses
 chmod +x /etc/rc.local
@@ -84,21 +84,9 @@ systemctl start rc-local.service
 echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
 
-#update
-apt update -y
-apt upgrade -y
-apt dist-upgrade -y
-apt-get remove --purge ufw firewalld -y
-apt-get remove --purge exim4 -y
-
-# install wget and curl
-apt -y install wget curl
-
 # install netfilter-persistent
 apt-get install netfilter-persistent
 
-# set time GMT +8
-ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime
 
 # set locale
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
