@@ -235,14 +235,19 @@ service cron restart >/dev/null 2>&1
 service cron reload >/dev/null 2>&1
 
 # remove unnecessary files
-cd
-apt autoclean -y
-apt -y remove --purge unscd
-apt-get -y --purge remove samba*;
-apt-get -y --purge remove apache2*;
-apt-get -y --purge remove bind9*;
-apt-get -y remove sendmail*
-apt autoremove -y
+sleep 1
+echo -e "[ ${green}INFO$NC ] Clearing trash"
+apt autoclean -y >/dev/null 2>&1
+
+if dpkg -s unscd >/dev/null 2>&1; then
+apt -y remove --purge unscd >/dev/null 2>&1
+fi
+
+# apt-get -y --purge remove samba* >/dev/null 2>&1
+# apt-get -y --purge remove apache2* >/dev/null 2>&1
+# apt-get -y --purge remove bind9* >/dev/null 2>&1
+# apt-get -y remove sendmail* >/dev/null 2>&1
+# apt autoremove -y >/dev/null 2>&1
 # finishing
 cd
 chown -R www-data:www-data /home/vps/public_html
