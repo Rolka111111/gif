@@ -38,35 +38,46 @@ echo -e "[ ${green}INFO${NC} ] Preparing the autoscript installation ~"
 apt install git curl -y >/dev/null 2>&1
 #echo -e "[ ${green}INFO${NC} ] Installation file is ready to begin !"
 #sleep 1
-
- [ -f "/usr/local/etc/xray/domain" ];
-
 mkdir /var/lib/premium-script;
 mkdir /var/lib/crot-script;
+
 clear
+touch /usr/local/etc/xray/domain
+echo -e "${YB}Input Domain${NC} "
+echo " "
+read -rp "Input your domain : " -e dns
+if [ -z $dns ]; then
+echo -e "Nothing input for domain!"
+else
+echo "$dns" > /usr/local/etc/xray/domain
+echo "DNS=$dns" > /var/lib/dnsvps.conf
+fi
+clear
+
+
 echo -e "${red}An${NC} ${green}Established By anggun 2023${NC} ${red}An${NC}"
 #DOWNLOAD SOURCE SCRIPT
-clear
-echo -e "${GREEN} CUSTOM SETUP DOMAIN VPS     ${NC}"
-echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo "1. Use Domain From Script / Gunakan Domain Dari"
-echo "2. Choose Your Own Domain / utk keamanan sebaik pilih 2"
-echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-read -rp "Choose Your Domain Installation : " dom 
+#clear
+#echo -e "${GREEN} CUSTOM SETUP DOMAIN VPS     ${NC}"
+#echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
+#echo "1. Use Domain From Script / Gunakan Domain Dari"
+#echo "2. Choose Your Own Domain / utk keamanan sebaik pilih 2"
+#echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
+#read -rp "Choose Your Domain Installation : " dom 
 
-if test $dom -eq 1; then
-clear
-wget -q -O /root/cf.sh https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/cf.sh
-chmod +x /root/cf.sh
-./cf.sh
-elif test $dom -eq 2; then
-read -rp "Enter Your Domain : " domen 
-echo $domen > /root/domain
-else 
-echo "Not Found Argument"
-exit 1
-fi
-echo -e "${GREEN}Done!${NC}"
+#if test $dom -eq 1; then
+#clear
+#wget -q -O /root/cf.sh https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/cf.sh
+#chmod +x /root/cf.sh
+#./cf.sh
+#elif test $dom -eq 2; then
+#read -rp "Enter Your Domain : " domen 
+#echo $domen > /root/domain
+#else 
+#echo "Not Found Argument"
+#exit 1
+#fi
+#echo -e "${GREEN}Done!${NC}"
 sleep 2
 clear
 echo "IP=$host" >> /var/lib/premium-script/ipvps.conf
