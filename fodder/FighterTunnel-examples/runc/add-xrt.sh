@@ -10,8 +10,8 @@ dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Dat
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 
-domain=$(cat /xray/domain)
-MYIP=$(wget -qO- ipv4.icanhazip.com);
+domain=$(cat /usr/local/etc/xray/domain)
+MYIP2=$(wget -qO- ipv4.icanhazip.com);
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 		echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
         echo -e "\E[0;41;36m  Add XRAY Trojan TCP XTLS Account  \E[0m"
