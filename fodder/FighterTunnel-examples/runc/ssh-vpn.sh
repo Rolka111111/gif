@@ -38,9 +38,9 @@ source /etc/os-release
 ver=$VERSION_ID
 
 #Detail
-country="id"
+country="ID"
 state="Riau"
-locality="Pekanbaru "
+locality="Pkanbaru "
 organization="anggun-Project"
 organizationalunit="anggun-Project"
 commonname="anggun-Project"
@@ -84,15 +84,29 @@ systemctl start rc-local.service
 echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
 
+#update
+apt update -y
+apt upgrade -y
+apt dist-upgrade -y
+apt-get remove --purge ufw firewalld -y
+apt-get remove --purge exim4 -y
 
+# install wget and curl
+apt -y install wget curl
+
+# install netfilter-persistent
+apt-get install netfilter-persistent
+
+# set time GMT +8
+ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime
 
 # set locale
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 
 # install
-#apt-get --reinstall --fix-missing install -y bzip2 gzip coreutils wget screen rsyslog iftop htop net-tools zip unzip wget net-tools curl nano sed screen gnupg gnupg1 bc apt-transport-https build-essential dirmngr libxml-parser-perl neofetch git lsof
-#echo "clear" >> .profile
-#echo "menu" >> .profile
+apt-get --reinstall --fix-missing install -y bzip2 gzip coreutils wget screen rsyslog iftop htop net-tools zip unzip wget net-tools curl nano sed screen gnupg gnupg1 bc apt-transport-https build-essential dirmngr libxml-parser-perl neofetch git lsof
+echo "clear" >> .profile
+echo "menu" >> .profile
 
 # install webserver
 apt -y install nginx
@@ -224,7 +238,6 @@ chmod +x ram
 chmod +x dns
 chmod +x nf
 chmod +x limit
-
 echo "0 6 * * * root reboot" >> /etc/crontab
 echo "0 0 * * * root /usr/bin/xp" >> /etc/crontab
 echo "*/2 * * * * root /usr/bin/cleaner" >> /etc/crontab
@@ -261,7 +274,7 @@ sleep 1
 echo -e "[ ${green}ok${NC} ] Restarting vnstat"
 /etc/init.d/vnstat restart >/dev/null 2>&1
 history -c
-#echo "unset HISTFILE" >> /etc/profile
+echo "unset HISTFILE" >> /etc/profile
 
 cd
 rm -f /root/ssh-vpn.sh
