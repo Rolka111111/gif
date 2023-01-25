@@ -153,26 +153,26 @@ systemctl enable resolvconf.service
 
 # download script
 cd /usr/local/sbin
-wget -q -O ins-helium "https://${Server_URL}/ins-helium.sh"
-wget -q -O bbr "https://${Server_URL}/bbr.sh"
-wget -q -O wssgen "https://${Server_URL}/wssgen.sh"
-wget -q -O add-host "https://${Server_URL}/add-host.sh"
-wget -q -O speedtest "https://${Server_URL}/speedtest_cli.py"
-wget -q -O xp "https://${Server_URL}/xp.sh"
-wget -q -O menu "https://${Server_URL}/menu.sh"
-wget -q -O status "https://${Server_URL}/status.sh"
-wget -q -O info "https://${Server_URL}/info.sh"
-wget -q -O restart "https://${Server_URL}/restart.sh"
-wget -q -O ram "https://${Server_URL}/ram.sh"
-wget -q -O dns "https://${Server_URL}/dns.sh"
-wget -q -O nf "https://${Server_URL}/media.sh"
-wget -q -O limit "https://${Server_URL}/limit-speed.sh"
-wget -q -O menu-tr "https://${Server_URL}/menu-tr.sh"
-wget -q -O menu-ws "https://${Server_URL}/menu-ws.sh"
-wget -q -O menu-vless "https://${Server_URL}/menu-vless.sh"
-wget -q -O menu-xtr "https://${Server_URL}/menu-xtr.sh"
-wget -q -O menu-xrt "https://${Server_URL}/menu-xrt.sh"
-wget -q -O certxray "https://${Server_URL}/cert.sh"
+wget -q -O ins-helium https://${Server_URL}/ins-helium.sh
+wget -q -O bbr https://${Server_URL}/bbr.sh
+wget -q -O wssgen https://${Server_URL}/wssgen.sh
+wget -q -O add-host https://${Server_URL}/add-host.sh
+wget -q -O speedtest https://${Server_URL}/speedtest_cli.py
+wget -q -O xp https://${Server_URL}/xp.sh
+wget -q -O menu https://${Server_URL}/menu.sh
+wget -q -O status https://${Server_URL}/status.sh
+wget -q -O info https://${Server_URL}/info.sh
+wget -q -O restart https://${Server_URL}/restart.sh
+wget -q -O ram https://${Server_URL}/ram.sh
+wget -q -O dns https://${Server_URL}/dns.sh
+wget -q -O nf https://${Server_URL}/media.sh
+wget -q -O limit https://${Server_URL}/limit-speed.sh
+wget -q -O menu-tr https://${Server_URL}/menu-tr.sh
+wget -q -O menu-ws https://${Server_URL}/menu-ws.sh"
+wget -q -O menu-vless https://${Server_URL}/menu-vless.sh
+wget -q -O menu-xtr https://${Server_URL}/menu-xtr.sh
+wget -q -O menu-xrt https://${Server_URL}/menu-xrt.sh
+wget -q -O certxray https://${Server_URL}/cert.sh
 chmod +x menu-tr
 chmod +x menu-ws
 chmod +x menu-vless
