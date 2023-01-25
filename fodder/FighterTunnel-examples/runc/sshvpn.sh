@@ -14,9 +14,9 @@ Server_URL="raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-
 country="ID"
 state="personal"
 locality="ridar"
-organization="anggun-"
-organizationalunit="anggun-Project"
-commonname="anggun-Project"
+organization="anggun"
+organizationalunit="anggun"
+commonname="anggun"
 email="arimar.amar@gmail.com"
 
 # go to root
@@ -57,19 +57,6 @@ systemctl start rc-local.service
 echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
 
-#update
-
-apt-get remove --purge ufw firewalld -y
-apt-get remove --purge exim4 -y
-
-# install wget and curl
-apt -y install wget curl
-
-# install netfilter-persistent
-apt-get install netfilter-persistent
-
-# set time GMT +7
-ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
 # set locale
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
@@ -86,7 +73,7 @@ rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
 wget -O /etc/nginx/nginx.conf "https://${Server_URL}/nginx.conf"
 mkdir -p /home/vps/public_html
-wget -O /etc/nginx/conf.d/vps.conf "https://${Server_URL}/vps.conf"
+#wget -O /etc/nginx/conf.d/vps.conf "https://${Server_URL}/vps.conf"
 /etc/init.d/nginx restart
 
 # setting vnstat
