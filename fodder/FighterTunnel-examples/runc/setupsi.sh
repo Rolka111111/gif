@@ -24,6 +24,21 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 Server_URL="raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc"
 
+apt update -y
+apt upgrade -y
+apt install socat -y
+apt install python -y
+apt install curl -y
+apt install wget -y
+apt install sed -y
+apt install nano -y
+apt install python3 -y
+apt install curl socat xz-utils wget apt-transport-https gnupg gnupg2 gnupg1 dnsutils lsb-release -y 
+apt install socat cr
+on bash-completion ntpdate -y
+apt install zip -y
+apt install curl pwgen openssl netcat cron -y
+
 #MYIP=$(wget -qO- ipv4.icanhazip.com);
 #echo "Checking VPS"
 #clear
@@ -204,44 +219,44 @@ echo -e "      ${WB}Multiport Websocket Autoscript By anggun${NC}"
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 echo -e "  ${WB}»»» Protocol Service «««  |  »»» Network Protocol «««${NC}  "
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
-echo -e "  ${RB}♦️${NC} ${YB}Vmess Websocket${NC}         ${WB}|${NC}  ${YB}- Websocket (CDN) TLS${NC}"
-echo -e "  ${RB}♦️${NC} ${YB}Vless Websocket${NC}         ${WB}|${NC}  ${YB}- Websocket (CDN) NTLS${NC}"
-echo -e "  ${RB}♦️${NC} ${YB}Trojan Websocket${NC}        ${WB}|${NC}  ${YB}- TCP XTLS${NC}"
-echo -e "  ${RB}♦️${NC} ${YB}Trojan TCP XTLS${NC}         ${WB}|${NC}  ${YB}- TCP TLS${NC}"
-echo -e "  ${RB}♦️${NC} ${YB}Trojan TCP${NC}              ${WB}|${NC}"
+echo -e "  ${RB}An${NC} ${YB}Vmess Websocket${NC}         ${WB}|${NC}  ${YB}- Websocket (CDN) TLS${NC}"
+echo -e "  ${RB}An${NC} ${YB}Vless Websocket${NC}         ${WB}|${NC}  ${YB}- Websocket (CDN) NTLS${NC}"
+echo -e "  ${RB}An${NC} ${YB}Trojan Websocket${NC}        ${WB}|${NC}  ${YB}- TCP XTLS${NC}"
+echo -e "  ${RB}An${NC} ${YB}Trojan TCP XTLS${NC}         ${WB}|${NC}  ${YB}- TCP TLS${NC}"
+echo -e "  ${RB}An${NC} ${YB}Trojan TCP${NC}              ${WB}|${NC}"
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 echo -e "           ${WB}»»» YAML Service Information «««${NC}          "
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
-echo -e "  ${RB}♦️${NC} ${YB}YAML XRAY VMESS WS${NC}"
-echo -e "  ${RB}♦️${NC} ${YB}YAML XRAY VLESS WS${NC}"
-echo -e "  ${RB}♦️${NC} ${YB}YAML XRAY TROJAN WS${NC}"
-echo -e "  ${RB}♦️${NC} ${YB}YAML XRAY TROJAN XTLS${NC}"
-echo -e "  ${RB}♦️${NC} ${YB}YAML XRAY TROJAN TCP${NC}"
+echo -e "  ${RB}An${NC} ${YB}YAML XRAY VMESS WS${NC}"
+echo -e "  ${RB}An${NC} ${YB}YAML XRAY VLESS WS${NC}"
+echo -e "  ${RB}An${NC} ${YB}YAML XRAY TROJAN WS${NC}"
+echo -e "  ${RB}An${NC} ${YB}YAML XRAY TROJAN XTLS${NC}"
+echo -e "  ${RB}An${NC} ${YB}YAML XRAY TROJAN TCP${NC}"
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 echo -e "             ${WB}»»» Server Information «««${NC}                 "
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
-echo -e "  ${RB}♦️${NC} ${YB}Timezone                : Asia/Jakarta (GMT +7)${NC}"
-echo -e "  ${RB}♦️${NC} ${YB}Fail2Ban                : [ON]${NC}"
-echo -e "  ${RB}♦️${NC} ${YB}Dflate                  : [ON]${NC}"
-echo -e "  ${RB}♦️${NC} ${YB}IPtables                : [ON]${NC}"
-echo -e "  ${RB}♦️${NC} ${YB}Auto-Reboot             : [ON]${NC}"
-echo -e "  ${RB}♦️${NC} ${YB}IPV6                    : [OFF]${NC}"
+echo -e "  ${RB}An${NC} ${YB}Timezone                : Asia/Jakarta (GMT +7)${NC}"
+echo -e "  ${RB}An${NC} ${YB}Fail2Ban                : [ON]${NC}"
+echo -e "  ${RB}An${NC} ${YB}Dflate                  : [ON]${NC}"
+echo -e "  ${RB}An${NC} ${YB}IPtables                : [ON]${NC}"
+echo -e "  ${RB}An${NC} ${YB}Auto-Reboot             : [ON]${NC}"
+echo -e "  ${RB}An${NC} ${YB}IPV6                    : [OFF]${NC}"
 echo -e ""
-echo -e "  ${RB}♦️${NC} ${YB}Autoreboot On 05.00 GMT +7${NC}"
-echo -e "  ${RB}♦️${NC} ${YB}Backup & Restore VPS Data${NC}"
-echo -e "  ${RB}♦️${NC} ${YB}Automatic Delete Expired Account${NC}"
-echo -e "  ${RB}♦️${NC} ${YB}Bandwith Monitor${NC}"
-echo -e "  ${RB}♦️${NC} ${YB}RAM & CPU Monitor${NC}"
-echo -e "  ${RB}♦️${NC} ${YB}Check Login User${NC}"
-echo -e "  ${RB}♦️${NC} ${YB}Check Created Config${NC}"
-echo -e "  ${RB}♦️${NC} ${YB}Automatic Clear Log${NC}"
-echo -e "  ${RB}♦️${NC} ${YB}Media Checker${NC}"
-echo -e "  ${RB}♦️${NC} ${YB}DNS Changer${NC}"
+echo -e "  ${RB}An${NC} ${YB}Autoreboot On 05.00 GMT +7${NC}"
+echo -e "  ${RB}An${NC} ${YB}Backup & Restore VPS Data${NC}"
+echo -e "  ${RB}An${NC} ${YB}Automatic Delete Expired Account${NC}"
+echo -e "  ${RB}An${NC} ${YB}Bandwith Monitor${NC}"
+echo -e "  ${RB}An${NC} ${YB}RAM & CPU Monitor${NC}"
+echo -e "  ${RB}An${NC} ${YB}Check Login User${NC}"
+echo -e "  ${RB}An${NC} ${YB}Check Created Config${NC}"
+echo -e "  ${RB}An${NC} ${YB}Automatic Clear Log${NC}"
+echo -e "  ${RB}An${NC} ${YB}Media Checker${NC}"
+echo -e "  ${RB}An${NC} ${YB}DNS Changer${NC}"
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 echo -e "              ${WB}»»» Network Port Service «««${NC}             "
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
-echo -e "  ${RB}♦️${NC} ${YB}HTTPS                    : 443${NC}"
-echo -e "  ${RB}♦️${NC} ${YB}HTTP                     : 80, 8080, 8880${NC}"
+echo -e "  ${RB}An${NC} ${YB}HTTPS                    : 443${NC}"
+echo -e "  ${RB}An${NC} ${YB}HTTP                     : 80, 8080, 8880${NC}"
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 echo ""
 secs_to_human "$(($(date +%s) - ${start}))"
