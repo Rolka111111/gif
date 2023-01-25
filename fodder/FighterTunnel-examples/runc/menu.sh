@@ -9,11 +9,25 @@ P='\e[0;35m'
 B='\033[0;36m'
 G='\e[0;32m'
 N='\e[0m'
+export Server_URL="raw.githubusercontent.com/wunuit/Multiport/main"
 
 clear
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
+MYIP=$(wget -qO- ipv4.icanhazip.com);
+clear
+red='\e[1;31m'
+green='\e[0;32m'
+yell='\e[1;33m'
+tyblue='\e[1;36m'
+purple='\e[0;35m'
+NC='\e[0m'
+purple() { echo -e "\\033[35;1m${*}\\033[0m"; }
+tyblue() { echo -e "\\033[36;1m${*}\\033[0m"; }
+yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
+green() { echo -e "\\033[32;1m${*}\\033[0m"; }
+red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 
 # // Export Color & Information
 export RED='\033[0;31m'
@@ -25,7 +39,7 @@ export CYAN='\033[0;36m'
 export LIGHT='\033[0;37m'
 export NC='\033[0m'
 clear
-domain=$(/usr/local/etc/xray/domain)
+domain=$(cat /usr/local/etc/xray/domain)
 
 # // nginx status
 nginx=$( systemctl status nginx | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
@@ -41,8 +55,25 @@ if [[ $xray == "running" ]]; then
     status_xray="${GREEN}ON${NC}"
 else
     status_xray="${RED}OFF${NC}"
+fi
+
+# // script version
+myver="$(cat /home/ver)"
+
+# // script version check
+serverV=$( curl -sS https://${Server_URL}/version_check_v2)
 
 function updatews(){
+clear
+echo -e "[ ${GREEN}INFO${NC} ] Check for Script updates . . ."
+sleep 1
+cd
+wget -q -O /root/update-v2.sh "https://${Server_URL}/update-v2.sh" && chmod +x update-v2.sh && ./update-v2.sh
+sleep 1
+rm -f /root/update-v2.sh
+rm -f /home/ver
+version_check_v2=$( curl -sS https://${Server_URL}/version_check_v2)
+echo "$version_check_v2" >> /home/ver
 clear
 echo ""
 echo -e "[ ${GREEN}INFO${NC} ] Successfully Up To Date!"
