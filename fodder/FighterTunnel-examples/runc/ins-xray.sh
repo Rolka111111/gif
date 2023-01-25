@@ -1076,7 +1076,7 @@ systemctl restart nginx
 
 sleep 1
 
-cd /usr/bin
+cd /usr/local/sbin
 # // VMESS WS FILES
 echo -e "[ ${green}INFO${NC} ] Downloading Vmess WS Files"
 sleep 1
