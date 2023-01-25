@@ -23,7 +23,7 @@ export CYAN='\033[0;36m'
 export LIGHT='\033[0;37m'
 export NC='\033[0m'
 clear
-domain=$(cat /root/domain)
+domain=$(cat /usr/local/etc/xray/domain)
 
 # // nginx status
 nginx=$( systemctl status nginx | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
@@ -39,26 +39,8 @@ if [[ $xray == "running" ]]; then
     status_xray="${GREEN}ON${NC}"
 else
     status_xray="${RED}OFF${NC}"
-fi
 
-# // script version
-#ver="$(cat /home/ver)"
 
- // script version check
-rverV=$( curl -sS https://${Server_URL}/version_check_v2)
-
-function updatews(){
-clear
-echo -e "[ ${GREEN}INFO${NC} ] Check for Script updates . . ."
-sleep 1
-cd
-wget -q -O /root/update-v2.sh https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/version_check_v2 && chmod +x update-v2.sh && ./update-v2.sh
-sleep 1
-rm -f /root/update-v2.sh
-rm -f /home/ver
-version_check_v2=$( curl -sS https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/version_check_v2)
-echo "$version_check_v2" >> /home/ver
-clear
 echo ""
 echo -e "[ ${GREEN}INFO${NC} ] Successfully Up To Date!"
 sleep 1
@@ -131,19 +113,11 @@ echo -e "\e[36m╘════════════════════�
  [\033[1;36m•21\033[0m]  Backup
  [\033[1;36m•22\033[0m]  Restore
  [\033[1;36m•23\033[0m]  Reboot
-"
-if [[ $serverV > $myver ]]; then
-echo -e " [\033[1;36m•24\033[0m]  Update Autoscript To V$serverV\n"
-up2u="updatews"
-else
-up2u="menu"
-fi
+ 
 echo -e " \033[1;37mType [ x ] To Exit From Menu \033[0m"
 echo ""
 echo -e "\e[36m╒════════════════════════════════════════════╕\033[0m"
 echo -e " Version       :\033[1;36m Multiport Websocket $myver\e[0m"
-echo -e " fre lifetime   : $Name"
-echo -e " Expiry Script : $Exp"
 echo -e " Status Script : ${G}Lifetime${NC}"
 echo -e "\e[36m╘════════════════════════════════════════════╛\033[0m"
 echo ""
