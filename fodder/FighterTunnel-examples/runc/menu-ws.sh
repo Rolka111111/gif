@@ -18,7 +18,6 @@ echo -e "\e[36m╘════════════════════�
  [\033[1;36m•0 \033[0m]  Back To Main Menu"
 echo ""
 echo -e " \033[1;37mPress [ Ctrl+C ] • To-Exit-Script\033[0m"
-echo ""
 echo -ne "Select menu : "; read x
     if [[ $x -eq 1 ]]; then
        add-ws
