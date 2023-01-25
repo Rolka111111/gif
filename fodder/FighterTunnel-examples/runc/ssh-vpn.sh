@@ -30,21 +30,21 @@ green() { echo -e "\\033[32;1m${*}\\033[0m"; }
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 
 # initializing var
-#export DEBIAN_FRONTEND=noninteractive
-#MYIP=$(wget -qO- ipinfo.io/ip);
-#MYIP2="s/xxxxxxxxx/$MYIP/g";
-#NET=$(ip -o $ANU -4 route show to default | awk '{print $5}');
-#source /etc/os-release
-#ver=$VERSION_ID
+export DEBIAN_FRONTEND=noninteractive
+MYIP=$(wget -qO- ipinfo.io/ip);
+MYIP2="s/xxxxxxxxx/$MYIP/g";
+NET=$(ip -o $ANU -4 route show to default | awk '{print $5}');
+source /etc/os-release
+ver=$VERSION_ID
 
 #Detail
-country="ID"
-state="Riau"
-locality="Pkanbaru "
-organization="anggun-Project"
-organizationalunit="anggun-Project"
-commonname="anggun-Project"
-email="arimar.amar@gmail.com"
+country="MY"
+state="Perak"
+locality="Parit Buntar"
+organization="wunuit-Project"
+organizationalunit="wunuit-Project"
+commonname="wunuit-Project"
+email="wunuit-project@gmail.com"
 
 # go to root
 cd
@@ -64,6 +64,7 @@ SysVStartPriority=99
 [Install]
 WantedBy=multi-user.target
 END
+
 # nano /etc/rc.local
 cat > /etc/rc.local <<-END
 #!/bin/sh -e
@@ -71,7 +72,6 @@ cat > /etc/rc.local <<-END
 # By default this script does nothing.
 exit 0
 END
-
 
 # Ubah izin akses
 chmod +x /etc/rc.local
@@ -84,9 +84,21 @@ systemctl start rc-local.service
 echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
 
+#update
+apt update -y
+apt upgrade -y
+apt dist-upgrade -y
+apt-get remove --purge ufw firewalld -y
+apt-get remove --purge exim4 -y
+
+# install wget and curl
+apt -y install wget curl
+
 # install netfilter-persistent
 apt-get install netfilter-persistent
 
+# set time GMT +8
+ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime
 
 # set locale
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
@@ -101,12 +113,9 @@ apt -y install nginx
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/nginx.conf" " >/dev/null 2>&1
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/wunuit/Multiport/main/OTHERS/nginx.conf"
 mkdir -p /home/vps/public_html
-wget -O /etc/nginx/conf.d/vps.conf  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/vps.conf"
-sed -i "s/xxx/${domain}/g" /etc/nginx/conf.d/vps.conf
-sed -i "s/xxx/${domain}/g" /etc/nginx/conf.d/xray.conf
-sed -i "s/xxx/${domain}/g" /home/vps/public_html/index.html
+wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/wunuit/Multiport/main/OTHERS/vps.conf"
 /etc/init.d/nginx restart
 
 # setting vnstat
@@ -185,33 +194,20 @@ systemctl start resolvconf.service
 systemctl enable resolvconf.service
 
 # download script
-cd /usr/local/sbin
-wget -q -O ins-helium "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/ins-helium.sh" >/dev/null 2>&1
-wget -q -O bbr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/bbr.sh" >/dev/null 2>&1
-wget -q -O wssgen "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/wssgen.sh" >/dev/null 2>&1
-wget -q -O add-host "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/add-host.sh" >/dev/null 2>&1
-wget -q -O speedtest "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/speedtest_cli.py" >/dev/null 2>&1
-wget -q -O xp "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/xp.sh" >/dev/null 2>&1
-wget -q -O menu "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu.sh" >/dev/null 2>&1
-wget -q -O status "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/status.sh" >/dev/null 2>&1
-wget -q -O info "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/info.sh" >/dev/null 2>&1
-wget -q -O restart  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/restart.sh" >/dev/null 2>&1
-wget -q -O ram  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/ram.sh" >/dev/null 2>&1
-wget -q -O dns  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/dns.sh" >/dev/null 2>&1
-wget -q -O nf  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/media.sh" >/dev/null 2>&1
-wget -q -O limit  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/limit-speed.sh" >/dev/null 2>&1
-wget -q -O menu-tr  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-tr.sh" >/dev/null 2>&1
-wget -q -O menu-ws  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-ws.sh" >/dev/null 2>&1
-wget -q -O menu-vless "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-vless.sh" >/dev/null 2>&1
-wget -q -O menu-xtr  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-xtr.sh" >/dev/null 2>&1
-wget -q -O menu-xrt  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-xrt.sh" >/dev/null 2>&1
-wget -q -O certxray  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/cert.sh" >/dev/null 2>&1
-chmod +x menu-tr
-chmod +x menu-ws
-chmod +x menu-vless
-chmod +x menu-xtr
-chmod +x menu-xrt
-chmod +x cerxray
+cd /usr/bin
+wget -O ins-helium "https://raw.githubusercontent.com/wunuit/AdsBlock/main/ins-helium.sh"
+wget -O bbr "https://raw.githubusercontent.com/wunuit/wunuit-TCP-BBR/main/bbr.sh"
+wget -O wssgen "https://raw.githubusercontent.com/wunuit/Multiport/main/SSH/wssgen.sh"
+wget -O add-host "https://raw.githubusercontent.com/wunuit/Multiport/main/SSH/add-host.sh"
+wget -O speedtest "https://raw.githubusercontent.com/wunuit/Multiport/main/SSH/speedtest_cli.py"
+wget -O xp "https://raw.githubusercontent.com/wunuit/Multiport/main/SSH/xp.sh"
+wget -O menu "https://raw.githubusercontent.com/wunuit/Multiport/main/SSH/menu.sh"
+wget -O status "https://raw.githubusercontent.com/wunuit/Multiport/main/SSH/status.sh"
+wget -O info "https://raw.githubusercontent.com/wunuit/Multiport/main/SSH/info.sh"
+wget -O restart "https://raw.githubusercontent.com/wunuit/Multiport/main/SSH/restart.sh"
+wget -O ram "https://raw.githubusercontent.com/wunuit/Multiport/main/SSH/ram.sh"
+wget -O dns "https://raw.githubusercontent.com/wunuit/Multiport/main/SSH/dns.sh"
+wget -O nf "https://raw.githubusercontent.com/wunuit/Multiport/main/media.sh"
 chmod +x ins-helium
 chmod +x bbr
 chmod +x wssgen
@@ -225,7 +221,6 @@ chmod +x restart
 chmod +x ram
 chmod +x dns
 chmod +x nf
-chmod +x limit
 echo "0 6 * * * root reboot" >> /etc/crontab
 echo "0 0 * * * root /usr/bin/xp" >> /etc/crontab
 echo "*/2 * * * * root /usr/bin/cleaner" >> /etc/crontab
@@ -235,19 +230,14 @@ service cron restart >/dev/null 2>&1
 service cron reload >/dev/null 2>&1
 
 # remove unnecessary files
-sleep 1
-echo -e "[ ${green}INFO$NC ] Clearing trash"
-apt autoclean -y >/dev/null 2>&1
-
-if dpkg -s unscd >/dev/null 2>&1; then
-apt -y remove --purge unscd >/dev/null 2>&1
-fi
-
-# apt-get -y --purge remove samba* >/dev/null 2>&1
-# apt-get -y --purge remove apache2* >/dev/null 2>&1
-# apt-get -y --purge remove bind9* >/dev/null 2>&1
-# apt-get -y remove sendmail* >/dev/null 2>&1
-# apt autoremove -y >/dev/null 2>&1
+cd
+apt autoclean -y
+apt -y remove --purge unscd
+apt-get -y --purge remove samba*;
+apt-get -y --purge remove apache2*;
+apt-get -y --purge remove bind9*;
+apt-get -y remove sendmail*
+apt autoremove -y
 # finishing
 cd
 chown -R www-data:www-data /home/vps/public_html
