@@ -81,17 +81,6 @@ echo -e ""
 domain=$(cat /root/domain)
 sleep 1
 echo -e "[ ${green}INFO${NC} ] XRAY Core Installation Begin . . . "
-apt update -y
-apt upgrade -y
-apt install socat -y
-apt install python -y
-apt install curl -y
-apt install wget -y
-apt install sed -y
-apt install nano -y
-apt install python3 -y
-apt install curl socat xz-utils wget apt-transport-https gnupg gnupg2 gnupg1 dnsutils lsb-release -y 
-apt install socat cron bash-completion ntpdate -y
 ntpdate pool.ntp.org
 apt -y install chrony
 timedatectl set-ntp true
@@ -101,8 +90,7 @@ timedatectl set-timezone Asia/Jakarta
 chronyc sourcestats -v
 chronyc tracking -v
 date
-apt install zip -y
-apt install curl pwgen openssl netcat cron -y
+
 
 # Make Folder Log XRAY
 mkdir -p /var/log/xray
