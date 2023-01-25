@@ -38,7 +38,7 @@ apt install git curl -y >/dev/null 2>&1
 mkdir /var/lib/premium-script;
 mkdir /var/lib/crot-script;
 clear
-echo -e "${red}♦️${NC} ${green}Established By anggun 2023${NC} ${red}♦️${NC}"
+echo -e "${red}An${NC} ${green}Established By anggun 2023${NC} ${red}An${NC}"
 #DOWNLOAD SOURCE SCRIPT
 clear
 echo -e "${GREEN} CUSTOM SETUP DOMAIN VPS     ${NC}"
@@ -94,13 +94,10 @@ echo -e "${GREEN}Done!${NC}"
 sleep 2
 clear
 
-#rm -rf /usr/share/nginx/html/index.html
-#wget -q -O /usr/share/nginx/html/index.html "https://raw.githubusercontent.com/wunuit/Multiport/main/OTHERS/index.html"
-
 # Finish
 rm -f /root/xraycore.sh
 rm -f /root/set-br.sh
-rm -f /root/sshvpn.sh.sh
+rm -f /root/sshvpn.sh
 
 # Version
 echo "1.0" > /home/ver
@@ -156,7 +153,7 @@ echo -e "${BB}——————————————————————
 echo ""
 secs_to_human "$(($(date +%s) - ${start}))"
 echo ""
-rm -r setup.sh
+rm -r setupsi.sh
 echo ""
 echo ""
 read -p "$( echo -e "Press ${orange}[ ${NC}${green}Enter${NC} ${CYAN}]${NC} For Reboot") "
