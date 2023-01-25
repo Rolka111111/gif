@@ -1,4 +1,4 @@
-$!/bin/bash
+#!/bin/bash
 # =========================================
 # Quick Setup | Script Setup Manager
 # Edition : Stable Edition V1.0
