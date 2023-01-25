@@ -9,7 +9,6 @@ clear
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
-Server_URL="raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc"
 #Detail
 country="ID"
 state="personal"
@@ -71,7 +70,7 @@ apt -y install nginx
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://${Server_URL}/nginx.conf"
+wget -O /etc/nginx/nginx.conf https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/nginx.conf
 mkdir -p /home/vps/public_html
 #wget -O /etc/nginx/conf.d/vps.conf "https://${Server_URL}/vps.conf"
 /etc/init.d/nginx restart
@@ -159,20 +158,20 @@ wget -q -O wssgen https://${Server_URL}/wssgen.sh
 wget -q -O add-host https://${Server_URL}/add-host.sh
 wget -q -O speedtest https://${Server_URL}/speedtest_cli.py
 wget -q -O xp https://${Server_URL}/xp.sh
-wget -q -O menu https://${Server_URL}/menu.sh
-wget -q -O status https://${Server_URL}/status.sh
-wget -q -O info https://${Server_URL}/info.sh
-wget -q -O restart https://${Server_URL}/restart.sh
-wget -q -O ram https://${Server_URL}/ram.sh
-wget -q -O dns https://${Server_URL}/dns.sh
-wget -q -O nf https://${Server_URL}/media.sh
-wget -q -O limit https://${Server_URL}/limit-speed.sh
-wget -q -O menu-tr https://${Server_URL}/menu-tr.sh
-wget -q -O menu-ws https://${Server_URL}/menu-ws.sh"
-wget -q -O menu-vless https://${Server_URL}/menu-vless.sh
-wget -q -O menu-xtr https://${Server_URL}/menu-xtr.sh
-wget -q -O menu-xrt https://${Server_URL}/menu-xrt.sh
-wget -q -O certxray https://${Server_URL}/cert.sh
+wget -q -O menu https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu.sh
+wget -q -O status https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/status.sh
+wget -q -O info https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/info.sh
+wget -q -O restart  https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/restart.sh
+wget -q -O ram  https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/ram.sh
+wget -q -O dns  https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/dns.sh
+wget -q -O nf  https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/media.sh
+wget -q -O limit  https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/limit-speed.sh
+wget -q -O menu-tr  https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-tr.sh
+wget -q -O menu-ws  https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-ws.sh"
+wget -q -O menu-vless  https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-vless.sh
+wget -q -O menu-xtr  https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-xtr.sh
+wget -q -O menu-xrt  https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-xrt.sh
+wget -q -O certxray  https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/cert.sh
 chmod +x menu-tr
 chmod +x menu-ws
 chmod +x menu-vless
