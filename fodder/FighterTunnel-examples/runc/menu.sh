@@ -5,11 +5,11 @@
 # Auther  : Geo Project
 # (C) Copyright 2022
 # =========================================
-Server_URL="raw.githubusercontent.com/arismaramar/gif/fodder/FighterTunnel-examples/runc/main"
+#rver_URL="raw.githubusercontent.com/arismaramar/gif/fodder/FighterTunnel-examples/runc/main"
 
-clear
-dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
-biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
+#lear
+#ateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
+#ji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 clear
 
@@ -42,10 +42,10 @@ else
 fi
 
 # // script version
-myver="$(cat /home/ver)"
+#ver="$(cat /home/ver)"
 
 # // script version check
-serverV=$( curl -sS https://${Server_URL}/version_check_v2)
+#rverV=$( curl -sS https://${Server_URL}/version_check_v2)
 
 function updatews(){
 clear
@@ -56,8 +56,8 @@ wget -q -O /root/update-v2.sh "https://${Server_URL}/update-v2.sh" && chmod +x u
 sleep 1
 rm -f /root/update-v2.sh
 rm -f /home/ver
-version_check_v2=$( curl -sS https://${Server_URL}/version_check_v2)
-echo "$version_check_v2" >> /home/ver
+#rsion_check_v2=$( curl -sS https://${Server_URL}/version_check_v2)
+#cho "$version_check_v2" >> /home/ver
 clear
 echo ""
 echo -e "[ ${GREEN}INFO${NC} ] Successfully Up To Date!"
