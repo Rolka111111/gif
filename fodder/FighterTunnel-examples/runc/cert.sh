@@ -40,6 +40,8 @@ sleep 1
 echo -e "[ ${green}INFO${NC} ] Restart All Service" 
 sleep 1
 echo $domain > /usr/local/etc/xray/domain
+sed -i "s/xxx/${domain}/g" /etc/nginx/conf.d/xray.conf
+sed -i "s/xxx/${domain}/g" /usr/share/nginx/html/index.html
 systemctl restart nginx
 systemctl restart xray.service
 systemctl restart xray@none.service
