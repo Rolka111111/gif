@@ -41,10 +41,10 @@ ver=$VERSION_ID
 country="MY"
 state="Perak"
 locality="Parit Buntar"
-organization="wunuit-Project"
+organization="anggn-Project"
 organizationalunit="wunuit-Project"
-commonname="wunuit-Project"
-email="wunuit-project@gmail.com"
+commonname="anggn-Project"
+email="arimar.amar@gmail.com"
 
 # go to root
 cd
@@ -97,8 +97,8 @@ apt -y install wget curl
 # install netfilter-persistent
 apt-get install netfilter-persistent
 
-# set time GMT +8
-ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime
+# set time GMT +7
+ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
 # set locale
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
@@ -113,9 +113,9 @@ apt -y install nginx
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/wunuit/Multiport/main/OTHERS/nginx.conf"
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/nginx.conf"
 mkdir -p /home/vps/public_html
-wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/wunuit/Multiport/main/OTHERS/vps.conf"
+wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/vps.conf"
 /etc/init.d/nginx restart
 
 # setting vnstat
@@ -139,12 +139,12 @@ rm -rf /root/vnstat-2.6
 apt -y install fail2ban
 
 # Instal DDOS Flate
-if [ -d '/usr/local/ddos' ]; then
-	echo; echo; echo "Please un-install the previous version first"
-	exit 0
-else
+#if [ -d '/usr/local/ddos' ]; then
+#	echo; echo; echo "Please un-install the previous version first"
+#	exit 0
+#else
 	mkdir /usr/local/ddos
-fi
+#fi
 clear
 echo; echo 'Installing DOS-Deflate 0.6'; echo
 echo; echo -n 'Downloading source files...'
@@ -166,7 +166,7 @@ echo 'Config file is at /usr/local/ddos/ddos.conf'
 echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
 
 # banner /etc/issue.net
-wget -q -O /etc/issue.net "https://raw.githubusercontent.com/wunuit/Multiport/main/OTHERS/issues.net" && chmod +x /etc/issue.net
+wget -q -O /etc/issue.net "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/issue.net" && chmod +x /etc/issue.net
 echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 
 # blockir torrent
@@ -194,20 +194,33 @@ systemctl start resolvconf.service
 systemctl enable resolvconf.service
 
 # download script
-cd /usr/bin
-wget -O ins-helium "https://raw.githubusercontent.com/wunuit/AdsBlock/main/ins-helium.sh"
-wget -O bbr "https://raw.githubusercontent.com/wunuit/wunuit-TCP-BBR/main/bbr.sh"
-wget -O wssgen "https://raw.githubusercontent.com/wunuit/Multiport/main/SSH/wssgen.sh"
-wget -O add-host "https://raw.githubusercontent.com/wunuit/Multiport/main/SSH/add-host.sh"
-wget -O speedtest "https://raw.githubusercontent.com/wunuit/Multiport/main/SSH/speedtest_cli.py"
-wget -O xp "https://raw.githubusercontent.com/wunuit/Multiport/main/SSH/xp.sh"
-wget -O menu "https://raw.githubusercontent.com/wunuit/Multiport/main/SSH/menu.sh"
-wget -O status "https://raw.githubusercontent.com/wunuit/Multiport/main/SSH/status.sh"
-wget -O info "https://raw.githubusercontent.com/wunuit/Multiport/main/SSH/info.sh"
-wget -O restart "https://raw.githubusercontent.com/wunuit/Multiport/main/SSH/restart.sh"
-wget -O ram "https://raw.githubusercontent.com/wunuit/Multiport/main/SSH/ram.sh"
-wget -O dns "https://raw.githubusercontent.com/wunuit/Multiport/main/SSH/dns.sh"
-wget -O nf "https://raw.githubusercontent.com/wunuit/Multiport/main/media.sh"
+cd /usr/local/sbin
+wget -q -O ins-helium "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/ins-helium.sh" >/dev/null 2>&1
+wget -q -O bbr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/bbr.sh" >/dev/null 2>&1
+wget -q -O wssgen "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/wssgen.sh" >/dev/null 2>&1
+wget -q -O add-host "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/add-host.sh" >/dev/null 2>&1
+wget -q -O speedtest "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/speedtest_cli.py" >/dev/null 2>&1
+wget -q -O xp "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/xp.sh" >/dev/null 2>&1
+wget -q -O menu "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu.sh" >/dev/null 2>&1
+wget -q -O status "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/status.sh" >/dev/null 2>&1
+wget -q -O info "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/info.sh" >/dev/null 2>&1
+wget -q -O restart  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/restart.sh" >/dev/null 2>&1
+wget -q -O ram  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/ram.sh" >/dev/null 2>&1
+wget -q -O dns  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/dns.sh" >/dev/null 2>&1
+wget -q -O nf  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/media.sh" >/dev/null 2>&1
+wget -q -O limit  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/limit-speed.sh" >/dev/null 2>&1
+wget -q -O menu-tr  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-tr.sh" >/dev/null 2>&1
+wget -q -O menu-ws  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-ws.sh" >/dev/null 2>&1
+wget -q -O menu-vless "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-vless.sh" >/dev/null 2>&1
+wget -q -O menu-xtr  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-xtr.sh" >/dev/null 2>&1
+wget -q -O menu-xrt  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-xrt.sh" >/dev/null 2>&1
+wget -q -O certxray  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/cert.sh" >/dev/null 2>&1
+chmod +x menu-tr
+chmod +x menu-ws
+chmod +x menu-vless
+chmod +x menu-xtr
+chmod +x menu-xrt
+chmod +x cerxray
 chmod +x ins-helium
 chmod +x bbr
 chmod +x wssgen
@@ -221,6 +234,7 @@ chmod +x restart
 chmod +x ram
 chmod +x dns
 chmod +x nf
+chmod +x limit
 echo "0 6 * * * root reboot" >> /etc/crontab
 echo "0 0 * * * root /usr/bin/xp" >> /etc/crontab
 echo "*/2 * * * * root /usr/bin/cleaner" >> /etc/crontab
