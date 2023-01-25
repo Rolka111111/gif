@@ -145,7 +145,6 @@ case $opt in
 21) clear ; backup ; read -n1 -r -p "Press any key to continue..." ; menu ;;
 22) clear ; restore ; menu ;;
 23) clear ; reboot ;;
-24) clear ; $up2u ; read -n1 -r -p "Press any key to continue..." ; menu ;;
 00 | 0) clear ; menu ;;
 x | X) exit ;;
 *) clear ; menu ;;
