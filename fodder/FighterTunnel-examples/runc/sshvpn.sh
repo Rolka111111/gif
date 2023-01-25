@@ -226,8 +226,6 @@ sleep 1
 echo -e "[ ${green}ok${NC} ] Restarting vnstat"
 /etc/init.d/vnstat restart >/dev/null 2>&1
 history -c
-echo "unset HISTFILE" >> /etc/profile
-
 cd
 rm -f /root/sshvpn.sh
 
