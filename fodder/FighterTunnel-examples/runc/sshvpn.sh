@@ -67,7 +67,10 @@ rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
 wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/nginx.conf" " >/dev/null 2>&1
 mkdir -p /home/vps/public_html
-#wget -O /etc/nginx/conf.d/vps.conf "https://${Server_URL}/vps.conf"
+wget -O /etc/nginx/conf.d/vps.conf  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/vps.conf"
+sed -i "s/xxx/${domain}/g" /etc/nginx/conf.d/vps.conf
+sed -i "s/xxx/${domain}/g" /etc/nginx/conf.d/xray.conf
+sed -i "s/xxx/${domain}/g" /home/vps/public_html/index.html
 /etc/init.d/nginx restart
 
 # setting vnstat
