@@ -28,12 +28,6 @@ yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
 green() { echo -e "\\033[32;1m${*}\\033[0m"; }
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 
-echo -e "Your IP is ${red}NOT REGISTER${NC} @ ${red}EXPIRED${NC}"
-echo ""
-echo -e "Please Contact ${green}Admin${NC}"
-echo -e "Telegram : t.me/wunuit"
-exit 0
-fi
 clear
 
 echo -e ""
@@ -56,7 +50,7 @@ apt -y install chrony
 timedatectl set-ntp true
 systemctl enable chronyd && systemctl restart chronyd
 systemctl enable chrony && systemctl restart chrony
-timedatectl set-timezone Asia/Kuala_Lumpur
+timedatectl set-timezone Asia/Jakarta
 chronyc sourcestats -v
 chronyc tracking -v
 date
@@ -69,6 +63,8 @@ chmod +x /var/log/xray
 
 # Make Folder XRAY
 mkdir -p /usr/local/etc/xray
+# Make Folder nginx
+mkdir -p /var/www/html
 
 # Download XRAY Core Latest Link
 #latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
@@ -98,7 +94,7 @@ chmod +x /root/.acme.sh/acme.sh
 sleep 1
 
 # Nginx directory file download
-mkdir -p /home/vps/public_html
+#mkdir -p /home/vps/public_html
 
 # set uuid
 uuid=$(cat /proc/sys/kernel/random/uuid)
@@ -1158,7 +1154,20 @@ systemctl restart nginx
 
 sleep 1
 
-cd /usr/bin
+cd /usr/local/sbin
+# // SSH WS
+echo -e "[ ${green}INFO${NC} ] Downloading SSH WS Files"
+sleep 1
+wget -O usernew "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/usernew.sh" && chmod +x usernew
+wget -O trial "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/trial.sh" && chmod +x trial
+wget -O renew "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/renew.sh" && chmod +x renew
+wget -O hapus "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/hapus.sh" && chmod +x hapus
+wget -O cek "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/cek.sh" && chmod +x cek
+wget -O member "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/member.sh" && chmod +x member
+wget -O delete "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/delete.sh" && chmod +x delete
+wget -O autokill "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/autokill.sh" && chmod +x autokill
+wget -O ceklim "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/ceklim.sh" && chmod +x ceklim
+
 # // VMESS WS FILES
 echo -e "[ ${green}INFO${NC} ] Downloading Vmess WS Files"
 sleep 1
