@@ -1,97 +1,12 @@
 #!/bin/bash
-# =========================================
-# Quick Setup | Script Setup Manager
-# Edition : Stable Edition V1.0
-# Auther  : Geo Project
-# (C) Copyright 2022
-# =========================================
-red='\e[1;31m'
-green='\e[0;32m'
-purple='\e[0;35m'
-orange='\e[0;33m'
-NC='\e[0m'
+#
+# ==================================================
 
-clear
-dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
-biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
-#########################
-MYIP=$(wget -qO- ipv4.icanhazip.com);
-clear
-red='\e[1;31m'
-green='\e[0;32m'
-yell='\e[1;33m'
-tyblue='\e[1;36m'
-purple='\e[0;35m'
-NC='\e[0m'
-purple() { echo -e "\\033[35;1m${*}\\033[0m"; }
-tyblue() { echo -e "\\033[36;1m${*}\\033[0m"; }
-yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
-green() { echo -e "\\033[32;1m${*}\\033[0m"; }
-red() { echo -e "\\033[31;1m${*}\\033[0m"; }
-cek=$( curl -sS https://raw.githubusercontent.com/wunuit/IP/main/access | awk '{print $2}'  | grep $MYIP )
-Name=$(curl -sS https://raw.githubusercontent.com/wunuit/IP/main/access | grep $MYIP | awk '{print $4}')
-if [[ $cek = $MYIP ]]; then
-echo -e "${green}Permission Accepted...${NC}"
-else
-echo -e "${red}Permission Denied!${NC}";
-echo ""
-echo -e "Your IP is ${red}NOT REGISTER${NC} @ ${red}EXPIRED${NC}"
-echo ""
-echo -e "Please Contact ${green}Admin${NC}"
-echo -e "Telegram : t.me/wunuit"
-exit 0
-fi
-clear
-
-BURIQ() {
-    curl -sS https://raw.githubusercontent.com/wunuit/IP/main/access >/root/tmp
-    data=($(cat /root/tmp | grep -E "^### " | awk '{print $4}'))
-    for user in "${data[@]}"; do
-        exp=($(grep -E "^### $user" "/root/tmp" | awk '{print $3}'))
-        d1=($(date -d "$exp" +%s))
-        d2=($(date -d "$biji" +%s))
-        exp2=$(((d1 - d2) / 86400))
-        if [[ "$exp2" -le "0" ]]; then
-            echo $user >/etc/.$user.ini
-        else
-            rm -f /etc/.$user.ini >/dev/null 2>&1
-        fi
-    done
-    rm -f /root/tmp
-}
-
-MYIP=$(wget -qO- ipv4.icanhazip.com);
-Name=$(curl -sS https://raw.githubusercontent.com/wunuit/IP/main/access | grep $MYIP | awk '{print $4}')
-echo $Name >/usr/local/etc/.$Name.ini
-CekOne=$(cat /usr/local/etc/.$Name.ini)
-
-Bloman() {
-    if [[ -f "/etc/.$Name.ini" ]]; then
-        CekTwo=$(cat /etc/.$Name.ini)
-        if [[ "$CekOne" = "$CekTwo" ]]; then
-            res="Expired"
-        fi
-    else
-        res="Permission Accepted..."
-    fi
-}
-
-PERMISSION() {
-    MYIP=$(wget -qO- ipv4.icanhazip.com);
-    IZIN=$(curl -sS https://raw.githubusercontent.com/wunuit/IP/main/access | awk '{print $2}' | grep $MYIP)
-    if [[ "$MYIP" = "$IZIN" ]]; then
-        Bloman
-    else
-        res="Permission Denied!"
-    fi
-    BURIQ
-}
-red='\e[1;31m'
-green='\e[0;32m'
-NC='\e[0m'
-green() { echo -e "\\033[32;1m${*}\\033[0m"; }
-red() { echo -e "\\033[31;1m${*}\\033[0m"; }
-PERMISSION
+# etc
+apt dist-upgrade -y
+apt install netfilter-persistent -y
+apt-get remove --purge ufw firewalld -y
+apt install -y screen curl jq bzip2 gzip vnstat coreutils rsyslog iftop zip unzip git apt-transport-https build-essential -y
 
 # initializing var
 export DEBIAN_FRONTEND=noninteractive
@@ -101,14 +16,18 @@ NET=$(ip -o $ANU -4 route show to default | awk '{print $5}');
 source /etc/os-release
 ver=$VERSION_ID
 
-#Detail
-country="MY"
-state="Perak"
-locality="Parit Buntar"
-organization="wunuit-Project"
-organizationalunit="wunuit-Project"
-commonname="wunuit-Project"
-email="wunuit-project@gmail.com"
+#detail nama perusahaan
+country=ID
+state=Indonesia
+locality=Jakarta
+organization=none
+organizationalunit=none
+commonname=none
+email=none
+
+# simple password minimal
+curl -sS https://raw.githubusercontent.com/arismaramar/supreme/aio/ssh/password | openssl aes-256-cbc -d -a -pass pass:scvps07gg -pbkdf2 > /etc/pam.d/common-password
+chmod +x /etc/pam.d/common-password
 
 # go to root
 cd
@@ -155,59 +74,158 @@ apt dist-upgrade -y
 apt-get remove --purge ufw firewalld -y
 apt-get remove --purge exim4 -y
 
+#install jq
+apt -y install jq
+
+#install shc
+apt -y install shc
+
 # install wget and curl
 apt -y install wget curl
 
-# install netfilter-persistent
-apt-get install netfilter-persistent
+#figlet
+apt-get install figlet -y
+apt-get install ruby -y
+gem install lolcat
 
-# set time GMT +8
-ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime
+# set time GMT +7
+ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
 # set locale
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 
-# install
-apt-get --reinstall --fix-missing install -y bzip2 gzip coreutils wget screen rsyslog iftop htop net-tools zip unzip wget net-tools curl nano sed screen gnupg gnupg1 bc apt-transport-https build-essential dirmngr libxml-parser-perl neofetch git lsof
-echo "clear" >> .profile
-echo "menu" >> .profile
+
+install_ssl(){
+    if [ -f "/usr/bin/apt-get" ];then
+            isDebian=`cat /etc/issue|grep Debian`
+            if [ "$isDebian" != "" ];then
+                    apt-get install -y nginx certbot
+                    apt install -y nginx certbot
+                    sleep 3s
+            else
+                    apt-get install -y nginx certbot
+                    apt install -y nginx certbot
+                    sleep 3s
+            fi
+    else
+        yum install -y nginx certbot
+        sleep 3s
+    fi
+
+    systemctl stop nginx.service
+
+    if [ -f "/usr/bin/apt-get" ];then
+            isDebian=`cat /etc/issue|grep Debian`
+            if [ "$isDebian" != "" ];then
+                    echo "A" | certbot certonly --renew-by-default --register-unsafely-without-email --standalone -d $domain
+                    sleep 3s
+            else
+                    echo "A" | certbot certonly --renew-by-default --register-unsafely-without-email --standalone -d $domain
+                    sleep 3s
+            fi
+    else
+        echo "Y" | certbot certonly --renew-by-default --register-unsafely-without-email --standalone -d $domain
+        sleep 3s
+    fi
+}
 
 # install webserver
 apt -y install nginx
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/wunuit/Multiport/main/OTHERS/nginx.conf"
-mkdir -p /home/vps/public_html
-wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/wunuit/Multiport/main/OTHERS/vps.conf"
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/nginx.conf" " >/dev/null 2>&1
+cd /var/www/html/ wget https://raw.githubusercontent.com/arismaramar/gif/main/fodder/web.zip
+unzip -x web.zip
+chmod +x /var/www/html/*
+#sed -i "s/xxx/${domain}/g" /etc/nginx/conf.d/vps.conf
+sed -i "s/xxx/${domain}/g" /home/vps/public_html/index.html
 /etc/init.d/nginx restart
 
-# setting vnstat
-apt -y install vnstat
-/etc/init.d/vnstat restart
-apt -y install libsqlite3-dev
-wget https://humdi.net/vnstat/vnstat-2.6.tar.gz
-tar zxvf vnstat-2.6.tar.gz
-cd vnstat-2.6
-./configure --prefix=/usr --sysconfdir=/etc && make && make install
+# install badvpn
 cd
-vnstat -u -i $NET
-sed -i 's/Interface "'""eth0""'"/Interface "'""$NET""'"/g' /etc/vnstat.conf
-chown vnstat:vnstat /var/lib/vnstat -R
-systemctl enable vnstat
-/etc/init.d/vnstat restart
-rm -f /root/vnstat-2.6.tar.gz
-rm -rf /root/vnstat-2.6
+wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/arismaramar/supreme/aio/ssh/newudpgw"
+chmod +x /usr/bin/badvpn-udpgw
+sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
+sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
+sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500' /etc/rc.local
+sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7400 --max-clients 500' /etc/rc.local
+sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7500 --max-clients 500' /etc/rc.local
+sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7600 --max-clients 500' /etc/rc.local
+sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7700 --max-clients 500' /etc/rc.local
+sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7800 --max-clients 500' /etc/rc.local
+sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7900 --max-clients 500' /etc/rc.local
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7400 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7500 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7600 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7700 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7800 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7900 --max-clients 500
+
+# setting port ssh
+cd
+sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+sed -i '/Port 22/a Port 500' /etc/ssh/sshd_config
+sed -i '/Port 22/a Port 40000' /etc/ssh/sshd_config
+sed -i '/Port 22/a Port 51443' /etc/ssh/sshd_config
+sed -i '/Port 22/a Port 58080' /etc/ssh/sshd_config
+sed -i '/Port 22/a Port 200' /etc/ssh/sshd_config
+sed -i '/Port 22/a Port 22' /etc/ssh/sshd_config
+/etc/init.d/ssh restart
+
+echo "=== Install Dropbear ==="
+# install dropbear
+apt -y install dropbear
+sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=143/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 50000 -p 109 -p 110 -p 69"/g' /etc/default/dropbear
+echo "/bin/false" >> /etc/shells
+echo "/usr/sbin/nologin" >> /etc/shells
+/etc/init.d/ssh restart
+/etc/init.d/dropbear restart
+
+cd
+# install stunnel
+apt install stunnel4 -y
+cat > /etc/stunnel/stunnel.conf <<-END
+cert = /etc/stunnel/stunnel.pem
+client = no
+socket = a:SO_REUSEADDR=1
+socket = l:TCP_NODELAY=1
+socket = r:TCP_NODELAY=1
+[dropbear]
+accept = 222
+connect = 127.0.0.1:22
+[dropbear]
+accept = 777
+connect = 127.0.0.1:109
+[ws-stunnel]
+accept = 2096
+connect = 700
+[openvpn]
+accept = 442
+connect = 127.0.0.1:1194
+END
+
+# make a certificate
+openssl genrsa -out key.pem 2048
+openssl req -new -x509 -key key.pem -out cert.pem -days 1095 \
+-subj "/C=$country/ST=$state/L=$locality/O=$organization/OU=$organizationalunit/CN=$commonname/emailAddress=$email"
+cat key.pem cert.pem >> /etc/stunnel/stunnel.pem
+
+# konfigurasi stunnel
+sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
+/etc/init.d/stunnel4 restart
+
 
 # install fail2ban
 apt -y install fail2ban
 
 # Instal DDOS Flate
-if [ -d '/usr/local/ddos' ]; then
-	echo; echo; echo "Please un-install the previous version first"
-	exit 0
-else
-	mkdir /usr/local/ddos
+mkdir /usr/local/ddos
 fi
 clear
 echo; echo 'Installing DOS-Deflate 0.6'; echo
@@ -229,11 +247,10 @@ echo; echo 'Installation has completed.'
 echo 'Config file is at /usr/local/ddos/ddos.conf'
 echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
 
-# banner /etc/issue.net
-wget -q -O /etc/issue.net "https://raw.githubusercontent.com/wunuit/Multiport/main/OTHERS/issues.net" && chmod +x /etc/issue.net
-echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
+#install bbr dan optimasi kernel
+#wget https://raw.githubusercontent.com/arismaramar/supreme/aio/ssh/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 
-# blockir torrent
+# blokir torrent
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
 iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
 iptables -A FORWARD -m string --string "find_node" --algo bm -j DROP
@@ -250,28 +267,38 @@ iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
 netfilter-persistent reload
 
-# install resolvconf service
-apt install resolvconf -y
-
-#start resolvconf service
-systemctl start resolvconf.service
-systemctl enable resolvconf.service
+# download script
 
 # download script
-cd /usr/bin
-wget -O ins-helium "https://raw.githubusercontent.com/wunuit/AdsBlock/main/ins-helium.sh"
-wget -O bbr "https://raw.githubusercontent.com/wunuit/wunuit-TCP-BBR/main/bbr.sh"
-wget -O wssgen "https://raw.githubusercontent.com/wunuit/Multiport/main/SSH/wssgen.sh"
-wget -O add-host "https://raw.githubusercontent.com/wunuit/Multiport/main/SSH/add-host.sh"
-wget -O speedtest "https://raw.githubusercontent.com/wunuit/Multiport/main/SSH/speedtest_cli.py"
-wget -O xp "https://raw.githubusercontent.com/wunuit/Multiport/main/SSH/xp.sh"
-wget -O menu "https://raw.githubusercontent.com/wunuit/Multiport/main/SSH/menu.sh"
-wget -O status "https://raw.githubusercontent.com/wunuit/Multiport/main/SSH/status.sh"
-wget -O info "https://raw.githubusercontent.com/wunuit/Multiport/main/SSH/info.sh"
-wget -O restart "https://raw.githubusercontent.com/wunuit/Multiport/main/SSH/restart.sh"
-wget -O ram "https://raw.githubusercontent.com/wunuit/Multiport/main/SSH/ram.sh"
-wget -O dns "https://raw.githubusercontent.com/wunuit/Multiport/main/SSH/dns.sh"
-wget -O nf "https://raw.githubusercontent.com/wunuit/Multiport/main/media.sh"
+cd /usr/local/sbin
+wget -q -O menu-ssh "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-ssh.sh" >/dev/null 2>&1
+wget -q -O ins-helium "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/ins-helium.sh" >/dev/null 2>&1
+wget -q -O bbr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/bbr.sh" >/dev/null 2>&1
+wget -q -O wssgen "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/wssgen.sh" >/dev/null 2>&1
+wget -q -O add-host "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/add-host.sh" >/dev/null 2>&1
+wget -q -O speedtest "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/speedtest_cli.py" >/dev/null 2>&1
+wget -q -O xp "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/xp.sh" >/dev/null 2>&1
+wget -q -O menu "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu.sh" >/dev/null 2>&1
+wget -q -O status "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/status.sh" >/dev/null 2>&1
+wget -q -O info "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/info.sh" >/dev/null 2>&1
+wget -q -O restart  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/restart.sh" >/dev/null 2>&1
+wget -q -O ram  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/ram.sh" >/dev/null 2>&1
+wget -q -O dns  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/dns.sh" >/dev/null 2>&1
+wget -q -O nf  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/media.sh" >/dev/null 2>&1
+wget -q -O limit  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/limit-speed.sh" >/dev/null 2>&1
+wget -q -O menu-tr  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-tr.sh" >/dev/null 2>&1
+wget -q -O menu-ws  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-ws.sh" >/dev/null 2>&1
+wget -q -O menu-vless "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-vless.sh" >/dev/null 2>&1
+wget -q -O menu-xtr  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-xtr.sh" >/dev/null 2>&1
+wget -q -O menu-xrt  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-xrt.sh" >/dev/null 2>&1
+wget -q -O certxray  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/cert.sh" >/dev/null 2>&1
+chmod +x menu-ssh
+chmod +x menu-tr
+chmod +x menu-ws
+chmod +x menu-vless
+chmod +x menu-xtr
+chmod +x menu-xrt
+chmod +x cerxray
 chmod +x ins-helium
 chmod +x bbr
 chmod +x wssgen
@@ -285,6 +312,8 @@ chmod +x restart
 chmod +x ram
 chmod +x dns
 chmod +x nf
+chmod +x limit
+
 echo "0 6 * * * root reboot" >> /etc/crontab
 echo "0 0 * * * root /usr/bin/xp" >> /etc/crontab
 echo "*/2 * * * * root /usr/bin/cleaner" >> /etc/crontab
@@ -294,14 +323,19 @@ service cron restart >/dev/null 2>&1
 service cron reload >/dev/null 2>&1
 
 # remove unnecessary files
-cd
-apt autoclean -y
-apt -y remove --purge unscd
-apt-get -y --purge remove samba*;
-apt-get -y --purge remove apache2*;
-apt-get -y --purge remove bind9*;
-apt-get -y remove sendmail*
-apt autoremove -y
+sleep 1
+echo -e "[ ${green}INFO$NC ] Clearing trash"
+apt autoclean -y >/dev/null 2>&1
+
+if dpkg -s unscd >/dev/null 2>&1; then
+apt -y remove --purge unscd >/dev/null 2>&1
+fi
+
+# apt-get -y --purge remove samba* >/dev/null 2>&1
+# apt-get -y --purge remove apache2* >/dev/null 2>&1
+# apt-get -y --purge remove bind9* >/dev/null 2>&1
+# apt-get -y remove sendmail* >/dev/null 2>&1
+# apt autoremove -y >/dev/null 2>&1
 # finishing
 cd
 chown -R www-data:www-data /home/vps/public_html
@@ -320,10 +354,21 @@ echo -e "[ ${green}ok${NC} ] Restarting resolvconf"
 sleep 1
 echo -e "[ ${green}ok${NC} ] Restarting vnstat"
 /etc/init.d/vnstat restart >/dev/null 2>&1
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7400 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7500 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7600 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7700 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7800 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7900 --max-clients 500
 history -c
 echo "unset HISTFILE" >> /etc/profile
 
+
 cd
+
 rm -f /root/ssh-vpn.sh
 
 # finishing
