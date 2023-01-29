@@ -1,38 +1,33 @@
 #!/bin/bash
-#
 # ==================================================
+#wget https://github.com/${GitUser}/
+GitUser="arismaramar"
 
-# etc
-apt dist-upgrade -y
-apt install netfilter-persistent -y
-apt-get remove --purge ufw firewalld -y
-apt install -y screen curl jq bzip2 gzip vnstat coreutils rsyslog iftop zip unzip git apt-transport-https build-essential -y
-
-# initializing var
+# // initializing var
 export DEBIAN_FRONTEND=noninteractive
-MYIP=$(wget -qO- ipinfo.io/ip);
+MYIP=$(wget -qO- icanhazip.com);
 MYIP2="s/xxxxxxxxx/$MYIP/g";
 NET=$(ip -o $ANU -4 route show to default | awk '{print $5}');
 source /etc/os-release
 ver=$VERSION_ID
 
-#detail nama perusahaan
-country=ID
-state=Indonesia
-locality=Jakarta
-organization=none
-organizationalunit=none
-commonname=none
-email=none
+# // detail nama perusahaan
+country="MY"
+state="ID"
+locality="RIAU"
+organization="@anggun"
+organizationalunit="@anggun"
+commonname="anggun"
+email="arimar.amar@gmail.com"
 
-# simple password minimal
-curl -sS https://raw.githubusercontent.com/arismaramar/supreme/aio/ssh/password | openssl aes-256-cbc -d -a -pass pass:scvps07gg -pbkdf2 > /etc/pam.d/common-password
+# // simple password minimal
+wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/arismaramar/multiportssh/main/password"
 chmod +x /etc/pam.d/common-password
 
-# go to root
+# // go to root
 cd
 
-# Edit file /etc/systemd/system/rc-local.service
+# // Edit file /etc/systemd/system/rc-local.service
 cat > /etc/systemd/system/rc-local.service <<-END
 [Unit]
 Description=/etc/rc.local
@@ -48,7 +43,7 @@ SysVStartPriority=99
 WantedBy=multi-user.target
 END
 
-# nano /etc/rc.local
+# // nano /etc/rc.local
 cat > /etc/rc.local <<-END
 #!/bin/sh -e
 # rc.local
@@ -56,94 +51,51 @@ cat > /etc/rc.local <<-END
 exit 0
 END
 
-# Ubah izin akses
+# // Ubah izin akses
 chmod +x /etc/rc.local
 
-# enable rc local
+# // enable rc local
 systemctl enable rc-local
 systemctl start rc-local.service
 
-# disable ipv6
+# // disable ipv6
 echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
 
-#update
+# // update
 apt update -y
 apt upgrade -y
 apt dist-upgrade -y
 apt-get remove --purge ufw firewalld -y
 apt-get remove --purge exim4 -y
 
-#install jq
-apt -y install jq
-
-#install shc
-apt -y install shc
-
-# install wget and curl
+# // install wget and curl
 apt -y install wget curl
 
-#figlet
-apt-get install figlet -y
-apt-get install ruby -y
-gem install lolcat
-
-# set time GMT +7
+# // set time GMT +7
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
-# set locale
+# // set locale
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 
+# // install
+apt-get --reinstall --fix-missing install -y bzip2 gzip coreutils wget screen rsyslog iftop htop net-tools zip unzip wget net-tools curl nano sed screen gnupg gnupg1 bc apt-transport-https build-essential dirmngr libxml-parser-perl neofetch git lsof
+echo "clear" >> .profile
+echo "menu" >> .profile
 
-install_ssl(){
-    if [ -f "/usr/bin/apt-get" ];then
-            isDebian=`cat /etc/issue|grep Debian`
-            if [ "$isDebian" != "" ];then
-                    apt-get install -y nginx certbot
-                    apt install -y nginx certbot
-                    sleep 3s
-            else
-                    apt-get install -y nginx certbot
-                    apt install -y nginx certbot
-                    sleep 3s
-            fi
-    else
-        yum install -y nginx certbot
-        sleep 3s
-    fi
-
-    systemctl stop nginx.service
-
-    if [ -f "/usr/bin/apt-get" ];then
-            isDebian=`cat /etc/issue|grep Debian`
-            if [ "$isDebian" != "" ];then
-                    echo "A" | certbot certonly --renew-by-default --register-unsafely-without-email --standalone -d $domain
-                    sleep 3s
-            else
-                    echo "A" | certbot certonly --renew-by-default --register-unsafely-without-email --standalone -d $domain
-                    sleep 3s
-            fi
-    else
-        echo "Y" | certbot certonly --renew-by-default --register-unsafely-without-email --standalone -d $domain
-        sleep 3s
-    fi
-}
-
-# install webserver
+# // install webserver
 apt -y install nginx
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/nginx.conf" " >/dev/null 2>&1
-cd /var/www/html/ wget https://raw.githubusercontent.com/arismaramar/gif/main/fodder/web.zip
-unzip -x web.zip
-chmod +x /var/www/html/*
-#sed -i "s/xxx/${domain}/g" /etc/nginx/conf.d/vps.conf
-sed -i "s/xxx/${domain}/g" /home/vps/public_html/index.html
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/arismaramar/multiportssh/main/nginx.conf"
+mkdir -p /home/vps/public_html
+wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/arismaramar/multiportssh/main/vps.conf"
 /etc/init.d/nginx restart
-# install badvpn
+
+# // install badvpn
 cd
-wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/arismaramar/supreme/aio/ssh/newudpgw"
+wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/arismaramar/multiportssh/main/newudpgw"
 chmod +x /usr/bin/badvpn-udpgw
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
@@ -163,28 +115,56 @@ screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7600 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7700 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7800 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7900 --max-clients 500
-# setting port ssh
+
+# // setting port ssh
 cd
-sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+apt-get -y update
+sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g'
+
+# /etc/ssh/sshd_config
 sed -i '/Port 22/a Port 500' /etc/ssh/sshd_config
 sed -i '/Port 22/a Port 40000' /etc/ssh/sshd_config
 sed -i '/Port 22/a Port 51443' /etc/ssh/sshd_config
 sed -i '/Port 22/a Port 58080' /etc/ssh/sshd_config
 sed -i '/Port 22/a Port 200' /etc/ssh/sshd_config
-sed -i '/Port 22/a Port 22' /etc/ssh/sshd_config
+sed -i 's/#Port 22/Port 22/g' /etc/ssh/sshd_config
 /etc/init.d/ssh restart
-echo "=== Install Dropbear ==="
-# install dropbear
+
+# // install dropbear
 apt -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=143/g' /etc/default/dropbear
-sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 50000 -p 109 -p 110 -p 69"/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 109 -p 68 -p 69 -p 110"/g' /etc/default/dropbear
 echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
-/etc/init.d/ssh restart
 /etc/init.d/dropbear restart
+
+# // install squid for debian 9,10 & ubuntu 20.04
+apt -y install squid3
+
+# install squid for debian 11
+apt -y install squid
+wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/arismaramar/multiportssh/main/squid3.conf"
+sed -i $MYIP2 /etc/squid/squid.conf
+
+# // setting vnstat
+apt -y install vnstat
+/etc/init.d/vnstat restart
+apt -y install libsqlite3-dev
+wget https://humdi.net/vnstat/vnstat-2.6.tar.gz
+tar zxvf vnstat-2.6.tar.gz
+cd vnstat-2.6
+./configure --prefix=/usr --sysconfdir=/etc && make && make install
 cd
-# install stunnel
+vnstat -u -i $NET
+sed -i 's/Interface "'""eth0""'"/Interface "'""$NET""'"/g' /etc/vnstat.conf
+chown vnstat:vnstat /var/lib/vnstat -R
+systemctl enable vnstat
+/etc/init.d/vnstat restart
+rm -f /root/vnstat-2.6.tar.gz
+rm -rf /root/vnstat-2.6
+
+# // install stunnel
 apt install stunnel4 -y
 cat > /etc/stunnel/stunnel.conf <<-END
 cert = /etc/stunnel/stunnel.pem
@@ -192,32 +172,48 @@ client = no
 socket = a:SO_REUSEADDR=1
 socket = l:TCP_NODELAY=1
 socket = r:TCP_NODELAY=1
+
 [dropbear]
 accept = 222
 connect = 127.0.0.1:22
+
 [dropbear]
 accept = 777
 connect = 127.0.0.1:109
-[ws-stunnel]
-accept = 2096
-connect = 700
+
 [openvpn]
 accept = 442
 connect = 127.0.0.1:1194
+
+[kontol-stunnel]
+accept = 2096
+connect = 127.0.0.1:2091
 END
-# make a certificate
+
+# // make a certificate
 openssl genrsa -out key.pem 2048
 openssl req -new -x509 -key key.pem -out cert.pem -days 1095 \
 -subj "/C=$country/ST=$state/L=$locality/O=$organization/OU=$organizationalunit/CN=$commonname/emailAddress=$email"
 cat key.pem cert.pem >> /etc/stunnel/stunnel.pem
-# konfigurasi stunnel
+
+# // konfigurasi stunnel
 sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
+/lib/systemd/systemd-sysv-install enable stunnel4
+systemctl start stunnel4
 /etc/init.d/stunnel4 restart
-# install fail2ban
+
+# // OpenVPN
+wget https://raw.githubusercontent.com/arismaramar/multiportssh/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
+
+# // install lolcat
+wget https://raw.githubusercontent.com/arismaramar/multiportssh/main/lolcat.sh &&  chmod +x lolcat.sh && ./lolcat.sh
+
+# // install fail2ban
 apt -y install fail2ban
-# Instal DDOS Flate
+
+# // Instal DDOS Flate
 mkdir /usr/local/ddos
-fi
+
 clear
 echo; echo 'Installing DOS-Deflate 0.6'; echo
 echo; echo -n 'Downloading source files...'
@@ -237,9 +233,19 @@ echo '.....done'
 echo; echo 'Installation has completed.'
 echo 'Config file is at /usr/local/ddos/ddos.conf'
 echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
-#install bbr dan optimasi kernel
-#wget https://raw.githubusercontent.com/arismaramar/supreme/aio/ssh/bbr.sh && chmod +x bbr.sh && ./bbr.sh
-# blokir torrent
+
+# // banner /etc/issue.net
+wget -O /etc/issue.net "https://raw.githubusercontent.com/arismaramar/multiportssh/main/banner/bannerssh.conf"
+echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
+sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
+
+# // Bannerku menu
+wget -O /usr/bin/bannerku https://raw.githubusercontent.com/arismaramar/multiportssh/main/banner/bannerku && chmod +x /usr/bin/bannerku
+
+# // install bbr
+wget https://raw.githubusercontent.com/arismaramar/multiportssh/main/system/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+
+# // blockir torrent
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
 iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
 iptables -A FORWARD -m string --string "find_node" --algo bm -j DROP
@@ -255,8 +261,8 @@ iptables-save > /etc/iptables.up.rules
 iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
 netfilter-persistent reload
-# download script
-# download script
+
+# // download script
 cd /usr/local/sbin
 wget -q -O menu-ssh "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-ssh.sh" >/dev/null 2>&1
 wget -q -O ins-helium "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/ins-helium.sh" >/dev/null 2>&1
@@ -300,42 +306,34 @@ chmod +x ram
 chmod +x dns
 chmod +x nf
 chmod +x limit
-echo "0 6 * * * root reboot" >> /etc/crontab
-echo "0 0 * * * root /usr/bin/xp" >> /etc/crontab
-echo "*/2 * * * * root /usr/bin/cleaner" >> /etc/crontab
+
+echo "0 0 * * * root delete" >> /etc/crontab
+echo "*/2 * * * * root clear-log" >> /etc/crontab
+echo "0 5 * * * root reboot" >> /etc/crontab
+echo "0 0 * * * root xp" >> /etc/crontab
+
+# // remove unnecessary files
 cd
-service cron restart >/dev/null 2>&1
-service cron reload >/dev/null 2>&1
-# remove unnecessary files
-sleep 1
-echo -e "[ ${green}INFO$NC ] Clearing trash"
-apt autoclean -y >/dev/null 2>&1
-if dpkg -s unscd >/dev/null 2>&1; then
-apt -y remove --purge unscd >/dev/null 2>&1
-fi
-# apt-get -y --purge remove samba* >/dev/null 2>&1
-# apt-get -y --purge remove apache2* >/dev/null 2>&1
-# apt-get -y --purge remove bind9* >/dev/null 2>&1
-# apt-get -y remove sendmail* >/dev/null 2>&1
-# apt autoremove -y >/dev/null 2>&1
-# finishing
+apt autoclean -y
+apt -y remove --purge unscd
+apt-get -y --purge remove samba*;
+apt-get -y --purge remove apache2*;
+apt-get -y --purge remove bind9*;
+apt-get -y remove sendmail*
+apt autoremove -y
+
+# // finishing
 cd
 chown -R www-data:www-data /home/vps/public_html
-sleep 1
-echo -e "[ ${green}ok${NC} ] Restarting nginx"
-/etc/init.d/nginx restart >/dev/null 2>&1
-sleep 1
-echo -e "[ ${green}ok${NC} ] Restarting cron "
-/etc/init.d/cron restart >/dev/null 2>&1
-sleep 1
-echo -e "[ ${green}ok${NC} ] Restarting fail2ban"
-/etc/init.d/fail2ban restart >/dev/null 2>&1
-sleep 1
-echo -e "[ ${green}ok${NC} ] Restarting resolvconf"
-/etc/init.d/resolvconf restart >/dev/null 2>&1
-sleep 1
-echo -e "[ ${green}ok${NC} ] Restarting vnstat"
-/etc/init.d/vnstat restart >/dev/null 2>&1
+/etc/init.d/nginx restart
+/etc/init.d/openvpn restart
+/etc/init.d/cron restart
+/etc/init.d/ssh restart
+/etc/init.d/dropbear restart
+/etc/init.d/fail2ban restart
+/etc/init.d/vnstat restart
+/etc/init.d/stunnel4 restart
+/etc/init.d/squid restart
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500
@@ -347,7 +345,19 @@ screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7800 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7900 --max-clients 500
 history -c
 echo "unset HISTFILE" >> /etc/profile
+
 cd
+rm -f /root/key.pem
+rm -f /root/cert.pem
 rm -f /root/ssh-vpn.sh
-# finishing
 clear
+
+
+
+
+
+
+
+
+
+
