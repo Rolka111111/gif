@@ -281,19 +281,9 @@ wget -q -O ram  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/F
 wget -q -O dns  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/dns.sh" >/dev/null 2>&1
 wget -q -O nf  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/media.sh" >/dev/null 2>&1
 wget -q -O limit  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/limit-speed.sh" >/dev/null 2>&1
-wget -q -O menu-tr  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-tr.sh" >/dev/null 2>&1
-wget -q -O menu-ws  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-ws.sh" >/dev/null 2>&1
-wget -q -O menu-vless "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-vless.sh" >/dev/null 2>&1
-wget -q -O menu-xtr  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-xtr.sh" >/dev/null 2>&1
-wget -q -O menu-xrt  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-xrt.sh" >/dev/null 2>&1
 wget -q -O certxray  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/cert.sh" >/dev/null 2>&1
 chmod +x menu-ssh
-chmod +x menu-tr
-chmod +x menu-ws
-chmod +x menu-vless
-chmod +x menu-xtr
-chmod +x menu-xrt
-chmod +x cerxray
+chmod +x certxray
 chmod +x ins-helium
 chmod +x bbr
 chmod +x wssgen
