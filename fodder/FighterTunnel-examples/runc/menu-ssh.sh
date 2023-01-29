@@ -86,7 +86,7 @@ user-unlockssh
 user-passwordssh
 ;;
 14)
-restart
+restartssh
 ;;
 x)
 menu
