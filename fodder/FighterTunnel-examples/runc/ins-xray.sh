@@ -1208,18 +1208,15 @@ wget -q -O trial-xtr "https://raw.githubusercontent.com/arismaramar/gif/main/fod
 # // OTHER FILES
 echo -e "[ ${green}INFO${NC} ] Downloading Others Files"
 sleep 1
-wget -q -O add-host "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/add-host.sh" && chmod +x add-xtr
-wget -q -O certxray  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/cert.sh" && chmod +x certxray
+wget -q -O vnstat "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/vnstat.sh" && chmod +x ram
 wget -q -O backup  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/backup.sh" && chmod +x backup
 wget -q -O restore  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/restore.sh" && chmod +x restore
-wget -q -O speedtest "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/speedtest_cli.py" && chmod +x speedtest
-wget -q -O bbr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/bbr.sh" && chmod +x bbr
-wget -q -O wssgen  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/wssgenn.sh" && chmod +x wssgen 
-wget -q -O ins-helium  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/ins-heliumm.sh" && chmod +x ins-helium
-wget -q -O dns  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/dns.sh" && chmod +x dns
-wget -q -O limit "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/limit-speed.sh" && chmod +x limit
-wget -q -O ram "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/ram.sh" && chmod +x ram
-wget -q -O vnstat "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/vnstat.sh" && chmod +x ram
-vnstat 
-
-
+#wget -q -O add-host "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/add-host.sh" && chmod +x add-xtr
+#wget -q -O certxray  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/cert.sh" && chmod +x certxray
+#wget -q -O speedtest "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/speedtest_cli.py" && chmod +x speedtest
+#wget -q -O bbr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/bbr.sh" && chmod +x bbr
+#wget -q -O wssgen  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/wssgenn.sh" && chmod +x wssgen 
+#wget -q -O ins-helium  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/ins-heliumm.sh" && chmod +x ins-helium
+#wget -q -O dns  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/dns.sh" && chmod +x dns
+#wget -q -O limit "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/limit-speed.sh" && chmod +x limit
+#wget -q -O ram "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/ram.sh" && chmod +x ram
