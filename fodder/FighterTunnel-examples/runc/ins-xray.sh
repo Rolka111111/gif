@@ -1158,66 +1158,81 @@ cd /usr/local/sbin
 # // SSH WS
 echo -e "[ ${green}INFO${NC} ] Downloading SSH WS Files"
 sleep 1
-wget -O usernew "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/usernew.sh" && chmod +x usernew
-wget -O trial "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/trial.sh" && chmod +x trial
-wget -O renew "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/renew.sh" && chmod +x renew
-wget -O hapus "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/hapus.sh" && chmod +x hapus
-wget -O cek "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/cek.sh" && chmod +x cek
-wget -O member "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/member.sh" && chmod +x member
-wget -O delete "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/delete.sh" && chmod +x delete
-wget -O autokill "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/autokill.sh" && chmod +x autokill
-wget -O ceklim "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/ceklim.sh" && chmod +x ceklim
+wget -q -O usernew "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/usernew.sh" && chmod +x usernew
+wget -q -O trial "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/trial.sh" && chmod +x trial
+wget -q -O renew "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/renew.sh" && chmod +x renew
+wget -q -O hapus "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/hapus.sh" && chmod +x hapus
+wget -q -O cek "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/cek.sh" && chmod +x cek
+wget -q -O member "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/member.sh" && chmod +x member
+wget -q -O delete "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/delete.sh" && chmod +x delete
+wget -q -O autokill "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/autokill.sh" && chmod +x autokill
+wget -q -O ceklim "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/ceklim.sh" && chmod +x ceklim
 
 # // VMESS WS FILES
 echo -e "[ ${green}INFO${NC} ] Downloading Vmess WS Files"
 sleep 1
-wget -O add-ws "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/add-ws.sh" && chmod +x add-ws
-wget -O cek-ws "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/cek-ws.sh" && chmod +x cek-ws
-wget -O del-ws "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/del-ws.sh" && chmod +x del-ws
-wget -O renew-ws "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/renew-ws.sh" && chmod +x renew-ws
-wget -O user-ws "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/user-ws.sh" && chmod +x user-ws
-wget -O trial-ws "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/trial-ws.sh" && chmod +x trial-ws
+wget -q -O add-ws "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/add-ws.sh" && chmod +x add-ws
+wget -q -O cek-ws "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/cek-ws.sh" && chmod +x cek-ws
+wget -q -O del-ws "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/del-ws.sh" && chmod +x del-ws
+wget -q -O renew-ws "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/renew-ws.sh" && chmod +x renew-ws
+wget -q -O user-ws "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/user-ws.sh" && chmod +x user-ws
+wget -q -O trial-ws "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/trial-ws.sh" && chmod +x trial-ws
 
 # // VLESS WS FILES
 echo -e "[ ${green}INFO${NC} ] Downloading Vless WS Files"
 sleep 1
-wget -O add-vless "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/add-vless.sh" && chmod +x add-vless
-wget -O cek-vless "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/cek-vless.sh" && chmod +x cek-vless
-wget -O del-vless "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/del-vless.sh" && chmod +x del-vless
-wget -O renew-vless "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/renew-vless.sh" && chmod +x renew-vless
-wget -O user-vless "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/user-vless.sh" && chmod +x user-vless
-wget -O trial-vless "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/trial-vless.sh" && chmod +x trial-vless
+wget -q -O add-vless "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/add-vless.sh" && chmod +x add-vless
+wget -q -O cek-vless "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/cek-vless.sh" && chmod +x cek-vless
+wget -q -O del-vless "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/del-vless.sh" && chmod +x del-vless
+wget -q -O renew-vless "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/renew-vless.sh" && chmod +x renew-vless
+wget -q -O user-vless "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/user-vless.sh" && chmod +x user-vless
+wget -q -O trial-vless "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/trial-vless.sh" && chmod +x trial-vless
 
 # // TROJAN WS FILES
 echo -e "[ ${green}INFO${NC} ] Downloading Trojan WS Files"
 sleep 1
-wget -O add-tr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/add-tr.sh" && chmod +x add-tr
-wget -O cek-tr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/cek-tr.sh" && chmod +x cek-tr
-wget -O del-tr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/del-tr.sh" && chmod +x del-tr
-wget -O renew-tr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/renew-tr.sh" && chmod +x renew-tr
-wget -O user-tr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/user-tr.sh" && chmod +x user-tr
-wget -O trial-tr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/trial-tr.sh" && chmod +x trial-tr
+wget -q -O add-tr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/add-tr.sh" && chmod +x add-tr
+wget -q -O cek-tr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/cek-tr.sh" && chmod +x cek-tr
+wget -q -O del-tr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/del-tr.sh" && chmod +x del-tr
+wget -q -O renew-tr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/renew-tr.sh" && chmod +x renew-tr
+wget -q -O user-tr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/user-tr.sh" && chmod +x user-tr
+wget -q -O trial-tr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/trial-tr.sh" && chmod +x trial-tr
 
 # // TROJAN TCP XTLS
 echo -e "[ ${green}INFO${NC} ] Downloading XRAY Vless TCP XTLS Files"
 sleep 1
-wget -O add-xrt "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/add-xrt.sh" && chmod +x add-xrt
-wget -O cek-xrt "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/cek-xrt.sh" && chmod +x cek-xrt
-wget -O del-xrt "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/del-xrt.sh" && chmod +x del-xrt
-wget -O renew-xrt "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/renew-xrt.sh" && chmod +x renew-xrt
-wget -O user-xrt "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/user-xrt.sh" && chmod +x user-xrt
-wget -O trial-xrt "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/trial-xrt.sh" && chmod +x trial-xrt
+wget -q -O add-xrt "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/add-xrt.sh" && chmod +x add-xrt
+wget -q -O cek-xrt "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/cek-xrt.sh" && chmod +x cek-xrt
+wget -q -O del-xrt "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/del-xrt.sh" && chmod +x del-xrt
+wget -q -O renew-xrt "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/renew-xrt.sh" && chmod +x renew-xrt
+wget -q -O user-xrt "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/user-xrt.sh" && chmod +x user-xrt
+wget -q -O trial-xrt "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/trial-xrt.sh" && chmod +x trial-xrt
 
 # // TROJAN TCP FILES
 echo -e "[ ${green}INFO${NC} ] Downloading Trojan TCP Files"
 sleep 1
-wget -O add-xtr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/add-xtr.sh" && chmod +x add-xtr
-wget -O cek-xtr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/cek-xtr.sh" && chmod +x cek-xtr
-wget -O del-xtr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/del-xtr.sh" && chmod +x del-xtr
-wget -O renew-xtr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/renew-xtr.sh" && chmod +x renew-xtr
-wget -O user-xtr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/user-xtr.sh" && chmod +x user-xtr
-wget -O trial-xtr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/trial-xtr.sh" && chmod +x trial-xtr
+wget -q -O add-xtr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/add-xtr.sh" && chmod +x add-xtr
+wget -q -O cek-xtr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/cek-xtr.sh" && chmod +x cek-xtr
+wget -q -O del-xtr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/del-xtr.sh" && chmod +x del-xtr
+wget -q -O renew-xtr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/renew-xtr.sh" && chmod +x renew-xtr
+wget -q -O user-xtr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/user-xtr.sh" && chmod +x user-xtr
+wget -q -O trial-xtr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/trial-xtr.sh" && chmod +x trial-xtr
 
 # // OTHER FILES
 echo -e "[ ${green}INFO${NC} ] Downloading Others Files"
 sleep 1
+wget -q -O add-host "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/add-host.sh" && chmod +x add-xtr
+wget -q -O certxray  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/cert.sh" && chmod +x certxray
+wget -q -O backup  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/backup.sh" && chmod +x backup
+wget -q -O restore  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/restore.sh" && chmod +x restore
+wget -q -O speedtest "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/speedtest_cli.py" && chmod +x speedtest
+wget -q -O bbr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/bbr.sh" && chmod +x bbr
+wget -q -O wssgen  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/wssgenn.sh" && chmod +x wssgen 
+wget -q -O ins-helium  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/ins-heliumm.sh" && chmod +x ins-helium
+wget -q -O dns  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/dns.sh" && chmod +x dns
+wget -q -O limit "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/limit-speed.sh" && chmod +x limit
+wget -q -O ram "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/ram.sh" && chmod +x ram
+wget -q -O vnstat "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/vnstat.sh" && chmod +x ram
+vnstat 
+
+
