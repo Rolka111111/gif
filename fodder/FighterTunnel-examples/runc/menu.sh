@@ -116,10 +116,10 @@ echo -e "\e[36m╒════════════════════�
 echo -e " \E[0;41;36m                 XRAY MENU                  \E[0m"
 echo -e "\e[36m╘════════════════════════════════════════════╛\033[0m
  [\033[1;36m•1 \033[0m]  SSH WEBSOCKET  Panel
- [\033[1;36m•2 \033[0m]  XRAY Vmess WS Panel
- [\033[1;36m•3 \033[0m]  XRAY Vless WS Panel
- [\033[1;36m•4 \033[0m]  XRAY Trojan WS Panel
- [\033[1;36m•5 \033[0m]  XRAY Trojan TCP XTLS Panel
+ [\033[1;36m•2 \033[0m]  XRAY Vmess  Panel
+ [\033[1;36m•3 \033[0m]  XRAY Vless  Panel
+ [\033[1;36m•4 \033[0m]  XRAY Trojan  Panel
+ [\033[1;36m•5 \033[0m]  XRAY shadowsocks-2022 Panel
  [\033[1;36m•6 \033[0m]  XRAY Trojan TCP Panel
  [\033[1;36m•7 \033[0m]  WSS Converter Panel"
 echo -e "\e[36m╒════════════════════════════════════════════╕\033[0m"
@@ -134,17 +134,19 @@ echo -e "\e[36m╘════════════════════�
 echo -e "\e[36m╒════════════════════════════════════════════╕\033[0m"
 echo -e " \E[0;41;36m                SYSTEM MENU                 \E[0m"
 echo -e "\e[36m╘════════════════════════════════════════════╛\033[0m
- [\033[1;36m•14\033[0m]  Change Domain
- [\033[1;36m•15\033[0m]  Renew Certificate XRAY
- [\033[1;36m•16\033[0m]  Check VPN Status
- [\033[1;36m•17\033[0m]  Check VPN Port
- [\033[1;36m•18\033[0m]  Restart VPN Services
- [\033[1;36m•19\033[0m]  Speedtest VPS
- [\033[1;36m•20\033[0m]  Check RAM
- [\033[1;36m•21\033[0m]  Check Bandwith
- [\033[1;36m•22\033[0m]  Backup
- [\033[1;36m•23\033[0m]  Restore
- [\033[1;36m•24\033[0m]  Reboot
+ [\033[1;36m•14\033[0m]  Change Xray-core Mod 
+ [\033[1;36m•15\033[0m]  RChange Xray-core Official
+ [\033[1;36m•16\033[0m]  Change Domain
+ [\033[1;36m•17\033[0m]  Renew Certificate XRAY
+ [\033[1;36m•18\033[0m]  Check VPN Status
+ [\033[1;36m•19\033[0m]  Check VPN Port
+ [\033[1;36m•20\033[0m]  Restart VPN Services
+ [\033[1;36m•21\033[0m]  Speedtest VPS
+ [\033[1;36m•22\033[0m]  Check RAM
+ [\033[1;36m•23\033[0m]  Check Bandwith
+ [\033[1;36m•24\033[0m]  Backup
+ [\033[1;36m•25\033[0m]  Restore
+ [\033[1;36m•26\033[0m]  Reboot
 "
 if [[ $serverV > $myver ]]; then
 echo -e " [\033[1;36m•24\033[0m]  Update Autoscript To V$serverV\n"
@@ -167,7 +169,7 @@ case $opt in
 2) clear ; menu-ws ; read -n1 -r -p "Press any key to continue..." ; menu ;;
 3) clear ; menu-vless ; read -n1 -r -p "Press any key to continue..." ; menu ;;
 4) clear ; menu-tr ; read -n1 -r -p "Press any key to continue..." ; menu ;;
-5) clear ; menu-xrt ; read -n1 -r -p "Press any key to continue..." ; menu ;;
+5) clear ; menu-ss ; read -n1 -r -p "Press any key to continue..." ; menu ;;
 6) clear ; menu-xtr ; read -n1 -r -p "Press any key to continue..." ; menu ;;
 7) clear ; wssgen ; read -n1 -r -p "Press any key to continue..." ; menu ;;
 8) clear ; ins-helium ; read -n1 -r -p "Press any key to continue..." ; menu ;;
@@ -176,18 +178,20 @@ case $opt in
 11) clear ; dns ; echo "" ; menu ;;
 12) clear ; nf ; echo "" ; read -n1 -r -p "Press any key to continue..." ; menu ;;
 13) clear ; limit ; echo "" ; menu ;;
-14) clear ; add-host ; menu ;;
-15) clear ; certxray ; menu ;;
-16) clear ; status ; read -n1 -r -p "Press any key to continue..." ; menu ;;
-17) clear ; info ; read -n1 -r -p "Press any key to continue..." ; menu ;;
-18) clear ; restart ; menu ;;
-19) clear ; speedtest ; echo "" ; read -n1 -r -p "Press any key to continue..." ; menu ;;
-20) clear ; ram ; echo "" ; read -n1 -r -p "Press any key to continue..." ; menu ;;
-21) clear ; vnstat ; echo "" ; read -n1 -r -p "Press any key to continue..." ; menu ;;
-22) clear ; backup ; read -n1 -r -p "Press any key to continue..." ; menu ;;
-23) clear ; restore ; menu ;;
-24) clear ; reboot ;;
-25) clear ; $up2u ; read -n1 -r -p "Press any key to continue..." ; menu ;;
+14) clear ; xraymod  ; menu ;;
+15) clear ; xrayofficial ; menu ;;
+16) clear ; add-host ; menu ;;
+17) clear ; certxray ; menu ;;
+18) clear ; status ; read -n1 -r -p "Press any key to continue..." ; menu ;;
+19) clear ; info ; read -n1 -r -p "Press any key to continue..." ; menu ;;
+20) clear ; restart ; menu ;;
+21) clear ; speedtest ; echo "" ; read -n1 -r -p "Press any key to continue..." ; menu ;;
+22) clear ; ram ; echo "" ; read -n1 -r -p "Press any key to continue..." ; menu ;;
+23) clear ; vnstat ; echo "" ; read -n1 -r -p "Press any key to continue..." ; menu ;;
+24) clear ; backup ; read -n1 -r -p "Press any key to continue..." ; menu ;;
+25) clear ; restore ; menu ;;
+26) clear ; reboot ;;
+27) clear ; $up2u ; read -n1 -r -p "Press any key to continue..." ; menu ;;
 00 | 0) clear ; menu ;;
 x | X) exit ;;
 *) clear ; menu ;;
