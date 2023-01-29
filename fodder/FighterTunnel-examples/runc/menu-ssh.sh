@@ -65,7 +65,7 @@ cek-ssh
 memberssh
 ;;
 7)
-deletessh
+deleteexssh
 ;;
 8)
 autokillssh
