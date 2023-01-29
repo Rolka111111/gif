@@ -1,5 +1,5 @@
 #!/bin/bash
-# Created By YoloNET
+# Created By anggun
 #wget https://github.com/${GitUser}/
 GitUser="arismaramar"
 #IZIN SCRIPT
