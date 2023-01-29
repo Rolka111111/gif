@@ -1,4 +1,19 @@
 #!/bin/bash
+#wget https://github.com/${GitUser}/
+GitUser="arismaramar"
+#IZIN SCRIPT
+MYIP=$(curl -sS ipv4.icanhazip.com)
+# LINE COLOUR
+line=$(cat /etc/line)
+# TEXT COLOUR BELOW
+below=$(cat /etc/below)
+# BACKGROUND TEXT COLOUR
+back_text=$(cat /etc/back)
+# NUMBER COLOUR
+number=$(cat /etc/number)
+# TEXT ON BOX COLOUR
+box=$(cat /etc/box)
+clear
 red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
