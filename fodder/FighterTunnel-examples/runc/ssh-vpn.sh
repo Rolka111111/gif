@@ -8,6 +8,20 @@ apt install netfilter-persistent -y
 apt-get remove --purge ufw firewalld -y
 apt install -y screen curl jq bzip2 gzip vnstat coreutils rsyslog iftop zip unzip git apt-transport-https build-essential -y
 
+
+clear
+mkdir /backup > /dev/null 2>&1
+mkdir /user > /dev/null 2>&1
+mkdir /tmp > /dev/null 2>&1
+mkdir -p /var/www/html/vmess
+mkdir -p /var/www/html/vless
+mkdir -p /var/www/html/trojan
+mkdir -p /var/www/html/allxray
+mkdir /usr/local/ddos
+rm /usr/local/etc/xray/city > /dev/null 2>&1
+rm /usr/local/etc/xray/org > /dev/null 2>&1
+rm /usr/local/etc/xray/timezone > /dev/null 2>&1
+
 # initializing var
 export DEBIAN_FRONTEND=noninteractive
 MYIP=$(wget -qO- ipinfo.io/ip);
