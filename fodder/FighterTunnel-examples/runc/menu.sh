@@ -120,7 +120,7 @@ echo -e "\e[36m╘════════════════════�
  [\033[1;36m•3 \033[0m]  XRAY Vless  Panel
  [\033[1;36m•4 \033[0m]  XRAY Trojan  Panel
  [\033[1;36m•5 \033[0m]  XRAY shadowsocks-2022 Panel
- [\033[1;36m•6 \033[0m]  XRAY Trojan TCP Panel
+ [\033[1;36m•6 \033[0m]  Log Create Account
  [\033[1;36m•7 \033[0m]  WSS Converter Panel"
 echo -e "\e[36m╒════════════════════════════════════════════╕\033[0m"
 echo -e " \E[0;41;36m                OTHERS MENU                 \E[0m"
@@ -170,7 +170,7 @@ case $opt in
 3) clear ; menu-vless ; read -n1 -r -p "Press any key to continue..." ; menu ;;
 4) clear ; menu-tr ; read -n1 -r -p "Press any key to continue..." ; menu ;;
 5) clear ; menu-ss ; read -n1 -r -p "Press any key to continue..." ; menu ;;
-6) clear ; menu-xtr ; read -n1 -r -p "Press any key to continue..." ; menu ;;
+6) clear ; log-create ; read -n1 -r -p "Press any key to continue..." ; menu ;;
 7) clear ; wssgen ; read -n1 -r -p "Press any key to continue..." ; menu ;;
 8) clear ; ins-helium ; read -n1 -r -p "Press any key to continue..." ; menu ;;
 9) clear ; bbr ; menu ;;
