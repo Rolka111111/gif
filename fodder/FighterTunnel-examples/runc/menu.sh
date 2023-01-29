@@ -169,7 +169,7 @@ case $opt in
 2) clear ; menu-ws ; read -n1 -r -p "Press any key to continue..." ; menu ;;
 3) clear ; menu-vless ; read -n1 -r -p "Press any key to continue..." ; menu ;;
 4) clear ; menu-tr ; read -n1 -r -p "Press any key to continue..." ; menu ;;
-5) clear ; menu-ss ; read -n1 -r -p "Press any key to continue..." ; menu ;;
+5) clear ; menu-ss2022 ; read -n1 -r -p "Press any key to continue..." ; menu ;;
 6) clear ; log-create ; read -n1 -r -p "Press any key to continue..." ; menu ;;
 7) clear ; wssgen ; read -n1 -r -p "Press any key to continue..." ; menu ;;
 8) clear ; ins-helium ; read -n1 -r -p "Press any key to continue..." ; menu ;;
