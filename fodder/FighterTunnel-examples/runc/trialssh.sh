@@ -30,7 +30,7 @@ wsdropbear="$(cat ~/log-install.txt | grep -w "Websocket SSH(HTTP)" | cut -d: -f
 wsstunnel="$(cat ~/log-install.txt | grep -w "Websocket SSL(HTTPS)" | cut -d: -f2|sed 's/ //g')"
 wsovpn="$(cat ~/log-install.txt | grep -w "Websocket OpenVPN" | cut -d: -f2|sed 's/ //g')"
 sleep 1
-Login=trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
+Login=ANGGUN`</dev/urandom tr -dc X-Z0-9 | head -c4`
 hari="1"
 Pass=1
 echo Ping Host
