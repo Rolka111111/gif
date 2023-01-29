@@ -326,6 +326,13 @@ wget -q -O user-lockssh "https://raw.githubusercontent.com/arismaramar/gif/main/
 wget -q -O user-unlockssh "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/user-unlockssh.sh" && chmod +x user-unlockssh
 wget -q -O user-passwordssh "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/user-passwordssh.sh" && user-passwordssh +x user-passwordssh
 wget -q -O restartssh "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/restartssh.sh" && chmod +x restartssh
+# // OTHER FILES
+echo -e "[ ${green}INFO${NC} ] Downloading Others Files"
+sleep 1
+wget -q -O vnstat "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/vnstat.sh" && chmod +x ram
+wget -q -O backup  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/backup.sh" && chmod +x backup
+wget -q -O restore  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/restore.sh" && chmod +x restore
+
 
 
 echo "0 0 * * * root delete" >> /etc/crontab
