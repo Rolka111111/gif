@@ -1155,19 +1155,6 @@ systemctl restart nginx
 sleep 1
 
 cd /usr/local/sbin
-# // SSH WS
-echo -e "[ ${green}INFO${NC} ] Downloading SSH WS Files"
-sleep 1
-wget -q -O usernew "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/usernew.sh" && chmod +x usernew
-wget -q -O trial "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/trial.sh" && chmod +x trial
-wget -q -O renew "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/renew.sh" && chmod +x renew
-wget -q -O hapus "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/hapus.sh" && chmod +x hapus
-wget -q -O cek "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/cek.sh" && chmod +x cek
-wget -q -O member "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/member.sh" && chmod +x member
-wget -q -O delete "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/delete.sh" && chmod +x delete
-wget -q -O autokill "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/autokill.sh" && chmod +x autokill
-wget -q -O ceklim "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/ceklim.sh" && chmod +x ceklim
-
 # // VMESS WS FILES
 echo -e "[ ${green}INFO${NC} ] Downloading Vmess WS Files"
 sleep 1
