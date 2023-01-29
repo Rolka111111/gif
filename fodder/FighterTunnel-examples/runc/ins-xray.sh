@@ -509,7 +509,6 @@ echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Other Menu${NC}"
 wget -q -O xraymod https://raw.githubusercontent.com/arismaramar/scxray/main/other/xraymod.sh
 wget -q -O xrayofficial https://raw.githubusercontent.com/arismaramar/scxray/main/other/xrayofficial.sh
 wget -q -O about https://raw.githubusercontent.com/arismaramar/scxray/main/other/about.sh
-apt-get install speedtest
 sleep 2
 chmod +x menu-ws
 chmod +x menu-vless
