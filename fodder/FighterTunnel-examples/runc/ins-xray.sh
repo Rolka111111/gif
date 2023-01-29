@@ -52,24 +52,6 @@ apt dist-upgrade -y
 apt-get remove --purge ufw firewalld -y
 apt-get remove --purge exim4 -y
 clear
-echo; echo 'Installing DOS-Deflate 0.6'; echo
-echo; echo -n 'Downloading source files...'
-wget -q -O /usr/local/ddos/ddos.conf http://www.inetbase.com/scripts/ddos/ddos.conf
-echo -n '.'
-wget -q -O /usr/local/ddos/LICENSE http://www.inetbase.com/scripts/ddos/LICENSE
-echo -n '.'
-wget -q -O /usr/local/ddos/ignore.ip.list http://www.inetbase.com/scripts/ddos/ignore.ip.list
-echo -n '.'
-wget -q -O /usr/local/ddos/ddos.sh http://www.inetbase.com/scripts/ddos/ddos.sh
-chmod 0755 /usr/local/ddos/ddos.sh
-cp -s /usr/local/ddos/ddos.sh /usr/local/sbin/ddos
-echo '...done'
-echo; echo -n 'Creating cron to run script every minute.....(Default setting)'
-/usr/local/ddos/ddos.sh --cron > /dev/null 2>&1
-echo '.....done'
-echo; echo 'Installation has completed.'
-echo 'Config file is at /usr/local/ddos/ddos.conf'
-echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
 
 ######install xray
 # Install Xray
@@ -486,120 +468,53 @@ sleep 0.5
 echo -e "${GB}[ INFO ]${NC} ${YB}Setup Done${NC}"
 sleep 2
 clear
-iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
-iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
-iptables -A FORWARD -m string --string "find_node" --algo bm -j DROP
-iptables -A FORWARD -m string --algo bm --string "BitTorrent" -j DROP
-iptables -A FORWARD -m string --algo bm --string "BitTorrent protocol" -j DROP
-iptables -A FORWARD -m string --algo bm --string "peer_id=" -j DROP
-iptables -A FORWARD -m string --algo bm --string ".torrent" -j DROP
-iptables -A FORWARD -m string --algo bm --string "announce.php?passkey=" -j DROP
-iptables -A FORWARD -m string --algo bm --string "torrent" -j DROP
-iptables -A FORWARD -m string --algo bm --string "announce" -j DROP
-iptables -A FORWARD -m string --algo bm --string "info_hash" -j DROP
-iptables-save > /etc/iptables.up.rules
-iptables-restore -t < /etc/iptables.up.rules
-netfilter-persistent save
-netfilter-persistent reload
-echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
-echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
-sed -i '/fs.file-max/d' /etc/sysctl.conf
-sed -i '/fs.inotify.max_user_instances/d' /etc/sysctl.conf
-sed -i '/net.ipv4.tcp_syncookies/d' /etc/sysctl.conf
-sed -i '/net.ipv4.tcp_fin_timeout/d' /etc/sysctl.conf
-sed -i '/net.ipv4.tcp_tw_reuse/d' /etc/sysctl.conf
-sed -i '/net.ipv4.tcp_max_syn_backlog/d' /etc/sysctl.conf
-sed -i '/net.ipv4.ip_local_port_range/d' /etc/sysctl.conf
-sed -i '/net.ipv4.tcp_max_tw_buckets/d' /etc/sysctl.conf
-sed -i '/net.ipv4.route.gc_timeout/d' /etc/sysctl.conf
-sed -i '/net.ipv4.tcp_synack_retries/d' /etc/sysctl.conf
-sed -i '/net.ipv4.tcp_syn_retries/d' /etc/sysctl.conf
-sed -i '/net.core.somaxconn/d' /etc/sysctl.conf
-sed -i '/net.core.netdev_max_backlog/d' /etc/sysctl.conf
-sed -i '/net.ipv4.tcp_timestamps/d' /etc/sysctl.conf
-sed -i '/net.ipv4.tcp_max_orphans/d' /etc/sysctl.conf
-sed -i '/net.ipv4.ip_forward/d' /etc/sysctl.conf
-echo "fs.file-max = 1000000
-fs.inotify.max_user_instances = 8192
-net.ipv4.tcp_syncookies = 1
-net.ipv4.tcp_fin_timeout = 30
-net.ipv4.tcp_tw_reuse = 1
-net.ipv4.ip_local_port_range = 1024 65000
-net.ipv4.tcp_max_syn_backlog = 16384
-net.ipv4.tcp_max_tw_buckets = 6000
-net.ipv4.route.gc_timeout = 100
-net.ipv4.tcp_syn_retries = 1
-net.ipv4.tcp_synack_retries = 1
-net.core.somaxconn = 32768
-net.core.netdev_max_backlog = 32768
-net.ipv4.tcp_timestamps = 0
-net.ipv4.tcp_max_orphans = 32768
-net.ipv4.ip_forward = 1" >> /etc/sysctl.conf
 
 # downldo scrip menu
 cd /usr/bin
 echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Main Menu${NC}"
-wget -q -O menu "https://raw.githubusercontent.com/arismaramar/scxray/main/menu/menu.sh"
-wget -q -O vmess "https://raw.githubusercontent.com/arismaramar/scxray/main/menu/vmess.sh"
-wget -q -O vless "https://raw.githubusercontent.com/arismaramar/scxray/main/menu/vless.sh"
-wget -q -O trojan "https://raw.githubusercontent.com/arismaramar/scxray/main/menu/trojan.sh"
-wget -q -O shadowsocks "https://raw.githubusercontent.com/arismaramar/scxray/main/menu/shadowsocks.sh"
-wget -q -O shadowsocks2022 "https://raw.githubusercontent.com/arismaramar/scxray/main/menu/shadowsocks2022.sh"
-wget -q -O socks "https://raw.githubusercontent.com/arismaramar/scxray/main/menu/socks.sh"
-wget -q -O allxray "https://raw.githubusercontent.com/arismaramar/scxray/main/menu/allxray.sh"
+wget -q -O menu-ws https://raw.githubusercontent.com/arismaramar/scxray/main/menu/vmess.sh
+wget -q -O menu-vless https://raw.githubusercontent.com/arismaramar/scxray/main/menu/vless.sh
+wget -q -O menu-tr https://raw.githubusercontent.com/arismaramar/scxray/main/menu/trojan.sh
+wget -q -O menu-ss2022 https://raw.githubusercontent.com/arismaramar/scxray/main/menu/shadowsocks2022.sh
 sleep 0.5
 echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Menu Vmess${NC}"
-wget -q -O add-vmess "https://raw.githubusercontent.com/arismaramar/scxray/main/vmess/add-vmess.sh"
-wget -q -O del-vmess "https://raw.githubusercontent.com/arismaramar/scxray/main/vmess/del-vmess.sh"
-wget -q -O extend-vmess "https://raw.githubusercontent.com/arismaramar/scxray/main/vmess/extend-vmess.sh"
-wget -q -O trialvmess "https://raw.githubusercontent.com/arismaramar/scxray/main/vmess/trialvmess.sh"
-wget -q -O cek-vmess "https://raw.githubusercontent.com/arismaramar/scxray/main/vmess/cek-vmess.sh" 
+wget -q -O add-vmess https://raw.githubusercontent.com/arismaramar/scxray/main/vmess/add-vmess.sh
+wget -q -O del-vmess https://raw.githubusercontent.com/arismaramar/scxray/main/vmess/del-vmess.sh
+wget -q -O extend-vmess https://raw.githubusercontent.com/arismaramar/scxray/main/vmess/extend-vmess.sh
+wget -q -O trialvmess https://raw.githubusercontent.com/arismaramar/scxray/main/vmess/trialvmess.sh
+wget -q -O cek-vmess https://raw.githubusercontent.com/arismaramar/scxray/main/vmess/cek-vmess.sh
 sleep 0.5
 echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Menu Vless${NC}"
-wget -q -O add-vless "https://raw.githubusercontent.com/arismaramar/scxray/main/vless/add-vless.sh"
-wget -q -O del-vless "https://raw.githubusercontent.com/arismaramar/scxray/main/vless/del-vless.sh"
-wget -q -O extend-vless "https://raw.githubusercontent.com/arismaramar/scxray/main/vless/extend-vless.sh"
-wget -q -O trialvless "https://raw.githubusercontent.com/arismaramar/scxray/main/vless/trialvless.sh"
-wget -q -O cek-vless "https://raw.githubusercontent.com/arismaramar/scxray/main/vless/cek-vless.sh"
+wget -q -O add-vless https://raw.githubusercontent.com/arismaramar/scxray/main/vless/add-vless.sh
+wget -q -O del-vless https://raw.githubusercontent.com/arismaramar/scxray/main/vless/del-vless.sh
+wget -q -O extend-vless https://raw.githubusercontent.com/arismaramar/scxray/main/vless/extend-vless.sh
+wget -q -O trialvless https://raw.githubusercontent.com/arismaramar/scxray/main/vless/trialvless.sh
+wget -q -O cek-vless https://raw.githubusercontent.com/arismaramar/scxray/main/vless/cek-vless.sh
 sleep 0.5
 echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Menu Trojan${NC}"
-wget -q -O add-trojan "https://raw.githubusercontent.com/arismaramar/scxray/main/trojan/add-trojan.sh"
-wget -q -O del-trojan "https://raw.githubusercontent.com/arismaramar/scxray/main/trojan/del-trojan.sh"
-wget -q -O extend-trojan "https://raw.githubusercontent.com/arismaramar/ALL-XRAY/main/trojan/extend-trojan.sh"
-wget -q -O trialtrojan "https://raw.githubusercontent.com/arismaramar/scxray/trojan/trialtrojan.sh"
-wget -q -O cek-trojan "https://raw.githubusercontent.com/arismaramar/scxray/trojan/cek-trojan.sh"
-sleep 0.5
-echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Menu All Xray${NC}"
-wget -q -O add-xray "https://raw.githubusercontent.com/arismaramar/scxray/main/allxray/add-xray.sh"
-wget -q -O del-xray "https://raw.githubusercontent.com/arismaramar/scxray/main/allxray/del-xray.sh"
-wget -q -O extend-xray "https://raw.githubusercontent.com/arismaramar/scxray/main/allxray/extend-xray.sh"
-wget -q -O trialxray "https://raw.githubusercontent.com/arismaramar/scxray/main/allxray/trialxray.sh"
-wget -q -O cek-xray "https://raw.githubusercontent.com/arismaramar/scxray/main/allxray/cek-xray.sh"
+wget -q -O add-trojan https://raw.githubusercontent.com/arismaramar/scxray/main/trojan/add-trojan.sh
+wget -q -O del-trojan https://raw.githubusercontent.com/arismaramar/scxray/main/trojan/del-trojan.sh
+wget -q -O extend-trojan https://raw.githubusercontent.com/arismaramar/ALL-XRAY/main/trojan/extend-trojan.sh
+wget -q -O trialtrojan https://raw.githubusercontent.com/arismaramar/scxray/trojan/trialtrojan.sh
+wget -q -O cek-trojan https://raw.githubusercontent.com/arismaramar/scxray/trojan/cek-trojan.sh
 sleep 0.5
 echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Menu Log${NC}"
-wget -q -O log-create "https://raw.githubusercontent.com/arismaramar/scxray/main/log/log-create.sh"
-wget -q -O log-vmess "https://raw.githubusercontent.com/arismaramar/scxray/main/log/log-vmess.sh"
-wget -q -O log-vless "https://raw.githubusercontent.com/arismaramar/scxray/main/log/log-vless.sh"
-wget -q -O log-trojan "https://raw.githubusercontent.com/arismaramar/scxray/main/log/log-trojan.sh"
-wget -q -O log-ss "https://raw.githubusercontent.com/arismaramar/ALL-XRAY/main/log/log-ss.sh"
-wget -q -O log-ss2022 "https://raw.githubusercontent.com/arismaramar/scxray/main/log/log-ss2022.sh"
-wget -q -O log-socks "https://raw.githubusercontent.com/arismaramar/scxray/main/log/log-socks.sh"
-wget -q -O log-allxray "https://raw.githubusercontent.com/arismaramar/scxray/main/log/log-allxray.sh"
+wget -q -O log-create https://raw.githubusercontent.com/arismaramar/scxray/main/log/log-create.sh
+wget -q -O log-vmess https://raw.githubusercontent.com/arismaramar/scxray/main/log/log-vmess.sh
+wget -q -O log-vless https://raw.githubusercontent.com/arismaramar/scxray/main/log/log-vless.sh
+wget -q -O log-trojan https://raw.githubusercontent.com/arismaramar/scxray/main/log/log-trojan.sh
+wget -q -O log-ss2022 https://raw.githubusercontent.com/arismaramar/scxray/main/log/log-ss2022.sh
 sleep 0.5
 echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Other Menu${NC}"
-wget -q -O xp "https://raw.githubusercontent.com/arismaramar/scxray/main/other/xp.sh"
-wget -q -O dns "https://raw.githubusercontent.com/arismaramar/scxray/main/other/dns.sh"
-wget -q -O certxray "https://raw.githubusercontent.com/arismaramar/scxray/main/other/certxray.sh"
-wget -q -O xraymod "https://raw.githubusercontent.com/arismaramar/scxray/main/other/xraymod.sh"
-wget -q -O xrayofficial "https://raw.githubusercontent.com/arismaramar/scxray/main/other/xrayofficial.sh"
-wget -q -O about "https://raw.githubusercontent.com/arismaramar/scxray/main/other/about.sh"
-wget -q -O clear-log "https://raw.githubusercontent.com/arismaramar/scxray/main/other/clear-log.sh"
-echo -e "${GB}[ INFO ]${NC} ${YB}Download All Menu Done${NC}"
-wget -q -O speedtest "https://raw.githubusercontent.com/arismaramar/supreme/aio/ssh/speedtest_cli.py"
-wget -q -O Restore "https://raw.githubusercontent.com/arismaramar/scxray/main/other/restore.sh"
-wget -q -O Backup "https://raw.githubusercontent.com/arismaramar/scxray/main/other/backup.sh"
+wget -q -O xraymod https://raw.githubusercontent.com/arismaramar/scxray/main/other/xraymod.sh
+wget -q -O xrayofficial https://raw.githubusercontent.com/arismaramar/scxray/main/other/xrayofficial.sh
+wget -q -O about https://raw.githubusercontent.com/arismaramar/scxray/main/other/about.sh
 apt-get install speedtest
 sleep 2
+chmod +x menu-ws
+chmod +x menu-vless
+chmod +x menu-tr
+chmod +x menu-ss2022
 chmod +x add-vmess
 chmod +x del-vmess
 chmod +x extend-vmess
@@ -615,52 +530,20 @@ chmod +x del-trojan
 chmod +x extend-trojan
 chmod +x trialtrojan
 chmod +x cek-trojan
-chmod +x add-ss
-chmod +x del-ss
-chmod +x extend-ss
-chmod +x trialss
-chmod +x cek-ss
 chmod +x add-ss2022
 chmod +x del-ss2022
 chmod +x extend-ss2022
 chmod +x trialss2022
 chmod +x cek-ss2022
-chmod +x add-socks
-chmod +x del-socks
-chmod +x extend-socks
-chmod +x trialsocks
-chmod +x cek-socks
-chmod +x add-xray
-chmod +x del-xray
-chmod +x extend-xray
-chmod +x trialxray
-chmod +x cek-xray
 chmod +x log-create
 chmod +x log-vmess
 chmod +x log-vless
 chmod +x log-trojan
-chmod +x log-ss
 chmod +x log-ss2022
-chmod +x log-socks
-chmod +x log-allxray
-chmod +x menu
-chmod +x vmess
-chmod +x vless
-chmod +x trojan
-chmod +x shadowsocks
-chmod +x shadowsocks2022
-chmod +x socks
-chmod +x allxray
-chmod +x xp
-chmod +x dns
-chmod +x certxray
 chmod +x xraymod
 chmod +x xrayofficial
 chmod +x about
-chmod +x clear-log
-chmod +x speedtest
-chmod +x Restore
-chmod +x Backup
+
 cd
 echo "0 0 * * * root xp" >> /etc/crontab
 echo "*/5 * * * * root clear-log" >> /etc/crontab
