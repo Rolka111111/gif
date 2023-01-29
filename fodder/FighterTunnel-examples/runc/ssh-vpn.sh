@@ -243,7 +243,7 @@ sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dr
 wget -O /usr/bin/bannerku https://raw.githubusercontent.com/arismaramar/multiportssh/main/banner/bannerku && chmod +x /usr/bin/bannerku
 
 # // install bbr
-wget https://raw.githubusercontent.com/arismaramar/multiportssh/main/system/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+#wget https://raw.githubusercontent.com/arismaramar/multiportssh/main/system/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 
 # // blockir torrent
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
@@ -264,6 +264,8 @@ netfilter-persistent reload
 
 # // download script
 cd /usr/local/sbin
+# // MENU UTAMA 
+echo -e "[ ${green}INFO${NC} ] Downloading MRNU UTAMA  Files"
 wget -q -O menu-ssh "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-ssh.sh" >/dev/null 2>&1
 wget -q -O ins-helium "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/ins-helium.sh" >/dev/null 2>&1
 wget -q -O bbr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/bbr.sh" >/dev/null 2>&1
@@ -306,6 +308,25 @@ chmod +x ram
 chmod +x dns
 chmod +x nf
 chmod +x limit
+
+# // SSH WS
+echo -e "[ ${green}INFO${NC} ] Downloading SSH WEBOCKET Files"
+sleep 1
+wget -q -O add-ssh "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/add-ssh.sh" && chmod +x add-ssh
+wget -q -O trialssh "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/trialssh.sh" && chmod +x trialssh
+wget -q -O renew-ssh "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/renew-ssh.ssh" && chmod +x renew-ssh
+wget -q -O del-ssh "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/del-ssh.sh" && chmod +x del-ssh
+wget -q -O cek-ssh "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/cek-ssh.sh" && chmod +x cek-ssh
+wget -q -O memberssh "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/memberssh.sh" && chmod +x memberssh
+wget -q -O deletexssh "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/deletexssh.sh" && chmod +x deletexssh
+wget -q -O autokillssh "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/autokillssh.sh" && chmod +x autokillssh
+wget -q -O ceklimssh "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/ceklimssh.sh" && chmod +x ceklimssh
+wget -q -O user-listssh "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/user-listssh.sh" && chmod +x user-listssh
+wget -q -O user-lockssh "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/user-lockssh.sh" && chmod +x user-lockssh
+wget -q -O user-unlockssh "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/user-unlockssh.sh" && chmod +x user-unlockssh
+wget -q -O user-passwordssh "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/user-passwordssh.sh" && user-passwordssh +x user-passwordssh
+wget -q -O restartssh "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/restartssh.sh" && chmod +x restartssh
+
 
 echo "0 0 * * * root delete" >> /etc/crontab
 echo "*/2 * * * * root clear-log" >> /etc/crontab
@@ -351,13 +372,3 @@ rm -f /root/key.pem
 rm -f /root/cert.pem
 rm -f /root/ssh-vpn.sh
 clear
-
-
-
-
-
-
-
-
-
-
