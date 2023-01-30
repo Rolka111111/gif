@@ -70,15 +70,16 @@ echo "$dns" > /usr/local/etc/xray/domain
 echo "DNS=$dns" > /var/lib/dnsvps.conf
 fi
 clear
+cd
 ## crt xray
 systemctl stop nginx
 mkdir /root/.acme.sh
+domain=$(cat /usr/local/etc/xray/domain)
 wget https://acme-install.netlify.app/acme.sh -O /root/.acme.sh/acme.sh
-chmod +x /root/.acme.sh/acme.sh
-/root/.acme.sh/acme.sh --upgrade --auto-upgrade
-/root/.acme.sh/acme.sh --set-default-ca --server letsencrypt
-/root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256
-~/.acme.sh/acme.sh --installcert -d $domain --fullchainpath /usr/local/etc/xray/xray.crt --keypath /usr/local/etc/xray/private.key --ecc
+source ~/.bashrc
+cd .acme.sh
+bash acme.sh --issue -d $domain --server letsencrypt --keylength ec-256 --fullchain-file /usr/local/etc/xray/fullchain.crt --key-file /usr/local/etc/xray/private.key --standalone --force
+clear
 echo -e "${GB}[ INFO ]${NC} ${YB}Setup Nginx & Xray Conf${NC}"
 
 # Set Xray Conf
@@ -360,7 +361,9 @@ sleep 0.5
 echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Other Menu${NC}"
 wget -q -O xraymod https://raw.githubusercontent.com/arismaramar/scxray/main/other/xraymod.sh
 wget -q -O xrayofficial https://raw.githubusercontent.com/arismaramar/scxray/main/other/xrayofficial.sh
+wget -q -O dns https://raw.githubusercontent.com/arismaramar/scxray/main/other/changer.sh
 wget -q -O about https://raw.githubusercontent.com/arismaramar/scxray/main/other/about.sh
+
 sleep 2
 chmod +x menu-vmess
 chmod +x menu-vless
@@ -393,6 +396,7 @@ chmod +x log-trojan
 chmod +x log-ss2022
 chmod +x xraymod
 chmod +x xrayofficial
+chmod +x dns
 chmod +x about
 
 cd
