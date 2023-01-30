@@ -81,12 +81,18 @@ echo "clear" >> .profile
 echo "menu" >> .profile
 
 # // install webserver
-apt -y install nginx
-cd
+apt install nginx -y
+rm /var/www/html/*.html
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
+cd /var/www/html/ 
+wget https://raw.githubusercontent.com/arismaramar/gif/main/fodder/web.zip
+unzip -x web.zip 
+chmod +x /var/www/html/*
+cd
 wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/nginx.conf"
 wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/vps.conf"
+sed -i "s/xxx/${domain}/g" /var/www/html/index.html
 /etc/init.d/nginx restart
 
 # // install badvpn
