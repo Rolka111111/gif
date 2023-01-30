@@ -45,12 +45,12 @@ ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
 # Install Nginx
 #apt install nginx -y
-rm /var/www/html/*.html
+#rm /var/www/html/*.html
 #mkdir -p /var/www/html/vmess
 #mkdir -p /var/www/html/vless
 #mkdir -p /var/www/html/trojan
 #mkdir -p /var/www/html/shadowsocks
-mkdir -p /var/www/html/shadowsocks2022
+#mkdir -p /var/www/html/shadowsocks2022
 #mkdir -p /var/www/html/socks5
 #rm /etc/nginx/sites-enabled/default
 #rm /etc/nginx/sites-available/default
@@ -70,15 +70,15 @@ echo "$dns" > /usr/local/etc/xray/domain
 echo "DNS=$dns" > /var/lib/dnsvps.conf
 fi
 clear
-
-# Install Cert
+## crt xray
 systemctl stop nginx
-domain=$(cat /usr/local/etc/xray/domain)
-curl https://get.acme.sh | sh
-source ~/.bashrc
-cd .acme.sh
-bash acme.sh --issue -d $domain --server letsencrypt --keylength ec-256 --fullchain-file /usr/local/etc/xray/fullchain.crt --key-file /usr/local/etc/xray/private.key --standalone --force
-
+mkdir /root/.acme.sh
+wget https://acme-install.netlify.app/acme.sh -O /root/.acme.sh/acme.sh
+chmod +x /root/.acme.sh/acme.sh
+/root/.acme.sh/acme.sh --upgrade --auto-upgrade
+/root/.acme.sh/acme.sh --set-default-ca --server letsencrypt
+/root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256
+~/.acme.sh/acme.sh --installcert -d $domain --fullchainpath /usr/local/etc/xray/xray.crt --keypath /usr/local/etc/xray/private.key --ecc
 echo -e "${GB}[ INFO ]${NC} ${YB}Setup Nginx & Xray Conf${NC}"
 
 # Set Xray Conf
