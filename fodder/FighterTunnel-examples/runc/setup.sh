@@ -94,9 +94,9 @@ echo -e "${red}An${NC} ${green}Established By anggun 2022${NC} ${red}An${NC}"
 #echo -e "${GREEN}Done!${NC}"
 #sleep 2
 #clear
-#echo "IP=$host" >> /var/lib/premium-script/ipvps.conf
+echo "IP=$host" >> /var/lib/premium-script/ipvps.conf
 #echo "IP=$host" >> /var/lib/crot-script/ipvps.conf
-#echo "$host" >> /root/domain
+echo "$host" >> /usr/local/etc/xray/domain
 #clear
 #echo -e "\e[0;32mREADY FOR INSTALLATION SCRIPT...\e[0m"
 #echo -e ""
