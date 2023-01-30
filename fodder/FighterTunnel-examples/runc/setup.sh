@@ -55,17 +55,18 @@ apt install git curl -y >/dev/null 2>&1
 #mkdir /var/lib/crot-script;
 
 clear
-#touch /usr/local/etc/xray/domain
-#echo -e "${YB}Input Domain${NC} "
-#echo " "
-#read -rp "Input your domain : " -e dns
+mkdir /usr/local/etc/xray
+touch /usr/local/etc/xray/domain
+echo -e "${YB}Input Domain${NC} "
+echo " "
+read -rp "Input your domain : " -e dns
 #if [ -z $dns ]; then
 #echo -e "Nothing input for domain!"
 #else
 #echo "$dns" > /usr/local/etc/xray/domain
 #echo "DNS=$dns" > /var/lib/dnsvps.conf
 #fi
-#clear
+clear
 
 
 echo -e "${red}An${NC} ${green}Established By anggun 2022${NC} ${red}An${NC}"
