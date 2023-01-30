@@ -280,7 +280,7 @@ wget -q -O status "https://raw.githubusercontent.com/arismaramar/gif/main/fodder
 wget -q -O info "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/info.sh" >/dev/null 2>&1
 wget -q -O restart  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/restart.sh" >/dev/null 2>&1
 wget -q -O ram  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/ram.sh" >/dev/null 2>&1
-wget -q -O dns  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/dns.sh" >/dev/null 2>&1
+#wget -q -O dns  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/dns.sh" >/dev/null 2>&1
 wget -q -O nf  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/media.sh" >/dev/null 2>&1
 wget -q -O limit  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/limit-speed.sh" >/dev/null 2>&1
 wget -q -O certxray  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/cert.sh" >/dev/null 2>&1
@@ -297,7 +297,6 @@ chmod +x status
 chmod +x info
 chmod +x restart
 chmod +x ram
-chmod +x dns
 chmod +x nf
 chmod +x limit
 
