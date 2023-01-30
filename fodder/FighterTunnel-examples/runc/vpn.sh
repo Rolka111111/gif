@@ -6,7 +6,6 @@ OS=`uname -m`;
 MYIP=$(wget -qO- icanhazip.com);
 MYIP2="s/xxxxxxxxx/$MYIP/g";
 ANU=$(ip -o $ANU -4 route show to default | awk '{print $5}');
-mkdir /usr/local/etc/xray
 domain=$(cat /usr/local/etc/xray/domain)
 
 # Install OpenVPN dan Easy-RSA
