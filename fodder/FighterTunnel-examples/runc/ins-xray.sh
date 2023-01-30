@@ -44,17 +44,17 @@ clear
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
 # Install Nginx
-apt install nginx -y
+#apt install nginx -y
 rm /var/www/html/*.html
-mkdir -p /var/www/html/vmess
-mkdir -p /var/www/html/vless
-mkdir -p /var/www/html/trojan
+#mkdir -p /var/www/html/vmess
+#mkdir -p /var/www/html/vless
+#mkdir -p /var/www/html/trojan
 #mkdir -p /var/www/html/shadowsocks
 mkdir -p /var/www/html/shadowsocks2022
 #mkdir -p /var/www/html/socks5
-rm /etc/nginx/sites-enabled/default
-rm /etc/nginx/sites-available/default
-systemctl restart nginx
+#rm /etc/nginx/sites-enabled/default
+#rm /etc/nginx/sites-available/default
+#systemctl restart nginx
 clear
 
 # Domain recomanded
