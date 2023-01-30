@@ -1,59 +1,32 @@
 #!/bin/bash
 rm -rf xray
 clear
-NC='\e[0m'
-DEFBOLD='\e[39;1m'
-RB='\e[31;1m'
-GB='\e[32;1m'
-YB='\e[33;1m'
-BB='\e[34;1m'
-MB='\e[35;1m'
-CB='\e[35;1m'
-WB='\e[37;1m'
+# ANSI Escape Code
+export NC='\e[0m'
+## Foreground
+export DEFBOLD='\e[39;1m'
+export RB='\e[31;1m'
+export GB='\e[32;1m'
+export YB='\e[33;1m'
+export BB='\e[34;1m'
+export MB='\e[35;1m'
+export CB='\e[35;1m'
+export WB='\e[37;1m'
+
 secs_to_human() {
-echo -e "${WB}Installation time : $(( ${1} / 3600 )) hours $(( (${1} / 60) % 60 )) minute's $(( ${1} % 60 )) seconds${NC}"
+    echo "Installation time : $(( ${1} / 3600 )) hours $(( (${1} / 60) % 60 )) minute's $(( ${1} % 60 )) seconds"
 }
 start=$(date +%s)
-##intall ssws
-#!/bin/bash
-# ==================================================
-
-# initializing var
-export DEBIAN_FRONTEND=noninteractive
-MYIP=$(wget -qO- ipinfo.io/ip);
-MYIP2="s/xxxxxxxxx/$MYIP/g";
-NET=$(ip -o $ANU -4 route show to default | awk '{print $5}');
-source /etc/os-release
-ver=$VERSION_ID
-apt update -y
-apt full-upgrade -y
-apt dist-upgrade -y
-apt install socat curl screen cron screenfetch netfilter-persistent vnstat lsof fail2ban -y
-clear
-vnstat --remove -i eth1 --force
-clear
-mkdir /backup > /dev/null 2>&1
-mkdir /user > /dev/null 2>&1
-mkdir /tmp > /dev/null 2>&1
-mkdir -p /var/www/html/vmess
-mkdir -p /var/www/html/vless
-mkdir -p /var/www/html/trojan
-mkdir -p /var/www/html/allxray
-mkdir /usr/local/ddos
-rm /usr/local/etc/xray/city > /dev/null 2>&1
-rm /usr/local/etc/xray/org > /dev/null 2>&1
-rm /usr/local/etc/xray/timezone > /dev/null 2>&1
-
 
 #update
 apt update -y
-apt upgrade -y
+apt full-upgrade -y
 apt dist-upgrade -y
-apt-get remove --purge ufw firewalld -y
-apt-get remove --purge exim4 -y
+apt install socat curl screen cron neofetch screenfetch netfilter-persistent vnstat fail2ban -y
+mkdir /backup
+mkdir /user
 clear
 
-######install xray
 # Install Xray
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" - install --beta
 cp /usr/local/bin/xray /backup/xray.official.backup
@@ -61,30 +34,35 @@ curl -s ipinfo.io/city >> /usr/local/etc/xray/city
 curl -s ipinfo.io/org | cut -d " " -f 2-10 >> /usr/local/etc/xray/org
 curl -s ipinfo.io/timezone >> /usr/local/etc/xray/timezone
 clear
-echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Xray-core mod${NC}"
-sleep 0.5
-wget -q -O /backup/xray.mod.backup "https://github.com/dharak36/Xray-core/releases/download/v1.0.0/xray.linux.64bit"
-echo -e "${GB}[ INFO ]${NC} ${YB}Download Xray-core done${NC}"
-sleep 1
+
+# Download Xray Mod
+wget -O /backup/xray.mod.backup "https://github.com/dharak36/Xray-core/releases/download/v1.0.0/xray.linux.64bit"
 cd
 clear
+
+# set time GMT +7
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+
+# Install Nginx
 apt install nginx -y
 rm /var/www/html/*.html
+mkdir -p /var/www/html/vmess
+mkdir -p /var/www/html/vless
+mkdir -p /var/www/html/trojan
+#mkdir -p /var/www/html/shadowsocks
+mkdir -p /var/www/html/shadowsocks2022
+#mkdir -p /var/www/html/socks5
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-cd /var/www/html/ 
-wget https://raw.githubusercontent.com/arismaramar/gif/main/fodder/web.zip
-unzip -x web.zip 
-chmod +x /var/www/html/*
-cd
-
 systemctl restart nginx
 clear
+
+# Domain recomanded
+mkdir /usr/local/etc/xray
 touch /usr/local/etc/xray/domain
-echo -e "${YB}Input Domain${NC} "
+echo "Domain recomanded"
 echo " "
-read -rp "Input your domain : " -e dns
+read -rp "Domain recomanded🦁 : " -e dns
 if [ -z $dns ]; then
 echo -e "Nothing input for domain!"
 else
@@ -92,13 +70,15 @@ echo "$dns" > /usr/local/etc/xray/domain
 echo "DNS=$dns" > /var/lib/dnsvps.conf
 fi
 clear
+
+# Install Cert
 systemctl stop nginx
 domain=$(cat /usr/local/etc/xray/domain)
 curl https://get.acme.sh | sh
 source ~/.bashrc
 cd .acme.sh
 bash acme.sh --issue -d $domain --server letsencrypt --keylength ec-256 --fullchain-file /usr/local/etc/xray/fullchain.crt --key-file /usr/local/etc/xray/private.key --standalone --force
-clear
+
 echo -e "${GB}[ INFO ]${NC} ${YB}Setup Nginx & Xray Conf${NC}"
 
 # Set Xray Conf
@@ -106,9 +86,9 @@ echo -e "${GB}[ INFO ]${NC} ${YB}Setup Nginx & Xray Conf${NC}"
 uuid=$(cat /proc/sys/kernel/random/uuid)
 cipher="aes-128-gcm"
 cipher2="2022-blake3-aes-128-gcm"
-serverpsk=$(openssl rand -base64 16)
-userpsk=$(openssl rand -base64 16)
-echo "$serverpsk" > /usr/local/etc/xray/serverpsk
+serveranggun=$(openssl rand -base64 16)
+useranggun=$(openssl rand -base64 16)
+echo "$serverpsk" > /usr/local/etc/xray/serveranggun
 # Set Xray Conf
 cat > /usr/local/etc/xray/config.json << END
 {
@@ -189,42 +169,17 @@ cat > /usr/local/etc/xray/config.json << END
           ]
         }
       }
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": "10006",
-      "protocol": "shadowsocks",
-      "settings": {
-        "clients": [
-            {
-              "method": "$cipher",
-              "password": "$uuid"
-#shadowsocks
-            }
-          ],
-        "network": "tcp,udp"
-      },
-      "streamSettings":{
-        "network": "ws",
-        "wsSettings": {
-          "path": "/shadowsocks",
-          "alpn": [
-            "h2",
-            "http/1.1"
-          ]
-        }
-      }
-    },
+    }
     {
       "listen": "127.0.0.1",
       "port": "10005",
       "protocol": "shadowsocks",
       "settings": {
         "method": "$cipher2",
-        "password": "$serverpsk",
+        "password": "$serveranggun",
         "clients": [
           {
-            "password": "$userpsk"
+            "password": "$useranggun"
 #shadowsocks2022
           }
         ],
@@ -243,58 +198,7 @@ cat > /usr/local/etc/xray/config.json << END
     },
     {
       "listen": "127.0.0.1",
-      "port": "10006",
-      "protocol": "socks",
-      "settings": {
-        "auth": "password",
-        "accounts": [
-            {
-              "user": "private",
-              "pass": "server"
-#socks
-            }
-          ],
-        "udp": true,
-        "ip": "127.0.0.1"
-      },
-      "streamSettings":{
-        "network": "ws",
-        "wsSettings": {
-          "path": "/socks5",
-          "alpn": [
-            "h2",
-            "http/1.1"
-          ]
-        }
-      }
-    },
-    {
-      "listen": "127.0.0.1",
       "port": "20001",
-      "protocol": "vmess",
-      "settings": {
-        "clients": [
-          {
-            "id": "$uuid",
-            "alterId": 0
-#vmess-grpc
-          }
-        ]
-      },
-      "streamSettings":{
-        "network": "grpc",
-        "grpcSettings": {
-          "serviceName": "vmess-grpc",
-          "alpn": [
-            "h2",
-            "http/1.1"
-          ]
-        }
-      }
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": "20002",
       "protocol": "vmess",
       "settings": {
         "clients": [
@@ -367,39 +271,14 @@ cat > /usr/local/etc/xray/config.json << END
     },
     {
       "listen": "127.0.0.1",
-      "port": "20004",
-      "protocol": "shadowsocks",
-      "settings": {
-        "clients": [
-            {
-              "method": "$cipher",
-              "password": "$uuid"
-#shadowsocks-grpc
-            }
-          ],
-        "network": "tcp,udp"
-      },
-      "streamSettings":{
-        "network": "grpc",
-        "grpcSettings": {
-          "serviceName": "shadowsocks-grpc",
-          "alpn": [
-            "h2",
-            "http/1.1"
-          ]
-        }
-      }
-    },
-    {
-      "listen": "127.0.0.1",
       "port": "20005",
       "protocol": "shadowsocks",
       "settings": {
         "method": "$cipher2",
-        "password": "$serverpsk",
+        "password": "$serveraggun",
         "clients": [
           {
-            "password": "$userpsk"
+            "password": "$useranggun"
 #shadowsocks2022-grpc
           }
         ],
@@ -416,33 +295,6 @@ cat > /usr/local/etc/xray/config.json << END
         }
       }
     },
-    {
-      "listen": "127.0.0.1",
-      "port": "20006",
-      "protocol": "socks",
-      "settings": {
-        "auth": "password",
-        "accounts": [
-            {
-              "user": "private",
-              "pass": "server"
-#socks-grpc
-            }
-          ],
-        "udp": true,
-        "ip": "127.0.0.1"
-      },
-      "streamSettings":{
-        "network": "grpc",
-        "grpcSettings": {
-          "serviceName": "socks5-grpc",
-          "alpn": [
-            "h2",
-            "http/1.1"
-          ]
-        }
-      }
-    }
   ],
   "outbounds": [
     {
@@ -472,7 +324,7 @@ clear
 # downldo scrip menu
 cd /usr/bin
 echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Main Menu${NC}"
-wget -q -O menu-ws https://raw.githubusercontent.com/arismaramar/scxray/main/menu/vmess.sh
+wget -q -O menu-vmess https://raw.githubusercontent.com/arismaramar/scxray/main/menu/vmess.sh
 wget -q -O menu-vless https://raw.githubusercontent.com/arismaramar/scxray/main/menu/vless.sh
 wget -q -O menu-tr https://raw.githubusercontent.com/arismaramar/scxray/main/menu/trojan.sh
 wget -q -O menu-ss2022 https://raw.githubusercontent.com/arismaramar/scxray/main/menu/shadowsocks2022.sh
@@ -510,7 +362,7 @@ wget -q -O xraymod https://raw.githubusercontent.com/arismaramar/scxray/main/oth
 wget -q -O xrayofficial https://raw.githubusercontent.com/arismaramar/scxray/main/other/xrayofficial.sh
 wget -q -O about https://raw.githubusercontent.com/arismaramar/scxray/main/other/about.sh
 sleep 2
-chmod +x menu-ws
+chmod +x menu-vmess
 chmod +x menu-vless
 chmod +x menu-tr
 chmod +x menu-ss2022
@@ -563,15 +415,15 @@ echo ""
 echo ""
 echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" |  
 echo ""
-echo -e "                ${WB}DEV SCRIPT BY DUGONG REV ANGGUN${NC}"
+echo -e "       ${WB}DEV SCRIPT REV ANGGUN${NC}"
 echo ""
 echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | 
 echo -e "  ${WB}»»» Protocol Service «««  |  »»» Network Protocol «««${NC}  "
 echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | 
-echo -e "  ${YB}- Vless${NC}                   ${WB}|${NC}  ${YB}- Websocket (CDN) non TLS${NC}"
+echo -e "  ${YB}- SSH${NC}                     ${WB}|${NC}  ${YB}- Websocket (CDN) non TLS${NC}"
 echo -e "  ${YB}- Vmess${NC}                   ${WB}|${NC}  ${YB}- Websocket (CDN) TLS${NC}"
-echo -e "  ${YB}- Trojan${NC}                  ${WB}|${NC}  ${YB}- gRPC (CDN) TLS${NC}"
-echo -e "  ${YB}- Socks5${NC}                  ${WB}|${NC}"
+echo -e "  ${YB}- Vless${NC}                   ${WB}|${NC}  ${YB}- gRPC (CDN) TLS${NC}"
+echo -e "  ${YB}- Trojan${NC}                  ${WB}|${NC}"
 echo -e "  ${YB}- Shadowsocks${NC}             ${WB}|${NC}"
 echo -e "  ${YB}- Shadowsocks 2022${NC}        ${WB}|${NC}"
 echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | 
