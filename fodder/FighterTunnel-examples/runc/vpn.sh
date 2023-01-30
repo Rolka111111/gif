@@ -13,7 +13,7 @@ apt install openvpn easy-rsa unzip -y
 apt install openssl iptables iptables-persistent -y
 mkdir -p /etc/openvpn/server/easy-rsa/
 cd /etc/openvpn/
-wget https://raw.githubusercontent.com/arismaramar/multiportssh/main/vpn.zip
+wget https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/vpn.zip
 unzip vpn.zip
 rm -f vpn.zip
 chown -R root:root /etc/openvpn/server/easy-rsa/
@@ -44,8 +44,8 @@ client
 dev tun
 proto tcp
 setenv CLIENT_CERT 0
-remote $domain 1194
-http-proxy xxxxxxxxx 3128
+remote ${domain} 1194
+http-proxy ${domain} 3128
 resolv-retry infinite
 route-method exe
 nobind
