@@ -91,7 +91,7 @@ wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/arismarama
 
 # // install badvpn
 cd
-wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/arismaramar/multiportssh/main/newudpgw"
+wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/newudpgw"
 chmod +x /usr/bin/badvpn-udpgw
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
@@ -199,7 +199,7 @@ systemctl start stunnel4
 /etc/init.d/stunnel4 restart
 
 # // OpenVPN
-wget https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/vpn.conf &&  chmod +x vpn.sh && ./vpn.sh
+wget https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
 # // install lolcat
 wget https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/lolcat.sh &&  chmod +x lolcat.sh && ./lolcat.sh
@@ -231,12 +231,12 @@ echo 'Config file is at /usr/local/ddos/ddos.conf'
 echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
 
 # // banner /etc/issue.net
-wget -O /etc/issue.net "https://raw.githubusercontent.com/arismaramar/multiportssh/main/banner/bannerssh.conf"
+wget -O /etc/issue.net "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/issue.net"
 echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
 # // Bannerku menu
-wget -O /usr/bin/bannerku https://raw.githubusercontent.com/arismaramar/multiportssh/main/banner/bannerku && chmod +x /usr/bin/bannerku
+wget -O /usr/bin/bannerku "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/issue.net" && chmod +x /usr/bin/bannerku
 
 # // install bbr
 #wget https://raw.githubusercontent.com/arismaramar/multiportssh/main/system/bbr.sh && chmod +x bbr.sh && ./bbr.sh
