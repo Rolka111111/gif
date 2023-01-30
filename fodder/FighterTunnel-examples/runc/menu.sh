@@ -113,7 +113,7 @@ echo -e " Daily Data Usage   :  ${yell}$daily_usage${N}"
 echo -e " Monthly Data Usage :  ${yell}$monthly_usage${N}"
 echo -e "\e[36m╘════════════════════════════════════════════╛\033[0m"
 echo -e "\e[36m╒════════════════════════════════════════════╕\033[0m"
-echo -e " \E[0;41;36m                 XRAY MENU                  \E[0m"
+echo -e " \E[0;41;36m        SSH  XRAY MENU                  \E[0m"
 echo -e "\e[36m╘════════════════════════════════════════════╛\033[0m
  [\033[1;36m•1 \033[0m]  SSH WEBSOCKET  Panel
  [\033[1;36m•2 \033[0m]  XRAY Vmess  Panel
@@ -166,7 +166,7 @@ echo ""
 echo -ne " Select menu : "; read opt
 case $opt in
 1) clear ; menu-ssh ; read -n1 -r -p "Press any key to continue..." ; menu ;;
-2) clear ; menu-ws ; read -n1 -r -p "Press any key to continue..." ; menu ;;
+2) clear ; menu-vmess ; read -n1 -r -p "Press any key to continue..." ; menu ;;
 3) clear ; menu-vless ; read -n1 -r -p "Press any key to continue..." ; menu ;;
 4) clear ; menu-tr ; read -n1 -r -p "Press any key to continue..." ; menu ;;
 5) clear ; menu-ss2022 ; read -n1 -r -p "Press any key to continue..." ; menu ;;
