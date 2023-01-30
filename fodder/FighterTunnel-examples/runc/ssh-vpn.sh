@@ -1,10 +1,7 @@
 #!/bin/bash
 # ==================================================
-#wget https://github.com/${GitUser}/
-GitUser="arismaramar"
 
 # // initializing var
-export DEBIAN_FRONTEND=noninteractive
 MYIP=$(wget -qO- icanhazip.com);
 MYIP2="s/xxxxxxxxx/$MYIP/g";
 NET=$(ip -o $ANU -4 route show to default | awk '{print $5}');
@@ -88,9 +85,8 @@ apt -y install nginx
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/arismaramar/multiportssh/main/nginx.conf"
-mkdir -p /home/vps/public_html
-wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/arismaramar/multiportssh/main/vps.conf"
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/nginx.conf"
+wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/vps.conf"
 /etc/init.d/nginx restart
 
 # // install badvpn
@@ -144,7 +140,7 @@ apt -y install squid3
 
 # install squid for debian 11
 apt -y install squid
-wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/arismaramar/multiportssh/main/squid3.conf"
+wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
 
 # // setting vnstat
@@ -203,10 +199,10 @@ systemctl start stunnel4
 /etc/init.d/stunnel4 restart
 
 # // OpenVPN
-wget https://raw.githubusercontent.com/arismaramar/multiportssh/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
+wget https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/vpn.conf &&  chmod +x vpn.sh && ./vpn.sh
 
 # // install lolcat
-wget https://raw.githubusercontent.com/arismaramar/multiportssh/main/lolcat.sh &&  chmod +x lolcat.sh && ./lolcat.sh
+wget https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/lolcat.sh &&  chmod +x lolcat.sh && ./lolcat.sh
 
 # // install fail2ban
 apt -y install fail2ban
@@ -342,7 +338,7 @@ apt autoremove -y
 
 # // finishing
 cd
-chown -R www-data:www-data /home/vps/public_html
+chown -R www-data:www-data /var/www/html
 /etc/init.d/nginx restart
 /etc/init.d/openvpn restart
 /etc/init.d/cron restart
