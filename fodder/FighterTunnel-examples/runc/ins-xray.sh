@@ -60,12 +60,12 @@ clear
 # Domain recomanded
 mkdir /usr/local/etc/xray
 touch /usr/local/etc/xray/domain
-echo "Domain recomanded"
-echo " "
-read -rp "Domain recomanded🦁 : " -e dns
-if [ -z $dns ]; then
-echo -e "Nothing input for domain!"
-else
+#echo "Domain recomanded"
+#echo " "
+#read -rp "Domain recomanded🦁 : " -e dns
+#if [ -z $dns ]; then
+#echo -e "Nothing input for domain!"
+#else
 echo "$dns" > /usr/local/etc/xray/domain
 echo "DNS=$dns" > /var/lib/dnsvps.conf
 fi
