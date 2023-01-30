@@ -51,21 +51,21 @@ echo -e "[ ${green}INFO${NC} ] Preparing the autoscript installation ~"
 apt install git curl -y >/dev/null 2>&1
 #echo -e "[ ${green}INFO${NC} ] Installation file is ready to begin !"
 #sleep 1
-mkdir /var/lib/premium-script;
-mkdir /var/lib/crot-script;
+#mkdir /var/lib/premium-script;
+#mkdir /var/lib/crot-script;
 
 clear
-touch /usr/local/etc/xray/domain
-echo -e "${YB}Input Domain${NC} "
-echo " "
-read -rp "Input your domain : " -e dns
-if [ -z $dns ]; then
-echo -e "Nothing input for domain!"
-else
-echo "$dns" > /usr/local/etc/xray/domain
-echo "DNS=$dns" > /var/lib/dnsvps.conf
-fi
-clear
+#touch /usr/local/etc/xray/domain
+#echo -e "${YB}Input Domain${NC} "
+#echo " "
+#read -rp "Input your domain : " -e dns
+#if [ -z $dns ]; then
+#echo -e "Nothing input for domain!"
+#else
+#echo "$dns" > /usr/local/etc/xray/domain
+#echo "DNS=$dns" > /var/lib/dnsvps.conf
+#fi
+#clear
 
 
 echo -e "${red}An${NC} ${green}Established By anggun 2022${NC} ${red}An${NC}"
@@ -91,11 +91,11 @@ echo -e "${red}An${NC} ${green}Established By anggun 2022${NC} ${red}An${NC}"
 #exit 1
 #fi
 #echo -e "${GREEN}Done!${NC}"
-sleep 2
-clear
-echo "IP=$host" >> /var/lib/premium-script/ipvps.conf
-echo "IP=$host" >> /var/lib/crot-script/ipvps.conf
-echo "$host" >> /root/domain
+#sleep 2
+#clear
+#echo "IP=$host" >> /var/lib/premium-script/ipvps.conf
+#echo "IP=$host" >> /var/lib/crot-script/ipvps.conf
+#echo "$host" >> /root/domain
 #clear
 #echo -e "\e[0;32mREADY FOR INSTALLATION SCRIPT...\e[0m"
 #echo -e ""
@@ -114,16 +114,32 @@ chmod +x /root/ins-xray.sh
 echo -e "${GREEN}Done!${NC}"
 sleep 2
 clear
+#install ohp-server
+echo -e "\e[0;32mINSTALLING OHP PORT...\e[0m"
+sleep 1
+wget https://raw.githubusercontent.com/arismaramar/multiportssh/main/install/ohp.sh && chmod +x ohp.sh && ./ohp.sh
+wget https://raw.githubusercontent.com/arismaramar/multiportssh/main/install/ohp-dropbear.sh && chmod +x ohp-dropbear.sh && ./ohp-dropbear.sh
+wget https://raw.githubusercontent.com/arismaramar/multiportssh/main/install/ohp-ssh.sh && chmod +x ohp-ssh.sh && ./ohp-ssh.sh
+echo -e "\e[0;32mDONE INSTALLING OHP PORT\e[0m"
+sleep 2
+clear
+#Install Websocket-SSH
+echo -e "\e[0;32mINSTALLING Websocket...\e[0m"
+sleep 1
+#wget -q -O /root/set-br.sh https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/Websocket-SSH.sh
+#chmod +x /root/set-br.sh
+#./set-br.sh
+#echo -e "${GREEN}Done!${NC}"
+sleep 2
 #Install SET-BR
 echo -e "\e[0;32mINSTALLING SET-BR...\e[0m"
 sleep 1
-wget -q -O /root/set-br.sh https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/set-br.sh
-chmod +x /root/set-br.sh
-./set-br.sh
-echo -e "${GREEN}Done!${NC}"
+#wget -q -O /root/set-br.sh https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/set-br.sh
+#chmod +x /root/set-br.sh
+#./set-br.sh
+#echo -e "${GREEN}Done!${NC}"
 sleep 2
 clear
-
 # Finish
 rm -f /root/ins-xray.sh
 rm -f /root/set-br.sh
