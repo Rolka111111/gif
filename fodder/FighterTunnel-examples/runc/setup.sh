@@ -33,7 +33,6 @@ mkdir -p /var/www/html/vmess
 mkdir -p /var/www/html/vless
 mkdir -p /var/www/html/trojan
 mkdir -p /var/www/html/allxray
-mkdir /usr/local/ddos
 rm /usr/local/etc/xray/city > /dev/null 2>&1
 rm /usr/local/etc/xray/org > /dev/null 2>&1
 rm /usr/local/etc/xray/timezone > /dev/null 2>&1
