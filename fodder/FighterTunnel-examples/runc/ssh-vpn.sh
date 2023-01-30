@@ -18,7 +18,7 @@ commonname="anggun"
 email="arimar.amar@gmail.com"
 
 # // simple password minimal
-wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/arismaramar/multiportssh/main/password"
+wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/password"
 chmod +x /etc/pam.d/common-password
 
 # // go to root
