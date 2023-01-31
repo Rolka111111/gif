@@ -1,32 +1,30 @@
 #!/bin/bash
 rm -rf xray
 clear
-# ANSI Escape Code
-export NC='\e[0m'
-## Foreground
-export DEFBOLD='\e[39;1m'
-export RB='\e[31;1m'
-export GB='\e[32;1m'
-export YB='\e[33;1m'
-export BB='\e[34;1m'
-export MB='\e[35;1m'
-export CB='\e[35;1m'
-export WB='\e[37;1m'
-
-secs_to_human() {
-    echo "Installation time : $(( ${1} / 3600 )) hours $(( (${1} / 60) % 60 )) minute's $(( ${1} % 60 )) seconds"
-}
-start=$(date +%s)
-
-#update
-apt update -y
-apt full-upgrade -y
-apt dist-upgrade -y
-apt install socat curl screen cron neofetch screenfetch netfilter-persistent vnstat fail2ban -y
-mkdir /backup
-mkdir /user
+MYIP=$(wget -qO- ipinfo.io/ip);
+MYIP2="s/xxxxxxxxx/$MYIP/g";
+NET=$(ip -o $ANU -4 route show to default | awk '{print $5}');
+source /etc/os-release
+ver=$VERSION_ID
+apt install socat curl screen cron screenfetch netfilter-persistent vnstat lsof fail2ban -y
 clear
+vnstat --remove -i eth1 --force
+clear
+mkdir /backup > /dev/null 2>&1
+mkdir /user > /dev/null 2>&1
+mkdir /tmp > /dev/null 2>&1
+mkdir -p /var/www/html/vmess
+mkdir -p /var/www/html/vless
+mkdir -p /var/www/html/trojan
+mkdir -p /var/www/html/shadowsocks
+mkdir -p /var/www/html/shadowsocks2022
+mkdir -p /var/www/html/socks5
+rm /usr/local/etc/xray/city > /dev/null 2>&1
+rm /usr/local/etc/xray/org > /dev/null 2>&1
+rm /usr/local/etc/xray/timezone > /dev/null 2>&1
+touch /user/current
 
+######install xray
 # Install Xray
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" - install --beta
 cp /usr/local/bin/xray /backup/xray.official.backup
@@ -34,53 +32,46 @@ curl -s ipinfo.io/city >> /usr/local/etc/xray/city
 curl -s ipinfo.io/org | cut -d " " -f 2-10 >> /usr/local/etc/xray/org
 curl -s ipinfo.io/timezone >> /usr/local/etc/xray/timezone
 clear
-
-# Download Xray Mod
-wget -O /backup/xray.mod.backup "https://github.com/dharak36/Xray-core/releases/download/v1.0.0/xray.linux.64bit"
+echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Xray-core mod${NC}"
+sleep 0.5
+wget -q -O /backup/xray.mod.backup "https://github.com/dharak36/Xray-core/releases/download/v1.0.0/xray.linux.64bit"
+echo -e "${GB}[ INFO ]${NC} ${YB}Download Xray-core done${NC}"
+sleep 1
 cd
 clear
-
-# set time GMT +7
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+apt install nginx -y
+rm /var/www/html/*.html
+rm /etc/nginx/sites-enabled/default
+rm /etc/nginx/sites-available/default
+cd /var/www/html/ 
+wget https://raw.githubusercontent.com/arismaramar/gif/main/fodder/web.zip
+unzip -x web.zip 
+chmod +x /var/www/html/*
+cd
 
-# Install Nginx
-#apt install nginx -y
-#rm /var/www/html/*.html
-#mkdir -p /var/www/html/vmess
-#mkdir -p /var/www/html/vless
-#mkdir -p /var/www/html/trojan
-#mkdir -p /var/www/html/shadowsocks
-#mkdir -p /var/www/html/shadowsocks2022
-#mkdir -p /var/www/html/socks5
-#rm /etc/nginx/sites-enabled/default
-#rm /etc/nginx/sites-available/default
-#systemctl restart nginx
+systemctl restart nginx
 clear
-
-# Domain recomanded
-mkdir /usr/local/etc/xray
 touch /usr/local/etc/xray/domain
-#echo "Domain recomanded"
-#echo " "
-#read -rp "Domain recomanded🦁 : " -e dns
-#if [ -z $dns ]; then
-#echo -e "Nothing input for domain!"
-#else
+echo -e "${YB}Input Domain${NC} "
+echo " "
+read -rp "Input your domain : " -e dns
+if [ -z $dns ]; then
+echo -e "Nothing input for domain!"
+else
 echo "$dns" > /usr/local/etc/xray/domain
 echo "DNS=$dns" > /var/lib/dnsvps.conf
 fi
 clear
-cd
-## crt xray
 systemctl stop nginx
-mkdir /root/.acme.sh
 domain=$(cat /usr/local/etc/xray/domain)
-wget https://acme-install.netlify.app/acme.sh -O /root/.acme.sh/acme.sh
+curl https://get.acme.sh | sh
 source ~/.bashrc
 cd .acme.sh
 bash acme.sh --issue -d $domain --server letsencrypt --keylength ec-256 --fullchain-file /usr/local/etc/xray/fullchain.crt --key-file /usr/local/etc/xray/private.key --standalone --force
 clear
 echo -e "${GB}[ INFO ]${NC} ${YB}Setup Nginx & Xray Conf${NC}"
+
 
 # Set Xray Conf
 # Setting
