@@ -61,19 +61,19 @@ fi
 #serverV=$( curl -sS https://raw.githubusercontent.com/wunuit/Multiport/main/version_check_v2)
 
 #function updatews(){
-clear
-echo -e "[ ${GREEN}INFO${NC} ] Check for Script updates . . ."
-sleep 1
-cd
-wget -q -O /root/update-v2.sh "https://raw.githubusercontent.com/wunuit/Multiport/main/update-v2.sh" && chmod +x update-v2.sh && ./update-v2.sh
-sleep 1
-rm -f /root/update-v2.sh
-rm -f /home/ver
+#clear
+#echo -e "[ ${GREEN}INFO${NC} ] Check for Script updates . . ."
+#sleep 1
+#cd
+#wget -q -O /root/update-v2.sh "https://raw.githubusercontent.com/wunuit/Multiport/main/update-v2.sh" && chmod +x update-v2.sh && ./update-v2.sh
+#sleep 1
+#rm -f /root/update-v2.sh
+#rm -f /home/ver
 #version_check_v2=$( curl -sS https://raw.githubusercontent.com/wunuit/Multiport/main/version_check_v2)
 #echo "$version_check_v2" >> /home/ver
 clear
 echo ""
-echo -e "[ ${GREEN}INFO${NC} ] Successfully Up To Date!"
+#echo -e "[ ${GREEN}INFO${NC} ] Successfully Up To Date!"
 sleep 1
 echo ""
 read -n 1 -s -r -p "Press any key to continue..."
@@ -175,7 +175,7 @@ case $opt in
 8) clear ; ins-helium ; read -n1 -r -p "Press any key to continue..." ; menu ;;
 9) clear ; bbr ; menu ;;
 10) clear ; helium ; menu ;;
-11) clear ; dns ; echo "" ; menu ;;
+11) clear ; changer ; echo "" ; menu ;;
 12) clear ; nf ; echo "" ; read -n1 -r -p "Press any key to continue..." ; menu ;;
 13) clear ; limit ; echo "" ; menu ;;
 14) clear ; xraymod  ; menu ;;
