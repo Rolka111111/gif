@@ -1,11 +1,15 @@
 #!/bin/bash
 # =========================================
 # Quick Setup | Script Setup Manager
+# Edition : Stable Edition V1.0
+# Auther  : Geo Project
+# (C) Copyright 2022
 # =========================================
 P='\e[0;35m'
 B='\033[0;36m'
 G='\e[0;32m'
 N='\e[0m'
+export Server_URL="raw.githubusercontent.com/wunuit/Multiport/main"
 
 clear
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
@@ -24,7 +28,6 @@ tyblue() { echo -e "\\033[36;1m${*}\\033[0m"; }
 yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
 green() { echo -e "\\033[32;1m${*}\\033[0m"; }
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
-
 
 # // Export Color & Information
 export RED='\033[0;31m'
@@ -55,30 +58,30 @@ else
 fi
 
 # // script version
-#myver="$(cat /home/ver)"
+myver="$(cat /home/ver)"
 
 # // script version check
-#serverV=$( curl -sS https://raw.githubusercontent.com/wunuit/Multiport/main/version_check_v2)
+serverV=$( curl -sS https://${Server_URL}/version_check_v2)
 
-#function updatews(){
-#clear
-#echo -e "[ ${GREEN}INFO${NC} ] Check for Script updates . . ."
-#sleep 1
-#cd
-#wget -q -O /root/update-v2.sh "https://raw.githubusercontent.com/wunuit/Multiport/main/update-v2.sh" && chmod +x update-v2.sh && ./update-v2.sh
-#sleep 1
-#rm -f /root/update-v2.sh
-#rm -f /home/ver
-#version_check_v2=$( curl -sS https://raw.githubusercontent.com/wunuit/Multiport/main/version_check_v2)
-#echo "$version_check_v2" >> /home/ver
+function updatews(){
 clear
-#echo ""
-#echo -e "[ ${GREEN}INFO${NC} ] Successfully Up To Date!"
-#sleep 1
-#echo ""
-#read -n 1 -s -r -p "Press any key to continue..."
-#menu
-#}
+echo -e "[ ${GREEN}INFO${NC} ] Check for Script updates . . ."
+sleep 1
+cd
+wget -q -O /root/update-v2.sh "https://${Server_URL}/update-v2.sh" && chmod +x update-v2.sh && ./update-v2.sh
+sleep 1
+rm -f /root/update-v2.sh
+rm -f /home/ver
+version_check_v2=$( curl -sS https://${Server_URL}/version_check_v2)
+echo "$version_check_v2" >> /home/ver
+clear
+echo ""
+echo -e "[ ${GREEN}INFO${NC} ] Successfully Up To Date!"
+sleep 1
+echo ""
+read -n 1 -s -r -p "Press any key to continue..."
+menu
+}
 
 echo -e "\e[36m╒════════════════════════════════════════════╕\033[0m"
 echo -e " \E[0;41;36m                 INFO SERVER                \E[0m"
