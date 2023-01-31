@@ -276,7 +276,7 @@ wget -q -O menu-ssh "https://raw.githubusercontent.com/arismaramar/gif/main/fodd
 wget -q -O ins-helium "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/ins-helium.sh" >/dev/null 2>&1
 wget -q -O bbr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/bbr.sh" >/dev/null 2>&1
 wget -q -O wssgen "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/wssgen.sh" >/dev/null 2>&1
-wget -q -O add-host "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/add-host.sh" >/dev/null 2>&1
+wget -q -O dns "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/dns.sh" >/dev/null 2>&1
 wget -q -O speedtest "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/speedtest_cli.py" >/dev/null 2>&1
 wget -q -O xp "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/xp.sh" >/dev/null 2>&1
 wget -q -O menu "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu.sh" >/dev/null 2>&1
@@ -291,7 +291,7 @@ chmod +x ins-helium
 chmod +x bbr
 chmod +x wssgen
 chmod +x menu
-chmod +x add-host
+chmod +x dns
 chmod +x speedtest
 chmod +x xp
 chmod +x status
