@@ -317,7 +317,7 @@ wget -q -O ceklimssh "https://raw.githubusercontent.com/arismaramar/gif/main/fod
 wget -q -O user-listssh "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/user-listssh.sh" && chmod +x user-listssh
 wget -q -O user-lockssh "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/user-lockssh.sh" && chmod +x user-lockssh
 wget -q -O user-unlockssh "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/user-unlockssh.sh" && chmod +x user-unlockssh
-wget -q -O user-passwordssh "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/user-passwordssh.sh" && user-passwordssh +x user-passwordssh
+#wget -q -O user-passwordssh "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/user-passwordssh.sh" && chmod +x user-passwordssh
 wget -q -O restartssh "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/restartssh.sh" && chmod +x restartssh
 # // OTHER FILES
 echo -e "[ ${green}INFO${NC} ] Downloading Others Files"
