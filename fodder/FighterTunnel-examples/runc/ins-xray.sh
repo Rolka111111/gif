@@ -352,7 +352,8 @@ sleep 0.5
 echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Other Menu${NC}"
 wget -q -O xraymod https://raw.githubusercontent.com/arismaramar/scxray/main/other/xraymod.sh
 wget -q -O xrayofficial https://raw.githubusercontent.com/arismaramar/scxray/main/other/xrayofficial.sh
-wget -q -O dns https://raw.githubusercontent.com/arismaramar/scxray/main/other/changer.sh
+wget -q -O changer https://raw.githubusercontent.com/arismaramar/scxray/main/other/changer.sh
+wget -q -O certxray  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/certxray.sh" >/dev/null 2>&1
 wget -q -O about https://raw.githubusercontent.com/arismaramar/scxray/main/other/about.sh
 
 sleep 2
@@ -387,7 +388,7 @@ chmod +x log-trojan
 chmod +x log-ss2022
 chmod +x xraymod
 chmod +x xrayofficial
-chmod +x dns
+chmod +x changer
 chmod +x about
 
 cd
