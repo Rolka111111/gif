@@ -72,11 +72,11 @@ fi
 #version_check_v2=$( curl -sS https://raw.githubusercontent.com/wunuit/Multiport/main/version_check_v2)
 #echo "$version_check_v2" >> /home/ver
 clear
-echo ""
+#echo ""
 #echo -e "[ ${GREEN}INFO${NC} ] Successfully Up To Date!"
-sleep 1
-echo ""
-read -n 1 -s -r -p "Press any key to continue..."
+#sleep 1
+#echo ""
+#read -n 1 -s -r -p "Press any key to continue..."
 menu
 }
 
