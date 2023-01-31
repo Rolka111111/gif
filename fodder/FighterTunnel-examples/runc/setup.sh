@@ -21,7 +21,6 @@ apt install nano -y
 apt install python3 -y
 apt install curl socat xz-utils wget apt-transport-https gnupg gnupg2 gnupg1 dnsutils lsb-release -y 
 apt install socat cr
-on bash-completion ntpdate -y
 apt install zip -y
 apt install curl pwgen openssl netcat cron -y
 
