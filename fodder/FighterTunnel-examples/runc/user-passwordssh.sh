@@ -1,7 +1,5 @@
 #!/bin/bash
 # Created By anggun
-#wget https://github.com/${GitUser}/
-GitUser="arismaramar"
 echo -e "\e[32mloading...\e[0m"
 clear
 echo " "
