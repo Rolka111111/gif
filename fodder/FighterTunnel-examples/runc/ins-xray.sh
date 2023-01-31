@@ -78,9 +78,9 @@ echo -e "${GB}[ INFO ]${NC} ${YB}Setup Nginx & Xray Conf${NC}"
 uuid=$(cat /proc/sys/kernel/random/uuid)
 cipher="aes-128-gcm"
 cipher2="2022-blake3-aes-128-gcm"
-serveranggun=$(openssl rand -base64 16)
-useranggun=$(openssl rand -base64 16)
-echo "$serverpsk" > /usr/local/etc/xray/serveranggun
+serverpsk=$(openssl rand -base64 16)
+userpsk=$(openssl rand -base64 16)
+echo "$serverpsk" > /usr/local/etc/xray/serverpsk
 # Set Xray Conf
 cat > /usr/local/etc/xray/config.json << END
 {
@@ -168,10 +168,10 @@ cat > /usr/local/etc/xray/config.json << END
       "protocol": "shadowsocks",
       "settings": {
         "method": "$cipher2",
-        "password": "$serveranggun",
+        "password": "$serverpsk",
         "clients": [
           {
-            "password": "$useranggun"
+            "password": "$userpsk"
 #shadowsocks2022
           }
         ],
@@ -267,10 +267,10 @@ cat > /usr/local/etc/xray/config.json << END
       "protocol": "shadowsocks",
       "settings": {
         "method": "$cipher2",
-        "password": "$serveraggun",
+        "password": "$serverpsk",
         "clients": [
           {
-            "password": "$useranggun"
+            "password": "$userpsk"
 #shadowsocks2022-grpc
           }
         ],
