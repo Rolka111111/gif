@@ -82,6 +82,7 @@ echo "menu" >> .profile
 
 # // install webserver
 apt install nginx -y
+mkdir -p /var/www/html
 rm /var/www/html/*.html
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
@@ -91,7 +92,8 @@ unzip -x web.zip
 chmod +x /var/www/html/*
 cd
 wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/nginx.conf"
-wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/vps.conf"
+wget -O /etc/nginx/conf.d/xray.conf "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/4.conf"
+sed -i "s/xxx/${domain}/g"  /etc/nginx/conf.d/xray.conf
 sed -i "s/xxx/${domain}/g" /var/www/html/index.html
 /etc/init.d/nginx restart
 
@@ -269,7 +271,7 @@ netfilter-persistent reload
 # // download script
 cd /usr/local/sbin
 # // MENU UTAMA 
-echo -e "[ ${green}INFO${NC} ] Downloading MRNU UTAMA  Files"
+echo -e "[ ${green}INFO${NC} ] Downloading MENU UTAMA  Files"
 wget -q -O menu-ssh "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/menu-ssh.sh" >/dev/null 2>&1
 wget -q -O ins-helium "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/ins-helium.sh" >/dev/null 2>&1
 wget -q -O bbr "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/bbr.sh" >/dev/null 2>&1
@@ -282,7 +284,6 @@ wget -q -O status "https://raw.githubusercontent.com/arismaramar/gif/main/fodder
 wget -q -O info "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/info.sh" >/dev/null 2>&1
 wget -q -O restart  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/restart.sh" >/dev/null 2>&1
 wget -q -O ram  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/ram.sh" >/dev/null 2>&1
-#wget -q -O dns  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/dns.sh" >/dev/null 2>&1
 wget -q -O nf  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/media.sh" >/dev/null 2>&1
 wget -q -O limit  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/limit-speed.sh" >/dev/null 2>&1
 wget -q -O certxray  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/cert.sh" >/dev/null 2>&1
