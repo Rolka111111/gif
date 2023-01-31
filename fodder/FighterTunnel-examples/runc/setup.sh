@@ -11,7 +11,8 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 
 apt update -y
-apt upgrade -y
+apt full-upgrade -y
+apt dist-upgrade -y
 apt install socat -y
 apt install python -y
 apt install curl -y
@@ -25,16 +26,6 @@ apt install zip -y
 apt install curl pwgen openssl netcat cron -y
 
 clear
-mkdir /backup > /dev/null 2>&1
-mkdir /user > /dev/null 2>&1
-mkdir /tmp > /dev/null 2>&1
-mkdir -p /var/www/html/vmess
-mkdir -p /var/www/html/vless
-mkdir -p /var/www/html/trojan
-mkdir -p /var/www/html/allxray
-rm /usr/local/etc/xray/city > /dev/null 2>&1
-rm /usr/local/etc/xray/org > /dev/null 2>&1
-rm /usr/local/etc/xray/timezone > /dev/null 2>&1
 
 # install
 apt-get --reinstall --fix-missing install -y bzip2 gzip coreutils wget screen rsyslog iftop htop net-tools zip unzip wget net-tools curl nano sed screen gnupg gnupg1 bc apt-transport-https build-essential dirmngr libxml-parser-perl neofetch git lsof
@@ -53,18 +44,18 @@ apt install git curl -y >/dev/null 2>&1
 #mkdir /var/lib/crot-script;
 
 clear
-mkdir /usr/local/etc/xray
-touch /usr/local/etc/xray/domain
-echo -e "${YB}Input Domain${NC} "
-echo " "
-read -rp "Input your domain : " -e dns
+#mkdir /usr/local/etc/xray
+#touch /usr/local/etc/xray/domain
+#echo -e "${YB}Input Domain${NC} "
+#echo " "
+#read -rp "Input your domain : " -e dns
 #if [ -z $dns ]; then
 #echo -e "Nothing input for domain!"
 #else
 #echo "$dns" > /usr/local/etc/xray/domain
 #echo "DNS=$dns" > /var/lib/dnsvps.conf
 #fi
-clear
+#clear
 
 
 echo -e "${red}An${NC} ${green}Established By anggun 2022${NC} ${red}An${NC}"
@@ -94,7 +85,7 @@ echo -e "${red}An${NC} ${green}Established By anggun 2022${NC} ${red}An${NC}"
 #clear
 echo "IP=$host" >> /var/lib/premium-script/ipvps.conf
 #echo "IP=$host" >> /var/lib/crot-script/ipvps.conf
-echo "$host" >> /usr/local/etc/xray/domain
+#echo "$host" >> /usr/local/etc/xray/domain
 #clear
 #echo -e "\e[0;32mREADY FOR INSTALLATION SCRIPT...\e[0m"
 #echo -e ""
