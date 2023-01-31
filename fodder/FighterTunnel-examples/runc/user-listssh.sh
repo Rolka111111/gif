@@ -1,7 +1,5 @@
 #!/bin/bash
 # Created By anggun
-#wget https://github.com/${GitUser}/
-GitUser="arismaramar"
 #IZIN SCRIPT
 MYIP=$(curl -sS ipv4.icanhazip.com)
 echo -e "\e[32mloading...\e[0m"
