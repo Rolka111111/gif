@@ -183,7 +183,7 @@ case $opt in
 13) clear ; limit ; echo "" ; menu ;;
 14) clear ; xraymod  ; menu ;;
 15) clear ; xrayofficial ; menu ;;
-16) clear ; add-host ; menu ;;
+16) clear ; dns ; menu ;;
 17) clear ; certxray ; menu ;;
 18) clear ; status ; read -n1 -r -p "Press any key to continue..." ; menu ;;
 19) clear ; info ; read -n1 -r -p "Press any key to continue..." ; menu ;;
