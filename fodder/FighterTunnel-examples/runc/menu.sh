@@ -55,12 +55,12 @@ else
 fi
 
 # // script version
-myver="$(cat /home/ver)"
+#myver="$(cat /home/ver)"
 
 # // script version check
-serverV=$( curl -sS https://raw.githubusercontent.com/wunuit/Multiport/main/version_check_v2)
+#serverV=$( curl -sS https://raw.githubusercontent.com/wunuit/Multiport/main/version_check_v2)
 
-function updatews(){
+#function updatews(){
 clear
 echo -e "[ ${GREEN}INFO${NC} ] Check for Script updates . . ."
 sleep 1
@@ -69,8 +69,8 @@ wget -q -O /root/update-v2.sh "https://raw.githubusercontent.com/wunuit/Multipor
 sleep 1
 rm -f /root/update-v2.sh
 rm -f /home/ver
-version_check_v2=$( curl -sS https://raw.githubusercontent.com/wunuit/Multiport/main/version_check_v2)
-echo "$version_check_v2" >> /home/ver
+#version_check_v2=$( curl -sS https://raw.githubusercontent.com/wunuit/Multiport/main/version_check_v2)
+#echo "$version_check_v2" >> /home/ver
 clear
 echo ""
 echo -e "[ ${GREEN}INFO${NC} ] Successfully Up To Date!"
@@ -128,9 +128,9 @@ echo -e "\e[36m╘════════════════════�
  [\033[1;36m•8 \033[0m]  Install Ads Block
  [\033[1;36m•9 \033[0m]  Install TCP BBR
  [\033[1;36m•10\033[0m]  Ads Block Panel
- [\033[1;36m•11\033[0m]  DNS Changer
+ [\033[1;36m•11\033[0m]  DNS SETING / Chang
  [\033[1;36m•12\033[0m]  Netflix Checker
- [\033[1;36m•13\033[0m]  Limit Bandwith Speed"
+ [\033[1;36m•13\033[0m]  Limit Bandwith Speed VPS"
 echo -e "\e[36m╒════════════════════════════════════════════╕\033[0m"
 echo -e " \E[0;41;36m                SYSTEM MENU                 \E[0m"
 echo -e "\e[36m╘════════════════════════════════════════════╛\033[0m
