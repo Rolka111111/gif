@@ -286,9 +286,7 @@ wget -q -O restart  "https://raw.githubusercontent.com/arismaramar/gif/main/fodd
 wget -q -O ram  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/ram.sh" >/dev/null 2>&1
 wget -q -O nf  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/media.sh" >/dev/null 2>&1
 wget -q -O limit  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/limit-speed.sh" >/dev/null 2>&1
-wget -q -O certxray  "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/FighterTunnel-examples/runc/cert.sh" >/dev/null 2>&1
 chmod +x menu-ssh
-chmod +x certxray
 chmod +x ins-helium
 chmod +x bbr
 chmod +x wssgen
