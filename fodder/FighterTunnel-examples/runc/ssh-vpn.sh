@@ -9,7 +9,7 @@ source /etc/os-release
 ver=$VERSION_ID
 
 # // detail nama perusahaan
-country="MY"
+country="ID"
 state="ID"
 locality="RIAU"
 organization="@anggun"
