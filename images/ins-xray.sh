@@ -1,4 +1,644 @@
 #!/bin/bash
+#!/bin/bash
+# =========================================
+# Quick Setup | Script Setup Manager
+# Edition : Stable Edition V1.0
+# Auther  : Adit Ardiansyah
+# (C) Copyright 2022
+# =========================================
+# // Export Color & Information
+export RED='\033[0;31m'
+export GREEN='\033[0;32m'
+export YELLOW='\033[0;33m'
+export BLUE='\033[0;34m'
+export PURPLE='\033[0;35m'
+export CYAN='\033[0;36m'
+export LIGHT='\033[0;37m'
+export NC='\033[0m'
 
-God="@amar arshad";krF=FoL;Gnr=Vl;QIy=Is;UOt=FC;kVE=Sk;KlM=gM;Xwe=TF;oTX=dD;Yox=Qa;wQx=mb;Kqb=Zy;xWU=twB;gTp=auw;hwZ=Ejp;tHg=iQZ;ojo=shb;jhw=FjF;IDL=klV;wOA=yFT;PZL=XfL;DRJ=DiE;bmJ=FCa;XGN=dOT;QCK=dkY;SOb=WJE;RJx=uAv;czJ=dts;VGB=oCy;TyO=xGj;yHU=bpq;Nfb=Wct;doQ=Ibf;XCL=rax;ZNH=Hhf;Eoh=yCU;ghd=hut;ooz=VKY;qMf=PrY;Ecf=Lke;BbJ=jie;QOI=lOT;oi=QkU;yM=iDO;rT=twI;wa=BEk;Lf=SGl;Sx=Kri;yL=RiF;Xf=iZT;iv=fpC;fW=nki;qX=FrL;ba=OUY;czP=Hdm;ecN=WKt;QMW=BnB;Nsq=jdC;nof=OZt;bhx=qNV;vVN=xaU;smp=Wta;ceY=GDh;AIB=juO;miA=Cso;zgz=Hka;Kea=YMq;hUp=SWY;zMP=ozk;WGK=JEt;pkF=jjF;FCq=pFs;ZrQ=VcQ;ZjS=do;BTP=Su;sly=xM;aZl=vF;iJn=bo;QCl=HB;SCO=xo;fUq=Jo;Epq=zc;wxq=Ev;ziJ=Gx;Kzo=JF;PDO=pJ;qhq=yp;OYk=rj;OGy=Cc;hSK=xR;lnD=um;UXi=pl;xBF=xP;qOD=iX;RVy=nl;mqe=JK;rQt=CA;qJD=FR;sPp=XZ;moh=DC;Fsj=GWh;NTx=Jnx;dwG=ncr;Ugd=mFV;ZTt=WjI;mFG=lms;YGK=bPI;UKs=ibv;hka=JFE;zpQ=Gxt;VlF=Jxk;AEJ=cuk;SUZ=YiV;Wfq=NhZ;xLp=ray;QmE=mqM;fkp=tHl;Sek=XvT;qbj=EKu;RfA=xSe;fPQ=Oll;cif=jtg;GYE=yei;Prw=RTD;sMB=pEL;sxA=APb;aRs=HgZ;SXm=VSI;lZA=UKc;YMw=Lct;bwO=XQI;OxQ=COX;bPh=KqP;GVr=hRx;eoA=eID;AZK=fFj;PGC=XPy;ieV=gly;AUO=yit;GjW=jaZ;tBB=HSO;vdV=efl;HiW=VHx;JaQ=RCo;cGr=fsk;eib=jty;TPK=rlb;dhM=oDt;tCL=muK;gAg=xQq;xWl=eMt;AtB=mbQ;UzS=lee;xjU=CPZ;qLS=iIg;dQw=NHN;Dum=qAc;aei=Whw;afz=OcR;NWZ=Txs;gzI=HsZ;YmH=IIm;kZc=Ppd;qnZ=vjw;sQw=BmF;PAB=rGe;gah=aHu;XfD=uJJ;LmJ=PUK;jCz=XpN;gTg=hRF;cpS=fhx;wFI=fih;pHM=aTH;GIm=Jtb;XDy=XGY;zMs=kPd;VtP=pbP;ALj=acU;HEZ=Tre;EPr=vOf;eSC=AIk;TXH=szR;nNa=bGD;lQt=Qod;Qvm=HGI;tkS=IOY;qmZ=tDf;xxx=xOS;pFg=XCd;aVR=xGh;ooR=AHX;JVj=laY;TvM=kEx;SYU=hol;ddj=khS;aPP=oiI;Edo="
-";DSi=WYX;LHA=Gfx;VgU=gJZ;Rxh=xYy;bXG=gvs;eLoP="e";u18="6";Yt="l";Yxgs="";qwt="Fu";ieC=HO;XcH=Rv;Ugs=LC;vD=xp;fy=oW;Zl=LhH;oP=Jm;sDA=kpY;GHn=TB;wzk=Da;oiO=Ei;NaM=hIf;fC=vjz;kT=rz;sV=bZz;CL=ARL;Wc=dA;gZG=tGI;vpk=cM;Aao=tgy;sU=ld;LZ=Pr;BE=wCX;iN=fQ;RCe=Dm;Rc=Fl;Njo=OMq;gtb=SKa;Wf=jMB;Dm=wHr;Nx=Wn;ANT=jAK;oFy=Bnc;IjZ=Xj;DQa=oK;ewZ=Vm;QPf=lz;Cwg=aS;KEM=jS;fkE=hM;nLw=ym;FWv=BC;aDC=Lw;tW=Rgn;kw=Hgf;tQ=eSh;Fi=iGb;Or=snM;ZG=xqx;xC=WJr;Bf=haC;pT=THr;By=jbu;tm=Hcy;eT=nTC;UT=KCa;dk=Pxy;vG=TvX;HX=MMB;Ow=ZoT;UJ=LvE;rx=oMF;EB=VZx;OC=IfU;dv=lTx;Nk=TNq;Ej=bKu;dl=ZZi;yzL=bJ;EiG=LJ;iqg=gK;fbd=vg;OPl=Ei;tnI=YS;yBV=DA;yxh=Ks;Nic=Ih;wMq=tD;iDs=AQ;Nhh=zy;JWe=Ry;gC=AnI;qWN=uq;hIc=OAL;UOm=Nq;Xj=ax;GW=utn;Fmc=CaI;zeK=eT;hI=sl;Ae=RK;XV=doy;Dpq=Eg;Mmr=MZg;CXd=Bao;RND=WUC;CGm=SRK;DJh=LZw;ym=Ah;xzv=IX;FYi=YUX;v6T=" ";RzE="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 gACIgACIKU2csVGIgACIgACIgACIgAiCzNDIwVWZsNHIgACIgACIgACIgACIgACIgACIgoAdvJGd gACIgACIgACIgoAdvJGdyV2YggnbpdmbgkXLgwGbhR3culGI0V2ZtQHchBCIgACIgACIgACIgACI gACIgACIgACIgACIgACIgACIKQ3biRnclNGI45Wan5GI51CIsxWY0NnbpBCdwFGIgACIgACIgACI 51CIsxWY0NnbpBSb1lHIgACIgACIgoQZzxWZgACIgoQamBCIgACIgACIgACIgowczACclVGbzBCI vR3cgwGdj1WZ0NXezBCIgAiCKkmZgACIgowczACclVGbzBCIgACIgACIKQ3biRnclNGI45Wan5GI gAiCuVGa0tTXgICdldWL0BXYv4Wai9iczV3LiAiZtAyWgYWagACIgogClNWa2JXZz5Ceul2ZuBCc gACIgACIgACIKAmbhlmYlREIwVmcnxXZ1N3cp9yY0V2LgQXYjBWPuFWaiVGRzlGIgACIgACIgACI vh2YlBCIgACIgACIgACIgACIgACIgACIK4WZoR3OdBiIiASPhAiIuFWaiVGRzlGJiAyWgYWagACI z5WdtIXZ0NXanVmct0CI0xWdhZWZk1Sei1ydl5WZy1SLgkHbu9GdyV2YgQ3biRnclNGI8BiIBJCI gACIgACIgACIgACIgogbpFWbvRGJgQWLgUmbvxWYk5WY0NXLtACbpFWbl1Cd19Ga0l2dtkHblZWY vh2YlBCIgACIgACIgACIgACIgACIgACIKU2csVGIgACIgACIgACIgAiCzNDIwVWZsNHIgACIgACI z5WdtIXZ0NXanVmct0CI0xWdhZWZk1Sei1ydl5WZy1SLgkHbu9GdyV2YgQ3biRnclNGI8BiIBJCI gACIgACIgACIgACIgogbpFWbvRGJgQWLgUmbvxWYk5WY0NXLtACbpFWbl1Cd19Ga0l2dtkHblZWY gISWiAyboNWZgACIgACIgAiClNHblBCIgAiCpZGIgACIgACIgACIgAiCzNDIwVWZsNHIgACIgACI 5xWZmF2cuVXLyVGdzl2ZlJXLtACdsVXYmVGZtknYtcXZuVmct0CI5xmbvRnclNGI09mY0JXZjBCf gowczACclVGbzBCIgACIgACIK4Wah12bkRCIk1CIl52bsFGZuFGdz1SLgwWah1WZtQXdvhGdpdXL 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 vxmIgACIgoALic2bs5icvJncl9SehJHevc2bs9ichZ3LiAiOiI3byJXZiACIgAiCsIyZvxmLzNXZ pxmIgACIgACIKsHIgACIgAiCbBiOiMHZuV3bi5WaiACIKwSfgAiCicmbp5mchdnIgojIsVmdlx2Z iw2bj9GdvJHciACIgACIgoAL1gDMwEDI6ICdy9GciACIgACIgoALiEjLw4CMucjMxICI6IiblR3c 6IyczVmckRWYiACIgACIgACIKsHI6Iycn5Wa0RXZzJCIgACIgAiCsIicv9GZt8WblR2br9GZiAiO gACIgowegACIKwSfgACIgogIpBXYiAiOicWY0JCIgACIgAiCs0HIgACIgAiCiEjLw4CMucjMxICI 09mcwJCIgACIgoALiM3clxmdkICI6ICdy9GciACIgACIKwiIx4CMuAjL3ITMiAiOi4WZ0NXasJCI u9Wa0BXeyNWZkJCIgACIgACIgACIKsHI6Iycn5Wa0RXZzJCIgACIgAiCsIyczVGb2JCI6ICbvN2b gACIgAiC7BCIgACIgACIgACIgACIgowWgojIzRnbllGbjJCIgACIgACIgACIgAiCsISZu9mbiojI gACIgAiCzNXZsZ3IKACIgACIgACIgACIgACIgACIi0HZpVXd7RiIgojIklmIgACIgACIgACIgACI 7pjIzdmbpRHdlNVbhVmc0NnIgACIgACIgoAL9BCIgACIgAiCdBCIgACIgACIgAiC9BCIgACIgACI gAiC7BiOiM3ZulGd0V2UzdnIgACIgACIgACIgACIKwiIzdnIgojIrJ3b3RXZuJCIgACIgACIgAiC gACIgoQfgACIgACIgAiC9BCIgACIgACIgAiCiM3clxmdvICI6ICa0FGciACIgACIgACIgACIgACI l1mdkICI6ICdy9GciACIgACIKwiIx4CMuAjL3ITMiAiOi4WZ0NXasJCIgACIgowegACIgAiCs0HI gACIgACIKsHI6Iycn5Wa0RXZzJCIgACIgAiCsIyczVWb2JCI6ICbvN2b09mcwJCIgACIgoALiM3c iQWaiACIgACIgACIgACIgACIgACIKsHIgACIgACIgACIgACIgAiCbBiOiMHduVWasNmIgACIgACI gACIgACIgowczVWb2NiCwAiOiQWSyVGdsFmIgACIgACIgACIgACIgACIgAiCsISfklWd1tHJiAiO gowe6Iycn5Wa0RXZT1WYlJHdzJCIgACIgACIKwSfgACIgACIgoQXgACIgACIgACIgoQfgACIgACI gACIgowegojIzdmbpRHdlN1c3JCIgACIgACIgACIgAiCsIyc3JCI6Iyay92d0VmbiACIgACIgACI 9BCIgACIK0HIgACIgACIgoQfgACIgACIgACIgogIzNXZtZ3LiAiOigGdhBnIgACIgACIgACIgACI 5JncvdHJiAiOiQncvBnIgACIgAiCsISMuAjLw4yNyEjIgojIuVGdzlGbiACIgACIKsHIgACIgoAL gACIgowegojIzdmbpRHdlNnIgACIgACIKwiIzNXZtZnIgojIs92YvR3byBnIgACIgAiCsISZlJnZ pJCIgACIgACIgACIgACIgACIgowegACIgACIgACIgACIgACIKsFI6Iyc05WZpx2YiACIgACIgACI Kkncy92dzNXZtZ3IKADI6ICZJJXZ0xWYiACIgACIgACIgACIgACIgACIKwiI9RWa1V3ekICI6ICZ ulGd0V2UtFWZyR3ciACIgACIgAiCs0HIgACIgACIK0FIgACIgACIgACIK0HIgACIgACIgACIgACI 6Iycn5Wa0RXZTN3diACIgACIgACIgACIgoALiM3diAiOismcvdHdl5mIgACIgACIgACIKsnOiM3Z gACIgAiC9BCIgACIgACIgAiCiUWZyZWeyJ3b39iIgojIoRXYwJCIgACIgACIgACIgACIgACIKsHI y9GciACIgACIKwiIx4CMuAjL3ITMiAiOi4WZ0NXasJCIgACIgowegACIgAiCs0HIgACIgoQfgACI pRHdlNnIgACIgACIKwiIzNXZtZnIgojIs92YvR3byBnIgACIgAiCsIycpJWYoFGdvV3akICI6ICd gACIgACIgowegACIgACIgACIgACIgACIKsFI6Iyc05WZpx2YiACIgACIgACIgACIgowegojIzdmb KADI6ICZJJXZ0xWYiACIgACIgACIgACIgACIgACIKwiI9RWa1V3ekICI6ICZpJCIgACIgACIgACI iACIgACIgAiCs0HIgACIgACIK0FIgACIgACIgACIK0HIgACIgACIgACIgACIKEGdvV3azNXZtZ3I iACIgACIgACIgACIgoALiM3diAiOismcvdHdl5mIgACIgACIgACIKsnOiM3ZulGd0V2UtFWZyR3c gACIKIycpJWYo1SY09Wdr9iIgojIoRXYwJCIgACIgACIgACIgACIgACIKsHI6Iycn5Wa0RXZTN3d w4CMucjMxICI6IiblR3cpxmIgACIgACIKsHIgACIKwSfgACIgAiC9BCIgACIgACIK0HIgACIgACI uFmavJHdiAiOiw2bj9GdvJHciACIgACIgoALiM3duFmavJHdkICI6ICdy9GciACIgACIgoALiEjL goQCJwiIl52buJiOi42bpRHc5J3YlRmIgACIgACIgACIgowegojIzdmbpRHdlNnIgACIgACIKwiI iACIgACIgACIgACIgACIgACIKsHIgACIgACIgACIgACIgowWgojIzRnbllGbjJCIgACIgACIgACI gACIgACIgACIgoQfgACIgACIgACIgACIgAiCzdnbhp2byR3IKISfklWd1tHJiAiOiQmcvd3czFGc iM3ZulGd0V2UtFWZyR3ciACIgACIgAiCs0HIgACIgACIKUWdyRHI6ICckVnIgACIgACIgACIKwSX 7BiOiM3ZulGd0V2UzdnIgACIgACIgACIgAiCsIyc3JCI6Iyay92d0VmbiACIgACIgACIgACIKsnO gACIgACIK0HIgACIgACIgACIgAiCiM3dt4WYq9mc09iIgojIoRXYwJCIgACIgACIgACIgACIgAiC gACIgACIKwiIx4CMuAjL3ITMiAiOi4WZ0NXasJCIgACIgACIgAiC7BCIgAiCs0HIgACIgoQfgACI gACIKwiIzt2YvN3dvRWYoNnIgojIs92YvR3byBnIgACIgACIgAiCsIyc3N3ckICI6ICdy9GciACI gowegACIgACIgACIgAiCbBiOiMHduVWasNmIgACIgACIgACIgAiC7BiOiM3ZulGd0V2ciACIgACI gojIkJ3b3N3chBnIgACIgACIgACIgoALi02Yn1COyETLzVWYiAiOiQ2boRXZtJCIgACIgACIgACI 3RXZuJCIgACIgACIgACIKwSXgACIgACIgACIgoQfgACIgACIgACIgAiCzd3czNiCi0HZpVXd7RiI gACIgAiC7pjIzdmbpRHdlNVbhVmc0NnIgACIgACIgoAL9BCIgACIgAiCiAHZ1xCcjRnIgojIrJ3b gACIgACIKsHI6Iycn5Wa0RXZTN3diACIgACIgACIgACIgAiCsIyc3JCI6Iyay92d0VmbiACIgACI JwSfgACIgAiC9BCIgACIgACIK0HIgACIgACIgACIgogIzdXLzN3LiAiOigGdhBnIgACIgACIgACI iAiOiQncvBnIgACIgACIgAiCsISMuAjLw4yNyEjIgojIuVGdzlGbiACIgACIgACIKsHIgACIgAiC ulGd0V2ciACIgACIgACIKwiIzNXZsZnIgojIs92YvR3byBnIgACIgACIgAiCsIyYwJ3ZzNXZsZHJ iMHduVWasNmIgACIgACIgACIgAiCsISZu9mbiojIu9Wa0BXeyNWZkJCIgACIgACIgAiC7BiOiM3Z nN3clxmdjogI9RWa1V3ekICI6ICZpJCIgACIgACIgACIgACIgAiC7BCIgACIgACIgACIgAiCbBiO hVmc0NnIgACIgACIgACIgoAL9BCIgACIgAiCdBCIgACIgACIgAiC9BCIgACIgACIgACIgAiCjBnc gACIgACIgACIgACIKwiIjBncnJCI6Iyay92d0VmbiACIgACIgACIgACIgAiC7pjIzdmbpRHdlNVb tM3clxmdiAiOiUWbh5UZjlmdyV2ciACIgACIgACIgACIgACIgAiC7BiOiM3ZulGd0V2UjBncnJCI uVGdzlGbiACIgACIgowegACIgAiCs0HIgACIgoQfgACIgACIgAiC9BCIgACIgACIgACIKIyYwJ3Z vN2b09mcwJCIgACIgoALiMGcyd2czVWb2RiIgojI0J3bwJCIgACIgAiCsISMuAjLw4yNyEjIgojI bBiOiMHduVWasNmIgACIgACIgACIgACIKsHI6Iycn5Wa0RXZzJCIgACIgAiCsIyczVWb2JCI6ICb gACIgAiCsISfklWd1tHJiAiOiQWaiACIgACIgACIgACIgACIgACIKsHIgACIgACIgACIgACIgAiC gACIgACIK0HIgACIgACIgACIgACIKMGcyd2czVWb2NiCwAiOiQWSyVGdsFmIgACIgACIgACIgACI vdHdl5mIgACIgACIgACIKsnOiM3ZulGd0V2UtFWZyR3ciACIgACIgAiCs0HIgACIgACIK0FIgACI gACIgACIgACIgACIgAiC7BiOiM3ZulGd0V2UjBncnJCIgACIgACIgACIgAiCsIyYwJ3ZiAiOismc gACIgAiC9BCIgACIgACIK0HIgACIgACIgACIKIyYwJ3ZtM3cl1mdiAiOiUWbh5UZjlmdyV2ciACI gojI0J3bwJCIgACIgACIgoALiEjLw4CMucjMxICI6IiblR3cpxmIgACIgACIgAiC7BCIgACIKwSf 0V2ciACIgACIgACIKwiIuFmavJHdiAiOiw2bj9GdvJHciACIgACIgACIKwiIjBncn5WYq9mc0RiI sNmIgACIgACIgACIgACIgoALiUmbv5mI6IibvlGdwlncjVGZiACIgACIgACIgAiC7BiOiM3ZulGd iAiOiQmcvd3czFGciACIgACIgACIgACIgACIgACIKsHIgACIgACIgACIgACIgAiCbBiOiMHduVWa gACIgACIK0FIgACIgACIgACIgoQfgACIgACIgACIgACIgACIKMGcydmbhp2byR3IKISfklWd1tHJ wJ3ZiAiOismcvdHdl5mIgACIgACIgACIKsnOiM3ZulGd0V2UtFWZyR3ciACIgACIgACIgoAL9BCI OV2YpZnclNnIgACIgACIgACIgACIgACIKsHI6Iycn5Wa0RXZTNGcydmIgACIgACIgACIgAiCsIyY pxmIgACIgowegACIKwSfgACIK0HIgACIgAiC9BCIgACIgACIgogIjBncn1ibhp2byRnIgojIl1WY iw2bj9GdvJHciACIgAiCsIyYwJ3ZzNHJiAiOiQncvBnIgACIgoALiEjLw4CMucjMxICI6IiblR3c gowWgojIzRnbllGbjJCIgACIgACIgowegojIzdmbpRHdlNnIgACIgoALiM3aj92c39GZhh2ciAiO gACIgACIgAiCsISbjdWL4ITMtMXZhJCI6ICZvhGdl1mIgACIgACIgACIgACIgowegACIgACIgACI gACIgACIgACIK0HIgACIgACIgACIgowYwJ3ZzN3IKISfklWd1tHJiAiOiQmcvd3czFGciACIgACI lNVbhVmc0NnIgACIgoAL9BCIgACIgogIwRWdsA3Y0JCI6Iyay92d0VmbiACIgACIgACIgACIKwSX 6Iycn5Wa0RXZTNGcydmIgACIgACIgAiCsIyYwJ3ZiAiOismcvdHdl5mIgACIgAiC7pjIzdmbpRHd gACIgACIK0HIgACIgACIgACIKIyYwJ3ZtM3ciAiOiUWbh5UZjlmdyV2ciACIgACIgACIgACIKsHI iAiOiw2bj9GdvJHciACIgACIgowegACIgowWgojIzRmb19mY0V3biACIKwSXgAiCJ0HIgACIK0HI j9GdvJHciACIgACIgowegACIgoAL9BCIgAiC9tHI6Iycn5Wa0RXZzJCIgACIgAiCsISbvRWZlJnZ vxmYiAiOicWY0JCIgACIgAiCs03egojIzdmbpRHdlNnIgACIgACIKwiIlx2bot2YhxmYiAiOiw2b gAiC7BCIgACIgowWgojIzVGb1JnIgACIgowegojIn5Wa0V3byJCIgoALdBCIK0HIgACIKICZlt2Y w4CMuAjLwICIgACIgACIgACIKsFI6ICcpJCIgACIgACIgoALiQGbllmZiAiOiUGc5RnIgACIgACI goALiATMvAjLw4CN24CMwEjIgACIgACIgACIgoALigzLw4CMuAjLwEjIgACIgACIgACIgoALigzL gACIKwiIyEzLw4CMuYTMuIzNxICIgACIgACIgACIKwiI2EzLw4CMuQTNy4SO2EjIgACIgACIgACI gACIgACIgAiCsICNy8CMuIjLw4iM5EjIgACIgACIgACIgoALiQjMvAjLw4CMuITOxICIgACIgACI gACIgACIgACIgoALiUTMvAjLw4COx4CO5EjIgACIgACIgACIgoALiYTMvAjLw4CO2EjLykTMiACI gACIgACIgACIgoALiQjMvAjLzETMuAjLzAjMiACIgACIgACIgAiCsICNy8CMuADMx4SM14CO5EjI gAiCiATMvojOwgTZmJCIgACIgACIgACIKwiI38iO6ADMjZmIgACIgACIgACIgoALigjMx8SM6ojI gACIgACIKwSfgACIgACIKICZlt2YvxmYiAiOicWYURmb19mY0V3biACIgACIgACIKwSXgACIgACI gACIgoALdBCIgACIgACIKISawFmIgACIgACIgACIgowWgojInFGVk5WdvJmbpJCIgACIgACIgowe 9BCIgACIgogIkxWZpZmIgojIlBXe0JCIgACIgACIgoALikGchJCI6IyZhRFZuV3biRXdvJCIgACI 6IyZhRFZuV3biRXdvJCIgACIgACIgoALiQGbllmZiAiOiUGc5RnIgACIgACIgAiC7BCIgACIgoAL KICduVmcy9Gd0lmYiACIgACIgACIgAiCbBiOiw2bj9GdvJHciACIgACIgACIKwiIkV2aj9GbiJCI gAiC7BiOikGchJCIgoAL9tHI6Iyc0FGdzJCIgoAL9BCIK0FIgACIK0HIgACIgAiCdBCIgACIgACI hJCI6IyZhRnIgACIgoALdBCIgAiCiU2YpZnclN1c0FGdTJCIgACIgAiCbBiOiMXZjlmdyV2ciACI gACIgAiC7BiOiAjIgACIgACIKsHI6IycsVmdlxmIgACIgowegojI5NWas9GciACIKwSfgAiCikGc gojIr5WasBXVyV2cVNHdhR3ciACIgACIgACIKwSZ1JHdgojIr5Was52dvRkclNXVzRXY0NnIgACI wVFZuV3bi5WSzRXY0NnIgACIgACIKsHI6ISblR3c5NnIgACIgoAL9BCIgAiC9BCIgACIgoQZ1JHd zJCIgACIgAiCsUWdyRHI6IyaulGbud3bERmb19mYul0c0FGdzJCIgACIgAiCsUWdyRHI6IyaulGb ismbpxmb39GRk5WdvJGd190c0FGdzJCIgACIgAiCsUWdyRHI6AiIr5WasBXVk5WdvJGd190c0FGd gInZtASbypQZjlmdyV2UgkXYyhFIn5WasxWY0NnbJByIKY0TFpQfK0HIgoQfgACIgoQZ1JHdgoDI 5N3Lk1WZ0NXez9yY0V2LgInZtASbypAZuU2YpZnclNnL5Fmc49SblR3c5N3Lk1WZ0NXez9yY0V2L yV2cukXYyh3LtVGdzl3cvQWblR3c5N3LjRXZvAiPG9UR8wDI0F2YKU2YpZnclNnL5Fmc49SblR3c 1hGdpd2LvozcwRHdo1jbvlGdhRnbl1Wdj9GRKU2YpZnclNFI5FmcY1jbvlGdwlmcjNXZEpQZjlmd pZnclN1WKoAdldmchRnLwV3av9GbtM3cuBCdldmchRnLrJ3b3RXZu1jclRnZBpwcsRHev02bj5iY QF0Qg4USNRUQfRVRO9FUBNUP0V2Un5Wak5WdvJUe0lGbpJWYwF2QKEGdhRWL3d3d9IXZzVlCdV2Y hBXYDRnbllmYtFkCgACIgACIgACIgACIgACIgACIgACIgACIgACIgU0QJZlUFN1XE5USC9FVF50X nVGbpZXayB1dl50bOpQRDlkVSV0UfRkTJJ0XUVkTfBVQDBiTJ1ERB9FVF50XQF0Q9MXZpRXaslmY yh3LjRXZvAyZpZmbvNWLg4WdyBSehJHev4Wai9CbhN2bs9iczV3L9QnchR3UjVGeFpQZ1JHd9MXZ 1RXY0NFdphXR05WZ2VmcQRnchR3clJlClJXdslWYm1ibv1DdyFGdzVmUK42bzpmLnlmZu92YvkXY 05WYXpQXsxWY0NnbJtlCKADMwADMwETPFxUSG9kT0lWbpxkCwADMwETPD9kUQ5Edp1WaMpwMy0zc g0FI9NkT7Ryav1nTFVkUHtHJgslIgUWLg8GajVmCKY0TFpAdldmchRnLyV2c11Sa0xWdt1TeCRWZ gQWYvxWZy1ibv1WZhRGIsR3YtVGdzl3cKISehJHWgYCI0JXY0NXZSBiJgQnchR3UgYCIlxmYh5WR zl3cKEjJ+IDIsxWdu9idlR2L+ASehJHegUGbiFmblBCb0NWblR3c5NnCxYiPyACbsVnbvYXZk9iP gkXYyhHI0JXY0NXZyBCb0NWblR3c5NnCxYiPyACbsVnbvYXZk9iPgkXYyhHI0JXY0NHIsR3YtVGd hR3UgYCIlxmYh5WRg0FI9NkT7Ryav1nTFVkUHtHJgslIgUWLg8GajVmCxYiPyACbsVnbvYXZk9iP gwGb152L2VGZv4DIkF2bsVmct42btVWYkBCb0NWblR3c5NnCignbpdmTgYCI0JXY0NXZSBiJgQnc hR3cgwGdj1WZ0NXezpQMm4jMgwGb152L2VGZv4DI45Wan5GIlxmYh5WZgwGdj1WZ0NXezpQMm4jM 152L2VGZv4DI45Wan5GI0JXY0NXZyBCb0NWblR3c5NnCxYiPyACbsVnbvYXZk9iPggnbpdmbgQnc gMkTk0VRDlkVSV0UbxGbllHJiASZtAyboNWZKU2YpZnclNFIsxWQgQnchR3clJFIjoQMm4jMgwGb vASY0FGZtc3d3pTY0FGZtc3d3BiUtAib39GajpQMgAXZlx2cKISZjlmdyV2UgwGbBBCdyFGdzVmU mAibhp2byRFImASehJHWgYCI0JXY0NXZSBiJgUGbiFmbFByIKwWb0h2XjlGbiVHcvMHc29SZt9Ga hJHWgYCI0JXY0NXZSBSXg03QOtHJr9WfOVURSd0ekAyWiASZtAyboNWZKEDIwVWZsNnC45Wan5EI tVGdzl3cKEjJ+IDIsxWdu9idlR2L+ACZh9GblJXLu9WblFGZgwGdj1WZ0NXezpgI45Wan5EImASe ggnbpdmbgQnchR3clJHIsR3YtVGdzl3cKEjJ+IDIsxWdu9idlR2L+ASehJHegQnchR3clJHIsR3Y ==gCxYiPyACbsVnbvYXZk9iP";Mll="ch";HTv=Yyu;cbY=cId;FwM=nUK;Neo=URi;Jrd=ZsO;ZzZ=gsI;AGg=Krt;KoC=Usx;ftb=Vzm;kuT=EVS;AUX=NGv;Aow=suL;uBc=hlq;OqT=ApZ;kSe=ZTL;aFt=FKz;yqF=lEj;ZII=uml;BwC=JPx;gWH=eyv;wWA=hWw;unn=Brn;hxs=DiR;nPo=iOr;Uuo=lUG;zxW=Nkd;MAi=aWZ;XcA=xIq;sZL=MLV;rwV=lNF;GYU=UPS;WeS=kTk;Aym=btt;rGW=IDI;Uhx=DhE;Kut=fsH;eGn=UyX;VNh=YtK;QWo=gEO;Byf=nvi;Ezb=oBV;uWP=JEl;Vsp=Lgc;EAF=Byk;PSz=HCg;pyP=bQL;Uxq=ehM;WdA=Uij;pWM=bsv;oXm=BKe;mtM=qkr;XEB=pua;XzD=SPa;Kng=JSY;bFL=Zud;xbc=GSY;neu=TQJ;Ttj=EdI;ZCG=HXS;NSP=aRL;UPz=CwR;edR=xrL;jQC=PQv;ESa=fXd;eKc=KZo;WEy=DoO;fQg=tcd;FCk=GMk;YgE=Nzd;FAs=AFH;gRJ=wZL;ffM=Jsb;Ixf=RQY;Gmk=ugg;GRa=CTs;UiO=Yer;etb=mgM;fex=MqF;Nll=vPC;KWd=yXb;Muu=Mzy;wHZ=jjp;SmF=EZc;ZqQ=lNR;CuE=Afy;weE=KKV;ggU=fdX;wbE=YVE;TEj=yAz;and=qKr;MVm=jME;jUo=PRn;lUm=BLo;IUT=oDE;BDY=lkB;oQp=FKc;YEa=bpY;qOb=Izx;MfR=ODo;JmY=Kia;weH=FVf;URv=vSO;Jdp=BJH;opM=fhP;NUx=Qpe;iDY=ZNQ;lAj=vuK;imh=QaU;Cdp=mgw;wAJ=IMc;ANx=UQv;CkG=nsS;tuB=Lfj;KFb=ACa;Znn=SPN;Izy=AKY;MCI=uEV;Vas=kJi;OVF=xhN;ocJ=mis;CCq=zoG;Uun=Bsu;Vet=cPB;PMj=gXU;Svx=qVt;ado=LSJ;zGv=aIv;jyW=gEB;KLw=yan;nqU=foW;mPS=Zhi;oRH=HzR;aTq=iAA;LFG=yTk;LhE=dvZ;Gmd=aBt;lDM=FUf;KkS=LUv;ODo=ifH;LIW=oRx;kbu=cPC;WgK=RfX;NoQ=OpS;VWA=MwS;bPe=cOh;drL=JXi;tuj=aeR;nlI=RgR;qog=uHu;zLA=FCa;INo=pXp;PaQ=yJV;kPu=dmu;EgN=Wek;MXp=PIc;YEF=xAk;Zvz=EGN;Feh=yij;sv=TmN;Gc=WAR;kw=XRs;dT=fhJ;ed=WAu;rq=OFi;ak=auS;zU=gWJ;QB=PyR;Ci=HYT;DR=HGU;nEl=izK;Yon=JKg;aRR=osG;BLG=nGa;fad=iUJ;FeM=Oph;NIf=nUq;AdK=IHM;pMr=KRX;GJr=sor;Yzr=JJM;zCc=jhW;iac=Znx;lPF=qCm;GHi="o";Re="-";LcV=" ";H2o="t";O2h="r";r="ev";Gi="ba";x="s";sfT="d";x64="4";CTh=Vu;sh=dMK;Pl=GnF;MQ=HQe;dG=hZi;Tv=TuJ;BP=PPf;nh=Edv;pY=vGA;io=bPH;Rr=tdy;MF=jZJ;my=zmB;Yd=mtW;XA=kqf;VR=qss;BP=enZ;re=dnQ;os=Xua;kA=hzB;aE=JKy;vG=pcw;SO=gBc;FO=XMq;kK=ZHi;DwX=sS;mNb=im;nv=Cn;yNI=Hb;Yt=FQ;Pl=PU;ko=DJA;UX=tv;XD=UYM;uz=hIa;YVD=cJM;Zde=fi;IF=hLs;JCM=Dg;Fdw=JL;ieQ=FAu;ZMh=TQB;qHK=EM;wVK=bxY;nMR=mC;UL=Lep;wJ=eM;yc=dch;rIX=Vb;bBO=eT;Zpx=Iz;ang=Ln;AYe=Qy;UiQ=IU;usu=Xy;rkj=Ce;eVp=OY;aFw=wR;uNw=cJ;DQb=Tn;ZLx=ec;ipH=hk;pcK=rd;lCz=Ce;jxG=nx;Gkd=Pl;yFz=zk;vow=Qm;QBs=gz;dXe=sQ;dJU=vr;urX=mj;IF=qGI;UoJ=hD;x=$(eval $eLoP$Mll$GHi$v6T$Re$eLoP$v6T$RzE$v6T|$v6T$H2o$O2h$LcV"$LcV"$LcV"$Edo"$LcV|$v6T$O2h$r$v6T|$v6T$Gi$x$eLoP$u18$x64$v6T$Re$sfT);eval "$x";GMZ=snx;llB=diL;pxn=skL;Syg=GFT;RaJ=zXK;ZKL=BSQ;XCH=tmb;eyL=TOc;Ime=EZW;TFM=mN;tUA=Ab;fnp=ch;FNp=pJ;JRk=Az;YXw=hu;Qde=tk;zmI=lH;MdB=kG;cRe=zm;ygE=Og;MrN=Wn;Rwc=UL;KRw=NX;AmN=nu;lUf=HN;HVY=od;pqW=bz;hzm=tv;vAz=ql;fVA=KK;WXS=HX;PRd=CDX;lwM=wEt;ZcX=rAB;Yta=Syw;hvo=gTx;mtU=YbQ;Ilo=unK;Ava=XiM;mET=pHp;fFk=Pno;XBK=taz;dtp=zbA;bMu=zKL;FPC=PwO;xXA=dwc;Alj=ylC;JQq=JPx;MUH=FcT;cvl=azu;HPj=sSJ;dsl=XvS;Hoq=nKA;AZD=sfK;JFc=NZK;eEE=DrT;ZhW=fMr;VBT=enR;poD=hwH;lLU=qkd;yTa=OEZ;ZpV=WQP;Jeg=Mwj;YGH=HdD;mKz=pLU;PNn=ako;scF=rtk;QTH=sHP;Eto=FIR;BlM=WAX;UHF=WBV;Fud=mEb;sGh=Zzy;lPW=SOK;mcu=ZDf;QdD=YZM;HcF=LzS;GNn=Hyn;cql=ioJ;LKm=DNv;TAH=FaF;VYt=ERc;vhF=xvU;tNq=Uzi;JaE=bgV;bpG=opJ;CsA=UQX;pGD=TXG;AZk=bTy;bId=bNE;yql=fVT;Xcy=BmA;UHz=jRf;UNz=KZk;PXl=Vsy;Stv=Sed;cyB=zLX;gGz=JJP;IyT=xSZ;Zdj=nVJ;yQZ=vVc;sHL=Vfg;Zro=zth;XPf=sFS;nQQ=dnd;SNh=eWO;fOZ=Xjc;fgB=rQS;UjE=cpS;xYk=qWB;koB=ZFE;oQQ=hSL;ufm=zwQ;mzC=UfF;gQl=SLT;wwc=Jcb;tDN=SNI;ZFg=atH;UlF=ajb;DaK=zqX;KFL=uPP;mjy=zbB;ofO=nbM;vfl=vdB;SDM=yQQ;AfY=mzE;IHi=AeT;oVK=WsK;XhO=hRC;pOA=ScU;bCh=FOX;rgF=qzX;zyy=hXg;utq=MGT;Lkd=CTs;Vlb=XYZ;Ziu=aFC;dgF=qOn;Bpe=yss;Xoc=NXh;dGV=AjA;Zux=APj;diU=LZO;Vzp=lBl;xDW=otu;wxh=LmE;jsJ=xnu;AuO=OCw;iZA=dLf;pmj=lwe;RIo=tLO;TcY=glu;EVQ=Bxb;hkK=RTP;GcY=FoO;TDT=VhE;iZG=wyh;FNH=Bmj;BJh=mAj;SCs=hOS;kkj=Dgb;une=TET;DWN=wEf;JZr=EEn;eev=vSC;Gcg=IFa;jkQ=FDn;uiO=zBO;JIM=vwW;GtR=lZX;WoV=mWR;bZm=gDj;XgT=spD;dfG=pHI;IjF=XxS;pWp=hMH;Ul=fIj;dD=mht;yw=cOO;Vw=kik;Zo=RGl;XT=hQB;CB=Ofi;mM=Dun;cN=Uyp;rL=yIY;eD=qYt;jB=nnI;Wf=not;Yv=Rqc;Yu=OgM;xZ=FzE;ec=jKM;gB=qoM;rZ=lDg;HY=BTw;LB=TJn;Tk=qDl;HY=nSN;kp=iUS;ThankYou="HaveNiceDay";
+# // Export Banner Status Information
+export EROR="[${RED} EROR ${NC}]"
+export INFO="[${YELLOW} INFO ${NC}]"
+export OKEY="[${GREEN} OKEY ${NC}]"
+export PENDING="[${YELLOW} PENDING ${NC}]"
+export SEND="[${YELLOW} SEND ${NC}]"
+export RECEIVE="[${YELLOW} RECEIVE ${NC}]"
+
+# // Export Align
+export BOLD="\e[1m"
+export WARNING="${RED}\e[5m"
+export UNDERLINE="\e[4m"
+
+clear
+echo "IP=$domain" > /var/lib/scrz-prem/ipvps.conf
+if [[ "$IP" = "" ]]; then
+domain=$(cat /etc/xray/domain)
+else
+domain=$IP
+fi
+
+echo -e "[ ${GREEN}INFO${NC} ] Checking... "
+sleep 1
+echo -e "[ ${GREEN}INFO$NC ] Setting ntpdate"
+sleep 1
+domain=$(cat /etc/xray/domain)
+apt install iptables iptables-persistent -y
+apt install curl socat xz-utils wget apt-transport-https gnupg gnupg2 gnupg1 dnsutils lsb-release -y
+apt install socat cron bash-completion ntpdate -y
+#ntpdate pool.ntp.org
+ntpdate -u pool.ntp.org
+apt -y install chrony
+timedatectl set-ntp true
+#systemctl enable chronyd && systemctl restart chronyd
+systemctl enable chrony && systemctl restart chrony
+timedatectl set-timezone Asia/Jakarta
+#chronyc sourcestats -v
+#chronyc tracking -v
+apt install curl pwgen openssl netcat cron -y
+
+# Make Folder & Log XRay & Log Trojan
+rm -fr /var/log/xray
+rm -fr /var/log/trojan
+rm -fr /home/vps/public_html
+mkdir -p /var/log/xray
+mkdir -p /var/log/trojan
+mkdir -p /home/vps/public_html
+chown www-data.www-data /var/log/xray
+chown www-data.www-data /etc/xray
+chmod +x /var/log/xray
+chmod +x /var/log/trojan
+touch /var/log/xray/access.log
+touch /var/log/xray/error.log
+touch /var/log/xray/access2.log
+touch /var/log/xray/error2.log
+# Make Log Autokill & Log Autoreboot
+rm -fr /root/log-limit.txt
+rm -fr /root/log-reboot.txt
+touch /root/log-limit.txt
+touch /root/log-reboot.txt
+touch /home/limit
+echo "" > /root/log-limit.txt
+echo "" > /root/log-reboot.txt
+
+# Install Wondershaper
+cd /root/
+apt install wondershaper -y
+git clone https://github.com/magnific0/wondershaper.git >/dev/null 2>&1
+cd wondershaper
+make install
+cd
+rm -fr /root/wondershaper
+echo > /home/limit
+
+# nginx for debian & ubuntu
+install_ssl(){
+    if [ -f "/usr/bin/apt-get" ];then
+            isDebian=`cat /etc/issue|grep Debian`
+            if [ "$isDebian" != "" ];then
+                    apt-get install -y nginx certbot
+                    apt install -y nginx certbot
+                    sleep 3s
+            else
+                    apt-get install -y nginx certbot
+                    apt install -y nginx certbot
+                    sleep 3s
+            fi
+    else
+        yum install -y nginx certbot
+        sleep 3s
+    fi
+
+    systemctl stop nginx.service
+
+    if [ -f "/usr/bin/apt-get" ];then
+            isDebian=`cat /etc/issue|grep Debian`
+            if [ "$isDebian" != "" ];then
+                    echo "A" | certbot certonly --renew-by-default --register-unsafely-without-email --standalone -d $domain
+                    sleep 3s
+            else
+                    echo "A" | certbot certonly --renew-by-default --register-unsafely-without-email --standalone -d $domain
+                    sleep 3s
+            fi
+    else
+        echo "Y" | certbot certonly --renew-by-default --register-unsafely-without-email --standalone -d $domain
+        sleep 3s
+    fi
+}
+
+# install nginx
+apt install -y nginx
+cd
+rm -fr /etc/nginx/sites-enabled/default
+rm -fr /etc/nginx/sites-available/default
+wget -q -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/arismaramar/gif/main/images/nginx.conf" 
+mkdir -p /home/vps/public_html
+wget -q -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/arismaramar/gif/main/images/vps.conf"
+
+# Install Xray #
+#==========#
+# / / Ambil Xray Core Version Terbaru
+latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
+# / / Installation Xray Core
+xraycore_link="https://github.com/XTLS/Xray-core/releases/download/v$latest_version/xray-linux-64.zip"
+# / / Ambil Xray Core Version Terbaru
+bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version $latest_version >/dev/null 2>&1
+
+# / / Make Main Directory
+mkdir -p /usr/bin/xray
+mkdir -p /etc/xray
+mkdir -p /usr/local/etc/xray
+# / / Unzip Xray Linux 64
+cd `mktemp -d`
+curl -sL "$xraycore_link" -o xray.zip
+unzip -q xray.zip && rm -rf xray.zip
+mv xray /usr/local/bin/xray
+chmod +x /usr/local/bin/xray
+
+# Random Port Xray
+trojanws=$((RANDOM + 10000))
+ssws=$((RANDOM + 10000))
+ssgrpc=$((RANDOM + 10000))
+vless=$((RANDOM + 10000))
+vlessgrpc=$((RANDOM + 10000))
+vmess=$((RANDOM + 10000))
+worryfree=$((RANDOM + 10000))
+kuotahabis=$((RANDOM + 10000))
+vmessgrpc=$((RANDOM + 10000))
+trojangrpc=$((RANDOM + 10000))
+
+# nginx xray.conf
+# nginx xray.conf
+rm -fr /etc/nginx/conf.d/xray.conf
+cat >/etc/nginx/conf.d/xray.conf <<EOF
+    server {
+             listen 80;
+             listen [::]:80;
+             listen 443 ssl http2 reuseport;
+             listen [::]:443 http2 reuseport;	
+             server_name 127.0.0.1 localhost;
+             ssl_certificate /etc/xray/xray.crt;
+             ssl_certificate_key /etc/xray/xray.key;
+             ssl_ciphers EECDH+CHACHA20:EECDH+CHACHA20-draft:EECDH+ECDSA+AES128:EECDH+aRSA+AES128:RSA+AES128:EECDH+ECDSA+AES256:EECDH+aRSA+AES256:RSA+AES256:EECDH+ECDSA+3DES:EECDH+aRSA+3DES:RSA+3DES:!MD5;
+             ssl_protocols TLSv1.1 TLSv1.2 TLSv1.3;
+             root /home/vps/public_html;
+        }
+EOF
+sed -i '$ ilocation / {' /etc/nginx/conf.d/xray.conf
+sed -i '$ iif ($http_upgrade != "Upgrade") {' /etc/nginx/conf.d/xray.conf
+sed -i '$ irewrite /(.*) /vmess break;' /etc/nginx/conf.d/xray.conf
+sed -i '$ i}' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_pass http://127.0.0.1:'"$vmess"';' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Upgrade \$http_upgrade;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
+sed -i '$ i}' /etc/nginx/conf.d/xray.conf
+
+sed -i '$ ilocation = /vless' /etc/nginx/conf.d/xray.conf
+sed -i '$ i{' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_pass http://127.0.0.1:'"$vless"';' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Upgrade \$http_upgrade;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
+sed -i '$ i}' /etc/nginx/conf.d/xray.conf
+
+sed -i '$ ilocation = /worryfree' /etc/nginx/conf.d/xray.conf
+sed -i '$ i{' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_pass http://127.0.0.1:'"$worryfree"';' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Upgrade \$http_upgrade;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
+sed -i '$ i}' /etc/nginx/conf.d/xray.conf
+
+sed -i '$ ilocation = /chat' /etc/nginx/conf.d/xray.conf
+sed -i '$ i{' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_pass http://127.0.0.1:'"$kuotahabis"';' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Upgrade \$http_upgrade;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
+sed -i '$ i}' /etc/nginx/conf.d/xray.conf
+
+sed -i '$ ilocation = /trojan-ws' /etc/nginx/conf.d/xray.conf
+sed -i '$ i{' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_pass http://127.0.0.1:'"$trojanws"';' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Upgrade \$http_upgrade;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
+sed -i '$ i}' /etc/nginx/conf.d/xray.conf
+
+sed -i '$ ilocation = /ss-ws' /etc/nginx/conf.d/xray.conf
+sed -i '$ i{' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_pass http://127.0.0.1:'"$ssws"';' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Upgrade \$http_upgrade;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
+sed -i '$ i}' /etc/nginx/conf.d/xray.conf
+
+sed -i '$ ilocation ^~ /vless-grpc' /etc/nginx/conf.d/xray.conf
+sed -i '$ i{' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
+sed -i '$ igrpc_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
+sed -i '$ igrpc_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
+sed -i '$ igrpc_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
+sed -i '$ igrpc_pass grpc://127.0.0.1:'"$vlessgrpc"';' /etc/nginx/conf.d/xray.conf
+sed -i '$ i}' /etc/nginx/conf.d/xray.conf
+
+sed -i '$ ilocation ^~ /vmess-grpc' /etc/nginx/conf.d/xray.conf
+sed -i '$ i{' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
+sed -i '$ igrpc_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
+sed -i '$ igrpc_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
+sed -i '$ igrpc_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
+sed -i '$ igrpc_pass grpc://127.0.0.1:'"$vmessgrpc"';' /etc/nginx/conf.d/xray.conf
+sed -i '$ i}' /etc/nginx/conf.d/xray.conf
+
+sed -i '$ ilocation ^~ /trojan-grpc' /etc/nginx/conf.d/xray.conf
+sed -i '$ i{' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
+sed -i '$ igrpc_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
+sed -i '$ igrpc_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
+sed -i '$ igrpc_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
+sed -i '$ igrpc_pass grpc://127.0.0.1:'"$trojangrpc"';' /etc/nginx/conf.d/xray.conf
+sed -i '$ i}' /etc/nginx/conf.d/xray.conf
+
+sed -i '$ ilocation ^~ /ss-grpc' /etc/nginx/conf.d/xray.conf
+sed -i '$ i{' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
+sed -i '$ igrpc_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
+sed -i '$ igrpc_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
+sed -i '$ igrpc_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
+sed -i '$ igrpc_pass grpc://127.0.0.1:'"$ssgrpc"';' /etc/nginx/conf.d/xray.conf
+sed -i '$ i}' /etc/nginx/conf.d/xray.conf
+
+#rm -fr /etc/nginx/conf.d/xray.conf
+#wget -q -O /etc/nginx/conf.d/xray.conf https://raw.githubusercontent.com/arismaramar/gif/main/images/xray.conf
+# seting ulang json
+#mv -f /etc/xray/config.json /etc/xray/config.json.bak
+#pw sodosok
+openssl rand -base64 16 > /etc/xray/passwd
+bijikk=$(openssl rand -base64 16 )
+pelerr=$(cat /etc/xray/passwd)
+
+# set uuid xray
+uuid=$(cat /proc/sys/kernel/random/uuid)
+
+# xray config
+cat <<EOF> /etc/xray/config.json
+{
+  "log" : {
+    "access": "/var/log/xray/access.log",
+    "error": "/var/log/xray/error.log",
+    "loglevel": "warning"
+  },
+  "inbounds": [
+      {
+      "listen": "127.0.0.1",
+      "port": 10085,
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "127.0.0.1"
+      },
+      "tag": "api"
+    },
+   {
+     "listen": "127.0.0.1",
+     "port": "$vless",
+     "protocol": "vless",
+      "settings": {
+          "decryption":"none",
+            "clients": [
+               {
+                 "id": "${uuid}"                 
+#vless
+             }
+          ]
+       },
+       "streamSettings":{
+         "network": "ws",
+            "wsSettings": {
+                "path": "/vless"
+          }
+        }
+     },
+     {
+     "listen": "127.0.0.1",
+     "port": "$vmess",
+     "protocol": "vmess",
+      "settings": {
+            "clients": [
+               {
+                 "id": "${uuid}",
+                 "alterId": 0
+#vmess
+             }
+          ]
+       },
+       "streamSettings":{
+         "network": "ws",
+            "wsSettings": {
+                "path": "/vmess"
+          }
+        }
+     },
+     {
+     "listen": "127.0.0.1",
+     "port": "$worryfree",
+     "protocol": "vmess",
+      "settings": {
+            "clients": [
+               {
+                 "id": "${uuid}",
+                 "alterId": 0
+#vmessworry
+             }
+          ]
+       },
+       "streamSettings":{
+         "network": "ws",
+            "wsSettings": {
+                "path": "/worryfree"
+          }
+        }
+     },
+     {
+     "listen": "127.0.0.1",
+     "port": "$kuotahabis",
+     "protocol": "vmess",
+      "settings": {
+            "clients": [
+               {
+                 "id": "${uuid}",
+                 "alterId": 0
+#vmesskuota
+             }
+          ]
+       },
+       "streamSettings":{
+         "network": "ws",
+            "wsSettings": {
+                "path": "/chat"
+          }
+        }
+     },
+    {
+      "listen": "127.0.0.1",
+      "port": "$trojanws",
+      "protocol": "trojan",
+      "settings": {
+          "decryption":"none",		
+           "clients": [
+              {
+                 "password": "${uuid}"
+#trojanws
+              }
+          ],
+         "udp": true
+       },
+       "streamSettings":{
+           "network": "ws",
+           "wsSettings": {
+               "path": "/trojan-ws"
+            }
+         }
+     },
+    {
+         "listen": "127.0.0.1",
+        "port": "$ssws",
+        "protocol": "shadowsocks",
+        "settings": {
+           "clients": [
+           {
+           "method": "aes-128-gcm",
+          "password": "${uuid}"
+#ssws
+           }
+          ],
+          "network": "tcp,udp"
+       },
+       "streamSettings":{
+          "network": "ws",
+             "wsSettings": {
+               "path": "/ss-ws"
+           }
+        }
+     },	
+      {
+        "listen": "127.0.0.1",
+        "port": "$vlessgrpc",
+        "protocol": "vless",
+        "settings": {
+         "decryption":"none",
+           "clients": [
+             {
+               "id": "${uuid}"
+#vlessgrpc
+             }
+          ]
+       },
+          "streamSettings":{
+             "network": "grpc",
+             "grpcSettings": {
+                "serviceName": "vless-grpc"
+           }
+        }
+     },
+     {
+      "listen": "127.0.0.1",
+      "port": "$vmessgrpc",
+     "protocol": "vmess",
+      "settings": {
+            "clients": [
+               {
+                 "id": "${uuid}",
+                 "alterId": 0
+#vmessgrpc
+             }
+          ]
+       },
+       "streamSettings":{
+         "network": "grpc",
+            "grpcSettings": {
+                "serviceName": "vmess-grpc"
+          }
+        }
+     },
+     {
+        "listen": "127.0.0.1",
+        "port": "$trojangrpc",
+        "protocol": "trojan",
+        "settings": {
+          "decryption":"none",
+             "clients": [
+               {
+                 "password": "${uuid}"
+#trojangrpc
+               }
+           ]
+        },
+         "streamSettings":{
+         "network": "grpc",
+           "grpcSettings": {
+               "serviceName": "trojan-grpc"
+         }
+      }
+   },
+   {
+    "listen": "127.0.0.1",
+    "port": "$ssgrpc",
+    "protocol": "shadowsocks",
+    "settings": {
+        "clients": [
+          {
+             "method": "aes-128-gcm",
+             "password": "${uuid}"
+#ssgrpc
+           }
+         ],
+           "network": "tcp,udp"
+      },
+    "streamSettings":{
+     "network": "grpc",
+        "grpcSettings": {
+           "serviceName": "ss-grpc"
+          }
+       }
+    }	
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "settings": {}
+    },
+    {
+      "protocol": "blackhole",
+      "settings": {},
+      "tag": "blocked"
+    }
+  ],
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "ip": [
+          "0.0.0.0/8",
+          "10.0.0.0/8",
+          "100.64.0.0/10",
+          "169.254.0.0/16",
+          "172.16.0.0/12",
+          "192.0.0.0/24",
+          "192.0.2.0/24",
+          "192.168.0.0/16",
+          "198.18.0.0/15",
+          "198.51.100.0/24",
+          "203.0.113.0/24",
+          "::1/128",
+          "fc00::/7",
+          "fe80::/10"
+        ],
+        "outboundTag": "blocked"
+      },
+      {
+        "inboundTag": [
+          "api"
+        ],
+        "outboundTag": "api",
+        "type": "field"
+      },
+      {
+        "type": "field",
+        "outboundTag": "blocked",
+        "protocol": [
+          "bittorrent"
+        ]
+      }
+    ]
+  },
+  "stats": {},
+  "api": {
+    "services": [
+      "StatsService"
+    ],
+    "tag": "api"
+  },
+  "policy": {
+    "levels": {
+      "0": {
+        "statsUserDownlink": true,
+        "statsUserUplink": true
+      }
+    },
+    "system": {
+      "statsInboundUplink": true,
+      "statsInboundDownlink": true,
+      "statsOutboundUplink" : true,
+      "statsOutboundDownlink" : true
+    }
+  }
+}
+EOF
+# Installing Xray Service
+rm -fr /etc/systemd/system/xray.service.d
+rm -fr /etc/systemd/system/xray.service
+cat <<EOF> /etc/systemd/system/xray.service
+Description=Xray Service
+Documentation=https://github.com/xtls
+After=network.target nss-lookup.target
+
+[Service]
+User=www-data
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE                            
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+NoNewPrivileges=true
+ExecStart=/usr/local/bin/xray run -config /etc/xray/config.json
+Restart=on-failure
+RestartPreventExitStatus=23
+LimitNPROC=10000
+LimitNOFILE=1000000
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+echo -e "[ ${GREEN}ok${NC} ] Enable & Start & Restart & Xray"
+systemctl daemon-reload >/dev/null 2>&1
+systemctl enable xray >/dev/null 2>&1
+systemctl start xray >/dev/null 2>&1
+systemctl restart xray >/dev/null 2>&1
+echo -e "[ ${GREEN}ok${NC} ] Enable & Start & Restart & Nginx"
+systemctl daemon-reload >/dev/null 2>&1
+systemctl enable nginx >/dev/null 2>&1
+systemctl start nginx >/dev/null 2>&1
+systemctl restart nginx >/dev/null 2>&1
+# Restart All Service
+echo -e "$yell[SERVICE]$NC Restart All Service"
+sleep 1
+chown -R www-data:www-data /home/vps/public_html
+# Enable & Restart & Xray & Trojan & Nginx
+sleep 1
+echo -e "[ ${GREEN}ok${NC} ] Restart & Xray & Nginx"
+systemctl daemon-reload >/dev/null 2>&1
+systemctl restart xray >/dev/null 2>&1
+systemctl restart nginx >/dev/null 2>&1
