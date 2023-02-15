@@ -1,14 +1,10 @@
 #!/bin/bash
-#!/bin/bah
-#!/bin/bash
 # =========================================
 # Quick Setup | Script Setup Manager
 # Edition : Stable Edition V1.0
 # Auther  : Adit Ardiansyah
 # (C) Copyright 2022
 # =========================================
-#!/bin/bash
-dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 
 clear
 BIBlack='\033[1;90m'      # Black
@@ -55,42 +51,77 @@ export BOLD="\e[1m"
 export WARNING="${RED}\e[5m"
 export UNDERLINE="\e[4m"
 
+# // Exporting URL Host
+
 # // Root Checking
 if [ "${EUID}" -ne 0 ]; then
 		echo -e "${EROR} Please Run This Script As Root User !"
 		exit 1
 fi
-export DEBIAN_FRONTEND=noninteractive
-MYIP=$(curl -sS ifconfig.me);
-MYIP2="s/xxxxxxxxx/$MYIP/g";
-NET=$(ip -o $ANU -4 route show to default | awk '{print $5}');
-source /etc/os-release
-ver=$VERSION_ID
 
+# // Exporting IP Address
+export IP=$( curl -s https://ipinfo.io/ip/ )
+
+# // Exporting Network Interface
+export NETWORK_IFACE="$(ip route show to default | awk '{print $5}')"
+
+# // Validate Result ( 1 )
 #detail nama perusahaan
 country=ID
 state=Indonesia
 locality=Indonesia
-organization=digvpn
-organizationalunit=remoot.my.id
-commonname=anggun
-email=arimar.amar@gmail.com
+organization=www.aixxy.codes
+organizationalunit=www.aixxy.codes
+commonname=www.aixxy.codes
+email=admin@aixxy.com
 
 # simple password minimal
-wget -q -O /etc/pam.d/common-password "https://raw.githubusercontent.com/arismaramar/gif/main/images/password"
+wget -q -O /etc/pam.d/common-password "https://raw.githubusercontent.com/H-Pri3l/1/main/password"
 chmod +x /etc/pam.d/common-password
 
 # go to root
 cd
+
+# Getting websocket dropbear
+#wget -q -O /usr/local/bin/ws-dropbear "https://raw.githubusercontent.com/H-Pri3l/0/main/ws-dropbear"
+#chmod +x /usr/local/bin/ws-dropbear
+
+# Installing Service
+#cat > /etc/systemd/system/ws-dropbear.service << END
+#[Unit]
+#Description=Ssh Websocket By Akhir Zaman
+#Documentation=https://xnxx.com
+#After=network.target nss-lookup.target
+
+#[Service]
+#Type=simple
+#User=root
+#CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+#AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+#NoNewPrivileges=true
+#ExecStart=/usr/bin/python2 -O /usr/local/bin/ws-dropbear 8880
+#Restart=on-failure
+
+#[Install]
+#WantedBy=multi-user.target
+#END
+
+#systemctl daemon-reload >/dev/null 2>&1
+#systemctl enable ws-dropbear >/dev/null 2>&1
+#systemctl start ws-dropbear >/dev/null 2>&1
+#systemctl restart ws-dropbear >/dev/null 2>&1
+
+clear 
+
 # Getting websocket ssl stunnel
-wget -q -O /usr/local/bin/ws-stunnel "https://raw.githubusercontent.com/arismaramar/gif/main/images/ws-stunnel"
+wget -q -O /usr/local/bin/ws-stunnel "https://raw.githubusercontent.com/H-Pri3l/1/main/ws-stunnel"
 chmod +x /usr/local/bin/ws-stunnel
 
 # Installing Service Ovpn Websocket
 cat > /etc/systemd/system/ws-stunnel.service << END
 [Unit]
-Description=Ovpn Websocket anggun
-Documentation=https://remoot.my.id
+Description=Ovpn Websocket By Akhir Zaman
+Documentation=https://xnxx.com
 After=network.target nss-lookup.target
 
 [Service]
@@ -188,19 +219,12 @@ echo -ne
 fi
 cd
 echo -e "[ ${green}INFO$NC ] Installing badvpn for game support..."
-#wget -q -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/arismaramar/gif/main/images/badvpn-udpgw64"
-wget -q -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/arismaramar/gif/main/images/newudpgw"
+#wget -q -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/H-Pri3l/0/main/badvpn-udpgw64"
+wget -q -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/H-Pri3l/1/main/newudpgw"
 chmod +x /usr/bin/badvpn-udpgw  >/dev/null 2>&1
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local >/dev/null 2>&1
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local >/dev/null 2>&1
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500' /etc/rc.local >/dev/null 2>&1
-sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7400 --max-clients 500' /etc/rc.local >/dev/null 2>&1
-sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7500 --max-clients 500' /etc/rc.local >/dev/null 2>&1
-sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7600 --max-clients 500' /etc/rc.local >/dev/null 2>&1
-sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7700 --max-clients 500' /etc/rc.local >/dev/null 2>&1
-sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7800 --max-clients 500' /etc/rc.local >/dev/null 2>&1
-sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7900 --max-clients 500' /etc/rc.local >/dev/null 2>&1
-
 systemctl daemon-reload >/dev/null 2>&1
 systemctl start rc-local.service >/dev/null 2>&1
 systemctl restart rc-local.service >/dev/null 2>&1
@@ -309,7 +333,7 @@ END
 
 # Service Stunnel5 /etc/init.d/stunnel5
 rm -fr /etc/init.d/stunnel5
-wget -q -O /etc/init.d/stunnel5 "https://raw.githubusercontent.com/arismaramar/gif/main/images/stunnel5.init"
+wget -q -O /etc/init.d/stunnel5 "https://raw.githubusercontent.com/H-Pri3l/1/main/stunnel5.init"
 
 # Ubah Izin Akses
 #chmod 600 /etc/stunnel5/stunnel5.pem
@@ -334,7 +358,7 @@ systemctl restart stunnel5 >/dev/null 2>&1
 # Install bbr
 sleep 1
 echo -e "[ ${green}INFO$NC ] Install bbr"
-#Optimasi Speed 
+#Optimasi Speed Mod By Akhir Zaman
 Add_To_New_Line(){
 	if [ "$(tail -n1 $1 | wc -l)" == "0"  ];then
 		echo "" >> "$1"
@@ -430,7 +454,7 @@ rm -fr /etc/issue.net
 rm -fr /etc/issue.net.save
 sleep 1
 echo -e "[ ${green}INFO$NC ] Settings banner"
-wget -q -O /etc/issue.net "https://raw.githubusercontent.com/arismaramar/gif/main/images/issue.net"
+wget -q -O /etc/issue.net "https://raw.githubusercontent.com/H-Pri3l/lekong/main/issue.net"
 chmod +x /etc/issue.net
 echo "Banner /etc/issue.net" >> /etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
@@ -492,12 +516,6 @@ echo -e "[ ${green}ok${NC} ] Restarting squid "
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500 >/dev/null 2>&1
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500 >/dev/null 2>&1
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500 >/dev/null 2>&1
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7400 --max-clients 500 >/dev/null 2>&1
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7500 --max-clients 500 >/dev/null 2>&1
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7600 --max-clients 500 >/dev/null 2>&1
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7700 --max-clients 500 >/dev/null 2>&1
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7800 --max-clients 500 >/dev/null 2>&1
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7900 --max-clients 500 >/dev/null 2>&1
 history -c
 echo "unset HISTFILE" >> /etc/profile
 
@@ -509,4 +527,4 @@ sleep 5
 clear
 rm -fr /root/key.pem >/dev/null 2>&1
 rm -fr /root/cert.pem >/dev/null 2>&1
-rm -fr /root/ssh-vpn.sh >/dev/null 2>&1 
+rm -fr /root/ssh-vpn.sh >/dev/null 2>&1�
