@@ -272,7 +272,6 @@ apt -y install fail2ban
 
 # Instal DDOS Flate
 mkdir /usr/local/ddos
-fi
 clear
 echo; echo 'Installing DOS-Deflate 0.6'; echo
 echo; echo -n 'Downloading source files...'
