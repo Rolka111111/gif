@@ -189,7 +189,7 @@ case $opt in
 18) clear ; limit-speed ;;
 19) clear ; wbm ;;
 20) clear ; cat /root/log-install.txt ;;
-21) clear ; canger ;;
+21) clear ; changer ;;
 22) clear ; clearlog ;;
 #99) clear ; update ;;
 0) clear ; menu ;;
