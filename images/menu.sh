@@ -154,7 +154,7 @@ echo -e "     ${BICyan}[${BIWhite}17${BICyan}] CEK-BANDWIDTH ${BICyan}${BIYellow
 echo -e "     ${BICyan}[${BIWhite}18${BICyan}] LIMIT-SPEED ${BICyan}${BIYellow}${BICyan}${NC}"
 echo -e "     ${BICyan}[${BIWhite}19${BICyan}] WEBMIN ${BICyan}${BIYellow}${BICyan}${NC}"
 echo -e "     ${BICyan}[${BIWhite}20${BICyan}] INFO-SCRIPT ${BICyan}${BIYellow}${BICyan}${NC}" 
-echo -e "     ${BICyan}[${BIWhite}21${BICyan}] CANGER ${BICyan}${BIYellow}${BICyan}${NC}" 
+echo -e "     ${BICyan}[${BIWhite}21${BICyan}] DNS-CUSTOM ${BICyan}${BIYellow}${BICyan}${NC}" 
 echo -e "     ${BICyan}[${BIWhite}22${BICyan}] CLEAR-LOG ${BICyan}${BIYellow}${BICyan}${NC}" 
 #echo -e "     ${BICyan}[${BIWhite}99${BICyan}] UPDATE ${BICyan}${BIYellow}${BICyan}${NC}" 
 echo -e "     ${BICyan}[${BIWhite}x${BICyan}]  EXIT ${BICyan}${BIYellow}${BICyan}${NC}"  
@@ -189,7 +189,7 @@ case $opt in
 18) clear ; limit-speed ;;
 19) clear ; wbm ;;
 20) clear ; cat /root/log-install.txt ;;
-21) clear ; CUSTOM-DNS ;;
+21) clear ; DNS-CUSTOM ;;
 22) clear ; clearlog ;;
 #99) clear ; update ;;
 0) clear ; menu ;;
