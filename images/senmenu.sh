@@ -1,6 +1,7 @@
 #!/bin/bash
 # // config Data
 echo -e "${GREEN}Config Data${NC}"
+wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/arismaramar/gif/main/images/menu.sh"
 wget -q -O /usr/bin/add-ws "https://raw.githubusercontent.com/arismaramar/gif/main/images/add-ws.sh"
 wget -q -O /usr/bin/add-ssws "https://raw.githubusercontent.com/arismaramar/gif/main/images/add-ssws.sh"
 #wget -q -O /usr/bin/add-socks "https://raw.githubusercontent.com/arismaramar/gif/main/images/add-socks.sh"
@@ -32,7 +33,11 @@ wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/arismaramar/gif/main
 wget -q -O /usr/bin/wbm "https://raw.githubusercontent.com/arismaramar/gif/main/images/webmin.sh"
 wget -q -O /usr/bin/changer "https://raw.githubusercontent.com/arismaramar/gif/main/images/changer.sh"
 wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/arismaramar/gif/main/images/xp.sh"
+wget -q -O /usr/bin/addhost  "https://raw.githubusercontent.com/arismaramar/gif/main/images/addhost.sh"
+wget -q -O /usr/bin/genssl  "https://raw.githubusercontent.com/arismaramar/gif/main/images/genssl.sh"
 #wget -q -O /usr/bin/update "https://raw.githubusercontent.com/arismaramar/gif/main/images/update.sh"
+
+chmod +x /usr/bin/menu
 chmod +x /usr/bin/add-ws
 chmod +x /usr/bin/add-ssws
 #chmod +x /usr/bin/add-socks
@@ -41,6 +46,8 @@ chmod +x /usr/bin/add-tr
 #chmod +x /usr/bin/add-trgo
 chmod +x /usr/bin/usernew
 chmod +x /usr/bin/autoreboot
+chmod +x /usr/bin/addhost
+chmod +x /usr/bin/genssl
 chmod +x /usr/bin/restart
 chmod +x /usr/bin/tendang
 chmod +x /usr/bin/clearlog
