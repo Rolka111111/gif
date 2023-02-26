@@ -93,8 +93,8 @@ chmod +x /etc/pam.d/common-password
 cd
 
 # Getting websocket dropbear
-wget -q -O /usr/local/bin/ws-dropbear "https://raw.githubusercontent.com/arismaramar/gif/main/images/service-wsdropbear"
-chmod +x /usr/local/bin/ws-dropbear
+#wget -q -O /usr/local/bin/ws-dropbear "https://raw.githubusercontent.com/arismaramar/gif/main/images/service-wsdropbear"
+#chmod +x /usr/local/bin/ws-dropbear
 
 # Installing Service
 #cat > /etc/systemd/system/ws-dropbear.service << END
