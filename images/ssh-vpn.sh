@@ -88,22 +88,13 @@ commonname=www.remoot.my.id
 email=arimar.amar@gmail.com
 
 # simple password minimal
-wget -q -O /etc/pam.d/common-password "https://raw.githubusercontent.com/kenDevXD/1/main/password"
+wget -q -O /etc/pam.d/common-password "https://raw.githubusercontent.com/arismaramar/gif/main/images/password"
 chmod +x /etc/pam.d/common-password
 
 # go to root
 cd
 
 # Getting websocket dropbear
-#wget -q -O /usr/local/bin/ws-dropbear "https://raw.githubusercontent.com/kenDevXD/0/main/ws-dropbear"
-#chmod +x /usr/local/bin/ws-dropbear
-
-# Installing Service
-#cat > /etc/systemd/system/ws-dropbear.service << END
-#[Unit]
-#Documentation=https://xnxx.com
-#After=network.target nss-lookup.target
-
 #[Service]
 #Type=simple
 #User=root
