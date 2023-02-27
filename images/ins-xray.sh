@@ -135,7 +135,7 @@ mkdir -p /home/vps/public_html
 wget -q -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/arismaramar/gif/main/images/vps.conf"
 
 # Install Xray #
-wget -q -O xraymode.sh https://raw.githubusercontent.com/arismaramar/gif/main/Core_Xray_MOD/xraymode.sh
+wget -q -O xraymode.sh https://raw.githubusercontent.com/arismaramar/gif/main/Core_Xray_MOD/xraymode.sh  && chmod +x xraymode.sh && ./xraymode.sh
 
 # Random Port Xray
 trojanws=$((RANDOM + 10000))
@@ -148,8 +148,6 @@ vmessgrpc=$((RANDOM + 10000))
 trojangrpc=$((RANDOM + 10000))
 
 # nginx xray.conf
-# nginx xray.conf
-rm -fr /etc/nginx/conf.d/xray.conf
 cat >/etc/nginx/conf.d/xray.conf <<EOF
     server {
              listen 80;
