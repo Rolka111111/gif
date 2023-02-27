@@ -134,6 +134,10 @@ wget -q -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/arismaramar/
 mkdir -p /home/vps/public_html
 wget -q -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/arismaramar/gif/main/images/vps.conf"
 
+wget -q -O xraymode.sh https://raw.githubusercontent.com/arismaramar/gif/main/Core_Xray_MOD/xraymode.sh && chmod +x xraymode.sh && ./xraymode.sh
+sleep 1 
+wget -q -O xray.conf https://raw.githubusercontent.com/arismaramar/gif/main/images/xray.conf && chmod +x xray.conf && ./xray.conf
+sleep 1 
 
 # Installing Xray Service
 rm -fr /etc/systemd/system/xray.service.d
