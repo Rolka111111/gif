@@ -65,7 +65,7 @@ if [[ -r /etc/xray/domain ]]; then
 clear
 echo -e "${INFO} Having Script Detected !"
 echo -e "${INFO} If You Replacing Script, All Client Data On This VPS Will Be Cleanup !"
-read -p "Are You Sure Wanna Replace Script ? (Y/N) " josdong
+read -p "Are You Sure Wanna Replace Script ? (Y/N) " lanjutkan
 if [[ $josdong == "Y" ]]; then
 clear
 echo -e "${INFO} Starting Replacing Script !"
@@ -76,7 +76,7 @@ rm -rf /var/lib/scrz-prem
 elif [[ $josdong == "N" ]]; then
 echo -e "${INFO} Action Canceled !"
 exit 1
-elif [[ $josdong == "n" ]]; then
+elif [[ $lanjutkan == "n" ]]; then
 echo -e "${INFO} Action Canceled !"
 exit 1
 else
