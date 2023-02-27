@@ -16,9 +16,9 @@ mkdir -p /usr/local/etc/xray
 cd `mktemp -d`
 curl -sL "$xraycore_link" -o xray.zip
 unzip -q xray.zip && rm -rf xray.zip
-rm -f /usr/local/bin/xray
 mv xray /usr/local/bin/xray
 chmod +x /usr/local/bin/xray
+
 systemctl restart xray
 sleep 0.5
 
