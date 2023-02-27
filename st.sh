@@ -66,14 +66,14 @@ clear
 echo -e "${INFO} Having Script Detected !"
 echo -e "${INFO} If You Replacing Script, All Client Data On This VPS Will Be Cleanup !"
 read -p "Are You Sure Wanna Replace Script ? (Y/N) " lanjutkan
-if [[ $josdong == "Y" ]]; then
+if [[ $lanjutkan == "Y" ]]; then
 clear
 echo -e "${INFO} Starting Replacing Script !"
-elif [[ $josdong == "y" ]]; then
+elif [[ $lanjutkan == "y" ]]; then
 clear
 echo -e "${INFO} Starting Replacing Script !"
 rm -rf /var/lib/scrz-prem 
-elif [[ $josdong == "N" ]]; then
+elif [[ $lanjutkan == "N" ]]; then
 echo -e "${INFO} Action Canceled !"
 exit 1
 elif [[ $lanjutkan == "n" ]]; then
