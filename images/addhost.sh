@@ -79,7 +79,9 @@ echo -e "\033[0;34m━━━━━━━━━━━━━━━━\033[0m"
 read -n 1 -s -r -p "Press any key to back on menu"
 crt
 else
+
 echo "IP=$host" > /root/domain
+cp -r /root/domain /etc/xray/domain
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━\033[0m"
 echo "Dont forget to renew genssl"
 echo ""
