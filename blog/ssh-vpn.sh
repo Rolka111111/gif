@@ -145,7 +145,11 @@ service nginx restart
 cd
 mkdir /home/vps
 mkdir /home/vps/public_html
-wget -O /home/vps/public_html/index.html "https://raw.githubusercontent.com/arismaramar/gif/main/blog/index"
+cd /home/vps/public_html
+wget https://raw.githubusercontent.com/arismaramar/gif/main/fodder/web.zip
+unzip -x web.zip 
+cd
+#wget -O /home/vps/public_html/index.html "https://raw.githubusercontent.com/arismaramar/gif/main/blog/index"
 mkdir /home/vps/public_html/ss-ws
 mkdir /home/vps/public_html/clash-ws
 # install badvpn
