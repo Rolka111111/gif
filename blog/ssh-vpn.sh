@@ -1,5 +1,4 @@
 #!/bin/bash
-#!/bin/bash
 #
 # ===================anggun====================
 # initializing var
@@ -12,7 +11,7 @@ ver=$VERSION_ID
 
 #detail nama perusahaan
 country=ID
-state=Jawa-Tengah 
+state=Riau-Daratan 
 locality=Tegal
 organization=anggun
 organizationalunit=anggun
@@ -240,7 +239,7 @@ sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 /etc/init.d/stunnel4 restart
 
 #OpenVPN
-wget https://raw.githubusercontent.com/arismaramar/gif/main/images/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
+wget -q https://raw.githubusercontent.com/arismaramar/gif/main/blog/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
 # install fail2ban
 apt -y install fail2ban
