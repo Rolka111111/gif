@@ -8,7 +8,7 @@ RED="\033[0;31m"
 COLOR1="$(cat /etc/anggun/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
 COLBG1="$(cat /etc/anggun/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')" 
 WH='\033[1;37m'                   
-###########- Yudhy Network-##########
+###########- ANGGUN-##########
 function addssh(){
 clear
 domen=`cat /etc/xray/domain`
