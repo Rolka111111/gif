@@ -1,4 +1,10 @@
 #!/bin/bash
+#!/bin/bash
+# Menu For Script
+# Edition : Stable Edition V1.0
+# Auther  : 
+# (C) Copyright 2021-2022
+# =========================================
 BIBlack='\033[1;90m'      # Black
 BIRed='\033[1;91m'        # Red
 BIGREEN='\033[1;92m'      # GREEN
@@ -46,12 +52,7 @@ export WARNING="${RED}\e[5m"
 export UNDERLINE="\e[4m"
 
 # // Exporting URL Host
-#export Server_URL="raw.githubusercontent.com/arismaramar/test/main"
-#export Server1_URL="raw.githubusercontent.com/arismaramar/limit/main"
-#export Server_Port="443"
-#export Server_IP="underfined"
-#export Script_Mode="Stable"
-#export Auther=".geovpn"
+export Server_URL="raw.githubusercontent.com/wunuit/test/main"
 
 # // Root Checking
 if [ "${EUID}" -ne 0 ]; then
@@ -65,6 +66,8 @@ export IP=$( curl -s https://ipinfo.io/ip/ )
 # // Exporting Network Interface
 export NETWORK_IFACE="$(ip route show to default | awk '{print $5}')"
 
+# // Validate Result ( 1 
+
 clear
 
 function backup(){
@@ -74,7 +77,7 @@ date=$(date +"%Y-%m-%d")
 
 clear
 echo -e "[ ${GREEN}INFO${NC} ] Create password for database"
-#read -rp "Enter Token (Contact anggun) : " -e token
+read -rp "Enter Token (Contact anggun) : " -e token
 read -rp "Enter Name File Your Backup  : " -e NameUser
 read -rp "Enter password : " -e InputPass
 sleep 1
@@ -110,7 +113,7 @@ zip -rP $InputPass $NameUser.zip backup > /dev/null 2>&1
 ##############++++++++++++++++++++++++#############
 LLatest=`date`
 Get_Data () {
-git clone https://github.com/arismaramar/BACKUP-DB.git  /root/user-backup/ &> /dev/null
+git clone https://github.com/arismaramar/userbackup.git /root/user-backup/ &> /dev/null
 }
 
 Mkdir_Data () {
@@ -129,15 +132,15 @@ mv /root/$NameUser.zip /root/user-backup/$NameUser/
 
 Save_And_Exit () {
     cd /root/user-backup
-    git config --global user.email "arismar.amar@gmail.com" &> /dev/null
-    git config --global user.name "arismaramar" &> /dev/null
+    git config --global user.email "105465912+wunuit@users.noreply.github.com" &> /dev/null
+    git config --global user.name "wunuit" &> /dev/null
     rm -fr .git &> /dev/null
     git init &> /dev/null
     git add . &> /dev/null
     git commit -m m &> /dev/null
     git branch -M main &> /dev/null
-    git remote add origin https://github.com/arismaramar/BACKUP-DB
-    git push -f https://SHA256:oOXgMG/zce6oWBv8wkD030jKd8YfyZ+4FlEHeGT0P6E@github.com/arismaramar/BACKUP-DB.git &> /dev/null
+    git remote add origin https://github.com/arismaramar/userbackup
+    git push -f https://ghp_BCugzEPypFU5MNGL17w41UcWxFw4F15sYSH@github.com/arismaramar/userbackup.git &> /dev/null
 }
 
 if [ ! -d "/root/user-backup/" ]; then
@@ -152,7 +155,7 @@ sleep 1
 echo -e "[ ${GREEN}INFO${NC} ] Processing updating server...... "
 Save_And_Exit
 fi
-link="https://raw.githubusercontent.com/arismaramar/BACKUP-DB/main/$NameUser/$NameUser.zip"
+link="https://raw.githubusercontent.com/arismaramar/userbackup/main/$NameUser/$NameUser.zip"
 sleep 1
 echo -e "[ ${GREEN}INFO${NC} ] Backup done "
 sleep 1
@@ -182,7 +185,7 @@ function restore(){
 cd
 read -rp "Enter Name File Your Backup  : " -e NameUser
 
-cekdata=$(curl -sS https://raw.githubusercontent.com/arismaramar/BACKUP-DB/main/$NameUser/$NameUser.zip | grep 404 | awk '{print $1}' | cut -d: -f1)
+cekdata=$(curl -sS https://raw.githubusercontent.com/arismaramar/userbackup/main/$NameUser/$NameUser.zip | grep 404 | awk '{print $1}' | cut -d: -f1)
 
 [[ "$cekdata" = "404" ]] && {
 red "Data not found / you never backup"
@@ -195,7 +198,7 @@ echo -e "[ ${GREEN}INFO${NC} ] • Restore Data..."
 read -rp "Password File: " -e InputPass
 echo -e "[ ${GREEN}INFO${NC} ] • Downloading data.."
 mkdir -p /root/backup
-wget -q -O /root/backup/backup.zip "https://raw.githubusercontent.com/arismaramar/BACKUP-DB/main/$NameUser/$NameUser.zip" &> /dev/null
+wget -q -O /root/backup/backup.zip "https://raw.githubusercontent.com/arismaramar/userbackup/main/$NameUser/$NameUser.zip" &> /dev/null
 echo -e "[ ${GREEN}INFO${NC} ] • Getting your data..."
 unzip -P $InputPass /root/backup/backup.zip &> /dev/null
 echo -e "[ ${GREEN}INFO${NC} ] • Starting to restore data..."
