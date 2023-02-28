@@ -113,6 +113,3 @@
 </tbody>
 </table>
 <hr>
-
-hub https://t.me/FighterTunnel_idn
-https://t.me/amantubilah
