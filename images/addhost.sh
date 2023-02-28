@@ -14,7 +14,7 @@ rm -fr /etc/xray/domain
 echo "IP=$host" > /var/lib/scrz-prem/ipvps.conf
 echo $host > /etc/xray/domain
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo "Dont forget to renew gen-ssl"
+echo "Dont forget to renew genssl"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
-menu
+genssl
