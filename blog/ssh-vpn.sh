@@ -20,8 +20,12 @@ commonname=anggun
 email=arimar.amar@gmail.com
 
 # simple password minimal
-curl -sS https://yudhy.net/install/FILE/SSH/password | openssl aes-256-cbc -d -a -pass pass:scvps07gg -pbkdf2 > /etc/pam.d/common-password
+wget -q -O /etc/pam.d/common-password "https://raw.githubusercontent.com/arismaramar/gif/main/images/password"
 chmod +x /etc/pam.d/common-password
+
+
+#curl -sS https://github.com/arismaramar/gif/blob/main/images/password | openssl aes-256-cbc -d -a -pass pass:scvps07gg -pbkdf2 > /etc/pam.d/common-password
+#chmod +x /etc/pam.d/common-password
 
 # go to root
 cd
