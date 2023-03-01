@@ -125,7 +125,7 @@ sleep 2
 sleep 5
 rm /root/install_up.sh
 rm /opt/.ver
-version_up=$( curl -sS https://raw.githubusercontent.com/arismaramar/gif/main/blog/PLUGINS/versi)
+version_up=$( curl -sS https://raw.githubusercontent.com/arismaramar/gif/main/blog/version)
 echo "$version_up" > /opt/.ver
 echo -e "$COLOR1 ${NC}  $COLOR1[INFO]${NC} Successfully Up To Date!"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
@@ -146,7 +146,7 @@ upminutes=`uptime -p | awk '{print $4,$5}' | cut -d , -f1`
 uptimecek=`uptime -p | awk '{print $6,$7}' | cut -d , -f1`
 cekup=`uptime -p | grep -ow "day"`
 IPVPS=$(curl -s ipinfo.io/ip )
-serverV=$( curl -sS https://raw.githubusercontent.com/arismaramar/gif/main/blog/PLUGINS/versi)
+serverV=$( curl -sS https://raw.githubusercontent.com/arismaramar/gif/main/blog/version)
 uis="${COLOR1}Premium Version$NC"
 echo -e "$COLOR1 $NC ${WH}User Roles     ${COLOR1}: ${WH}$uis"
 if [ "$cekup" = "day" ]; then
