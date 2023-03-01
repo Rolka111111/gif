@@ -59,9 +59,6 @@ export IP=$( curl -s https://ipinfo.io/ip/ )
 export NETWORK_IFACE="$(ip route show to default | awk '{print $5}')"
 
 
-# // Checking VPS Status > Got Banned / No
-
-# // Checking Script Expired
 clear
 
 GREEN='\033[0;32m'
