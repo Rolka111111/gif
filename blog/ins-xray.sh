@@ -165,7 +165,7 @@ cat > /etc/xray/config.json << END
        "streamSettings":{
            "network": "ws",
            "wsSettings": {
-               "path": "/yudhynet"
+               "path": "/anggun"
             }
          }
      },
