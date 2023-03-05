@@ -1,7 +1,8 @@
 #!/bin/bash
 # Install Xray core#
 #==========#
-
+#!/bin/bash
+GITHUB_CMD="https://github.com/arismaramar/gif/raw/"
 # / / Ambil Xray Core Version Terbaru
 latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
 # / / Installation Xray Core
