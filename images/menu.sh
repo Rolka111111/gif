@@ -110,20 +110,12 @@ resv2r="${GREEN}ON${NC}"
 else
 resv2r="${red}OFF${NC}"
 fi
-#read -n 1 -s -r -p "Press any key to back on menu"
-#menu
-#fi
-#}
-#echo ""
-#read -n 1 -s -r -p "Press any key to back on menu"
-#menu
-#}
 
 IPVPS=$(curl -s ipinfo.io/ip )
 ISPVPS=$( curl -s ipinfo.io/org )
 clear
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "${BICyan} │              ${BIWhite}${UWhite}Server Informations${NC}"
+echo -e "${BICyan} │  ${BIWhite}${UWhite}Server Informations${NC}"
 echo -e "${BICyan} │"
 echo -e " ${BICyan}│  ${BICyan}Use Core        :  ${BIPurple}ANGGUN ${NC}"
 echo -e " ${BICyan}│  ${BICyan}Current Domain  :  ${BIPurple}$(cat /etc/xray/domain)${NC}"
@@ -162,7 +154,7 @@ echo -e "${BICyan} └───────────────────�
 echo -e " ${BICyan}┌─────────────────────────────────────┐${NC}"
 echo -e " ${BICyan}│  Version      ${NC} : $sem Last Update"
 echo -e " ${BICyan}│  User          :ANGGUN \e[0m"
-echo -e " ${BICyan}│  Expiry script${NC} : unlimited"
+echo -e " ${BICyan}│  Expiry script${NC} : Lifetime"
 echo -e " ${BICyan}└─────────────────────────────────────┘${NC}"
 echo
 read -p " Select menu : " opt
