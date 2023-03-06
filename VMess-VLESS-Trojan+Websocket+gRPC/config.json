@@ -1,3 +1,4 @@
+uuid=$(cat /proc/sys/kernel/random/uuid)
 {
   "log" : {
     "access": "/var/log/xray/access.log",
@@ -22,7 +23,7 @@
           "decryption":"none",
             "clients": [
                {
-                 "id": "UUID",
+                 "id": "${uuid}"
 #vless
              }
           ]
@@ -41,7 +42,7 @@
       "settings": {
             "clients": [
                {
-                 "id": "UUID",
+                 "id": "${uuid}"
                  "alterId": 0
 #vmess
              }
@@ -62,7 +63,7 @@
           "decryption":"none",
            "clients": [
               {
-                 "password": "UUID",
+                 "password": "${uuid}"
 #trojanws
               }
           ],
@@ -83,7 +84,7 @@
            "clients": [
            {
            "method": "aes-128-gcm",
-          "password": "UUID",
+          "password": "${uuid}"
 #ssws
            }
           ],
@@ -104,7 +105,7 @@
          "decryption":"none",
            "clients": [
              {
-               "id": "UUID",
+               "id": "${uuid}"
 #vlessgrpc
              }
           ]
@@ -123,7 +124,7 @@
       "settings": {
             "clients": [
                {
-                 "id": "UUID",
+                 "id": "${uuid}"
                  "alterId": 0
 #vmessgrpc
              }
@@ -144,7 +145,7 @@
           "decryption":"none",
              "clients": [
                {
-                 "password": "UUID",
+                 "password": "${uuid}"
 #trojangrpc
                }
            ]
@@ -164,7 +165,7 @@
         "clients": [
           {
              "method": "aes-128-gcm",
-             "password": "UUID",
+             "password": "${uuid}"
 #ssgrpc
            }
          ],
