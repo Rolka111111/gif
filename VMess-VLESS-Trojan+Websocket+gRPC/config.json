@@ -16,13 +16,13 @@
     },
    {
      "listen": "127.0.0.1",
-     "port": "10001",
+     "port": "19001",
      "protocol": "vless",
       "settings": {
           "decryption":"none",
             "clients": [
                {
-                 "id": "1d1c1d94-6987-4658-a4dc-8821a30fe7e0"
+                 "id": "UUID",
 #vless
              }
           ]
@@ -36,12 +36,12 @@
      },
      {
      "listen": "127.0.0.1",
-     "port": "10002",
+     "port": "19002",
      "protocol": "vmess",
       "settings": {
             "clients": [
                {
-                 "id": "1d1c1d94-6987-4658-a4dc-8821a30fe7e0",
+                 "id": "UUID",
                  "alterId": 0
 #vmess
              }
@@ -56,13 +56,13 @@
      },
     {
       "listen": "127.0.0.1",
-      "port": "10003",
+      "port": "19003",
       "protocol": "trojan",
       "settings": {
           "decryption":"none",
            "clients": [
               {
-                 "password": "1d1c1d94-6987-4658-a4dc-8821a30fe7e0"
+                 "password": "UUID",
 #trojanws
               }
           ],
@@ -77,13 +77,13 @@
      },
     {
          "listen": "127.0.0.1",
-        "port": "10004",
+        "port": "19004",
         "protocol": "shadowsocks",
         "settings": {
            "clients": [
            {
            "method": "aes-128-gcm",
-          "password": "1d1c1d94-6987-4658-a4dc-8821a30fe7e0"
+          "password": "UUID",
 #ssws
            }
           ],
@@ -98,13 +98,13 @@
      },
       {
         "listen": "127.0.0.1",
-        "port": "10005",
+        "port": "19005",
         "protocol": "vless",
         "settings": {
          "decryption":"none",
            "clients": [
              {
-               "id": "1d1c1d94-6987-4658-a4dc-8821a30fe7e0"
+               "id": "UUID",
 #vlessgrpc
              }
           ]
@@ -118,12 +118,12 @@
      },
      {
       "listen": "127.0.0.1",
-      "port": "10006",
+      "port": "19006",
      "protocol": "vmess",
       "settings": {
             "clients": [
                {
-                 "id": "1d1c1d94-6987-4658-a4dc-8821a30fe7e0",
+                 "id": "UUID",
                  "alterId": 0
 #vmessgrpc
              }
@@ -138,13 +138,13 @@
      },
      {
         "listen": "127.0.0.1",
-        "port": "10007",
+        "port": "19007",
         "protocol": "trojan",
         "settings": {
           "decryption":"none",
              "clients": [
                {
-                 "password": "1d1c1d94-6987-4658-a4dc-8821a30fe7e0"
+                 "password": "UUID",
 #trojangrpc
                }
            ]
@@ -158,13 +158,13 @@
    },
    {
     "listen": "127.0.0.1",
-    "port": "10008",
+    "port": "19008",
     "protocol": "shadowsocks",
     "settings": {
         "clients": [
           {
              "method": "aes-128-gcm",
-             "password": "1d1c1d94-6987-4658-a4dc-8821a30fe7e0"
+             "password": "UUID",
 #ssgrpc
            }
          ],
