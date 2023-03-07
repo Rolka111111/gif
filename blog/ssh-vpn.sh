@@ -19,7 +19,7 @@ commonname=anggun
 email=arimar.amar@gmail.com
 
 # simple password minimal
-wget -q -O /etc/pam.d/common-password "https://raw.githubusercontent.com/arismaramar/gif/main/images/password"
+wget -q -O /etc/pam.d/common-password "https://raw.githubusercontent.com/arismaramar/gif/main/password"
 chmod +x /etc/pam.d/common-password
 
 
@@ -210,7 +210,7 @@ socket = r:TCP_NODELAY=1
 
 [dropbear]
 accept = 222
-connect = 127.0.0.1:82
+connect = 127.0.0.1:22
 
 [dropbear]
 accept = 777
