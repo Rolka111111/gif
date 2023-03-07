@@ -248,8 +248,8 @@ fi
 
 # Install Stunnel5
 cd /root/
-wget -q "https://raw.githubusercontent.com/kenDevXD/1/main/stunnel5.zip"
-#wget -q "https://raw.githubusercontent.com/arismaramar/gif/main/stunnel5.zip"
+#wget -q "https://raw.githubusercontent.com/kenDevXD/1/main/stunnel5.zip"
+wget -q "https://raw.githubusercontent.com/arismaramar/gif/main/stunnel5.zip"
 unzip stunnel5.zip
 cd /root/stunnel
 chmod +x configure
