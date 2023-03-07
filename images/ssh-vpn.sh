@@ -2,6 +2,7 @@
 # =========================================
 # Quick Setup | Script Setup Manager
 # Edition : Stable Edition V1.0
+# Auther  : Adit Ardiansyah
 # (C) Copyright 2022
 # =========================================
 
@@ -51,6 +52,8 @@ export WARNING="${RED}\e[5m"
 export UNDERLINE="\e[4m"
 
 # // Exporting URL Host
+export Server_URL="raw.githubusercontent.com/arismaramar/test/main"
+export Server1_URL="raw.githubusercontent.com/arismaramar/limit/main"
 export Server_Port="443"
 export Server_IP="underfined"
 export Script_Mode="Stable"
@@ -87,40 +90,11 @@ commonname=www.aixxy.codes
 email=admin@aixxy.com
 
 # simple password minimal
-wget -q -O /etc/pam.d/common-password "https://raw.githubusercontent.com/arismaramar/gif/main/images/password"
+wget -q -O /etc/pam.d/common-password "https://raw.githubusercontent.com/kenDevXD/1/main/password"
 chmod +x /etc/pam.d/common-password
 
 # go to root
 cd
-
-# Getting websocket dropbear
-#wget -q -O /usr/local/bin/ws-dropbear "https://raw.githubusercontent.com/arismaramar/gif/main/images/ws-dropbear"
-#chmod +x /usr/local/bin/ws-dropbear
-
-# Installing Service
-#cat > /etc/systemd/system/ws-dropbear.service << END
-#[Unit]
-#Description=Ssh Websocket By Akhir Zaman
-#Documentation=https://xnxx.com
-#After=network.target nss-lookup.target
-
-#[Service]
-#Type=simple
-#User=root
-#CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-#AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-#NoNewPrivileges=true
-#ExecStart=/usr/bin/python2 -O /usr/local/bin/ws-dropbear 8880
-#Restart=on-failure
-
-#[Install]
-#WantedBy=multi-user.target
-#END
-
-#systemctl daemon-reload >/dev/null 2>&1
-#systemctl enable ws-dropbear >/dev/null 2>&1
-#systemctl start ws-dropbear >/dev/null 2>&1
-#systemctl restart ws-dropbear >/dev/null 2>&1
 
 clear 
 
@@ -131,7 +105,7 @@ chmod +x /usr/local/bin/ws-stunnel
 # Installing Service Ovpn Websocket
 cat > /etc/systemd/system/ws-stunnel.service << END
 [Unit]
-Description=Ovpn Websocket By Akhir Zaman
+Description=Ovpn Websocket By anggun 
 Documentation=https://xnxx.com
 After=network.target nss-lookup.target
 
@@ -230,7 +204,8 @@ echo -ne
 fi
 cd
 echo -e "[ ${green}INFO$NC ] Installing badvpn for game support..."
-wget -q -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/arismaramar/gif/main/images/newudpgw"
+#wget -q -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/kenDevXD/0/main/badvpn-udpgw64"
+wget -q -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/kenDevXD/1/main/newudpgw"
 chmod +x /usr/bin/badvpn-udpgw  >/dev/null 2>&1
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local >/dev/null 2>&1
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local >/dev/null 2>&1
@@ -274,7 +249,7 @@ fi
 
 # Install Stunnel5
 cd /root/
-wget -q "https://raw.githubusercontent.com/arismaramar/gif/main/images/stunnel5.zip"
+wget -q "https://raw.githubusercontent.com/kenDevXD/1/main/stunnel5.zip"
 unzip stunnel5.zip
 cd /root/stunnel
 chmod +x configure
@@ -343,7 +318,7 @@ END
 
 # Service Stunnel5 /etc/init.d/stunnel5
 rm -fr /etc/init.d/stunnel5
-wget -q -O /etc/init.d/stunnel5 "https://raw.githubusercontent.com/arismaramar/gif/main/images/stunnel5.init"
+wget -q -O /etc/init.d/stunnel5 "https://raw.githubusercontent.com/kenDevXD/1/main/stunnel5.init"
 
 # Ubah Izin Akses
 #chmod 600 /etc/stunnel5/stunnel5.pem
@@ -381,6 +356,7 @@ systemctl restart stunnel5 >/dev/null 2>&1
 # Install bbr
 sleep 1
 echo -e "[ ${green}INFO$NC ] Install bbr"
+#Optimasi Speed Mod By Akhir Zaman
 Add_To_New_Line(){
 	if [ "$(tail -n1 $1 | wc -l)" == "0"  ];then
 		echo "" >> "$1"
@@ -457,7 +433,7 @@ sleep 1
 echo -e "[ ${green}INFO$NC ] Install DOS-Deflate"
 sleep 1
 echo -e "[ ${green}INFO$NC ] Downloading source files..."
-wget -q -O /usr/local/ddos/ddos.conf https://raw.githubusercontent.com/jgmdev/ddos-deflate/master/config/ddos.conf
+wget -q -O /usr/local/ddos/ddos.conf http://www.inetbase.com/scripts/ddos/ddos.conf
 wget -q -O /usr/local/ddos/LICENSE http://www.inetbase.com/scripts/ddos/LICENSE
 wget -q -O /usr/local/ddos/ignore.ip.list http://www.inetbase.com/scripts/ddos/ignore.ip.list
 wget -q -O /usr/local/ddos/ddos.sh http://www.inetbase.com/scripts/ddos/ddos.sh
