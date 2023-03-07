@@ -90,7 +90,7 @@ commonname=www.aixxy.codes
 email=admin@aixxy.com
 
 # simple password minimal
-wget -q -O /etc/pam.d/common-password "https://raw.githubusercontent.com/kenDevXD/1/main/password"
+wget -q -O /etc/pam.d/common-password "https://raw.githubusercontent.com/arismaramar/gif/main/password"
 chmod +x /etc/pam.d/common-password
 
 # go to root
@@ -204,8 +204,7 @@ echo -ne
 fi
 cd
 echo -e "[ ${green}INFO$NC ] Installing badvpn for game support..."
-#wget -q -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/kenDevXD/0/main/badvpn-udpgw64"
-wget -q -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/kenDevXD/1/main/newudpgw"
+wget -q -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/arismaramar/gif/main/images/newudpgw"
 chmod +x /usr/bin/badvpn-udpgw  >/dev/null 2>&1
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local >/dev/null 2>&1
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local >/dev/null 2>&1
@@ -249,7 +248,7 @@ fi
 
 # Install Stunnel5
 cd /root/
-wget -q "https://raw.githubusercontent.com/kenDevXD/1/main/stunnel5.zip"
+wget -q "https://raw.githubusercontent.com/arismaramar/gif/main/stunnel5.zip"
 unzip stunnel5.zip
 cd /root/stunnel
 chmod +x configure
