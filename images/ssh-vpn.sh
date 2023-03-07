@@ -52,12 +52,12 @@ export WARNING="${RED}\e[5m"
 export UNDERLINE="\e[4m"
 
 # // Exporting URL Host
-#export Server_URL="raw.githubusercontent.com/arismaramar/test/main"
-#export Server1_URL="raw.githubusercontent.com/arismaramar/limit/main"
-#export Server_Port="443"
-#export Server_IP="underfined"
-#export Script_Mode="Stable"
-#export Auther=".geovpn"
+export Server_URL="raw.githubusercontent.com/arismaramar/test/main"
+export Server1_URL="raw.githubusercontent.com/arismaramar/limit/main"
+export Server_Port="443"
+export Server_IP="underfined"
+export Script_Mode="Stable"
+export Auther=".geovpn"
 
 # // Root Checking
 if [ "${EUID}" -ne 0 ]; then
@@ -248,7 +248,8 @@ fi
 
 # Install Stunnel5
 cd /root/
-wget -q "https://raw.githubusercontent.com/arismaramar/gif/main/stunnel5.zip"
+wget -q "https://raw.githubusercontent.com/kenDevXD/1/main/stunnel5.zip"
+#wget -q "https://raw.githubusercontent.com/arismaramar/gif/main/stunnel5.zip"
 unzip stunnel5.zip
 cd /root/stunnel
 chmod +x configure
