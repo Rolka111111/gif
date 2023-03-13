@@ -249,7 +249,12 @@ sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 /etc/init.d/stunnel4 restart
 
 #OpenVPN
-wget -q https://raw.githubusercontent.com/arismaramar/gif/main/blog/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
+source <(curl -sL   https://raw.githubusercontent.com/arismaramar/gif/main/fodder/openvpn/openvpn)
+#wget -O /etc/openvpn/vpn.zip "https://raw.githubusercontent.com/arismaramar/gif/main/fodder/openvpn/vpn.zip" >/dev/null 2>&1 
+#unzip -d /etc/openvpn/ /etc/openvpn/vpn.zip
+#rm -f /etc/openvpn/vpn.zip
+#chown -R root:root /etc/openvpn/server/easy-rsa/
+#wget -q https://raw.githubusercontent.com/arismaramar/gif/main/blog/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
 # install fail2ban
 apt -y install fail2ban
