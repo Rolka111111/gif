@@ -102,58 +102,6 @@ if [ "$v2r" = "active" ]; then
 resv2r="${green}ON${NC}"
 else
 resv2r="${red}OFF${NC}"
-fi
-function addhost(){
-clear
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo ""
-read -rp "Domain/Host: " -e host
-echo ""
-if [ -z $host ]; then
-echo "????"
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-read -n 1 -s -r -p "Press any key to back on menu"
-setting-menu
-else
-rm -fr /etc/xray/domain
-echo "IP=$host" > /var/lib/scrz-prem/ipvps.conf
-echo $host > /etc/xray/domain
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo "Dont forget to renew gen-ssl"
-echo ""
-read -n 1 -s -r -p "Press any key to back on menu"
-menu
-fi
-}
-function genssl(){
-clear
-systemctl stop nginx
-systemctl stop xray
-domain=$(cat /var/lib/scrz-prem/ipvps.conf | cut -d'=' -f2)
-Cek=$(lsof -i:80 | cut -d' ' -f1 | awk 'NR==2 {print $1}')
-if [[ ! -z "$Cek" ]]; then
-sleep 1
-echo -e "[ ${red}WARNING${NC} ] Detected port 80 used by $Cek " 
-systemctl stop $Cek
-sleep 2
-echo -e "[ ${green}INFO${NC} ] Processing to stop $Cek " 
-sleep 1
-fi
-echo -e "[ ${green}INFO${NC} ] Starting renew gen-ssl... " 
-sleep 2
-/root/.acme.sh/acme.sh --upgrade
-/root/.acme.sh/acme.sh --upgrade --auto-upgrade
-/root/.acme.sh/acme.sh --set-default-ca --server letsencrypt
-/root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256
-~/.acme.sh/acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key --ecc
-echo -e "[ ${green}INFO${NC} ] Renew gen-ssl done... " 
-sleep 2
-echo -e "[ ${green}INFO${NC} ] Starting service $Cek " 
-sleep 2
-echo $domain > /etc/xray/domain
-systemctl start nginx
-systemctl start xray
-echo -e "[ ${green}INFO${NC} ] All finished... " 
 sleep 0.5
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
@@ -192,11 +140,11 @@ echo -e " ${BICyan}[${BIWhite}07${BICyan}]${RED} •${NC} ${CYAN}AUTO REBOOT    
 echo -e " ${BICyan}[${BIWhite}08${BICyan}]${RED} •${NC} ${CYAN}REBOOT          $NC  ${BICyan}[${BIWhite}19${BICyan}]${RED} • ${NC}${CYAN}WEBMIN $NC"
 echo -e " ${BICyan}[${BIWhite}09${BICyan}]${RED} •${NC} ${CYAN}RESTART SERVICE $NC  ${BICyan}[${BIWhite}20${BICyan}]${RED} • ${NC}${CYAN}SCRIPT INFO $NC"
 echo -e " ${BICyan}[${BIWhite}10${BICyan}]${RED} •${NC} ${CYAN}BACKUP {OFF}    $NC  ${BICyan}[${BIWhite}21${BICyan}]${RED} • ${NC}${CYAN}CLEAR LOG $NC"
-echo -e " ${BICyan}[${BIWhite}11${BICyan}]${RED} •${NC} ${CYAN}ADD HOST        $NC  ${BICyan}[${BIWhite}22${BICyan}]${RED} • ${NC}${CYAN}FIX MISSING POINTING $NC"
+echo -e " ${BICyan}[${BIWhite}11${BICyan}]${RED} •${NC} ${CYAN}ADD HOST        $NC  ${BICyan}[${BIWhite}22${BICyan}]${RED} • ${NC}${CYAN}FIX AUTO DNS $NC"
 echo -e " ${BICyan}[${BIWhite} X ${BICyan}] TYPE X FOR EXIT ${BICyan}${BIYellow}${BICyan}${NC}"  
 echo -e " ${RED}"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[44;1;39m                ⇱ anggun ⇲                    \E[0m"
+echo -e "\E[44;1;39m                ⇱ ANGGUN ⇲                    \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo
 read -p " Select menu : " opt
@@ -225,7 +173,7 @@ case $opt in
 20) clear ; cat /root/log-install.txt ;;
 21) clear ; clearlog ;;
 #99) clear ; update ;;
-22) clear ; wget https://raw.githubusercontent.com/arismaramar/gif/main/images/cf.sh && chmod +x cf.sh && ./cf.sh ;;
+22) clear ; fix ;;
 
 0) clear ; menu ;;
 x) exit ;;
