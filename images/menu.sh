@@ -44,6 +44,12 @@ export WARNING="${RED}\e[5m"
 export UNDERLINE="\e[4m"
 
 # // Exporting URL Host
+export Server_URL="raw.githubusercontent.com/Zeastore/test/main"
+export Server1_URL="raw.githubusercontent.com/Zeastore/limit/main"
+export Server_Port="443"
+export Server_IP="underfined"
+export Script_Mode="Stable"
+export Auther=".geovpn"
 
 # // Root Checking
 if [ "${EUID}" -ne 0 ]; then
@@ -158,6 +164,7 @@ sleep 0.5
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
+}
 IPVPS=$(curl -s ipinfo.io/ip )
 ISPVPS=$( curl -s ipinfo.io/org )
 clear
@@ -195,7 +202,7 @@ echo -e " ${BICyan}[${BIWhite}11${BICyan}]${RED} •${NC} ${CYAN}ADD HOST       
 echo -e " ${BICyan}[${BIWhite} X ${BICyan}] TYPE X FOR EXIT ${BICyan}${BIYellow}${BICyan}${NC}"  
 echo -e " ${RED}"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[44;1;39m                ⇱ ANGGUN  ⇲                    \E[0m"
+echo -e "\E[44;1;39m                ⇱ anggun ⇲                    \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo
 read -p " Select menu : " opt
