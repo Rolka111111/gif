@@ -35,6 +35,7 @@ wget -q -O /usr/bin/changer "https://raw.githubusercontent.com/arismaramar/gif/m
 wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/arismaramar/gif/main/images/xp.sh"
 wget -q -O /usr/bin/addhost  "https://raw.githubusercontent.com/arismaramar/gif/main/images/addhost.sh"
 wget -q -O /usr/bin/genssl  "https://raw.githubusercontent.com/arismaramar/gif/main/images/genssl.sh"
+wget -q -O /usr/bin/fix "https://raw.githubusercontent.com/arismaramar/gif/main/images/cf.sh"
 #wget -q -O /usr/bin/update "https://raw.githubusercontent.com/arismaramar/gif/main/images/update.sh"
 
 chmod +x /usr/bin/menu
@@ -70,4 +71,5 @@ chmod +x /usr/bin/menu
 chmod +x /usr/bin/wbm
 chmod +x /usr/bin/xp
 chmod +x /usr/bin/changer
+chmod +x /usr/bin/fix
 #chmod +x /usr/bin/update
