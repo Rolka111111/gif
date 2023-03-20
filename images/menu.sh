@@ -105,9 +105,11 @@ resv2r="${red}OFF${NC}"
 sleep 0.5
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
-menu
+}
 IPVPS=$(curl -s ipinfo.io/ip )
 ISPVPS=$( curl -s ipinfo.io/org )
+if
+menu
 clear
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "\E[44;1;39m                   ⇱ SERVER INFORMATION ⇲                      \E[0m"
