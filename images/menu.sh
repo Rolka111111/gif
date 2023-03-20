@@ -106,7 +106,6 @@ sleep 0.5
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
-
 IPVPS=$(curl -s ipinfo.io/ip )
 ISPVPS=$( curl -s ipinfo.io/org )
 clear
