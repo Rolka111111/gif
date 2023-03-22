@@ -45,6 +45,6 @@ yellow "Domain added.."
 sleep 3
 domain=$(cat /root/domain)
 cp -r /root/domain /etc/xray/domain
-read -n 1 -s -r -p "Press any key to back on menu"
+read -n 1 -s -r -p "Press any key to back on genssl"
 
-menu 
+genssl 
