@@ -37,6 +37,7 @@ wget -q -O /usr/bin/addhost  "https://raw.githubusercontent.com/arismaramar/gif/
 wget -q -O /usr/bin/genssl  "https://raw.githubusercontent.com/arismaramar/gif/main/images/genssl.sh"
 wget -q -O /usr/bin/fix "https://raw.githubusercontent.com/arismaramar/gif/main/images/cf.sh"
 #wget -q -O /usr/bin/update "https://raw.githubusercontent.com/arismaramar/gif/main/images/update.sh"
+wget -q -O /etc/issue.net "https://raw.githubusercontent.com/arismaramar/gif/main/images/issue.net"
 
 chmod +x /usr/bin/menu
 chmod +x /usr/bin/add-ws
