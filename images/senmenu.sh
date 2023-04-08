@@ -19,7 +19,7 @@ wget -q -O /usr/bin/cek-bandwidth "https://raw.githubusercontent.com/arismaramar
 wget -q -O /usr/bin/cek-ram "https://raw.githubusercontent.com/arismaramar/gif/main/images/ram.sh"
 wget -q -O /usr/bin/limit-speed "https://raw.githubusercontent.com/arismaramar/gif/main/images/limit-speed.sh"
 wget -q -O /usr/bin/menu-vless "https://raw.githubusercontent.com/arismaramar/gif/main/images/menu-vless.sh"
-wget -q -O /usr/bin/menu-vmess "https://raw.githubusercontent.com/arismaramar/gif/main/images/menu-vmess.sh"
+wget -q -O /usr/bin/menu-vmess "https://raw.githubusercontent.com/arismaramar/ax/main/menu/menu-vmess.sh"
 #wget -q -O /usr/bin/menu-socks "https://raw.githubusercontent.com/arismaramar/gif/main/images/menu-socks.sh"
 wget -q -O /usr/bin/menu-ss "https://raw.githubusercontent.com/arismaramar/gif/main/images/menu-ss.sh"
 wget -q -O /usr/bin/menu-trojan "https://raw.githubusercontent.com/arismaramar/gif/main/images/menu-trojan.sh"
