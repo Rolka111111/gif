@@ -15,7 +15,7 @@ wget -q -O /usr/bin/cek-ram "https://raw.githubusercontent.com/arismaramar/gif/m
 wget -q -O /usr/bin/limit-speed "https://raw.githubusercontent.com/arismaramar/gif/main/images/limit-speed.sh"
 wget -q -O /usr/bin/menu-vless "https://raw.githubusercontent.com/arismaramar/ax/main/menu/menu-vless.sh"
 wget -q -O /usr/bin/menu-vmess "https://raw.githubusercontent.com/arismaramar/ax/main/menu/menu-vmess.sh"
-wget -q -O /usr/bin/menu-ss "https://raw.githubusercontent.com/arismaramar/ax/main/menu/menu-ss.sh"
+wget -q -O /usr/bin/menu-ss "https://raw.githubusercontent.com/arismaramar/gif/main/images/menu-ss.sh"
 wget -q -O /usr/bin/menu-trojan "https://raw.githubusercontent.com/arismaramar/ax/main/menu/menu-trojan.sh"
 wget -q -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/arismaramar/ax/main/menu/menu-ssh.sh"
 wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/arismaramar/ax/main/backup/backup.sh"
