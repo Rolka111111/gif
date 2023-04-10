@@ -26,7 +26,7 @@ wget -q -O /usr/bin/menu-trojan "https://raw.githubusercontent.com/arismaramar/g
 #wget -q -O /usr/bin/menu-trgo "https://raw.githubusercontent.com/arismaramar/gif/main/images/menu-trgo.sh"
 wget -q -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/arismaramar/gif/main/images/menu-ssh.sh"
 #wget -q -O /usr/bin/menu-bckp "https://raw.githubusercontent.com/arismaramar/gif/main/images/menu-bckp-telegram.sh"
-wget -q -O /usr/bin/menu-bckp "https://raw.githubusercontent.com/arismaramar/gif/main/images/menu-bckp-github.sh"
+wget -q -O /usr/bin/menu-bckp "https://raw.githubusercontent.com/arismaramar/menu/main/BACKUP/backup.sh"
 #wget -q -O /usr/bin/bckp "https://raw.githubusercontent.com/arismaramar/gif/main/images/bckpbot.sh"
 wget -q -O /usr/bin/usernew "https://raw.githubusercontent.com/arismaramar/gif/main/images/usernew.sh"
 wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/arismaramar/gif/main/images/menu.sh"
