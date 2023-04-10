@@ -18,7 +18,7 @@ wget -q -O /usr/bin/menu-vmess "https://raw.githubusercontent.com/arismaramar/ax
 wget -q -O /usr/bin/menu-ss "https://raw.githubusercontent.com/arismaramar/ax/main/menu/menu-ss.sh"
 wget -q -O /usr/bin/menu-trojan "https://raw.githubusercontent.com/arismaramar/ax/main/menu/menu-trojan.sh"
 wget -q -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/arismaramar/ax/main/menu/menu-ssh.sh"
-wget -q -O /usr/bin/menu-bckp "https://raw.githubusercontent.com/arismaramar/ax/main/backup/backup.sh"
+wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/arismaramar/ax/main/backup/backup.sh"
 #wget -q -O /usr/bin/menu-bckp "https://raw.githubusercontent.com/arismaramar/menu/main/BACKUP/backup.sh"
 wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/arismaramar/gif/main/images/menu.sh"
 wget -q -O /usr/bin/wbm "https://raw.githubusercontent.com/arismaramar/gif/main/images/webmin.sh"
@@ -48,7 +48,8 @@ chmod +x /usr/bin/menu-vmess
 chmod +x /usr/bin/menu-ss
 chmod +x /usr/bin/menu-trojan
 chmod +x /usr/bin/menu-ssh
-chmod +x /usr/bin/menu-bckp
+chmod +x /usr/bin/menu-backup
+#chmod +x /usr/bin/menu-bckp
 chmod +x /usr/bin/menu
 chmod +x /usr/bin/wbm
 chmod +x /usr/bin/xp
