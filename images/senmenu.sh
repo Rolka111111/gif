@@ -1,7 +1,7 @@
 #!/bin/bash
 # // config Data
 echo -e "${GREEN}Config Data${NC}"
-wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/arismaramar/gif/main/images/menu2.sh"
+wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/arismaramar/gif/main/images/menu3.sh"
 #wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/arismaramar/gif/main/images/menu.sh"
 wget -q -O /usr/bin/autoreboot "https://raw.githubusercontent.com/arismaramar/gif/main/images/autoreboot.sh"
 wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/arismaramar/gif/main/images/restart.sh"
