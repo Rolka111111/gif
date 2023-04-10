@@ -20,13 +20,13 @@ wget -q -O /usr/bin/menu-trojan "https://raw.githubusercontent.com/arismaramar/a
 wget -q -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/arismaramar/ax/main/menu/menu-ssh.sh"
 wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/arismaramar/ax/main/backup/backup.sh"
 #wget -q -O /usr/bin/menu-bckp "https://raw.githubusercontent.com/arismaramar/menu/main/BACKUP/backup.sh"
-wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/arismaramar/gif/main/images/menu.sh"
 wget -q -O /usr/bin/wbm "https://raw.githubusercontent.com/arismaramar/gif/main/images/webmin.sh"
-wget -q -O /usr/bin/changer "https://raw.githubusercontent.com/arismaramar/gif/main/images/changer.sh"
+wget -q -O /usr/bin/menu-dns "https://raw.githubusercontent.com/arismaramar/gif/main/images/changer.sh"
 wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/arismaramar/gif/main/images/xp.sh"
 wget -q -O /usr/bin/addhost  "https://raw.githubusercontent.com/arismaramar/gif/main/images/addhost.sh"
 wget -q -O /usr/bin/genssl  "https://raw.githubusercontent.com/arismaramar/gif/main/images/genssl.sh"
 wget -q -O /usr/bin/fix "https://raw.githubusercontent.com/arismaramar/gif/main/images/cf.sh"
+wget -q -O /usr/bin/menu-set  "https://raw.githubusercontent.com/arismaramar/ax/main/menu/menu-set.sh"
 #wget -q -O /usr/bin/update "https://raw.githubusercontent.com/arismaramar/gif/main/images/update.sh"
 wget -q -O /etc/issue.net "https://raw.githubusercontent.com/arismaramar/gif/main/images/issue.net"
 
@@ -50,7 +50,8 @@ chmod +x /usr/bin/menu-trojan
 chmod +x /usr/bin/menu-ssh
 chmod +x /usr/bin/menu-backup
 #chmod +x /usr/bin/menu-bckp
-chmod +x /usr/bin/menu
+chmod +x /usr/bin/menu-dns
+chmod +x /usr/bin/menu-set
 chmod +x /usr/bin/wbm
 chmod +x /usr/bin/xp
 chmod +x /usr/bin/changer
