@@ -119,11 +119,11 @@ echo -e "□ Current Time        = $( date -d "0 days" +"%d-%m-%Y | %X" )"
 echo -e "□ Operating System    = $( cat /etc/os-release | grep -w PRETTY_NAME | sed 's/PRETTY_NAME//g' | sed 's/=//g' | sed 's/"//g' ) ( $( uname -m) )"
 echo -e "□ Current Domain      = $( cat /etc/xray/domain )"
 echo -e "□ Server IP           = ${IP}"
-echo -e "□ Clients Name        = $Name"
-echo -e "□ Expired Script VPS  = $Exp"
+echo -e "□ Clients Name        = ANGGUN
+echo -e "□ Expired Script VPS  = LIFEIME
 echo -e "□ Time Reboot VPS     = 00:00 ${GREEN}( Jam 12 Malam )${NC}"
-echo -e "□ License Limit       = 3 VPS ${GREEN}( Persatu IP VPS )${NC}"
-echo -e "□ AutoScript By Dev   = Wak ${GREEN}( Vlukss )${NC}"
+echo -e "□ License Limit       = UNLIMITED ${GREEN}( UNLIMITED IP VPS )${NC}"
+echo -e "□ AutoScript By Dev   = ANGGUN ${GREEN}( ANGGUN )${NC}"
 
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "\E[44;1;39m                     ⇱ STATUS LAYANAN ⇲                       \E[0m"
