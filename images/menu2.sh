@@ -119,7 +119,6 @@ echo -e "□ Current Time        = $( date -d "0 days" +"%d-%m-%Y | %X" )"
 echo -e "□ Operating System    = $( cat /etc/os-release | grep -w PRETTY_NAME | sed 's/PRETTY_NAME//g' | sed 's/=//g' | sed 's/"//g' ) ( $( uname -m) )"
 echo -e "□ Current Domain      = $( cat /etc/xray/domain )"
 echo -e "□ Server IP           = ${IP}"
-echo -e "□ Clients Name        = ANGGUN
 echo -e "□ Time Reboot VPS     = 00:00 ${GREEN}( Jam 12 Malam )${NC}"
 echo -e "□ License Limit       = UNLIMITED ${GREEN}( UNLIMITED IP VPS )${NC}"
 echo -e "□ AutoScript By Dev   = ANGGUN ${GREEN}( ANGGUN )${NC}"
