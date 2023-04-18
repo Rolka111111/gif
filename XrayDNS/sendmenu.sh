@@ -12,7 +12,7 @@ wget -q -O /usr/bin/xp "${GITHUB_CMD}main/XrayDNS/xp" >/dev/null 2>&1
 wget -q -O /usr/bin/bkp "${GITHUB_CMD}main/XrayDNS/bkp" >/dev/null 2>&1
 wget -q -O /usr/bin/net "${GITHUB_CMD}main/XrayDNS/net" >/dev/null 2>&1
 wget -q -O /usr/bin/gotop "${GITHUB_CMD}main/XrayDNS/gotop" >/dev/null 2>&1
-wget -q -O /usr/bin/logclean "${GITHUB_CMD}main/XrayDNS/logclean" >/dev/null 2>&1
+#wget -q -O /usr/bin/logclean "${GITHUB_CMD}main/XrayDNS/logclean" >/dev/null 2>&1
 wget -q -O /usr/bin/portin "${GITHUB_CMD}main/XrayDNS/portin" >/dev/null 2>&1
 wget -q -O /usr/bin/settings "${GITHUB_CMD}main/XrayDNS/settings" >/dev/null 2>&1
 wget -q -O /usr/bin/restart "${GITHUB_CMD}main/XrayDNS/restart" >/dev/null 2>&1
