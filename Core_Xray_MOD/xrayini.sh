@@ -1,4 +1,5 @@
-#!/bin/bash
+!/bin/bash
+GITHUB_CMD="https://github.com/arismaramar/gif/raw/"
 # Install Xray core#
 #==========#
 # / / Ambil Xray Core Version Terbaru
