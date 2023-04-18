@@ -1,3 +1,5 @@
+!/bin/bash
+GITHUB_CMD="https://github.com/arismaramar/gif/raw/"
 #!/usr/bin/env bash
 export PATH
 source /etc/os-release
