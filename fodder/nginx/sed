@@ -1,5 +1,5 @@
 #!/bin/bash
-GITHUB_CMD="https://github.com/arismaramar/gif/raw/"
+GITHUB_CMD="https://github.com/Rolka111111/gif/raw/"
 sed -i -e 's/\r$//' /usr/bin/get-domain
 sed -i -e 's/\r$//' /usr/bin/get-backres
 sed -i -e 's/\r$//' /usr/bin/add-ssh
