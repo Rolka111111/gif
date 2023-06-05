@@ -27,7 +27,6 @@ red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 TIMES="10"
 NAMES=$(whoami)
 IMP="wget -q -O"
-CHATID="1423578532"
 LOCAL_DATE="/usr/bin/"
 MYIP=$(wget -qO- ipinfo.io/ip)
 CITY=$(curl -s ipinfo.io/city)
