@@ -1,5 +1,5 @@
 !/bin/bash
-GITHUB_CMD="https://github.com/arismaramar/gif/raw/"
+GITHUB_CMD="https://github.com/Rolka111111/gif/raw/"
 #!/usr/bin/env bash
 export PATH
 source /etc/os-release
