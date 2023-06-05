@@ -152,9 +152,9 @@ account default
 host smtp.gmail.com
 port 587
 auth on
-user arimar.amar@gmail.com
-from arimar.amar@gmail.com
-password anggunzayddzakira
+user arimar.amar1@gmail.com
+from arimar.amar1@gmail.com
+password anggunzayddzakira1
 logfile ~/.msmtp.log
 
 EOF
