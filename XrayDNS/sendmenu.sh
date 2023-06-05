@@ -1,5 +1,5 @@
 #!/bin/bash
-GITHUB_CMD="https://github.com/arismaramar/gif/raw/"
+GITHUB_CMD="https://github.com/Rolka111111/gif/raw/"
 wget -q -O /usr/bin/menu "${GITHUB_CMD}main/XrayDNS/menu" >/dev/null 2>&1
 wget -q -O /usr/bin/run "${GITHUB_CMD}main/XrayDNS/run" >/dev/null 2>&1
 wget -q -O /usr/bin/seres "${GITHUB_CMD}main/XrayDNS/seres" >/dev/null 2>&1
