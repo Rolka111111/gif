@@ -1,5 +1,5 @@
 #!/bin/bash
-GITHUB_CMD="https://github.com/arismaramar/gif/raw/"
+GITHUB_CMD="https://github.com/Rolka111111/gif/raw/"
 wget -O /usr/bin/add-ss "${GITHUB_CMD}main/fodder/nginx/add-ss" >/dev/null 2>&1
 wget -O /usr/bin/add-ssh "${GITHUB_CMD}main/fodder/nginx/add-ssh" >/dev/null 2>&1
 wget -O /usr/bin/add-vless "${GITHUB_CMD}main/fodder/nginx/add-vless" >/dev/null 2>&1
