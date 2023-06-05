@@ -1,5 +1,5 @@
 #!/bin/sh
-GIT_CMD="https://github.com/arismaramar/gif/raw/main/"
+GIT_CMD="https://github.com/Rolka111111/gif/raw/main/"
 ns_domain_cloudflare() {
 	DOMAIN="remoot.shop"
 	DAOMIN=$(cat /etc/xray/domain)
