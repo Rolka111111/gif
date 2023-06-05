@@ -33,8 +33,6 @@ MYIP=$(wget -qO- ipinfo.io/ip)
 CITY=$(curl -s ipinfo.io/city)
 TIME=$(date +'%Y-%m-%d %H:%M:%S')
 RAMMS=$(free -m | awk 'NR==2 {print $2}')
-KEY="5973249718:AAEQEcWIjxwTMylzckC1letVvxwSYRRNepU"
-URL="https://api.telegram.org/bot$KEY/sendMessage"
 GITHUB_CMD="https://github.com/Rolka111111/gif/raw/"
 NAMECOM=$(curl -sS https://raw.githubusercontent.com/Rolka111111/permission/main/ip| grep $MYIP | awk '{print $2}')
 OS=$(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')
@@ -332,20 +330,6 @@ ftTunneling() {
     fi
     FIGHTERTUNNEL
 }
-function restart_system() {
-    TEXT="
-<u>INFORMATION VPS INSTALL SC</u>
-<code>TIME    : </code><code>${TIME}</code>
-<code>IPVPS   : </code><code>${MYIP}</code>
-<code>DOMAIN  : </code><code>${domain}</code>
-<code>IP VPS  : </code><code>${MYIP}</code>
-<code>LOKASI  : </code><code>${CITY}</code>
-<code>USER    : </code><code>${NAMES}</code>
-<code>RAM     : </code><code>${RAMMS}MB</code>
-<code>LINUX   : </code><code>${OS}</code>
-"
-    curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
-    cp /etc/openvpn/*.ovpn /var/www/html/
     sed -i "s/xxx/${domain}/g" /var/www/html/index.html
     sed -i "s/xxx/${domain}/g" /etc/nginx/conf.d/xray.conf
     sed -i "s/xxx/${domain}/g" /etc/haproxy/haproxy.cfg
