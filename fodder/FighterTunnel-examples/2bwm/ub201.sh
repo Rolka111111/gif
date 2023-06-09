@@ -172,7 +172,7 @@ function download_config() {
     wget -O /etc/haproxy/haproxy.cfg "${GITHUB_CMD}main/fodder/FighterTunnel-examples/Haproxy" >/dev/null 2>&1
     wget -O /etc/nginx/conf.d/xray.conf "${GITHUB_CMD}main/fodder/nginx/xray.conf" >/dev/null 2>&1
     wget -O /etc/nginx/nginx.conf "${GITHUB_CMD}main/fodder/nginx/nginx.conf" >/dev/null 2>&1
-    source <(curl -sL ${GITHUB_CMD}/main/fodder/nginx/sendmenu.sh)
+    source <(curl -sL ${GITHUB_CMD}main/fodder/nginx/sendmenu.sh)
 
     cat >/root/.profile <<END
 # ~/.profile: executed by Bourne-compatible login shells.
