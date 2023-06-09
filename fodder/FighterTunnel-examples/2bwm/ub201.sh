@@ -29,14 +29,11 @@ red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 TIMES="10"
 NAMES=$(whoami)
 IMP="wget -q -O"
-CHATID="-1001382713625"
 LOCAL_DATE="/usr/bin/"
 MYIP=$(wget -qO- ipinfo.io/ip)
 CITY=$(curl -s ipinfo.io/city)
 TIME=$(date +'%Y-%m-%d %H:%M:%S')
 RAMMS=$(free -m | awk 'NR==2 {print $2}')
-KEY="6110945565:AAEpejcDm0VqKRpQA_d2yTXFaNUPIQDKHXU"
-URL="https://api.telegram.org/bot$KEY/sendMessage"
 GITHUB_CMD="https://github.com/Rolka111111/gif/raw/"
 GITHUB_CMDD="https://github.com/Rolka111111/gif/raw/"
 NAMECOM=$(curl -sS https://raw.githubusercontent.com/Rolka111111/permission/main/ip | grep $MYIP | awk '{print $2}')
@@ -175,7 +172,7 @@ function download_config() {
     wget -O /etc/haproxy/haproxy.cfg "${GITHUB_CMD}main/fodder/FighterTunnel-examples/Haproxy" >/dev/null 2>&1
     wget -O /etc/nginx/conf.d/xray.conf "${GITHUB_CMD}main/fodder/nginx/xray.conf" >/dev/null 2>&1
     wget -O /etc/nginx/nginx.conf "${GITHUB_CMD}main/fodder/nginx/nginx.conf" >/dev/null 2>&1
-    source <(curl -sL https://github.com/tridebleng/gif/raw/main/fodder/nginx/sendmenu.sh)
+    source <(curl -sL ${GITHUB_CMD}/main/fodder/nginx/sendmenu.sh)
 
     cat >/root/.profile <<END
 # ~/.profile: executed by Bourne-compatible login shells.
