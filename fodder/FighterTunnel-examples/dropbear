@@ -2,14 +2,14 @@
 # change to NO_START=0 to enable Dropbear
 NO_START=0
 # the TCP port that Dropbear listens on
-DROPBEAR_PORT=80
+DROPBEAR_PORT=143
 
 # any additional arguments for Dropbear
 DROPBEAR_EXTRA_ARGS="-p 109"
 
 # specify an optional banner file containing a message to be
 # sent to clients before they connect, such as "/etc/fightertunnel.txt"
-DROPBEAR_BANNER="/etc/fightertunnel.txt"
+DROPBEAR_BANNER="/etc/banner"
 
 # RSA hostkey file (default: /etc/dropbear/dropbear_rsa_host_key)
 #DROPBEAR_RSAKEY="/etc/dropbear/dropbear_rsa_host_key"
