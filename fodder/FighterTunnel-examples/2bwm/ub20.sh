@@ -113,10 +113,10 @@ function LOGO() {
     echo -e "
     ┌─────────────────────────────────────────┐
  ───│                                         │───
- ───│$Green┌─┐┬ ┬┌┬┐┌─┐┌─┐┌─┐┬─┐┬┌─┐┌┬┐ $NC   │───
- ───│$Green├─┤│ │ │ │ │└─┐│  ├┬┘│├─┘ │  $NC   │───
- ───│$Green┴ ┴└─┘ ┴ └─┘└─┘└─┘┴└─┴┴   ┴  $NC   │───
-    │$GRAY https://t.me/amantubilah     $NC   │
+ ───│$Green┌─┐┬ ┬┌┬┐┌─┐┌─┐┌─┐┬─┐┬┌─┐┌┬┐ $NC           │───
+ ───│$Green├─┤│ │ │ │ │└─┐│  ├┬┘│├─┘ │  $NC           │───
+ ───│$Green┴ ┴└─┘ ┴ └─┘└─┘└─┘┴└─┴┴   ┴  $NC           │───
+    │$GRAY https://t.me/amantubilah     $NC              │
     └─────────────────────────────────────────┘
          ${RED}Autoscript xray vpn lite (multi port)${FONT}    
 ${RED}Make sure the internet is smooth when installing the script${FONT}
