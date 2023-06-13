@@ -65,7 +65,7 @@ function is_root() {
 }
 judge() {
     if [[ 0 -eq $? ]]; then
-        print_ok "$1 Complete... | thx to ${YELLOW}ANGGUN${FONT}"
+        print_ok "$1 Complete... | thx to ${YELLOW}Rolka${FONT}"
         sleep 1
     fi
 }
